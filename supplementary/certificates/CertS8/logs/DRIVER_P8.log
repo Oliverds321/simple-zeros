@@ -1,0 +1,165 @@
+parents ['runs/P8/init.ckpt']: args=('poly:1,127/2500,-8997/10000,6187/10000,3/1250', 8, '1700', '0.00796', 'flint', 64, False, 'numpy+lb3+sym') stack_boxes=824 processed(sum)=1.9164e+04 cpu_time(sum)=0s worst=0.0124626
+sha256(sorted rows): union of parents = union of shards = 867ada2c29319e0f15cb42deacde1b31c175c85acf67662393527611f1cb28e7 (824 rows)
+shard 0: runs/P8/r0_0.ckpt boxes=165
+shard 1: runs/P8/r0_1.ckpt boxes=165
+shard 2: runs/P8/r0_2.ckpt boxes=165
+shard 3: runs/P8/r0_3.ckpt boxes=165
+shard 4: runs/P8/r0_4.ckpt boxes=164
+2026-09-26 21:47:48 round 0 start N=5 CHUNK=540 alpha=poly8A K=8 mu=1/1700 claim=0.00796 weights=w_poly8A_K8_mu1700.json extra=--window win_poly8A.json --lb3 --sym
+2026-09-26 21:56:48 round 0 done: 0 shards ok, 5 left
+  it=360 processed=5.723e+06 stack_boxes=3.161e+05 min centre F=0.0081687 t=504s iv_checked=5.645e+06 iv_rejected=0
+  it=400 processed=6.113e+06 stack_boxes=4.073e+05 min centre F=0.0080905 t=538s iv_checked=6.048e+06 iv_rejected=0
+  it=360 processed=6.060e+06 stack_boxes=2.283e+05 min centre F=0.0083853 t=532s iv_checked=6.003e+06 iv_rejected=0
+  it=360 processed=5.429e+06 stack_boxes=3.893e+05 min centre F=0.0082104 t=486s iv_checked=5.383e+06 iv_rejected=0
+  it=400 processed=5.994e+06 stack_boxes=2.404e+05 min centre F=0.0081446 t=526s iv_checked=5.929e+06 iv_rejected=0
+parents ['runs/P8/r0_0.ckpt', 'runs/P8/r0_1.ckpt', 'runs/P8/r0_2.ckpt', 'runs/P8/r0_3.ckpt', 'runs/P8/r0_4.ckpt']: args=('poly:1,127/2500,-8997/10000,6187/10000,3/1250', 8, '1700', '0.00796', 'flint', 64, False, 'numpy+lb3+sym') stack_boxes=1581270 processed(sum)=2.9319e+07 cpu_time(sum)=2586s worst=0.0080905
+sha256(sorted rows): union of parents = union of shards = 02ec7ad6de6a50f5517b0d8a5867650a0ff2d1a2533f137e4f886c6eaa7a2a71 (1581270 rows)
+shard 0: runs/P8/r1_0.ckpt boxes=316254
+shard 1: runs/P8/r1_1.ckpt boxes=316254
+shard 2: runs/P8/r1_2.ckpt boxes=316254
+shard 3: runs/P8/r1_3.ckpt boxes=316254
+shard 4: runs/P8/r1_4.ckpt boxes=316254
+2026-09-26 22:11:17 round 1 start N=5 CHUNK=540 alpha=poly8A K=8 mu=1/1700 claim=0.00796 weights=w_poly8A_K8_mu1700.json extra=--window win_poly8A.json --lb3 --sym --qp-sweeps 6
+2026-09-26 22:20:17 round 1 done: 0 shards ok, 5 left
+  it=2520 processed=3.669e+07 stack_boxes=2.652e+05 min centre F=0.0080145 t=3113s iv_checked=3.632e+07 iv_rejected=0
+  it=600 processed=7.384e+06 stack_boxes=2.734e+05 min centre F=0.0080905 t=526s iv_checked=7.327e+06 iv_rejected=0
+  it=640 processed=7.289e+06 stack_boxes=2.700e+05 min centre F=0.0080313 t=525s iv_checked=7.232e+06 iv_rejected=0
+  it=640 processed=7.458e+06 stack_boxes=2.753e+05 min centre F=0.0080905 t=533s iv_checked=7.398e+06 iv_rejected=0
+  it=640 processed=7.355e+06 stack_boxes=2.671e+05 min centre F=0.0080905 t=525s iv_checked=7.296e+06 iv_rejected=0
+parents ['runs/P8/r1_0.ckpt', 'runs/P8/r1_1.ckpt', 'runs/P8/r1_2.ckpt', 'runs/P8/r1_3.ckpt', 'runs/P8/r1_4.ckpt']: args=('poly:1,127/2500,-8997/10000,6187/10000,3/1250', 8, '1700', '0.00796', 'flint', 64, False, 'numpy+lb3+sym') stack_boxes=1350974 processed(sum)=6.6174e+07 cpu_time(sum)=5222s worst=0.0080145
+sha256(sorted rows): union of parents = union of shards = ddab2fdac4b2ec72f4862ed4b0d24ee3a2eb1704f2a6203d9b56dc2280c5c0a6 (1350974 rows)
+shard 0: runs/P8/r2_0.ckpt boxes=270195
+shard 1: runs/P8/r2_1.ckpt boxes=270195
+shard 2: runs/P8/r2_2.ckpt boxes=270195
+shard 3: runs/P8/r2_3.ckpt boxes=270195
+shard 4: runs/P8/r2_4.ckpt boxes=270194
+2026-09-26 22:23:36 round 2 start N=5 CHUNK=540 alpha=poly8A K=8 mu=1/1700 claim=0.00796 weights=w_poly8A_K8_mu1700.json extra=--window win_poly8A.json --lb3 --sym --qp-sweeps 6
+2026-09-26 22:32:37 round 2 done: 0 shards ok, 5 left
+  it=5880 processed=7.434e+07 stack_boxes=2.889e+05 min centre F=0.0080145 t=5742s iv_checked=7.367e+07 iv_rejected=0
+  it=840 processed=8.013e+06 stack_boxes=2.414e+05 min centre F=0.0080145 t=515s iv_checked=7.960e+06 iv_rejected=0
+  it=920 processed=8.216e+06 stack_boxes=2.426e+05 min centre F=0.0080145 t=522s iv_checked=8.162e+06 iv_rejected=0
+  it=880 processed=8.219e+06 stack_boxes=2.377e+05 min centre F=0.0080145 t=524s iv_checked=8.172e+06 iv_rejected=0
+  it=920 processed=8.454e+06 stack_boxes=2.446e+05 min centre F=0.0080145 t=536s iv_checked=8.402e+06 iv_rejected=0
+parents ['runs/P8/r2_0.ckpt', 'runs/P8/r2_1.ckpt', 'runs/P8/r2_2.ckpt', 'runs/P8/r2_3.ckpt', 'runs/P8/r2_4.ckpt']: args=('poly:1,127/2500,-8997/10000,6187/10000,3/1250', 8, '1700', '0.00796', 'flint', 64, False, 'numpy+lb3+sym') stack_boxes=1255158 processed(sum)=1.0724e+08 cpu_time(sum)=7840s worst=0.0080145
+sha256(sorted rows): union of parents = union of shards = 050faf71aa77d566e556f570cddd96fb6f5cd911d39356dad9cdb541a1dacdaf (1255158 rows)
+shard 0: runs/P8/r3_0.ckpt boxes=251032
+shard 1: runs/P8/r3_1.ckpt boxes=251032
+shard 2: runs/P8/r3_2.ckpt boxes=251032
+shard 3: runs/P8/r3_3.ckpt boxes=251031
+shard 4: runs/P8/r3_4.ckpt boxes=251031
+parents ['runs/P8/r3_0.ckpt', 'runs/P8/r3_1.ckpt', 'runs/P8/r3_2.ckpt', 'runs/P8/r3_3.ckpt', 'runs/P8/r3_4.ckpt']: args=('poly:1,127/2500,-8997/10000,6187/10000,3/1250', 8, '1700', '0.00796', 'flint', 64, False, 'numpy+lb3+sym') stack_boxes=1255158 processed(sum)=1.0724e+08 cpu_time(sum)=7840s worst=0.0080145
+sha256(sorted rows): union of parents = union of shards = 050faf71aa77d566e556f570cddd96fb6f5cd911d39356dad9cdb541a1dacdaf (1255158 rows)
+shard 0: runs/P8/x3_0.ckpt boxes=156895
+shard 1: runs/P8/x3_1.ckpt boxes=156895
+shard 2: runs/P8/x3_2.ckpt boxes=156895
+shard 3: runs/P8/x3_3.ckpt boxes=156895
+shard 4: runs/P8/x3_4.ckpt boxes=156895
+shard 5: runs/P8/x3_5.ckpt boxes=156895
+shard 6: runs/P8/x3_6.ckpt boxes=156894
+shard 7: runs/P8/x3_7.ckpt boxes=156894
+2026-09-26 22:34:34 round 3 start N=8 CHUNK=1200 alpha=poly8A K=8 mu=1/1700 claim=0.00796 weights=w_poly8A_K8_mu1700.json extra=--window win_poly8A.json --lb3 --sym --qp-sweeps 6
+2026-09-26 22:54:35 round 3 done: 0 shards ok, 8 left
+  it=60400 processed=1.287e+08 stack_boxes=7.770e+04 min centre F=0.0080145 t=9038s iv_checked=1.277e+08 iv_rejected=0
+  it=46720 processed=2.119e+07 stack_boxes=8.462e+04 min centre F=0.0080145 t=1195s iv_checked=2.106e+07 iv_rejected=0
+  it=49480 processed=2.163e+07 stack_boxes=8.082e+04 min centre F=0.0080140 t=1199s iv_checked=2.149e+07 iv_rejected=0
+  it=48680 processed=2.152e+07 stack_boxes=8.192e+04 min centre F=0.0080145 t=1197s iv_checked=2.136e+07 iv_rejected=0
+  it=53400 processed=2.164e+07 stack_boxes=7.400e+04 min centre F=0.0080145 t=1198s iv_checked=2.149e+07 iv_rejected=0
+  it=50320 processed=2.142e+07 stack_boxes=7.844e+04 min centre F=0.0080145 t=1196s iv_checked=2.128e+07 iv_rejected=0
+  it=51360 processed=2.144e+07 stack_boxes=7.719e+04 min centre F=0.0080145 t=1196s iv_checked=2.129e+07 iv_rejected=0
+  it=50000 processed=2.128e+07 stack_boxes=7.861e+04 min centre F=0.0080145 t=1198s iv_checked=2.113e+07 iv_rejected=0
+parents ['runs/P8/r3_0.ckpt', 'runs/P8/r3_1.ckpt', 'runs/P8/r3_2.ckpt', 'runs/P8/r3_3.ckpt', 'runs/P8/r3_4.ckpt', 'runs/P8/r3_5.ckpt', 'runs/P8/r3_6.ckpt', 'runs/P8/r3_7.ckpt']: args=('poly:1,127/2500,-8997/10000,6187/10000,3/1250', 8, '1700', '0.00796', 'flint', 64, False, 'numpy+lb3+sym') stack_boxes=633295 processed(sum)=2.7884e+08 cpu_time(sum)=17417s worst=0.0080140
+sha256(sorted rows): union of parents = union of shards = 87c3490a0a62dc8713bb913fe161007762351db182a70437a355610ac3d4b98c (633295 rows)
+shard 0: runs/P8/r4_0.ckpt boxes=79162
+shard 1: runs/P8/r4_1.ckpt boxes=79162
+shard 2: runs/P8/r4_2.ckpt boxes=79162
+shard 3: runs/P8/r4_3.ckpt boxes=79162
+shard 4: runs/P8/r4_4.ckpt boxes=79162
+shard 5: runs/P8/r4_5.ckpt boxes=79162
+shard 6: runs/P8/r4_6.ckpt boxes=79162
+shard 7: runs/P8/r4_7.ckpt boxes=79161
+2026-09-26 22:54:41 round 4 start N=8 CHUNK=1200 alpha=poly8A K=8 mu=1/1700 claim=0.00796 weights=w_poly8A_K8_mu1700.json extra=--window win_poly8A.json --lb3 --sym --qp-sweeps 6
+2026-09-26 23:14:42 round 4 done: 0 shards ok, 8 left
+  it=506560 processed=2.888e+08 stack_boxes=4.061e+04 min centre F=0.0080140 t=18615s iv_checked=2.867e+08 iv_rejected=0
+  it=98440 processed=9.823e+06 stack_boxes=3.896e+04 min centre F=0.0080131 t=1198s iv_checked=9.753e+06 iv_rejected=0
+  it=90760 processed=1.040e+07 stack_boxes=4.240e+04 min centre F=0.0080140 t=1198s iv_checked=1.033e+07 iv_rejected=0
+  it=97960 processed=9.975e+06 stack_boxes=3.958e+04 min centre F=0.0080140 t=1198s iv_checked=9.910e+06 iv_rejected=0
+  it=94360 processed=1.008e+07 stack_boxes=4.123e+04 min centre F=0.0080140 t=1198s iv_checked=1.003e+07 iv_rejected=0
+  it=87720 processed=1.086e+07 stack_boxes=4.335e+04 min centre F=0.0080140 t=1198s iv_checked=1.079e+07 iv_rejected=0
+  it=93760 processed=1.019e+07 stack_boxes=4.090e+04 min centre F=0.0080140 t=1198s iv_checked=1.013e+07 iv_rejected=0
+  it=95120 processed=1.008e+07 stack_boxes=4.095e+04 min centre F=0.0080140 t=1198s iv_checked=1.001e+07 iv_rejected=0
+parents ['runs/P8/r4_0.ckpt', 'runs/P8/r4_1.ckpt', 'runs/P8/r4_2.ckpt', 'runs/P8/r4_3.ckpt', 'runs/P8/r4_4.ckpt', 'runs/P8/r4_5.ckpt', 'runs/P8/r4_6.ckpt', 'runs/P8/r4_7.ckpt']: args=('poly:1,127/2500,-8997/10000,6187/10000,3/1250', 8, '1700', '0.00796', 'flint', 64, False, 'numpy+lb3+sym') stack_boxes=327621 processed(sum)=3.6023e+08 cpu_time(sum)=27002s worst=0.0080131
+sha256(sorted rows): union of parents = union of shards = c285aef8a38b052124fd97d47123ea69b32237be10226df6e8a433c90c6e81c0 (327621 rows)
+shard 0: runs/P8/r5_0.ckpt boxes=40953
+shard 1: runs/P8/r5_1.ckpt boxes=40953
+shard 2: runs/P8/r5_2.ckpt boxes=40953
+shard 3: runs/P8/r5_3.ckpt boxes=40953
+shard 4: runs/P8/r5_4.ckpt boxes=40953
+shard 5: runs/P8/r5_5.ckpt boxes=40952
+shard 6: runs/P8/r5_6.ckpt boxes=40952
+shard 7: runs/P8/r5_7.ckpt boxes=40952
+2026-09-26 23:14:50 round 5 start N=8 CHUNK=1200 alpha=poly8A K=8 mu=1/1700 claim=0.00796 weights=w_poly8A_K8_mu1700.json extra=--window win_poly8A.json --lb3 --sym --qp-sweeps 6
+2026-09-26 23:34:51 round 5 done: 0 shards ok, 8 left
+  it=1259680 processed=3.671e+08 stack_boxes=1.465e+04 min centre F=0.0080131 t=28200s iv_checked=3.645e+08 iv_rejected=0
+  it=96280 processed=6.773e+06 stack_boxes=1.476e+04 min centre F=0.0080131 t=1192s iv_checked=6.717e+06 iv_rejected=0
+  it=93120 processed=7.304e+06 stack_boxes=1.547e+04 min centre F=0.0080131 t=1198s iv_checked=7.254e+06 iv_rejected=0
+  it=92560 processed=7.363e+06 stack_boxes=1.625e+04 min centre F=0.0080131 t=1198s iv_checked=7.320e+06 iv_rejected=0
+  it=93400 processed=7.205e+06 stack_boxes=1.593e+04 min centre F=0.0080131 t=1198s iv_checked=7.164e+06 iv_rejected=0
+  it=91680 processed=7.444e+06 stack_boxes=1.572e+04 min centre F=0.0080121 t=1198s iv_checked=7.387e+06 iv_rejected=0
+  it=91000 processed=7.322e+06 stack_boxes=1.628e+04 min centre F=0.0080131 t=1198s iv_checked=7.276e+06 iv_rejected=0
+  it=90840 processed=7.450e+06 stack_boxes=1.636e+04 min centre F=0.0080131 t=1198s iv_checked=7.395e+06 iv_rejected=0
+parents ['runs/P8/r5_0.ckpt', 'runs/P8/r5_1.ckpt', 'runs/P8/r5_2.ckpt', 'runs/P8/r5_3.ckpt', 'runs/P8/r5_4.ckpt', 'runs/P8/r5_5.ckpt', 'runs/P8/r5_6.ckpt', 'runs/P8/r5_7.ckpt']: args=('poly:1,127/2500,-8997/10000,6187/10000,3/1250', 8, '1700', '0.00796', 'flint', 64, False, 'numpy+lb3+sym') stack_boxes=124965 processed(sum)=4.1795e+08 cpu_time(sum)=36581s worst=0.0080121
+sha256(sorted rows): union of parents = union of shards = b5d9503263483a45ec74f2083badb65cac6e82544ecf8cea2afaec4444fa64e1 (124965 rows)
+shard 0: runs/P8/r6_0.ckpt boxes=15621
+shard 1: runs/P8/r6_1.ckpt boxes=15621
+shard 2: runs/P8/r6_2.ckpt boxes=15621
+shard 3: runs/P8/r6_3.ckpt boxes=15621
+shard 4: runs/P8/r6_4.ckpt boxes=15621
+shard 5: runs/P8/r6_5.ckpt boxes=15620
+shard 6: runs/P8/r6_6.ckpt boxes=15620
+shard 7: runs/P8/r6_7.ckpt boxes=15620
+2026-09-26 23:34:56 round 6 start N=8 CHUNK=1200 alpha=poly8A K=8 mu=1/1700 claim=0.00796 weights=w_poly8A_K8_mu1700.json extra=--window win_poly8A.json --lb3 --sym --qp-sweeps 6
+{'ok': True, 'processed': 421971112, 'worst': (0.008012143984198236, array([1.046875  , 2.921875  , 1.0390625 , 1.03515625, 1.0390625 ,
+
+{'ok': True, 'processed': 3758043, 'worst': (0.008012143984198236, array([1.046875  , 2.921875  , 1.0390625 , 1.03515625, 1.0390625 ,
+
+{'ok': True, 'processed': 3519977, 'worst': (0.008012143984198236, array([1.046875  , 2.921875  , 1.0390625 , 1.03515625, 1.0390625 ,
+
+{'ok': True, 'processed': 4332127, 'worst': (0.008012143984198236, array([1.046875  , 2.921875  , 1.0390625 , 1.03515625, 1.0390625 ,
+
+{'ok': True, 'processed': 4017857, 'worst': (0.008012143984198236, array([1.046875  , 2.921875  , 1.0390625 , 1.03515625, 1.0390625 ,
+
+{'ok': True, 'processed': 4118374, 'worst': (0.008012143984198236, array([1.046875  , 2.921875  , 1.0390625 , 1.03515625, 1.0390625 ,
+
+{'ok': True, 'processed': 4719664, 'worst': (0.008012143984198236, array([1.046875  , 2.921875  , 1.0390625 , 1.03515625, 1.0390625 ,
+
+2026-09-26 23:44:08 round 6 done: 7 shards ok, 1 left
+PermissionError: [WinError 5] Access is denied: 'runs/P8/r6_6.ckpt.tmp' -> 'runs/P8/r6_6.ckpt'
+parents ['runs/P8/r6_6.ckpt']: args=('poly:1,127/2500,-8997/10000,6187/10000,3/1250', 8, '1700', '0.00796', 'flint', 64, False, 'numpy+lb3+sym') stack_boxes=14436 processed(sum)=3.7534e+05 cpu_time(sum)=51s worst=0.0080121
+sha256(sorted rows): union of parents = union of shards = df5b1d0dbd367ef9baa0bae16ebab1cfae83dc87a0beeced53a192440cba1c6d (14436 rows)
+shard 0: runs/P8/r7_0.ckpt boxes=1805
+shard 1: runs/P8/r7_1.ckpt boxes=1805
+shard 2: runs/P8/r7_2.ckpt boxes=1805
+shard 3: runs/P8/r7_3.ckpt boxes=1805
+shard 4: runs/P8/r7_4.ckpt boxes=1804
+shard 5: runs/P8/r7_5.ckpt boxes=1804
+shard 6: runs/P8/r7_6.ckpt boxes=1804
+shard 7: runs/P8/r7_7.ckpt boxes=1804
+2026-09-26 23:44:09 round 7 start N=8 CHUNK=1200 alpha=poly8A K=8 mu=1/1700 claim=0.00796 weights=w_poly8A_K8_mu1700.json extra=--window win_poly8A.json --lb3 --sym --qp-sweeps 6
+{'ok': True, 'processed': 911927, 'worst': (0.008012143984198236, array([1.046875  , 2.921875  , 1.0390625 , 1.03515625, 1.0390625 ,
+
+{'ok': True, 'processed': 365233, 'worst': (0.008012143984198236, array([1.046875  , 2.921875  , 1.0390625 , 1.03515625, 1.0390625 ,
+
+{'ok': True, 'processed': 429465, 'worst': (0.008012143984198236, array([1.046875  , 2.921875  , 1.0390625 , 1.03515625, 1.0390625 ,
+
+{'ok': True, 'processed': 627639, 'worst': (0.008012143984198236, array([1.046875  , 2.921875  , 1.0390625 , 1.03515625, 1.0390625 ,
+
+{'ok': True, 'processed': 353314, 'worst': (0.008012143984198236, array([1.046875  , 2.921875  , 1.0390625 , 1.03515625, 1.0390625 ,
+
+{'ok': True, 'processed': 730344, 'worst': (0.008012143984198236, array([1.046875  , 2.921875  , 1.0390625 , 1.03515625, 1.0390625 ,
+
+{'ok': True, 'processed': 519324, 'worst': (0.008012143984198236, array([1.046875  , 2.921875  , 1.0390625 , 1.03515625, 1.0390625 ,
+
+{'ok': True, 'processed': 461604, 'worst': (0.008012143984198236, array([1.046875  , 2.921875  , 1.0390625 , 1.03515625, 1.0390625 ,
+
+2026-09-26 23:45:15 round 7 done: 8 shards ok, 0 left
+2026-09-26 23:45:15 ALL SHARDS OK: certificate claim=0.00796 holds (K=8 alpha=poly8A mu=1/1700 w_poly8A_K8_mu1700.json --window win_poly8A.json --lb3 --sym --qp-sweeps 6)

@@ -1,0 +1,181 @@
+\section{The certificates}\label{sec:cert}
+
+\subsection{What is certified}
+Four finite statements enter the proofs. Three are local inequalities for all gap vectors in an orthant, one is the majorant.
+\begin{itemize}
+\item \texttt{CertS8}: $(\mathrm{LI})$ of Definition~\ref{def:LI} for $k_{\tilde\psi}$, $K=8$, with position weights and penalties summing to
+$\nu=\frac7{1700}$, at $c=\frac{199}{25000}$ (Theorem~\ref{thm:S}, Corollary~\ref{cor:SC}).
+\item \texttt{CertAM5} and \texttt{CertAM7}: $(\mathrm{LI}_{\mathrm m})$ of Definition~\ref{def:LIm} for $k_{\cos1.6s}$ with the claims of
+Table~\ref{tab:allmarks} for $K=5$ and $K=7$ (Theorem~\ref{thm:main}); a $K=6$ certificate, shown in Table~\ref{tab:allmarks} for comparison, is not used.
+\item \texttt{CertMajV2}: the majorant of \S\ref{sec:simple}: $P\ge0$ on $[0,30]$ and $\cB\ge v_\psi$ on $[0,\frac12]$, with $2\beta_0+4\beta_*<\frac{33}{10}$.
+(The library also contains a first version, \texttt{CertMaj}, with the threshold $3.2063638853$, only $5.7\cdot10^{-11}$ above the
+actual value; it is proved as well, and no theorem uses it.)
+\end{itemize}
+The data of the local inequalities (weights, penalties, credits) were chosen by linear programmes over finite sets of gap vectors found by
+local minimisation, and the claims were then set slightly below the programme's values: for $K=5$ each claim lies $1.5\cdot10^{-5}$ below the programme's value,
+and for $K=7$ every claim was lowered by $10^{-5}$ after the certifier had refuted the programme's own claims (\S\ref{ssec:bnb}). The
+certificates, not the programmes, carry the proof. In the formalisation each is a single \texttt{Prop} (Appendix~\ref{app:lean}). The local ones are existential in the weights: they assert
+\emph{some} data with the stated $\nu$ and credit sums $a_1,a_2$, since the constants depend on the data only through these numbers; the files
+of Table~\ref{tab:certs} supply the witnesses. Gap vectors range over the whole orthant $[0,\infty)^{K-1}$; the reductions used by the
+certifiers (to a box, and to classes of patterns) are theorems, not part of the statements.
+
+\begin{table}[ht]\centering\small
+\caption{Certificates, their data and their verification. Paths are relative to the folder
+\texttt{supplementary/certificates/} of the repository (\S\ref{ssec:reproduce}). The seven sha256 values printed here are those of the
+files in \texttt{supplementary/}; those of the three local certificates are also recorded in the doc-strings of their \texttt{Prop}s
+(Appendix~\ref{app:defs}).}\label{tab:certs}
+\footnotesize
+\begin{tabular}{@{}p{1.3cm}>{\raggedright\arraybackslash}p{7.9cm}>{\raggedright\arraybackslash}p{5.8cm}@{}}
+\toprule
+name & data and sha256 & verification\\
+\midrule
+\texttt{CertS8} & \texttt{CertS8/\allowbreak w\_poly8A\_K8\_mu1700.json}\newline \texttt{257b340d9da4f343600a21589f16d891}\newline\texttt{5f3e082499d475e153c5453980671e78}\newline the window, \texttt{win\_poly8A.json} of the same folder (the unnormalised $v$):\newline \texttt{c4005f57a7920f78aa2df33b093c9c50}\newline\texttt{30efac2b8e39fc6cf7371b0c0f32dc14} &
+interval branch-and-bound with LB3, about $4.5\cdot10^8$ boxes in $8$ shards; re-run from scratch ($4.51\cdot10^8$ boxes). In Lean: displayed hypothesis.\\[4pt]
+\texttt{CertAM5} & \texttt{CertAM5/\allowbreak claims\_d15e6\_a1.6\_K5\_mu500.json}\newline \texttt{cf055dd2ee9a9e469b6510fe70b5fbc4}\newline\texttt{16b8a40515cc6746bc390d40d88777f2}\newline the $20$ files \texttt{xpat\_K5\_*.json} of the same folder, concatenated in sorted order:\newline \texttt{a5947c01d34ddcbc7366861b35e83942}\newline\texttt{099fcbf7ac71e13fcd432796882dd34e} &
+$20$ classes; $1.18\cdot10^7$ boxes (LB1--LB2), $3.7\cdot10^5$ (LB3); re-run with identical counts. In Lean: replayed by the kernel ($46{,}047$ leaves, $89{,}362$ point records; \S\ref{ssec:replay}), so the $K=5$ pair has no hypothesis; the replay files are the library \texttt{ZetaSReplay} of the repository.\\[4pt]
+\texttt{CertAM7} & \texttt{CertAM7/\allowbreak claims\_a1.6\_K7\_mu500\_L1e5.json}\newline \texttt{d2cf393019407bdc797c73147ec8e3dc}\newline\texttt{66ec41fe745600c84173f74ac66bfc5c}\newline the $72$ files \texttt{xpat\_K7\_*.json} of the same folder, concatenated in sorted order:\newline \texttt{33c4c8c5762bcebdf8f544ab34a137a6}\newline\texttt{a7ba4065d08f5caee0a51188e1a67514} &
+$72$ classes covering $128$ patterns; about $4.8\cdot10^8$ boxes (LB3); complete run $72/72$ at these claims:
+\texttt{logs/cert\_lb3\_rerun.txt} of the same folder, completeness checked in \texttt{logs/k7\_verify\_pexact2.txt}
+(the log of the refutation described in \S\ref{ssec:bnb} is not part of \texttt{supplementary/}). In Lean: displayed hypothesis.\\[4pt]
+\texttt{CertMajV2} & \texttt{CertMajV2/\allowbreak majorant\_delta1\_beta.npy} ($60$ binary64 numbers)\newline \texttt{fd909f79669e2fc1ba5fd4e44d01d600}\newline\texttt{7ccf5303b7ce62d4c5ee08f7ef024845} &
+Arb at $106$ bits. In Lean: \emph{kernel-checked}, $614$ cells, about $88$ s; the hypothesis is discharged.\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Interval branch-and-bound}\label{ssec:bnb}
+\paragraph{Reductions.} Since $k^2\ge0$, $F_{\bm}(g)\ge\sum_i\mu_ig_i$, so a box on which $\sum_i\mu_i(c_i-h_i)$ already exceeds the claim is
+discarded, and only a bounded box needs to be covered. The weights and credits of the all-marks certificates are reversal-symmetric, so
+$F_{\bm}(g)$ is unchanged when both the pattern and the gap vector are reversed; this reduces the $2^K$ patterns to $20$, $36$ and $72$ classes for
+$K=5,6,7$. Coincident points ($g_i=0$) belong to the domain; there $k(0)=1$ makes $F$ large.
+
+\paragraph{Kernel bounds.} For a window $\psi\ge0$, $\abs{k_\psi^{(j)}}\le(2\pi)^j\int v_\psi\abs s^j$; for $\tilde\psi$ this gives
+$\abs{k'''}\le M_3=\frac{1747823}{7775424}\pi^3<6.969843$. These are proved analytically and enter as constants. Values of $k,k',k''$ at box centres are enclosed in Arb (or in
+\texttt{mpmath.iv} with explicit Taylor remainders).
+
+\paragraph{Lower bounds on a box} $\mathbf c\pm\mathbf h$. For a span $s$ (a run of consecutive gaps) let $\mathrm{sc}_s$, $\mathrm{hs}_s$ be the
+sums of the $c_i$ and of the $h_i$ over the span.
+\begin{itemize}
+\item[(LB1)] On the span interval, $\abs k\ge\abs{k(\mathrm{sc})}-\abs{k'(\mathrm{sc})}\,\mathrm{hs}-\frac12\sup\abs{k''}\,\mathrm{hs}^2$; clip at $0$,
+square, sum with the weights, and add $\sum\mu_i(c_i-h_i)$.
+\item[(LB2)] $F(\mathbf c)-\sum_i\abs{\partial_iF(\mathbf c)}h_i-\frac12\sum_s\gamma_sW_{2,s}\,\mathrm{hs}_s^2$, where $W_{2,s}$ bounds
+$\abs{w''}=2\abs{k'^2+kk''}$ on the span interval; valid because the Hessian of a span term is $w''\,\mathbf v_s\mathbf v_s^{\tsp}$.
+\item[(LB3)] By Taylor's theorem with integral remainder,
+$F(\mathbf c+\boldsymbol\delta)\ge F(\mathbf c)+\nabla F(\mathbf c)\cdot\boldsymbol\delta+\frac12\sum_s\gamma_s\,\underline w''_s\,(\mathbf v_s\cdot\boldsymbol\delta)^2$
+on the box, with $\underline w''_s$ a lower bound for $w''$ on the span interval from a Taylor model of $k,k',k''$ with $\abs{k'''}\le M_3$. Spans with
+$\underline w''_s\le0$ are bounded below by $-\frac12\gamma_s\abs{\underline w''_s}\mathrm{hs}_s^2$. The remaining quadratic $q$ is convex, so
+$q(\boldsymbol\delta)\ge q(\hat{\mathbf d})+\nabla q(\hat{\mathbf d})\cdot(\boldsymbol\delta-\hat{\mathbf d})$ for \emph{every} $\hat{\mathbf d}$ (a
+floating-point quadratic programme chooses $\hat{\mathbf d}$, which affects only tightness), and this affine function is minimised over the box exactly.
+\end{itemize}
+A box is accepted when a lower bound, evaluated in interval arithmetic, exceeds the claim; otherwise it is bisected. The certificate is the
+statement that the stack empties with every box domain-pruned or accepted. LB3 cuts the trees by factors of $30$ to $200$. Tangent planes
+after a convexity certificate are used in the verifiers of \mbox{sxuff}, \mbox{AMTOPA} and \mbox{npip99} (\S\ref{ssec:others}); LB3 is our form of this step, and we
+have not compared it with theirs in substance.
+
+\paragraph{Arithmetic and trust.} Box edges are exact dyadics. The default engine uses float64 intervals widened outward by one unit in the last
+place at every operation, which assumes IEEE-754 round-to-nearest; a scalar engine in Arb balls avoids this assumption at about fifteen times the
+cost. The correctness of Arb is trusted. The closing arithmetic ($H$, $\Phi_m$, the constants) was done in Arb from exact rationals and is also
+checked in Lean.
+
+\paragraph{Validation and negative controls.} Claims set just above the located minimum must fail, and do, with a rigorous counterexample:
+for $K=5$, class $11111$ at the claim raised by $4.5\cdot10^{-5}$; for $K=6$, class $211112$ at $0.0166770$ ($F=0.01667680$); for $K=7$ the
+certifier refuted class $1121212$ at the claims first proposed by the linear programme that chose the weights ($F=0.02054932<0.02054941$), in a
+basin that the programme's search had missed, after which every claim was lowered by $10^{-5}$ and all $72$ classes certified; at the
+lowered claim plus $10^{-5}$ the certifier refutes class $2112112$. For the polynomial window, the same engine at $K=7$ refutes the claim $0.00736$
+($F=0.00735942$), and its certificate at the claim $0.00732$ was reproduced box for box independently ($18{,}215{,}893$ boxes). The
+$K=8$ claim $0.00796$ lies $0.56\%$ below the floating-point minimum $0.0080050$. An independent kernel stress test of LB3 on $2400$ boxes found no
+violation. The $K=8$ and $K=7$ certificates were each re-run in full: independent runs, not independent code.
+
+\subsection{Kernel replay inside Lean}\label{ssec:replay}
+\paragraph{The majorant (done).} The checker is written in core Lean. For each cell it proves one enclosure of $(\sin\theta,\cos\theta)$, $\theta=\pi m/30$
+at the cell midpoint $m$, and generates the other $58$ cosines by a fixed-point complex recurrence $z_{k+1}=\lfloor z_kz_1/2^{64}\rfloor$ whose error
+grows only linearly ($\abs{z_k-e^{ik\theta}}\le k\cdot2^{-55}$, proved); the sums $P(m)$, $P'(m)$, $P''(m)$ are exact integer sums, and a third-order
+bound with $\abs{P'''}\le645$ covers the cell. $P\ge0$ on $[0,30]$ needs $600$ cells, $\cB\ge v_\psi$ on $[0,\frac12]$ needs $14$. The replay takes
+about $88$ seconds in $13$ files, at most $1.64$ GB each; the smallest margins are $4.1\cdot10^{-6}$ and $4.4\cdot10^{-6}$. Negative controls fail as
+they should, in a python mirror ($62$ cells) and in the kernel, which proves that the checker returns \texttt{false} on $[3.25,3.75]$ and on
+$[\frac14,\frac12]$ for deliberately wrong data. The analytic part (the Fourier pair $\sinc^2\leftrightarrow$ triangle, the transform of $\cB$, its
+support, $\int\cB=\beta_0$, and $2\beta_0+4\abs{\beta_{52}}<\frac{33}{10}$ in exact rationals) is proved in Lean. So the hypothesis \texttt{CertMajV2}
+is discharged.
+
+\paragraph{The $K=5$ all-marks certificate (replayed by the kernel).} The branch-and-bound trees above cannot be replayed box by box in the kernel. A second
+certificate with large leaves was built for the same data: $92{,}074$ nodes and $46{,}047$ leaves over the $20$ classes, of three kinds --- cap
+leaves (the penalty alone exceeds the claim), convex leaves (a tangent plane at a floating-point minimiser plus an exact positive semidefiniteness
+check) and linear-programming leaves (five affine minorants per span with rational dual multipliers; $4{,}660$, $2{,}343$ and $39{,}044$ leaves
+respectively). Every leaf is accepted by the exact rational mirror of the corrected checker (version~3, described below; $46{,}047$ leaves,
+no failure). In a differential test on mutated leaves the mirror was never more permissive than the Lean checker; in any case soundness
+rests on the kernel replay, not on the mirror. The checker stores each kernel enclosure (the values
+$k,k',k''$ at a rational point, or bounds on $w,w''$ over a cell of width $\frac1{64}$) as a record proved once by kernel evaluation; leaves only
+combine stored rationals. Measured in the replay of class $11111$ ($1{,}725$ leaves): about $0.24$ s per point record, $0.025$ s per cell and
+$0.74$ s per leaf; with at most $40$ leaves per file the leaf files peak at $3.43$ GB in the one-class pilot. The full replay ($1{,}478$ files: $1{,}475$ shards and
+three common files; $46{,}047$ leaves, $89{,}362$ point records; manifest sha256 \texttt{360d9b22469b9dbf449899a2c6d0bd5b}\allowbreak
+\texttt{e696380e826f137ef20da71ae96c1609}) was estimated from the pilot at about $15.6$ Lean-hours; it took $20.4$. At the minimiser of class $11111$ the margin is $1.49\cdot10^{-5}$; raising
+the claim by $1.5\cdot10^{-5}$, to $8.9\cdot10^{-8}$ above the true minimum, makes exactly one leaf fail in the kernel, the one that contains
+the minimiser, as it should.
+The soundness theorem of the checker is split into $28$ nodes. An earlier version of one leaf check was unsound: the linear-programming leaf
+took a tangent line at a point computed from the floating-point minimiser without checking that this point lies in the span interval, where
+alone the second-derivative penalty is valid; a kernel-checked counterexample (one span, a claim of $\frac9{10}$ accepted where the functional
+is about $0.446$) shows it. The majorant certificate uses only the interval and enclosure layer of the checker, which is proved.
+Version~3 of the checker corrects the defect with one guard, which admits the tangent line at the floating-point point only when that point
+lies in the span interval; no other definition used by the checker changed, and the $20$ class certificates pass it unchanged (through the exact mirror).
+The whole soundness chain of version~3 is proved with the three standard axioms and is in the library (Appendix~\ref{app:chain}):
+\texttt{ZetaS.CertV2.\allowbreak ChainV3.\allowbreak certAM5\_of\_checks} derives \texttt{CertAM5} from the acceptance of the $20$ class certificates by the checker
+and the identity of their data with the data of \texttt{CertAM5}.
+
+The replay files use the library's own definitions. Built from an empty build folder, the one-class pilot compiles $56$ files with no
+failure in $1{,}976$ s, at a peak of $3.49$ GB. The full replay, against the library at commit \texttt{bb7223b}, whose Lean files the release
+changes only in comments (Appendix~\ref{app:layout}), compiled all $1{,}478$ files, with no failure and no retry, in $2$~h~$50$~min of
+wall time and $20.4$ Lean-hours of processor time; the lowest free memory was $2.48$ GB and the build products take $7.1$ GB. It ran in two
+pools, $273$ light files sixteen at once and $1{,}203$ heavy files six at once, and then the two top files alone ($21$~s and $18$~s, peak
+$4.65$ and $4.67$ GB). The kernel checked the $46{,}047$ leaves and $89{,}362$ point records in exact rational arithmetic. The final file applies
+\texttt{certAM5\_of\_checks} with the identity of the data by \texttt{rfl} and proves \texttt{ZetaS.CertV2.\allowbreak certAM5\_replayed};
+the two theorems of the $K=5$ pair without hypothesis follow (Appendix~\ref{app:replay}). These three theorems
+depend only on \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound} and rest on no open declaration (Appendix~\ref{app:census}). The $1{,}478$ source files
+match their manifest file by file, and a scan of all of them finds no \texttt{sorry}, \texttt{native\_decide}, \texttt{axiom},
+\texttt{unsafe}, \texttt{implemented\_by} or \texttt{extern}. The $1{,}478$ files, byte-identical to those checked, are the
+library \texttt{ZetaSReplay} of the repository, and the two theorems are in its module \texttt{ReplayHeadlines}; \texttt{lake build
+ZetaSReplay} repeats the replay (\S\ref{ssec:reproduce}).
+
+\paragraph{The $K=7$ and $K=8$ certificates.} Large leaves cut the $K=7$ trees only by a factor of about four: an estimated $6\cdot10^7$ leaves and
+$15$ GB of certificate, because the functional has a lattice of near-minimal basins whose number grows geometrically with $K$ (the branch-and-bound
+trees grow by a factor of $20$ to $30$ per step in $K$). This is beyond the $32$ GB machine used. These certificates therefore remain displayed
+hypotheses, identified by the sha256 of Table~\ref{tab:certs} and verified outside Lean as described in \S\ref{ssec:bnb}.
+
+\subsection{How to reproduce}\label{ssec:reproduce}
+\sloppy
+{\raggedright Everything is in the repository \repourl, at tag \repotag{} (Appendix~\ref{app:layout}). The Lean libraries are at its root, the replay
+files of \S\ref{ssec:replay} are the library \texttt{ZetaSReplay}, and the folder \texttt{supplementary/} holds the data of
+Table~\ref{tab:certs}, the certifiers and their logs, and the generator of the replay files, with a guide (\texttt{supplementary/README.md}),
+the commands that run them (\texttt{supplementary/VERIFY.md}) and the sha256 of every file
+(\texttt{supplementary/CHECKSUMS.sha256}). Commands are run from the root of the repository.\par}
+\begin{itemize}\raggedright
+\item \emph{The statements and their axioms.} The toolchain is pinned in \texttt{lean-toolchain}, and
+\texttt{lake exe cache get} fetches the prebuilt Mathlib. Then
+\begin{Verbatim}[fontsize=\small,xleftmargin=1em]
+lake build ZetaS
+lake build Solution.FollowUpZeta
+lake env lean comparator/PrintAxioms/FollowUpZeta.lean
+\end{Verbatim}
+Every line printed by the last command must read \texttt{\ldots{} depends on axioms: [propext, Classical.choice, Quot.sound]}. This checks
+the fourteen statements of record (Appendix~\ref{app:record}), in which \texttt{CertAM5}, \texttt{CertAM7} and \texttt{CertS8} are
+hypotheses. The files \texttt{comparator/README\_followup.md} and \texttt{comparator/config-followup.json} (the fourteen theorem names and
+the permitted axioms) describe the same check with the comparator tool used by the repository of~\cite{AF}.
+\item \emph{The kernel replay of \texttt{CertAM5}} (about $20$ Lean-hours, and several GB of memory per file, \S\ref{ssec:replay}):
+\begin{Verbatim}[fontsize=\small,xleftmargin=1em]
+lake build ZetaSReplay
+lake env lean comparator/PrintAxioms/FollowUpReplay.lean
+\end{Verbatim}
+The last command prints the axioms of \texttt{ZetaS.Top.zeta\_simple\_K5\_uncond}, \texttt{ZetaS.Top.zeta\_distinct\_K5\_uncond} and
+\texttt{ZetaS.CertV2.certAM5\_replayed}; again every line must read as above.
+\item \emph{The local certificates outside Lean.} In \texttt{supplementary/certificates/}: \texttt{CertS8/} (the certifier
+\texttt{bnb\_lb3.py} with \texttt{polywin.py}; the driver logs of the run and of the re-run, which end with \texttt{ALL SHARDS OK}),
+\texttt{CertAM5/} (\texttt{bnb\_interval\_w.py}, the $K=5$ run, with its driver \texttt{runcert.sh}) and \texttt{CertAM7/}
+(\texttt{bnb\_lb3\_w.py}, the LB3 engine with the all-marks check, with its driver \texttt{runlb3.sh}, and the exact constants
+\texttt{pexact2.py}), each with its data and logs; and \texttt{common/}, with the input checks \texttt{verify\_inputs.py} (weights
+nonnegative, span sums $2$, penalties summing to $\nu$, claims exactly $\sum_ib_i(m_i)$, all patterns covered) and \texttt{d819\_exact.py}.
+\item \emph{The majorant:} \texttt{supplementary/certificates/CertMajV2/r4\_majorant\_arb.py} (Arb, $106$ bits); in Lean the files
+\texttt{MajCheck.lean}, \texttt{MajSoundNPos.lean}, \texttt{MajSoundNMaj.lean} and the $13$ replay shards, all in \texttt{ZetaS/Majorant/}
+and built with \texttt{ZetaS}.
+\item \emph{The replay files from the certificate:} \texttt{supplementary/replay-K5/} holds the certificate with large leaves
+(\texttt{v2\_K5\_*.json}, one file per class, and \texttt{v2common\_K5\_4.json}) and the generator \texttt{gen\_replay.py}, which writes the
+replay files from it; \texttt{ZetaSReplay/MANIFEST.sha256} gives the sha256 of each replay file.
+\end{itemize}

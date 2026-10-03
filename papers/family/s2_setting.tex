@@ -1,0 +1,163 @@
+\section{Setting}\label{sec:setting}
+This section recalls what is needed from~\cite{DSouza}; proofs that are not changed are not repeated.
+
+\subsection{Notation}\label{ssec:notation}
+Each of the following letters has one meaning in this paper; the objects that the working draft or~\cite{DSouza} denote by the same letter are
+renamed as shown.
+
+\begin{center}\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{6.4cm}>{\raggedright\arraybackslash}p{7.0cm}@{}}
+\toprule
+letter & meaning here & renamed objects\\
+\midrule
+$r$ & a modulus (a Farey denominator, the modulus of a character) & height exponent $r_0$ ($r$ in~\cite{DSouza} and in Lean); rows $\mathfrak r_1,\dots,\mathfrak r_5$ of Proposition~\ref{prop:3.1}\\
+$\Xi$ & the near cutoff of \S\ref{sec:shell} & the finite point set of Lemmas~\ref{lem:K-G}--\ref{lem:K-Z}: $\mathcal P$\\
+$K$ & the shell width of \S\ref{sec:shell} & the width in Lemma~\ref{lem:K}: $K_1=\Lc$ (so $\ell_{K_1}$, and $R_0$, $\Delta$ of \S\ref{sec:lemmaK} use $K_1$)\\
+$\psi$ & $v\star v$ & Chebyshev's function: written $\sum_{n\le y}\Lam(n)$; the digamma function: written $\Gamma'/\Gamma$\\
+$\theta$ & a rate exponent; $\theta(\alphap)$ is the largest one available at $\alphap$ & the variable on $\R/\Z$: $\vartheta$; Chebyshev's $\theta$: written $\sum_{p\le y}\log p$\\
+$\kappa$ & the width of the near cutoff in \S\ref{sec:shell} & the Frobenius constant of Proposition~\ref{prop:3.1}: $\Bfun_*$; the parity of $\chi$: $\mathfrak a(\chi)$; the exponent $\kappa'$ of the draft: $\mathfrak c$\\
+$w$ & the ramp width of the window & the family weight of Lemma~\ref{lem:shell-2}: $\mathfrak w$; the model weight of Lemma~\ref{lem:K-P}: $\mathfrak m$; the weight of Theorem~\ref{thm:shell-K}: $\omega_K$\\
+\bottomrule
+\end{tabular}
+\end{center}
+``Lemma~K'', ``K.1''--``K.6'' and node names such as ``K7'' are names, not the variable $K$.
+
+Let $\chi\in\FQ$ have modulus $q$ and parity $\mathfrak a(\chi)\in\{0,1\}$. Put
+\[
+\Lc:=\log\frac{QT}{2\pi},\qquad L:=\lambda\Lc,\qquad X:=e^{L}=\Bigl(\frac{QT}{2\pi}\Bigr)^{\lambda},\qquad I:=[T,2T],
+\]
+with a bandwidth $1<\lambda<2$ fixed with the design (\S\ref{sec:design}), and $\mathcal N:=\sum_{\chi\in\FQ}N_\chi(T,2T)\asymp Q^2T\Lc$.
+The family constant is $C_Q:=Q^2/\abs{\FQ}\to C:=\pi^4/18$, and $2\pi^4/27$ for $\FQ^{\rm dy}$. We write $e(x)=e^{2\pi ix}$ and
+\begin{gather*}
+\DT(v):=\int_I e^{i\tau v}\,d\tau,\qquad a_n(s):=-\frac1{2\pi}\Lam(n)n^{-1/2}\DT(s-\log n)\quad(n\le X),\\
+A_\chi(s):=\sum_na_n(s)\chi(n),
+\end{gather*}
+$\norm{a(s)}^2=\sum_n\abs{a_n(s)}^2$, $S(\vartheta)=S(\vartheta;s)=\sum_na_n(s)e(n\vartheta)$ and $\mathbf F(s):=\sum_{\chi\in\FQ}\abs{A_\chi(s)}^2$.
+One has $\abs{\DT(v)}\le\min(T,2/\abs v)$ and $\int_{\R}\abs{\DT}^2=2\pi T$.
+
+\emph{The window.} Following~\cite{DSouza}, the window is $\varphi(u)=p(u/\Lc)\,\varphi_{\rm flat}(u)$, where
+$\varphi_{\rm flat}(u)=\varrho_2((L/2-\abs u)/w)$ is the flat taper of~\cite{AF} with its Gevrey-2 ramp $\varrho_2$ of width
+$w\ge1$, and $p$ is an even polynomial profile on $[-\lambda/2,\lambda/2]$ with $p(0)=1$, $0<p\le1$, $p$ decreasing on
+$[0,\lambda/2]$ and $p(\lambda/2)\ge1/6$. Put $\gwin:=\varphi^2\star\varphi^2\ge0$, a function of the physical variable $s$.
+The moments $a:=L^{-1}\int\varphi^2$ and $b:=L^{-1}\int\varphi^4$ must satisfy $a\ge3/4$ and $b\ge1/2$ (\S\ref{sec:design}).
+The window's density in the scale-free variable $t=u/\Lc$ is the probability density
+\[
+v(t):=\frac{\Lc\,\varphi(\Lc t)^2}{\int\varphi^2}=\frac{\varphi(\Lc t)^2}{a\lambda},
+\]
+supported on $[-\lambda/2,\lambda/2]$; put $\psi:=v\star v$, a function of the dual variable $\alpha=s/\Lc$. The substitution $u=\Lc t$ in
+$\gwin(\alpha\Lc)=\int\varphi(u)^2\varphi(\alpha\Lc-u)^2\,du$ gives the dictionary $\gwin(\alpha\Lc)=(a\lambda)^2\Lc\,\psi(\alpha)$.
+The profile's own density is $v_p:=p^2/\!\int p^2$ on $[-\lambda/2,\lambda/2]$. The unnormalised squares $\varphi(\Lc t)^2$ and $p(t)^2$ agree off the
+two ramps $\lambda/2-w/\Lc<\abs t\le\lambda/2$, but the normalised densities do not: there $v=v_p\int p^2/(a\lambda)$. Since
+$0\le\int p^2-a\lambda\le2w/\Lc$ ($0\le\varphi_{\rm flat}\le1$, $p\le1$), one has $\norm{v-v_p}_1\le2(\int p^2-a\lambda)/\!\int p^2=O(w/\Lc)$, and $v$,
+$v_p$ are bounded uniformly: $\norm v_\infty\le1/(a\lambda)$, $\norm{v_p}_\infty\le1/\!\int p^2\le36/\lambda$.
+
+\emph{The functional.} For a kernel $k$, even and nonnegative on $[-\lambda,\lambda]$,
+\begin{equation}\label{eq:B}
+\Bfun_k(v):=\psi(0)+\int_{\abs\alpha\le\lambda}k(\alpha)\psi(\alpha)\,d\alpha,\qquad\psi=v\star v .
+\end{equation}
+The kernel of~\cite{DSouza} is $k(\alpha)=\abs\alpha$ for $\abs\alpha\le1$ and $C\abs\alpha$ for $1<\abs\alpha\le\lambda$.
+
+\subsection{The imported hypotheses}\label{ssec:H}
+The preprint~\cite{DSouza} imports six statements from~\cite{AF}, each a theorem of the Lean artifact of~\cite{AF}:
+\begin{enumerate}[label=(H\arabic*)]
+\item the rank--trace certificate for the direct sum of the per-character Gram blocks: the number of simple zeros on the line
+is at least $4\tr\widehat G-\frob{\widehat G}^2-2\mathcal N-3N_{\rm II}$ minus a perturbation loss, linear in $(\tr,\frob\cdot^2)$;
+\item the grid Gram identity $G_z=G_p$ for each primitive $\chi$, with density $\nu_{X,\chi}=\mu_q+P_{X,\chi}$ and no pole term;
+\item the positivity $\gwin=\varphi^2\star\varphi^2\ge0$;
+\item the Gevrey-2 ramp lemma for the flat taper, with $2w\le L$;
+\item the cap-free ends majorants with their explicit constants;
+\item the $q$-uniform local count $N_\chi(t,t+1]\le A_0\log(q(\abs t+3))$.
+\end{enumerate}
+\emph{H1--H6 at the new bandwidth.} Each of H1--H6 has a Lean instantiation that is free of the bandwidth in the following sense: it is valid for
+every $0<\lambda<2$ (the Lean class carries the condition $\lambda<2$), with the constants of the window and of the design recomputed at $\lambda$ (this is read off the
+hypotheses of each instantiation in the Lean sources). The bandwidth enters in three
+places, each through a constant:
+\begin{enumerate}[label=(\arabic*)]
+\item H1, off-line zeros outside the window. Their amplification $e^{\abs{\Im\gamma}L/2}$ enters only the tail, through the closing condition of the design
+(\S\ref{sec:design}), which is proved at $\lambda=191/100$ \tagL. Its leading part requires $D_0\ge(9e/16)\lambda^2\Lc^2/w$, which is $5.578\,\Lc^2$ at $\lambda=1.91$,
+$w=1$, in agreement with the design's $D_0\approx5.58\,\Lc^2$ (\S\ref{sec:design}(v)); the buffer row keeps its rate $\Lc^2/T$. Inside the window the off-line
+zeros enter only through an inertia bound, and the Poisson bound is required only at zeros on the line, where it holds for every $L$.
+\item H4. The product-taper constant $B'$ of the ramp lemma depends on $\lambda$ and the profile: for S53-L75 it is $42\,950.7$ with coefficient-sum majorants,
+within the certified $B'\le43\,447\le5\cdot10^4$ (\S\ref{sec:design}(iv)).
+\item H5. The window constant $c'$ of the cap-free ends majorants is $8\,183.4$ at $\lambda=1.91$ (coefficient-sum majorants), against about $548$ at $\lambda^*$; it
+changes only the constant of the ends row, whose rate $\Lc\log\Lc/T$ is unchanged.
+\end{enumerate}
+H2 uses the prime side exactly up to $X=e^L$, for every $L$; H3 and H6 contain no parameter. The conditions $8w\le L$ and $\frac16\le p\le1$ with $p$
+nonincreasing, which the instantiations use, are supplied by $w=1$, large $L$ and the profile S53-L75 ($p(\lambda/2)=0.196764$).
+
+\subsection{The certificate}\label{ssec:cert-prop}
+Let $\widehat G_{\rm fam}$ be the normalised family Gram matrix of~\cite[\S3]{DSouza}, $N_{\rm II,fam}$ the number of zeros counted
+in the buffer, and $B_{\rm tr}$, $B_F$ the trace and Frobenius parts of the tail perturbation.
+
+\begin{proposition}[{\cite[Proposition~3.1]{DSouza}}]\label{prop:3.1}
+Suppose that for given $(Q,T)$: \textup{(i)} the display of H1 holds; \textup{(ii)} $\mathcal N(1-\mathfrak r_1)\le\tr\widehat G_{\rm fam}$
+and $\frob{\widehat G_{\rm fam}}^2\le(\Bfun_*+\mathfrak r_2)\mathcal N$; \textup{(iii)} $N_{\rm II,fam}\le \mathfrak r_3\mathcal N$;
+\textup{(iv)} $B_{\rm tr}\le \mathfrak r_4\mathcal N$ and $B_F\le \mathfrak r_5\sqrt{\mathcal N}$. Then
+\[
+\sum_\chi N^s_{0,\chi}(T,2T)\ \ge\ \bigl[2-\Bfun_*-\bigl(4\mathfrak r_1+\mathfrak r_2+3\mathfrak r_3+4\mathfrak r_4+2\mathfrak r_5\sqrt{\Bfun_*+\mathfrak r_2}+\mathfrak r_5^2\bigr)\bigr]\mathcal N .
+\]
+\end{proposition}
+The proof is the moment algebra of the certificate of~\cite{AF}. In the formal development it is
+\texttt{ZetaQ.prop\_3\_1\_pair\_moment\_certificate}, which does not depend on the bandwidth, and the frame-to-headline step
+built on it for the family paper is proved (\texttt{shell\_assembly}, \texttt{k\_assembly}) \tagL.
+Everything below produces the inputs (ii)--(iv) with $\Bfun_*$ equal to the value of a functional~\eqref{eq:B} at a certified
+profile and every $\mathfrak r_i$ tending to $0$ at the stated rate.
+
+\subsection{The two zones}\label{ssec:zones}
+The only input of~\cite{DSouza} that this paper changes is the out-zone half of the Frobenius row. Let
+$\delta':=3\log\log Q/\log Q$ and let
+\[
+O:=\{s:(1-\delta')\log Q<\abs s\le\log X\}
+\]
+be the out-zone of~\cite[Lemma~4.3]{DSouza}. In~\cite[Lemmas~4.1--4.3]{DSouza}, by Parseval and the positivity of $\gwin$, the
+Frobenius main term is an integral of $\gwin(s)$ against family second moments of Dirichlet polynomials. On $O$ the certificate consumes the full block $\sum_\chi\int_O\gwin\abs{A_\chi+B_\chi}^2$, which is bounded through $\int_{O^\pm}\gwin\mathbf F$
+(Step~3 of \S\ref{sec:proof} and \S\ref{ssec:K-proof}(d)); here $B_\chi(s):=\sum_n\overline{a_n(-s)}\,\bar\chi(n)$ is the second half of~\cite[Lemma~4.3]{DSouza} and
+$O^\pm:=O\cap\{\pm s>0\}$; and~\cite{DSouza} bounds $\mathbf F(s)$ pointwise by the
+multiplicative large sieve,
+\[
+\mathbf F(s)\le(X+Q^2)\norm{a(s)}^2=C_Q\abs{\FQ}(1+X/Q^2)\norm{a(s)}^2 .
+\]
+Since $\norm{a(s)}^2=\frac T{2\pi}(s+O(1))$ for $(1+\delta_1)\log Q\le s\le\log X-1$ by the prime number theorem, and $s=\alpha\Lc$, this is
+the kernel $C\abs\alpha$ of~\eqref{eq:B}. On the top edge $\log X-1<s\le\log X$, where the cut $n\le X$ is felt, only the upper bound
+$\norm{a(s)}^2\le\frac T{2\pi}(s+O(1))$ holds uniformly (at $s=\log X$ the left side is about $\frac T{4\pi}s$), and an upper bound is what is used here; the diagonal evaluation of~\cite{DSouza} used in
+\S\ref{ssec:K-proof}(d) and \S\ref{sec:proof} is integrated over $O^+$, where the top edge has relative weight $O(\Lc^{-1})$. The in-zone $\abs s\le(1-\delta')\log Q$ and the zone-edge strip up to $\abs\alpha=1$ (kernel
+$C\abs\alpha$, the row $L_1$ of~\cite[\S10.3]{DSouza}) are treated as in~\cite[\S4]{DSouza}. The half $B_\chi$ with $\bar\chi$ and
+the $\chi/\bar\chi$ cross term are treated as in~\cite[\S4]{DSouza} on the in-zone, and on the out-zone by Cauchy--Schwarz in
+$\chi$ (\S\ref{ssec:K-proof}(d), Step~3 of \S\ref{sec:proof}). The large sieve is used in Gallagher's form $Q^2+\pi N$~\cite{Gal67}, which is what the formal
+development proves; the sharp form $N-1+Q^2$ is not needed.
+
+\subsection{The bandwidth}\label{ssec:bandwidth}
+Theorem~\ref{thm:shell} runs at $\lambda=191/100$, while the estimates of~\cite{DSouza} were
+derived, and formalised, at $\lambda^*=1.2507321515$. We have re-examined at $\lambda=191/100$ every row of~\cite{DSouza} that the Shell route imports for $\FQ$ (not the dyadic
+family): we tracked where $\lambda$ enters each stated bound of~\cite[\S\S4--10]{DSouza}, and re-read line by line the proofs of the large-sieve
+uses, the $\mu P$ cross term, the tail, the ends, the moment floor, the shell decomposition and the prime number theorem input. The conclusion is:
+
+\begin{enumerate}[label=(\roman*)]
+\item The only condition on $\lambda$ that a proof uses in an essential way is
+\[
+\lambda_{\rm eff}:=\frac{\log X}{\log Q}=\lambda\Bigl(1+\frac{\log(T/2\pi)}{\log Q}\Bigr)<2,
+\]
+in the form $X=o(Q^2/(\log Q)^{B})$. It makes the large sieve lossless, $X+Q^2=Q^2(1+o(1))$; it gives the saving $Q^{\lambda_{\rm eff}/2-1}$
+of the linear character sums in the $\mu P$ cross term and in the prime part of the trace (these use only $n\ne m$ and
+$\abs{M(y)}\le y$, with no bound on $n$); and the same condition, $N\le Q^{2-\eta}$, is what Lemma~\ref{lem:K} and the Shell lemmas
+need. At fixed $\lambda<2$ it holds for all large $Q$. At $\lambda=191/100$ and $r_0+\eps=3.5$ the crossover $X=Q^2$ lies near
+$\log_{10}Q\approx177$; at $\lambda=1.995$ it moves to $\log_{10}Q\approx5400$.
+\item Every other cap on $\lambda$ in~\cite{DSouza} and in its formalisation is a convenience of the design at $\lambda^*$: the
+regime $X\le Q^{3/2}$, the pin $\lambda=\lambda^*$ of the design predicate, the row $L_{11}$ ($\lambda\le1.26$), the ends constant
+$c_1=0.41$, the Gevrey gate $B'\le4\cdot10^4$ and the numeric proofs of two rows at the literal value $\lambda^*$.
+\item Four statements about the design must be corrected, none of which moves $0.9059137927$:
+the ends constant $c_1=0.41$ of~\cite[Lemma~8.1]{DSouza} is not covered by its proof at $\lambda=1.91$ and becomes $c_1=0.52$,
+which needs the Minkowski split $\sqrt{\sum(\mu+P)^2}\le\sqrt{\sum\mu^2}+\sqrt{\sum P^2}$ (it gives $0.0684+\lambda\sqrt{1+X/Q^2}/(\sqrt2\pi)=0.4983$
+at $X/Q^2\to0$; the other route gives $0.6156$) and $X/Q^2\le0.1034$;
+the moment floor $a\ge3/4$ cannot be relaxed (an ends estimate needs $a\ge0.7409$) and is met in eventual form, since $a\ge\langle p^2\rangle$
+minus the ramp mass and $\langle p^2\rangle-3/4=2.00001\cdot10^{-7}$ for S53-L75, once $\Lc/w\ge2.03\cdot10^5$;
+the ramp row has rate $\Theta(1/\log Q)$ (the buffer row, $O(\Lc^2/T)$, is smaller), because the design and its formalisation clamp $w\ge1$ (the design has $w=\max(1,w^*)$ with $w^*\to0$, so $w=1$ for
+large $Q$; in the formal design $w=\max(1,\Lc^{(3-r_0)/2})=1$);
+and the zone slope of the certified profile is $2(C-1)\psi_{v_p}(1)=1.9458$, not the design's $0.505$.
+\item The prime number theorem is used only in the form $\sum_{n\le x}\Lam(n)-x=o(x(\log x)^{-A})$ for one fixed $A$ depending on $r_0+\eps$
+(no power saving and no short intervals). This form is a Lean theorem, derived from the medium form of the prime number
+theorem in the formal tree (\texttt{L7\_2.psi\_sub\_id\_isLittleO\_log\_rpow}) \tagL.
+\end{enumerate}
+In Lean, the two rows proved only at the literal $\lambda^*$ are re-proved for every $0<\lambda<2$ (\S\ref{sec:design}).
+The other parts of~\cite[\S\S4--10]{DSouza} were not re-proved line by line; H1--H6 are treated in \S\ref{ssec:H} and the Shell lemmas in
+\S\ref{sec:shell}.

@@ -1,0 +1,79 @@
+\section{Zeros that are simple or on the line}\label{sec:sc}
+
+\begin{proof}[Proof of Corollary~\ref{cor:SC}]
+Use the window $\tilde\psi$ and the data of the proof of Theorem~\ref{thm:S} throughout; the cancellation of $R$ below needs the same window in
+(AF4) and in the packing term. Fix $\lambda\in(0,1)$ and let $t:=2+\sqrt2$, so that $t^2=4t-2$ and $t\ge2$. Let $N_{\mathrm{on}}$ be the number of
+on-line zeros with $\gamma\in I'$ counted with multiplicity, $r\le N_{\mathrm{on}}$ the number of distinct ones, and $p_1$, $p_2$ the numbers of
+simple and of multiple off-line pairs with $\Re\gamma\in I'$, so that $p=p_1+p_2$. The count to be bounded is $N^{\mathrm{sc}}(I'):=N_{\mathrm{on}}+2p_1$,
+which differs from $N^{\mathrm{sc}}(T,2T)$ by $O(\sqrt T\log T)$.
+
+Apply Lemma~\ref{lem:Ast} with $(s,t)=(1,2+\sqrt2)$, $P:=\sum_{\text{on-line}}m_\rho u_\rho u_\rho^{\tsp}=VV^{\tsp}$, where $V$ has the $r$ real columns
+$\sqrt{m_\rho}\,u_\rho$, $M:=V^{\tsp}V$, and $Q:=G-P$, the sum of the off-line pair blocks, so that $n_+(Q)\le b:=p$ by (AF2). By (AF1),
+$\tr P\le N_{\mathrm{on}}$, hence $2\tr P+2t\tr Q=2\tr G+2(t-1)\tr Q\ge2\tr G+2(t-1)(\tr G-N_{\mathrm{on}})$, and (AF3)--(AF4) give
+\[
+r+t^2p\ \ge\ (2t-R_\lambda(\tilde\psi))N-2(t-1)N_{\mathrm{on}}+\tr\Psi_{1,t}(M)-o(N).
+\]
+Since $N(I')-N_{\mathrm{on}}\ge2p_1+4p_2$, we have $p\le\frac14(N(I')-N_{\mathrm{on}}+2p_1)$; also $r\le N_{\mathrm{on}}$. Moving the
+$N_{\mathrm{on}}$ terms to the left, their coefficient is $2t-1-t^2/4=t^2/4$, so
+\[
+\tfrac{t^2}4\,N^{\mathrm{sc}}(I')\ \ge\ \big(2t-R_\lambda(\tilde\psi)-\tfrac{t^2}4\big)N+\tr\Psi_{1,t}(M)-o(N).
+\]
+Pinch $M$ to the block $M^\circ$ of the simple on-line zeros (Lemma~\ref{lem:pinch}; $\Psi_{1,t}$ is convex) and use $\Psi_{1,t}\ge\Psi\ge0$:
+$\tr\Psi_{1,t}(M)\ge\tr\Psi(M^\circ)$. For $c'<c$ let $A',B'$ be as in Lemma~\ref{lem:transfer}, $\beta':=B'/m$, $\tau'':=(B'/A')\tau$ and
+$S_{c'}:=(H_\lambda(\tilde\psi)-\tau'')/(1-\beta')$. Lemma~\ref{lem:transfer} gives $\tr\Psi(M^\circ)\ge\beta's_1-\tau''N-o(N)$, and the proof of
+Theorem~\ref{thm:G} gives $s_1\ge(S_{c'}-o(1))N$. Since $\beta'>0$ and $\beta'S_{c'}-\tau''=S_{c'}-H_\lambda(\tilde\psi)$,
+\[
+\tr\Psi(M^\circ)\ \ge\ \big(S_{c'}-H_\lambda(\tilde\psi)\big)N-o(N),\qquad H_\lambda(\tilde\psi)=2-R_\lambda(\tilde\psi).
+\]
+Substituting, $R_\lambda(\tilde\psi)$ cancels:
+\[
+N^{\mathrm{sc}}(I')\ \ge\ \frac{8t-t^2-8+4S_{c'}}{t^2}\,N-o(N)=\frac{2t-3+2S_{c'}}{2t-1}\,N-o(N).
+\]
+Let $T\to\infty$, then $c'\uparrow c$ and $\lambda\to1^-$; $S_{c'}$ tends to the constant $S^*=0.673373689541190\ldots$ of Theorem~\ref{thm:S}, and
+$(1+2\sqrt2+2S^*)/(3+2\sqrt2)=0.887919569562\ldots>0.8879195$.
+\end{proof}
+
+\begin{remark}\label{rem:SC}
+\begin{enumerate}[label=(\roman*)]
+\item The corollary follows from the \emph{proof} of Theorem~\ref{thm:S} (the linear packing bound, the fixed-point identity and the limit
+$c'\uparrow c$), not from the number $S^*$ alone; it uses no input beyond those of Theorem~\ref{thm:S} and Lemma~\ref{lem:Ast}.
+\item The formula $(1+2\sqrt2+2S)/(3+2\sqrt2)$ is Lamzouri's~\cite{Lamzouri}, with Lamzouri's constant replaced by $S^*$. The value moves only through $S$,
+with slope $2/(3+2\sqrt2)=0.343146$: $0.8876200$ at $S=H(\cos\sqrt2s)$ (Lamzouri's value) and $0.8879195$ at $S^*$. The whole gain,
+$2.9\cdot10^{-4}$, comes from Theorem~\ref{thm:S}, so Corollary~\ref{cor:SC} is not an independent advance. At $S=0.67349239$, the largest
+unrefereed bandwidth-one value of \S\ref{ssec:others}, the formula gives $0.8879603$.
+\item The variant that counts a multiple on-line zero once is not claimed. Within the two-parameter family of Lemma~\ref{lem:Ast}, the choice
+$s=1$, $t=2+\sqrt2$ is optimal for this argument, by a computation that we do not reproduce; nothing
+above depends on it.
+\end{enumerate}
+\end{remark}
+
+\begin{remark}[Distinct zeros from the chain of Theorem~\ref{thm:S}]\label{rem:Sdist}
+The same argument gives
+\[
+\liminf_{T\to\infty}\frac{N^d(T,2T)}{N(T,2T)}\ \ge\ \tfrac12(1+S^*)=0.8366868\ldots,
+\]
+which Theorem~\ref{thm:main} supersedes. We
+include it because it is the value that a bound of the kind of Theorem~\ref{thm:S} gives for distinct zeros. The remark is not formalised.
+\emph{Proof.} Fix $\lambda\in(0,1)$ and $c'<c$, with $\beta'$, $\tau''$, $S_{c'}$ as above. Apply Lemma~\ref{lem:stab} with $V$ the matrix of the $r$
+real columns $\sqrt{m_\rho}\,u_\rho$ over the distinct on-line zeros with $\gamma_\rho\in I'$, $P:=VV^{\tsp}$, $M:=V^{\tsp}V$, $Q:=G-P$ and $b:=p$
+(AF2). Let $N_{\mathrm{off}}:=N(I')-N_{\mathrm{on}}\ge2p$. By (AF1) and (AF3), $\tr Q=\tr G-\tr P\ge N_{\mathrm{off}}-o(N)$, so
+$2\tr P+4\tr Q=2\tr G+2\tr Q$ and (AF4) give
+\[
+r\ \ge\ H_\lambda(\tilde\psi)N+2N_{\mathrm{off}}-4p+\tr\Psi(M)-o(N).
+\]
+Pinch $M$ into the block $M^\circ$ of the simple on-line zeros and the $1\times1$ blocks $m_\rho\norm{u_\rho}^2=m_\rho(1-\delta_\rho)$ of the
+multiple ones (Lemma~\ref{lem:pinch}). Since $\Psi$ is $2$-Lipschitz on $[0,\infty)$ and $\Psi(m)=2m-3$ for $m\ge2$,
+$\Psi(m_\rho(1-\delta_\rho))\ge2m_\rho-3-2m_\rho\delta_\rho$, and $\sum_\rho m_\rho\delta_\rho=o(N)$; and since
+$\tr\Psi(M^\circ)\ge(S_{c'}-H_\lambda(\tilde\psi))N-o(N)$ as shown above,
+\[
+N^d(I'):=r+2p\ \ge\ S_{c'}N+2N_{\mathrm{off}}-2p+\sum_{m_\rho\ge2}(2m_\rho-3)-o(N),
+\]
+the sum running over the multiple on-line zeros. Add the identity $N^d(I')=s_1+n_{\ge2}+2p$, where $n_{\ge2}$ is the number of multiple
+on-line zeros, and subtract $N(I')=s_1+\sum_{m_\rho\ge2}m_\rho+N_{\mathrm{off}}$:
+\[
+2N^d(I')-N(I')\ \ge\ S_{c'}N+N_{\mathrm{off}}+\sum_{m_\rho\ge2}(m_\rho-2)-o(N)\ \ge\ S_{c'}N-o(N).
+\]
+Since $N(I')=N+o(N)$ and $N^d(T,2T)\ge N^d(I')-O(\sqrt T\log T)$, letting $T\to\infty$, then $c'\uparrow c$ and $\lambda\to1^-$ gives the claim.
+With $\tr\Psi(M^\circ)\ge0$ in place of the packing bound the same computation gives $\frac12(1+H(\psi))$, the value
+of~\cite[Theorem~A(ii)]{AF}.
+\end{remark}

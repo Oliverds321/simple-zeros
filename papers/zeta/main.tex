@@ -1,0 +1,61 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,margin=2.6cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancyvrb}
+\usepackage{fvextra}
+\input{unicode_lean}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=green!40!black,urlcolor=blue!50!black]{hyperref}
+\hypersetup{pdftitle={On the proportions of simple and of distinct zeros of the Riemann zeta function},pdfauthor={Oliver D'Souza},pdfkeywords={Riemann zeta function; simple zeros; distinct zeros; Lean 4; formal verification}}
+\input{macrosA}
+
+\title{On the proportions of simple and of distinct zeros\\ of the Riemann zeta function}
+\author{Oliver D'Souza\thanks{\copyright~2026 Oliver D'Souza. This paper is licensed under CC~BY~4.0.}}
+\date{Release version, October 2026 (repository tag \repotag)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We prove, without hypotheses on the zeros and with computer-assisted steps, that, as $T\to\infty$, at least $0.676102666$ of the zeros
+$\rho$ of $\zeta(s)$ with $T<\Im\rho\le2T$, counted with multiplicity, are simple, and at least $0.838051333$ of them are distinct. The
+largest previous unconditional bounds that we located in the refereed and arXiv literature are, truncated, $0.67250077$ for simple zeros, which is the bound for
+simple zeros on the critical line, and $0.83625038$ for distinct zeros. Unrefereed computer-assisted claims for simple zeros on the line at
+bandwidth one reach $0.67349239$; the three largest of them use the fixed-test-function pair-correlation formula, as Lamzouri does, rather
+than the inputs of Alp\"oge and Furman used here. Two unrefereed works claim considerably more by other means, and we have not verified
+them.
+The argument extends the rank--trace method of Alp\"oge and Furman. With a smaller computer-certified local inequality ($K=5$ consecutive
+zeros instead of $7$) it gives the slightly smaller pair $0.675158622$ and $0.837579311$. For this pair the whole proof, the local
+certificate included, is checked by the kernel of Lean~4 with no hypotheses. For the $K=7$ pair and for the two statistics below, everything
+except the local certificate (the analytic and algebraic steps, the majorant certificate and the closing arithmetic) is checked by the
+kernel, and the local certificate enters as a single displayed hypothesis, verified outside Lean by interval arithmetic. Two further
+statistics are recorded. At least $0.6733736895$ of the zeros are simple and on the critical line, by a method that others published first;
+this is not a record, since for this statistic six unrefereed works announce larger values, from $0.673399$ to $0.67349239$, one of them
+($0.6734$) as a hypothesis-free Lean theorem, whereas our formal statement carries a certificate hypothesis. At least $0.8879195$ of the
+zeros are simple or on the line, which is Lamzouri's formula evaluated at $0.6733736895$. The results are lower bounds only and say nothing
+about the Riemann hypothesis itself. None of them has been independently refereed, and the Lean development has not been rebuilt outside
+this project.
+\end{abstract}
+
+\tableofcontents
+
+\input{s1_intro}
+\input{s2_setting}
+\input{s3_linalg}
+\input{s4_first}
+\input{s5_simple}
+\input{s6_sc}
+\input{s7_cert}
+\input{s8_remarks}
+
+\appendix
+{\rightskip=0pt plus 4em\relax % ragged right in Appendix A only (long Lean names)
+\input{appA_lean}\par}
+\input{appB_how}
+
+\bibliographystyle{plain}
+\bibliography{bib}
+\end{document}

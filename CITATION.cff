@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using these metadata."
+type: software
+title: "Simple zeros: Lean formalisation of zero-proportion theorems for ζ and for families of Dirichlet L-functions"
+authors:
+  - family-names: "D'Souza"
+    given-names: "Oliver"
+version: 1.0.0
+date-released: 2026-10-03
+license: Apache-2.0
+repository-code: "https://github.com/Oliverds321/simple-zeros"

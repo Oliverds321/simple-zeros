@@ -1,0 +1,63 @@
+\section{The certificate}\label{sec:cert}
+
+\subsection{The functional and the profiles}
+For $1<\alphap<\lambda<2$ and $C^+>0$ let $k_{\alphap}(\alpha)=\abs\alpha$ for $\abs\alpha\le1$, $1$ for $1<\abs\alpha\le\alphap$ and $C^+$ for $\alphap<\abs\alpha\le\lambda$, and
+$\Bfun_{\alphap}(v):=\psi(0)+\int k_{\alphap}\psi$, $\psi=v\star v$. Since $\psi\ge0$, $\Bfun_{\alphap}$ is increasing in $C^+$, so a rational upper bound for the family constant
+suffices. The profiles are even polynomials $p(t)=\sum_{i=0}^6d_i(2t/\lambda)^{2i}$ with $d_0=1$ and $d_i\in\mathbb Q$, and $v_p:=p^2/\!\int p^2$ on $[-\lambda/2,\lambda/2]$.
+With $P=p^2$ and $\tilde\psi(\alpha)=\int_{-\lambda/2}^{\lambda/2-\alpha}P(x)P(x+\alpha)\,dx$, a polynomial in $\alpha$ with rational coefficients on $[0,\lambda]$,
+\[
+\Bfun_{\alphap}(v_p)=\frac{\tilde\psi(0)+2\int_0^1\alpha\tilde\psi+2\int_1^{\alphap}\tilde\psi+2C^+\int_{\alphap}^{\lambda}\tilde\psi}{(\int P)^2}\in\mathbb Q .
+\]
+The profile of Theorem~\ref{thm:shell} is S53-L75; the profile D53-L75 enters only Remark~\ref{rem:shell-dyadic}, which is not claimed, and is listed for
+completeness. Both have $\alphap=2497/1500=\frac53-\frac1{500}$ and
+\begin{itemize}
+\item S53-L75: $\lambda=191/100$, $C^+=541161617/10^8\ge\pi^4/18$ (margin $1.44\cdot10^{-9}$),
+$d=(1,\ -\tfrac{109245641}{315967035},\ -\tfrac{484609675}{903872491},\ \tfrac{1126440115}{499347366},\ -\tfrac{1244916364}{475100341},\ \tfrac{381673291}{981251350},\ \tfrac{37853428}{698475165})$;
+\item D53-L75: $\lambda=93/50$, $C^+=721548823/10^8\ge2\pi^4/27$ (margin $5.26\cdot10^{-9}$),
+$d=(1,\ -\tfrac{390353034}{798066593},\ \tfrac{1309177511}{918253499},\ -\tfrac{6068806879}{896328244},\ \tfrac{13364613432}{870778397},\ -\tfrac{12836034741}{854019032},\ \tfrac{4242100897}{905838731})$.
+\end{itemize}
+They were produced by a numerical optimiser; how they were found does not matter, since the certificate below is a statement about these
+rationals.
+
+\subsection{Values}
+\begin{center}\small
+\begin{tabular}{@{}lllllll@{}}
+\toprule
+profile & $2-\Bfun_{\alphap}(v_p)$ & claimed & slack & $a$ & $b$ & $p(\lambda/2)$\\
+\midrule
+S53-L75 & $0.90591379273786\ldots$ & $0.9059137927$ & $3.79\cdot10^{-11}$ & $0.7500002000$ & $0.62398$ & $0.19676$\\
+D53-L75 & $0.90317761969178\ldots$ & $0.9031776196$ & $9.18\cdot10^{-11}$ & $0.7577343$ & $0.63045$ & $0.16666687$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Here $a=\lambda^{-1}\int p^2$ and $b=\lambda^{-1}\int p^4$. Both profiles satisfy the side conditions ``L75'' of the formal design: $0<p\le1$ on $[-\lambda/2,\lambda/2]$, $p$ strictly
+decreasing on $[0,\lambda/2]$, $a\ge3/4$, $b\ge1/2$, $p(\lambda/2)\ge1/6$. Two margins are tight ($a-3/4=2.0\cdot10^{-7}$ for S53-L75, $p(\lambda/2)-1/6=2.0\cdot10^{-7}$ for
+D53-L75), and both are handled in exact rationals. The distinct-zero values $(3-\Bfun_{\alphap}(v_p))/2$ are $0.9529568963$ and $0.9515888098$ (Remark~\ref{rem:distinct}).
+Against the variational optimum at the same $(\alphap,\lambda\le1.99)$, $0.9059227$, the degree-$12$ profile loses about $9\cdot10^{-6}$; the limit
+$\sup_v(2-\Bfun_{\alphap}(v))\to0.9061786$ as $\alphap\uparrow5/3$ is not asserted, because the density estimates do not give the dependence of their constants on
+$\eps_1$.
+
+\subsection{The formal certificate}
+The certificate is the Lean \texttt{Prop}
+\begin{center}
+\texttt{CertS53 := ShellCert S53L75 PcertS53},
+\end{center}
+which asserts: $1<\lambda<2$, $1<\alphap$, $v_p$ is admissible (nonnegative, integrable, of mass $1$, supported in $[-\lambda/2,\lambda/2]$), $p$ satisfies L75, and the real-valued
+functional, defined with Mathlib's integral, satisfies $\Bfun_{\alphap}(v_p)\le2-9059137927/10^{10}$ (Appendix~\ref{app:lean}). It is a theorem,
+\texttt{ZetaShell.certS53 : CertS53}, and so is \texttt{certD53 : CertD53}, with the three standard axioms \tagL. The proof has
+three parts:
+\begin{enumerate}[label=(\alph*)]
+\item the rational number $\Bfun_{\alphap}(v_p)$ is computed by Lean's kernel (\texttt{decide +kernel}, core Lean only: about $2\cdot10^4$ rational operations on numbers
+with about $213$ digits, $7$ seconds and $1.4$ GB per profile), together with four negative controls (for instance $C^++10^{-6}$ makes the next ten-digit claim
+fail);
+\item the real functional equals that rational (node R3): the list operations of the certificate code are proved sound against real evaluation and interval
+integrals, $\psi$ is shown to be even, zero beyond $\lambda$ and equal to $(\lambda/2)\hat\psi(\alpha/(\lambda/2))/(\int P)^2$ on $[0,\lambda]$, and the integral is split at $1$ and
+$\alphap$;
+\item the side conditions L75 (node R5): $-q'$, where $p(t)=q((2t/\lambda)^2)$, is written in Bernstein form with positive coefficients, checked by \texttt{ring} (degree $5$
+with no elevation for S53-L75; degree $15$ after ten elevations for D53-L75), which gives strict decrease and $0<p\le1$; the moments are exact rationals.
+\end{enumerate}
+Independently of Lean, two programs (symbolic expansion of $\tilde\psi$, and exact Newton--Cotes quadrature at $\deg\tilde\psi+2$ rational nodes)
+return the same rational for both profiles, and the certificate code of the formal development reproduces it exactly \tagN.
+
+The certificate of Theorem~\ref{thm:one-prime} is of the same kind: $\Bfun^{\rm K}_{C}=\Bfun_{k_{\alphap}}$ at level $C$ for any $\alphap$, so the identity (b) applies at $\alphap=6/5$
+to the design profile of~\cite{DSouza}, and the kernel computes $0.7235110849\ldots$ (\S\ref{ssec:K-constants}).

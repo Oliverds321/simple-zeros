@@ -1,0 +1,3 @@
+'ZetaShell.LemmaK.theorem_one_prime_design' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.certS53' depends on axioms: [propext, Classical.choice, Quot.sound]
+leanrun: exit=0 elapsed=18.9s peak_mem=3247MB slot=3/4 waited=0s file=comparator/PrintAxioms/FollowUpShell.lean

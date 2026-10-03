@@ -1,0 +1,151 @@
+lake build ZetaSReplay (jobs=3) started 2026-10-01 22:22:09 at 2b810aa
+✔ [8705/8768] Built R11111_Pts7 (30s)
+✔ [8706/8768] Built R11111_Pts5 (104s)
+✔ [8707/8768] Built R11111_Pts6 (104s)
+✔ [8708/8768] Built R11111_Pts4 (103s)
+✔ [8709/8768] Built R11111_Pts3 (97s)
+✔ [8710/8768] Built R11111_Pts2 (97s)
+✔ [8716/8768] Built R11111_Data (693ms)
+✔ [8719/8774] Built R11111_Pts1 (98s)
+⚠ [8738/8795] Replayed Zeta23.ThmD.WindowCore
+warning: Zeta23/ThmD/WindowCore.lean:388:22: Variable name `u` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _u
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8739/8795] Replayed Zeta23.XiPrime.QuarticWindow.ModWindow
+warning: Zeta23/XiPrime/QuarticWindow/ModWindow.lean:87:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [8740/8795] Replayed ZetaS.Window.CosWindow
+info: ZetaS/Window/CosWindow.lean:571:0: 'ZetaS.CosWindow.integral_cosW' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:572:0: 'ZetaS.CosWindow.integral_cosW_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:573:0: 'ZetaS.CosWindow.jInt_cosW' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:574:0: 'ZetaS.CosWindow.Rquot_cosW' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:575:0: 'ZetaS.CosWindow.HC_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:576:0: 'ZetaS.CosWindow.HC_eight_fifths' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:577:0: 'ZetaS.CosWindow.HC_37_25' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:578:0: 'ZetaS.CosWindow.sigma_K7' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:579:0: 'ZetaS.CosWindow.dist_K7' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:580:0: 'ZetaS.CosWindow.sigma_K5' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:581:0: 'ZetaS.CosWindow.dist_K5' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:582:0: 'ZetaS.CosWindow.admWindow_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:583:0: 'ZetaS.CosWindow.admWindow_phiV_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [8743/8801] Replayed ZetaS.Cert.C17_CapLeaf
+warning: ZetaS/Cert/C17_CapLeaf.lean:28:5: Variable name `hg0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hg0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8744/8801] Replayed ZetaS.Cert.C01_QIRound
+warning: ZetaS/Cert/C01_QIRound.lean:20:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:21:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:22:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:20:6: 'exact (Rat.le_floor.mp le_rfl)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:21:6: '(rw [← Rat.floor_intCast_div_natCast] at *; exact Int.floor_le _)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:22:6: 'exact Int.floor_le (q * 2 ^ 64)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:31:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:32:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:33:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:31:6: 'exact (Rat.le_ceil (x := q * 2 ^ 64))' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:32:6: 'exact (Rat.ceil_le.mp le_rfl)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:33:6: 'exact Int.le_ceil (q * 2 ^ 64)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [8762/10236] Built R11112_Data (757ms)
+✔ [8763/10236] Built ReplayCommon (66s)
+✔ [8764/10236] Built R11111_Pts0 (101s)
+✔ [8765/10236] Built R11112_Pts0 (101s)
+✔ [8766/10236] Built R11112_Pts1 (98s)
+✔ [8767/10236] Built R11112_Pts2 (98s)
+✔ [8768/10236] Built R11112_Pts3 (98s)
+✔ [8769/10236] Built R11112_Pts4 (96s)
+✔ [8770/10236] Built R11112_Pts5 (98s)
+✔ [8771/10236] Built R11112_Pts6 (97s)
+✔ [8772/10236] Built R11112_Pts7 (98s)
+✔ [8773/10236] Built R11112_Pts8 (97s)
+✔ [8774/10236] Built R11112_Pts11 (3.1s)
+✔ [8775/10236] Built R11121_Data (959ms)
+✔ [8776/10236] Built R11112_Pts9 (98s)
+✔ [8777/10236] Built R11112_Pts10 (98s)
+✔ [8778/10236] Built R11121_Pts0 (103s)
+✔ [8779/10236] Built R11121_Pts1 (105s)
+✔ [8780/10236] Built R11121_Pts2 (111s)
+✔ [8781/10236] Built R11121_Pts3 (104s)
+✔ [8782/10236] Built R11121_Pts4 (102s)
+✔ [8783/10236] Built R11121_Pts5 (101s)
+✔ [8784/10236] Built R11121_Pts6 (98s)
+✔ [8785/10236] Built R11122_Data (749ms)
+✔ [8786/10236] Built R11121_Pts7 (97s)
+✔ [8787/10236] Built R11121_Pts8 (97s)
+✔ [8788/10236] Built R11122_Pts0 (99s)
+✔ [8789/10236] Built R11122_Pts1 (97s)
+✔ [8790/10236] Built R11122_Pts2 (97s)
+✔ [8791/10236] Built R11122_Pts3 (97s)
+✔ [8792/10236] Built R11122_Pts4 (98s)
+✔ [8793/10236] Built R11122_Pts5 (96s)
+✔ [8794/10236] Built R11122_Pts6 (102s)
+✔ [8795/10236] Built R11122_Pts7 (102s)
+✔ [8796/10236] Built R11122_Pts8 (103s)
+✔ [8797/10236] Built R11122_Pts9 (98s)
+✔ [8798/10236] Built R11211_Data (700ms)
+✔ [8799/10236] Built R11122_Pts10 (95s)
+✔ [8800/10236] Built R11122_Pts11 (63s)
+✔ [8801/10236] Built R11211_Pts0 (95s)
+✔ [8802/10236] Built R11211_Pts1 (94s)
+✔ [8803/10236] Built R11211_Pts2 (94s)
+✔ [8804/10236] Built R11211_Pts3 (94s)
+✔ [8805/10236] Built R11211_Pts4 (95s)
+✔ [8806/10236] Built R11211_Pts5 (95s)
+✔ [8807/10236] Built R11211_Pts8 (56s)
+✔ [8808/10236] Built R11212_Data (706ms)
+✔ [8809/10236] Built R11211_Pts6 (96s)
+✔ [8810/10236] Built R11211_Pts7 (97s)
+✔ [8811/10236] Built R11212_Pts0 (99s)
+✔ [8812/10236] Built R11212_Pts1 (98s)
+✔ [8813/10236] Built R11212_Pts2 (97s)
+✔ [8814/10236] Built R11212_Pts3 (97s)
+✔ [8815/10236] Built R11212_Pts4 (96s)
+✔ [8816/10236] Built R11212_Pts5 (96s)
+✔ [8817/10236] Built R11212_Pts6 (96s)
+✔ [8818/10236] Built R11212_Pts7 (98s)
+✔ [8819/10236] Built R11212_Pts8 (99s)
+✔ [8820/10236] Built R11212_Pts9 (98s)
+✔ [8821/10236] Built R11212_Pts10 (98s)
+✔ [8822/10236] Built R11212_Pts11 (98s)
+✔ [8823/10236] Built R11212_Pts14 (52s)
+✔ [8824/10236] Built R11221_Data (705ms)
+✔ [8825/10236] Built R11212_Pts12 (94s)
+✔ [8826/10236] Built R11212_Pts13 (94s)
+✔ [8827/10236] Built R11221_Pts0 (94s)
+✔ [8828/10236] Built R11221_Pts1 (91s)
+✔ [8829/10236] Built R11221_Pts2 (92s)
+✔ [8830/10236] Built R11221_Pts3 (93s)
+✔ [8831/10236] Built R11221_Pts4 (93s)
+✔ [8832/10236] Built R11221_Pts5 (93s)
+✔ [8833/10236] Built R11221_Pts6 (93s)
+✔ [8834/10236] Built R11221_Pts7 (93s)
+lake build exit=127 finished 2026-10-01 23:01:23
+errors: 0; sorry warnings: 0

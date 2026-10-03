@@ -1,0 +1,36 @@
+bnb_interval: alpha=poly8A K=8 mu=1/1700 c_claim=0.00796 backend=auto prec=64 engine=numpy mode=hybrid workers=1 lb3=True sym=True axis=grad
+objective: sha256=9b09b50eb8f0b5dfd0d95055a994f206cbf3700c3c02098b51e7af2d3e5536f7 (K=8 alpha=poly8A mu=1/1700 claim=199/25000 weights=w_poly8A_K8_mu1700.json sha256=257b340d9da4f343600a21589f16d8915f3e082499d475e153c5453980671e78 window=win_poly8A.json sha256=c4005f57a7920f78aa2df33b093c9c5030efac2b8e39fc6cf7371b0c0f32dc14 sym=True lb3=True engine=numpy pure=False backend=auto prec=64)
+  resumed from runs/R1003/r1_3.ckpt: processed=0.000e+00 stack_boxes=2.839e+05
+  resumed checkpoint sha256=e2907309bed67ea3a51b06b63db9e435efc42840b9e450934ec5a247884b5a7c
+  it=40 processed=7.106e+05 stack_boxes=2.740e+05 min centre F=0.0080661 t=54s iv_checked=7.045e+05 iv_rejected=0
+  it=80 processed=9.050e+05 stack_boxes=2.770e+05 min centre F=0.0080661 t=66s iv_checked=8.971e+05 iv_rejected=0
+  it=120 processed=1.558e+06 stack_boxes=3.497e+05 min centre F=0.0080661 t=113s iv_checked=1.544e+06 iv_rejected=0
+  it=160 processed=2.159e+06 stack_boxes=2.835e+05 min centre F=0.0080661 t=152s iv_checked=2.141e+06 iv_rejected=0
+  it=200 processed=2.617e+06 stack_boxes=2.597e+05 min centre F=0.0080661 t=182s iv_checked=2.596e+06 iv_rejected=0
+  it=240 processed=3.150e+06 stack_boxes=3.841e+05 min centre F=0.0080661 t=219s iv_checked=3.123e+06 iv_rejected=0
+  it=280 processed=3.487e+06 stack_boxes=3.088e+05 min centre F=0.0080661 t=241s iv_checked=3.457e+06 iv_rejected=0
+  it=320 processed=4.095e+06 stack_boxes=2.614e+05 min centre F=0.0080661 t=281s iv_checked=4.059e+06 iv_rejected=0
+  it=360 processed=4.960e+06 stack_boxes=3.279e+05 min centre F=0.0080661 t=341s iv_checked=4.916e+06 iv_rejected=0
+  it=400 processed=5.265e+06 stack_boxes=2.944e+05 min centre F=0.0080661 t=360s iv_checked=5.217e+06 iv_rejected=0
+  it=440 processed=5.897e+06 stack_boxes=2.419e+05 min centre F=0.0080661 t=403s iv_checked=5.843e+06 iv_rejected=0
+  it=480 processed=6.596e+06 stack_boxes=3.144e+05 min centre F=0.0080661 t=453s iv_checked=6.537e+06 iv_rejected=0
+  it=520 processed=7.100e+06 stack_boxes=2.630e+05 min centre F=0.0080661 t=485s iv_checked=7.039e+06 iv_rejected=0
+  it=560 processed=7.591e+06 stack_boxes=2.473e+05 min centre F=0.0080661 t=517s iv_checked=7.527e+06 iv_rejected=0
+  it=600 processed=8.306e+06 stack_boxes=2.803e+05 min centre F=0.0080661 t=567s iv_checked=8.237e+06 iv_rejected=0
+  it=640 processed=8.821e+06 stack_boxes=2.355e+05 min centre F=0.0080661 t=600s iv_checked=8.750e+06 iv_rejected=0
+  it=680 processed=9.547e+06 stack_boxes=2.931e+05 min centre F=0.0080661 t=652s iv_checked=9.470e+06 iv_rejected=0
+  it=720 processed=9.766e+06 stack_boxes=2.621e+05 min centre F=0.0080661 t=665s iv_checked=9.689e+06 iv_rejected=0
+  it=760 processed=1.025e+07 stack_boxes=2.376e+05 min centre F=0.0080661 t=697s iv_checked=1.017e+07 iv_rejected=0
+  it=800 processed=1.102e+07 stack_boxes=2.949e+05 min centre F=0.0080661 t=749s iv_checked=1.093e+07 iv_rejected=0
+  it=840 processed=1.134e+07 stack_boxes=2.622e+05 min centre F=0.0080661 t=770s iv_checked=1.125e+07 iv_rejected=0
+  it=880 processed=1.202e+07 stack_boxes=2.415e+05 min centre F=0.0080563 t=814s iv_checked=1.193e+07 iv_rejected=0
+  it=920 processed=1.280e+07 stack_boxes=2.844e+05 min centre F=0.0080563 t=868s iv_checked=1.269e+07 iv_rejected=0
+  it=960 processed=1.303e+07 stack_boxes=2.555e+05 min centre F=0.0080563 t=884s iv_checked=1.292e+07 iv_rejected=0
+  it=1000 processed=1.353e+07 stack_boxes=2.417e+05 min centre F=0.0080563 t=918s iv_checked=1.342e+07 iv_rejected=0
+  it=1040 processed=1.443e+07 stack_boxes=3.063e+05 min centre F=0.0080563 t=979s iv_checked=1.431e+07 iv_rejected=0
+  it=1080 processed=1.477e+07 stack_boxes=2.830e+05 min centre F=0.0080563 t=1001s iv_checked=1.465e+07 iv_rejected=0
+  it=1120 processed=1.542e+07 stack_boxes=2.310e+05 min centre F=0.0080563 t=1044s iv_checked=1.530e+07 iv_rejected=0
+  it=1160 processed=1.586e+07 stack_boxes=2.162e+05 min centre F=0.0080563 t=1076s iv_checked=1.574e+07 iv_rejected=0
+  it=1200 processed=1.648e+07 stack_boxes=3.289e+05 min centre F=0.0080563 t=1118s iv_checked=1.635e+07 iv_rejected=0
+  it=1240 processed=1.685e+07 stack_boxes=2.713e+05 min centre F=0.0080563 t=1145s iv_checked=1.672e+07 iv_rejected=0
+  it=1280 processed=1.737e+07 stack_boxes=2.376e+05 min centre F=0.0080563 t=1178s iv_checked=1.723e+07 iv_rejected=0

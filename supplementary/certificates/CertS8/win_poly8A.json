@@ -1,0 +1,1 @@
+{"name": "poly8A", "coeffs_u": ["1", "508/10000", "-8997/10000", "6187/10000", "24/10000"], "note": "v(s) = 1 + 0.0508 u - 0.8997 u^2 + 0.6187 u^3 + 0.0024 u^4, u = (2s)^2; Nelder-Mead optimum of the K=8 chain cap (winopt.py poly8), rounded to 4 decimals"}

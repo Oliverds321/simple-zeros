@@ -1,0 +1,329 @@
+name = "Zeta23"
+version = "0.1.0"
+defaultTargets = ["Zeta23"]
+
+[leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = false
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "51e6992efd06126df61a496bebf8f49482a4e129"
+
+[[lean_lib]]
+name = "Zeta23"
+
+# --- comparator challenge/solution layer (comparator/README.md). Trusted: ChallengeDeps + Challenge
+# (Mathlib-only). Untrusted: Solution (imports Zeta23). Not in defaultTargets; build with
+# `lake build Challenge Solution`, or let github.com/leanprover/comparator build them itself.
+[[lean_lib]]
+name = "ChallengeDeps"
+srcDir = "comparator"
+
+[[lean_lib]]
+name = "Challenge"
+srcDir = "comparator"
+
+[[lean_lib]]
+name = "Solution"
+srcDir = "comparator"
+
+# --- ZetaQ: the conductor-aspect library (ZetaQ/README.md, and the module docstring of
+# ZetaQ.lean). Imports Zeta23, including its ParamsQ/WindowD and Tail/GevreyTail layers.
+# Kept out of defaultTargets because it carries four sorries — the Beurling–Selberg input of
+# the SHARP large sieve (ZetaQ.l2_concentration_exists; since the Gallagher rethread no headline
+# consumes it) and three frozen superseded statements — so that `lake build` remains the Zeta23 record's own sorry-free
+# gate. Build it with `lake build ZetaQ`.
+[[lean_lib]]
+name = "ZetaQ"
+
+# --- ZetaS and ZetaShell: the RH-72 FOLLOW-UP libraries (plan: mathsrh/rh72/LEAN_PLAN.md; board:
+# mathsrh/rh72/lean_board/BOARD.md). ZetaS is the zeta follow-up (imports Zeta23); ZetaShell is the
+# family follow-up (imports ZetaQ). During development they carry the Phase-1 skeleton, i.e. node
+# statements closed by `sorry`, which are replaced one by one by proofs with name and statement kept
+# byte-identical; each release states its trust level (LEAN_PLAN section 0). Kept out of
+# defaultTargets for the same reason as ZetaQ: `lake build` stays the Zeta23 record's own sorry-free
+# gate. The glob `X.*` builds the root module X and every module under X/, so a new skeleton or node
+# file is built without being added to the root. Build with `lake build ZetaS ZetaShell`.
+[[lean_lib]]
+name = "ZetaS"
+globs = ["ZetaS.*"]
+
+[[lean_lib]]
+name = "ZetaShell"
+globs = ["ZetaShell.*"]
+
+# --- ZetaSCertShims: bare-name forwarding modules for the FROZEN track-C checker v3 (ZetaS/Cert/CheckerBase,
+# CheckerLeaves, CheckerCoreV3, CheckerTestsV3 are byte-identical to the audited files and import each other by bare
+# names). Each module here only imports ZetaS.Cert.<same name>; built as a dependency of ZetaS.
+[[lean_lib]]
+name = "ZetaSCertShims"
+srcDir = "ZetaSCertShims"
+roots = ["CheckerBase", "CheckerLeaves", "CheckerCoreV3"]
+
+# --- ZetaSReplay: the kernel replay of the K = 5 all-marks certificate `CertAM5` (ZetaSReplay/README.md): 1,478
+# generated modules with bare names, as in ZetaSCertShims (the shards R<class>_* of the 20 reversal classes, then
+# ReplayCommon, ReplayAM5 and ReplayHeadlines). ReplayHeadlines proves the hypothesis-free K = 5 theorems
+# ZetaS.Top.zeta_simple_K5_uncond and ZetaS.Top.zeta_distinct_K5_uncond. Not in defaultTargets: build it with
+# `lake build ZetaSReplay` (about 20 Lean-hours of CPU time, about 7 GB of build products, 1,478 modules). The replay
+# was last run on 28 September 2026, module by module, against commit bb7223b; the ZetaS/ of this release differs from
+# bb7223b's only in two doc-strings of ZetaS/ChallengeZetaS.lean (no declaration changed). Lake has no wildcard for
+# bare module names, so `globs` lists every module (generated from ZetaSReplay/MANIFEST.sha256); with `roots` alone,
+# the modules that ReplayHeadlines imports would not be found.
+[[lean_lib]]
+name = "ZetaSReplay"
+srcDir = "ZetaSReplay"
+roots = ["ReplayHeadlines"]
+globs = [
+  "ReplayHeadlines", "ReplayAM5", "ReplayCommon",
+  "R11111_Assembly", "R11111_Cells", "R11111_Cert", "R11111_Data", "R11111_Leaves0", "R11111_Leaves1",
+  "R11111_Leaves2", "R11111_Leaves3", "R11111_Leaves4", "R11111_Leaves5", "R11111_Leaves6", "R11111_Leaves7",
+  "R11111_Leaves8", "R11111_Leaves9", "R11111_Leaves10", "R11111_Leaves11", "R11111_Leaves12", "R11111_Leaves13",
+  "R11111_Leaves14", "R11111_Leaves15", "R11111_Leaves16", "R11111_Leaves17", "R11111_Leaves18", "R11111_Leaves19",
+  "R11111_Leaves20", "R11111_Leaves21", "R11111_Leaves22", "R11111_Leaves23", "R11111_Leaves24", "R11111_Leaves25",
+  "R11111_Leaves26", "R11111_Leaves27", "R11111_Leaves28", "R11111_Leaves29", "R11111_Leaves30", "R11111_Leaves31",
+  "R11111_Leaves32", "R11111_Leaves33", "R11111_Leaves34", "R11111_Leaves35", "R11111_Leaves36", "R11111_Leaves37",
+  "R11111_Leaves38", "R11111_Leaves39", "R11111_Leaves40", "R11111_Leaves41", "R11111_Leaves42", "R11111_Leaves43",
+  "R11111_Pts0", "R11111_Pts1", "R11111_Pts2", "R11111_Pts3", "R11111_Pts4", "R11111_Pts5", "R11111_Pts6",
+  "R11111_Pts7",
+  "R11112_Assembly", "R11112_Cells", "R11112_Cert", "R11112_Data", "R11112_Leaves0", "R11112_Leaves1",
+  "R11112_Leaves2", "R11112_Leaves3", "R11112_Leaves4", "R11112_Leaves5", "R11112_Leaves6", "R11112_Leaves7",
+  "R11112_Leaves8", "R11112_Leaves9", "R11112_Leaves10", "R11112_Leaves11", "R11112_Leaves12", "R11112_Leaves13",
+  "R11112_Leaves14", "R11112_Leaves15", "R11112_Leaves16", "R11112_Leaves17", "R11112_Leaves18", "R11112_Leaves19",
+  "R11112_Leaves20", "R11112_Leaves21", "R11112_Leaves22", "R11112_Leaves23", "R11112_Leaves24", "R11112_Leaves25",
+  "R11112_Leaves26", "R11112_Leaves27", "R11112_Leaves28", "R11112_Leaves29", "R11112_Leaves30", "R11112_Leaves31",
+  "R11112_Leaves32", "R11112_Leaves33", "R11112_Leaves34", "R11112_Leaves35", "R11112_Leaves36", "R11112_Leaves37",
+  "R11112_Leaves38", "R11112_Leaves39", "R11112_Leaves40", "R11112_Leaves41", "R11112_Leaves42", "R11112_Leaves43",
+  "R11112_Leaves44", "R11112_Leaves45", "R11112_Leaves46", "R11112_Leaves47", "R11112_Leaves48", "R11112_Leaves49",
+  "R11112_Leaves50", "R11112_Leaves51", "R11112_Leaves52", "R11112_Leaves53", "R11112_Leaves54", "R11112_Leaves55",
+  "R11112_Leaves56", "R11112_Leaves57", "R11112_Leaves58", "R11112_Leaves59", "R11112_Leaves60", "R11112_Pts0",
+  "R11112_Pts1", "R11112_Pts2", "R11112_Pts3", "R11112_Pts4", "R11112_Pts5", "R11112_Pts6", "R11112_Pts7",
+  "R11112_Pts8", "R11112_Pts9", "R11112_Pts10", "R11112_Pts11",
+  "R11121_Assembly", "R11121_Cells", "R11121_Cert", "R11121_Data", "R11121_Leaves0", "R11121_Leaves1",
+  "R11121_Leaves2", "R11121_Leaves3", "R11121_Leaves4", "R11121_Leaves5", "R11121_Leaves6", "R11121_Leaves7",
+  "R11121_Leaves8", "R11121_Leaves9", "R11121_Leaves10", "R11121_Leaves11", "R11121_Leaves12", "R11121_Leaves13",
+  "R11121_Leaves14", "R11121_Leaves15", "R11121_Leaves16", "R11121_Leaves17", "R11121_Leaves18", "R11121_Leaves19",
+  "R11121_Leaves20", "R11121_Leaves21", "R11121_Leaves22", "R11121_Leaves23", "R11121_Leaves24", "R11121_Leaves25",
+  "R11121_Leaves26", "R11121_Leaves27", "R11121_Leaves28", "R11121_Leaves29", "R11121_Leaves30", "R11121_Leaves31",
+  "R11121_Leaves32", "R11121_Leaves33", "R11121_Leaves34", "R11121_Leaves35", "R11121_Leaves36", "R11121_Leaves37",
+  "R11121_Leaves38", "R11121_Leaves39", "R11121_Leaves40", "R11121_Leaves41", "R11121_Leaves42", "R11121_Leaves43",
+  "R11121_Leaves44", "R11121_Leaves45", "R11121_Leaves46", "R11121_Leaves47", "R11121_Leaves48", "R11121_Leaves49",
+  "R11121_Leaves50", "R11121_Leaves51", "R11121_Leaves52", "R11121_Pts0", "R11121_Pts1", "R11121_Pts2",
+  "R11121_Pts3", "R11121_Pts4", "R11121_Pts5", "R11121_Pts6", "R11121_Pts7", "R11121_Pts8",
+  "R11122_Assembly", "R11122_Cells", "R11122_Cert", "R11122_Data", "R11122_Leaves0", "R11122_Leaves1",
+  "R11122_Leaves2", "R11122_Leaves3", "R11122_Leaves4", "R11122_Leaves5", "R11122_Leaves6", "R11122_Leaves7",
+  "R11122_Leaves8", "R11122_Leaves9", "R11122_Leaves10", "R11122_Leaves11", "R11122_Leaves12", "R11122_Leaves13",
+  "R11122_Leaves14", "R11122_Leaves15", "R11122_Leaves16", "R11122_Leaves17", "R11122_Leaves18", "R11122_Leaves19",
+  "R11122_Leaves20", "R11122_Leaves21", "R11122_Leaves22", "R11122_Leaves23", "R11122_Leaves24", "R11122_Leaves25",
+  "R11122_Leaves26", "R11122_Leaves27", "R11122_Leaves28", "R11122_Leaves29", "R11122_Leaves30", "R11122_Leaves31",
+  "R11122_Leaves32", "R11122_Leaves33", "R11122_Leaves34", "R11122_Leaves35", "R11122_Leaves36", "R11122_Leaves37",
+  "R11122_Leaves38", "R11122_Leaves39", "R11122_Leaves40", "R11122_Leaves41", "R11122_Leaves42", "R11122_Leaves43",
+  "R11122_Leaves44", "R11122_Leaves45", "R11122_Leaves46", "R11122_Leaves47", "R11122_Leaves48", "R11122_Leaves49",
+  "R11122_Leaves50", "R11122_Leaves51", "R11122_Leaves52", "R11122_Leaves53", "R11122_Leaves54", "R11122_Leaves55",
+  "R11122_Leaves56", "R11122_Leaves57", "R11122_Leaves58", "R11122_Leaves59", "R11122_Leaves60", "R11122_Leaves61",
+  "R11122_Pts0", "R11122_Pts1", "R11122_Pts2", "R11122_Pts3", "R11122_Pts4", "R11122_Pts5", "R11122_Pts6",
+  "R11122_Pts7", "R11122_Pts8", "R11122_Pts9", "R11122_Pts10", "R11122_Pts11",
+  "R11211_Assembly", "R11211_Cells", "R11211_Cert", "R11211_Data", "R11211_Leaves0", "R11211_Leaves1",
+  "R11211_Leaves2", "R11211_Leaves3", "R11211_Leaves4", "R11211_Leaves5", "R11211_Leaves6", "R11211_Leaves7",
+  "R11211_Leaves8", "R11211_Leaves9", "R11211_Leaves10", "R11211_Leaves11", "R11211_Leaves12", "R11211_Leaves13",
+  "R11211_Leaves14", "R11211_Leaves15", "R11211_Leaves16", "R11211_Leaves17", "R11211_Leaves18", "R11211_Leaves19",
+  "R11211_Leaves20", "R11211_Leaves21", "R11211_Leaves22", "R11211_Leaves23", "R11211_Leaves24", "R11211_Leaves25",
+  "R11211_Leaves26", "R11211_Leaves27", "R11211_Leaves28", "R11211_Leaves29", "R11211_Leaves30", "R11211_Leaves31",
+  "R11211_Leaves32", "R11211_Leaves33", "R11211_Leaves34", "R11211_Leaves35", "R11211_Leaves36", "R11211_Leaves37",
+  "R11211_Leaves38", "R11211_Leaves39", "R11211_Leaves40", "R11211_Leaves41", "R11211_Leaves42", "R11211_Leaves43",
+  "R11211_Leaves44", "R11211_Leaves45", "R11211_Leaves46", "R11211_Leaves47", "R11211_Leaves48", "R11211_Leaves49",
+  "R11211_Leaves50", "R11211_Leaves51", "R11211_Leaves52", "R11211_Leaves53", "R11211_Leaves54", "R11211_Pts0",
+  "R11211_Pts1", "R11211_Pts2", "R11211_Pts3", "R11211_Pts4", "R11211_Pts5", "R11211_Pts6", "R11211_Pts7",
+  "R11211_Pts8",
+  "R11212_Assembly", "R11212_Cells", "R11212_Cert", "R11212_Data", "R11212_Leaves0", "R11212_Leaves1",
+  "R11212_Leaves2", "R11212_Leaves3", "R11212_Leaves4", "R11212_Leaves5", "R11212_Leaves6", "R11212_Leaves7",
+  "R11212_Leaves8", "R11212_Leaves9", "R11212_Leaves10", "R11212_Leaves11", "R11212_Leaves12", "R11212_Leaves13",
+  "R11212_Leaves14", "R11212_Leaves15", "R11212_Leaves16", "R11212_Leaves17", "R11212_Leaves18", "R11212_Leaves19",
+  "R11212_Leaves20", "R11212_Leaves21", "R11212_Leaves22", "R11212_Leaves23", "R11212_Leaves24", "R11212_Leaves25",
+  "R11212_Leaves26", "R11212_Leaves27", "R11212_Leaves28", "R11212_Leaves29", "R11212_Leaves30", "R11212_Leaves31",
+  "R11212_Leaves32", "R11212_Leaves33", "R11212_Leaves34", "R11212_Leaves35", "R11212_Leaves36", "R11212_Leaves37",
+  "R11212_Leaves38", "R11212_Leaves39", "R11212_Leaves40", "R11212_Leaves41", "R11212_Leaves42", "R11212_Leaves43",
+  "R11212_Leaves44", "R11212_Leaves45", "R11212_Leaves46", "R11212_Leaves47", "R11212_Leaves48", "R11212_Leaves49",
+  "R11212_Leaves50", "R11212_Leaves51", "R11212_Leaves52", "R11212_Leaves53", "R11212_Leaves54", "R11212_Leaves55",
+  "R11212_Leaves56", "R11212_Leaves57", "R11212_Leaves58", "R11212_Leaves59", "R11212_Leaves60", "R11212_Leaves61",
+  "R11212_Leaves62", "R11212_Leaves63", "R11212_Leaves64", "R11212_Leaves65", "R11212_Leaves66", "R11212_Leaves67",
+  "R11212_Leaves68", "R11212_Leaves69", "R11212_Pts0", "R11212_Pts1", "R11212_Pts2", "R11212_Pts3", "R11212_Pts4",
+  "R11212_Pts5", "R11212_Pts6", "R11212_Pts7", "R11212_Pts8", "R11212_Pts9", "R11212_Pts10", "R11212_Pts11",
+  "R11212_Pts12", "R11212_Pts13", "R11212_Pts14",
+  "R11221_Assembly", "R11221_Cells", "R11221_Cert", "R11221_Data", "R11221_Leaves0", "R11221_Leaves1",
+  "R11221_Leaves2", "R11221_Leaves3", "R11221_Leaves4", "R11221_Leaves5", "R11221_Leaves6", "R11221_Leaves7",
+  "R11221_Leaves8", "R11221_Leaves9", "R11221_Leaves10", "R11221_Leaves11", "R11221_Leaves12", "R11221_Leaves13",
+  "R11221_Leaves14", "R11221_Leaves15", "R11221_Leaves16", "R11221_Leaves17", "R11221_Leaves18", "R11221_Leaves19",
+  "R11221_Leaves20", "R11221_Leaves21", "R11221_Leaves22", "R11221_Leaves23", "R11221_Leaves24", "R11221_Leaves25",
+  "R11221_Leaves26", "R11221_Leaves27", "R11221_Leaves28", "R11221_Leaves29", "R11221_Leaves30", "R11221_Leaves31",
+  "R11221_Leaves32", "R11221_Leaves33", "R11221_Leaves34", "R11221_Leaves35", "R11221_Leaves36", "R11221_Leaves37",
+  "R11221_Leaves38", "R11221_Leaves39", "R11221_Leaves40", "R11221_Leaves41", "R11221_Leaves42", "R11221_Leaves43",
+  "R11221_Leaves44", "R11221_Leaves45", "R11221_Leaves46", "R11221_Leaves47", "R11221_Leaves48", "R11221_Leaves49",
+  "R11221_Leaves50", "R11221_Leaves51", "R11221_Leaves52", "R11221_Leaves53", "R11221_Leaves54", "R11221_Leaves55",
+  "R11221_Leaves56", "R11221_Leaves57", "R11221_Leaves58", "R11221_Leaves59", "R11221_Leaves60", "R11221_Pts0",
+  "R11221_Pts1", "R11221_Pts2", "R11221_Pts3", "R11221_Pts4", "R11221_Pts5", "R11221_Pts6", "R11221_Pts7",
+  "R11221_Pts8", "R11221_Pts9", "R11221_Pts10", "R11221_Pts11",
+  "R11222_Assembly", "R11222_Cells", "R11222_Cert", "R11222_Data", "R11222_Leaves0", "R11222_Leaves1",
+  "R11222_Leaves2", "R11222_Leaves3", "R11222_Leaves4", "R11222_Leaves5", "R11222_Leaves6", "R11222_Leaves7",
+  "R11222_Leaves8", "R11222_Leaves9", "R11222_Leaves10", "R11222_Leaves11", "R11222_Leaves12", "R11222_Leaves13",
+  "R11222_Leaves14", "R11222_Leaves15", "R11222_Leaves16", "R11222_Leaves17", "R11222_Leaves18", "R11222_Leaves19",
+  "R11222_Leaves20", "R11222_Leaves21", "R11222_Leaves22", "R11222_Leaves23", "R11222_Leaves24", "R11222_Leaves25",
+  "R11222_Leaves26", "R11222_Leaves27", "R11222_Leaves28", "R11222_Leaves29", "R11222_Leaves30", "R11222_Leaves31",
+  "R11222_Leaves32", "R11222_Leaves33", "R11222_Leaves34", "R11222_Leaves35", "R11222_Leaves36", "R11222_Leaves37",
+  "R11222_Leaves38", "R11222_Leaves39", "R11222_Leaves40", "R11222_Leaves41", "R11222_Leaves42", "R11222_Leaves43",
+  "R11222_Leaves44", "R11222_Leaves45", "R11222_Leaves46", "R11222_Leaves47", "R11222_Leaves48", "R11222_Leaves49",
+  "R11222_Leaves50", "R11222_Leaves51", "R11222_Leaves52", "R11222_Leaves53", "R11222_Leaves54", "R11222_Leaves55",
+  "R11222_Leaves56", "R11222_Leaves57", "R11222_Leaves58", "R11222_Pts0", "R11222_Pts1", "R11222_Pts2",
+  "R11222_Pts3", "R11222_Pts4", "R11222_Pts5", "R11222_Pts6", "R11222_Pts7", "R11222_Pts8", "R11222_Pts9",
+  "R11222_Pts10", "R11222_Pts11", "R11222_Pts12",
+  "R12112_Assembly", "R12112_Cells", "R12112_Cert", "R12112_Data", "R12112_Leaves0", "R12112_Leaves1",
+  "R12112_Leaves2", "R12112_Leaves3", "R12112_Leaves4", "R12112_Leaves5", "R12112_Leaves6", "R12112_Leaves7",
+  "R12112_Leaves8", "R12112_Leaves9", "R12112_Leaves10", "R12112_Leaves11", "R12112_Leaves12", "R12112_Leaves13",
+  "R12112_Leaves14", "R12112_Leaves15", "R12112_Leaves16", "R12112_Leaves17", "R12112_Leaves18", "R12112_Leaves19",
+  "R12112_Leaves20", "R12112_Leaves21", "R12112_Leaves22", "R12112_Leaves23", "R12112_Leaves24", "R12112_Leaves25",
+  "R12112_Leaves26", "R12112_Leaves27", "R12112_Leaves28", "R12112_Leaves29", "R12112_Leaves30", "R12112_Leaves31",
+  "R12112_Leaves32", "R12112_Leaves33", "R12112_Leaves34", "R12112_Leaves35", "R12112_Leaves36", "R12112_Leaves37",
+  "R12112_Leaves38", "R12112_Leaves39", "R12112_Leaves40", "R12112_Leaves41", "R12112_Leaves42", "R12112_Leaves43",
+  "R12112_Leaves44", "R12112_Leaves45", "R12112_Leaves46", "R12112_Leaves47", "R12112_Leaves48", "R12112_Leaves49",
+  "R12112_Leaves50", "R12112_Leaves51", "R12112_Leaves52", "R12112_Leaves53", "R12112_Leaves54", "R12112_Leaves55",
+  "R12112_Leaves56", "R12112_Leaves57", "R12112_Leaves58", "R12112_Leaves59", "R12112_Leaves60", "R12112_Leaves61",
+  "R12112_Leaves62", "R12112_Pts0", "R12112_Pts1", "R12112_Pts2", "R12112_Pts3", "R12112_Pts4", "R12112_Pts5",
+  "R12112_Pts6", "R12112_Pts7", "R12112_Pts8", "R12112_Pts9", "R12112_Pts10", "R12112_Pts11",
+  "R12121_Assembly", "R12121_Cells", "R12121_Cert", "R12121_Data", "R12121_Leaves0", "R12121_Leaves1",
+  "R12121_Leaves2", "R12121_Leaves3", "R12121_Leaves4", "R12121_Leaves5", "R12121_Leaves6", "R12121_Leaves7",
+  "R12121_Leaves8", "R12121_Leaves9", "R12121_Leaves10", "R12121_Leaves11", "R12121_Leaves12", "R12121_Leaves13",
+  "R12121_Leaves14", "R12121_Leaves15", "R12121_Leaves16", "R12121_Leaves17", "R12121_Leaves18", "R12121_Leaves19",
+  "R12121_Leaves20", "R12121_Leaves21", "R12121_Leaves22", "R12121_Leaves23", "R12121_Leaves24", "R12121_Leaves25",
+  "R12121_Leaves26", "R12121_Leaves27", "R12121_Leaves28", "R12121_Leaves29", "R12121_Leaves30", "R12121_Leaves31",
+  "R12121_Leaves32", "R12121_Leaves33", "R12121_Leaves34", "R12121_Leaves35", "R12121_Leaves36", "R12121_Leaves37",
+  "R12121_Leaves38", "R12121_Leaves39", "R12121_Leaves40", "R12121_Leaves41", "R12121_Leaves42", "R12121_Leaves43",
+  "R12121_Leaves44", "R12121_Leaves45", "R12121_Leaves46", "R12121_Leaves47", "R12121_Leaves48", "R12121_Leaves49",
+  "R12121_Leaves50", "R12121_Leaves51", "R12121_Leaves52", "R12121_Leaves53", "R12121_Leaves54", "R12121_Pts0",
+  "R12121_Pts1", "R12121_Pts2", "R12121_Pts3", "R12121_Pts4", "R12121_Pts5", "R12121_Pts6", "R12121_Pts7",
+  "R12121_Pts8", "R12121_Pts9",
+  "R12122_Assembly", "R12122_Cells", "R12122_Cert", "R12122_Data", "R12122_Leaves0", "R12122_Leaves1",
+  "R12122_Leaves2", "R12122_Leaves3", "R12122_Leaves4", "R12122_Leaves5", "R12122_Leaves6", "R12122_Leaves7",
+  "R12122_Leaves8", "R12122_Leaves9", "R12122_Leaves10", "R12122_Leaves11", "R12122_Leaves12", "R12122_Leaves13",
+  "R12122_Leaves14", "R12122_Leaves15", "R12122_Leaves16", "R12122_Leaves17", "R12122_Leaves18", "R12122_Leaves19",
+  "R12122_Leaves20", "R12122_Leaves21", "R12122_Leaves22", "R12122_Leaves23", "R12122_Leaves24", "R12122_Leaves25",
+  "R12122_Leaves26", "R12122_Leaves27", "R12122_Leaves28", "R12122_Leaves29", "R12122_Leaves30", "R12122_Leaves31",
+  "R12122_Leaves32", "R12122_Leaves33", "R12122_Leaves34", "R12122_Leaves35", "R12122_Leaves36", "R12122_Leaves37",
+  "R12122_Leaves38", "R12122_Leaves39", "R12122_Leaves40", "R12122_Leaves41", "R12122_Leaves42", "R12122_Leaves43",
+  "R12122_Leaves44", "R12122_Leaves45", "R12122_Leaves46", "R12122_Leaves47", "R12122_Leaves48", "R12122_Leaves49",
+  "R12122_Leaves50", "R12122_Leaves51", "R12122_Leaves52", "R12122_Leaves53", "R12122_Leaves54", "R12122_Leaves55",
+  "R12122_Leaves56", "R12122_Leaves57", "R12122_Pts0", "R12122_Pts1", "R12122_Pts2", "R12122_Pts3", "R12122_Pts4",
+  "R12122_Pts5", "R12122_Pts6", "R12122_Pts7", "R12122_Pts8", "R12122_Pts9", "R12122_Pts10", "R12122_Pts11",
+  "R12212_Assembly", "R12212_Cells", "R12212_Cert", "R12212_Data", "R12212_Leaves0", "R12212_Leaves1",
+  "R12212_Leaves2", "R12212_Leaves3", "R12212_Leaves4", "R12212_Leaves5", "R12212_Leaves6", "R12212_Leaves7",
+  "R12212_Leaves8", "R12212_Leaves9", "R12212_Leaves10", "R12212_Leaves11", "R12212_Leaves12", "R12212_Leaves13",
+  "R12212_Leaves14", "R12212_Leaves15", "R12212_Leaves16", "R12212_Leaves17", "R12212_Leaves18", "R12212_Leaves19",
+  "R12212_Leaves20", "R12212_Leaves21", "R12212_Leaves22", "R12212_Leaves23", "R12212_Leaves24", "R12212_Leaves25",
+  "R12212_Leaves26", "R12212_Leaves27", "R12212_Leaves28", "R12212_Leaves29", "R12212_Leaves30", "R12212_Leaves31",
+  "R12212_Leaves32", "R12212_Leaves33", "R12212_Leaves34", "R12212_Leaves35", "R12212_Leaves36", "R12212_Leaves37",
+  "R12212_Leaves38", "R12212_Leaves39", "R12212_Leaves40", "R12212_Leaves41", "R12212_Leaves42", "R12212_Leaves43",
+  "R12212_Leaves44", "R12212_Leaves45", "R12212_Leaves46", "R12212_Leaves47", "R12212_Leaves48", "R12212_Leaves49",
+  "R12212_Leaves50", "R12212_Leaves51", "R12212_Leaves52", "R12212_Leaves53", "R12212_Leaves54", "R12212_Leaves55",
+  "R12212_Leaves56", "R12212_Leaves57", "R12212_Pts0", "R12212_Pts1", "R12212_Pts2", "R12212_Pts3", "R12212_Pts4",
+  "R12212_Pts5", "R12212_Pts6", "R12212_Pts7", "R12212_Pts8", "R12212_Pts9", "R12212_Pts10", "R12212_Pts11",
+  "R12221_Assembly", "R12221_Cells", "R12221_Cert", "R12221_Data", "R12221_Leaves0", "R12221_Leaves1",
+  "R12221_Leaves2", "R12221_Leaves3", "R12221_Leaves4", "R12221_Leaves5", "R12221_Leaves6", "R12221_Leaves7",
+  "R12221_Leaves8", "R12221_Leaves9", "R12221_Leaves10", "R12221_Leaves11", "R12221_Leaves12", "R12221_Leaves13",
+  "R12221_Leaves14", "R12221_Leaves15", "R12221_Leaves16", "R12221_Leaves17", "R12221_Leaves18", "R12221_Leaves19",
+  "R12221_Leaves20", "R12221_Leaves21", "R12221_Leaves22", "R12221_Leaves23", "R12221_Leaves24", "R12221_Leaves25",
+  "R12221_Leaves26", "R12221_Leaves27", "R12221_Leaves28", "R12221_Leaves29", "R12221_Leaves30", "R12221_Leaves31",
+  "R12221_Leaves32", "R12221_Leaves33", "R12221_Leaves34", "R12221_Leaves35", "R12221_Leaves36", "R12221_Leaves37",
+  "R12221_Leaves38", "R12221_Leaves39", "R12221_Leaves40", "R12221_Leaves41", "R12221_Leaves42", "R12221_Leaves43",
+  "R12221_Leaves44", "R12221_Leaves45", "R12221_Leaves46", "R12221_Leaves47", "R12221_Leaves48", "R12221_Leaves49",
+  "R12221_Pts0", "R12221_Pts1", "R12221_Pts2", "R12221_Pts3", "R12221_Pts4", "R12221_Pts5", "R12221_Pts6",
+  "R12221_Pts7", "R12221_Pts8", "R12221_Pts9",
+  "R12222_Assembly", "R12222_Cells", "R12222_Cert", "R12222_Data", "R12222_Leaves0", "R12222_Leaves1",
+  "R12222_Leaves2", "R12222_Leaves3", "R12222_Leaves4", "R12222_Leaves5", "R12222_Leaves6", "R12222_Leaves7",
+  "R12222_Leaves8", "R12222_Leaves9", "R12222_Leaves10", "R12222_Leaves11", "R12222_Leaves12", "R12222_Leaves13",
+  "R12222_Leaves14", "R12222_Leaves15", "R12222_Leaves16", "R12222_Leaves17", "R12222_Leaves18", "R12222_Leaves19",
+  "R12222_Leaves20", "R12222_Leaves21", "R12222_Leaves22", "R12222_Leaves23", "R12222_Leaves24", "R12222_Leaves25",
+  "R12222_Leaves26", "R12222_Leaves27", "R12222_Leaves28", "R12222_Leaves29", "R12222_Leaves30", "R12222_Leaves31",
+  "R12222_Leaves32", "R12222_Leaves33", "R12222_Leaves34", "R12222_Leaves35", "R12222_Leaves36", "R12222_Leaves37",
+  "R12222_Leaves38", "R12222_Leaves39", "R12222_Leaves40", "R12222_Leaves41", "R12222_Leaves42", "R12222_Leaves43",
+  "R12222_Leaves44", "R12222_Leaves45", "R12222_Leaves46", "R12222_Leaves47", "R12222_Leaves48", "R12222_Leaves49",
+  "R12222_Leaves50", "R12222_Pts0", "R12222_Pts1", "R12222_Pts2", "R12222_Pts3", "R12222_Pts4", "R12222_Pts5",
+  "R12222_Pts6", "R12222_Pts7", "R12222_Pts8", "R12222_Pts9", "R12222_Pts10", "R12222_Pts11",
+  "R21112_Assembly", "R21112_Cells", "R21112_Cert", "R21112_Data", "R21112_Leaves0", "R21112_Leaves1",
+  "R21112_Leaves2", "R21112_Leaves3", "R21112_Leaves4", "R21112_Leaves5", "R21112_Leaves6", "R21112_Leaves7",
+  "R21112_Leaves8", "R21112_Leaves9", "R21112_Leaves10", "R21112_Leaves11", "R21112_Leaves12", "R21112_Leaves13",
+  "R21112_Leaves14", "R21112_Leaves15", "R21112_Leaves16", "R21112_Leaves17", "R21112_Leaves18", "R21112_Leaves19",
+  "R21112_Leaves20", "R21112_Leaves21", "R21112_Leaves22", "R21112_Leaves23", "R21112_Leaves24", "R21112_Leaves25",
+  "R21112_Leaves26", "R21112_Leaves27", "R21112_Leaves28", "R21112_Leaves29", "R21112_Leaves30", "R21112_Leaves31",
+  "R21112_Leaves32", "R21112_Leaves33", "R21112_Leaves34", "R21112_Leaves35", "R21112_Leaves36", "R21112_Leaves37",
+  "R21112_Leaves38", "R21112_Leaves39", "R21112_Leaves40", "R21112_Leaves41", "R21112_Leaves42", "R21112_Leaves43",
+  "R21112_Leaves44", "R21112_Leaves45", "R21112_Leaves46", "R21112_Leaves47", "R21112_Leaves48", "R21112_Leaves49",
+  "R21112_Leaves50", "R21112_Leaves51", "R21112_Leaves52", "R21112_Leaves53", "R21112_Leaves54", "R21112_Leaves55",
+  "R21112_Leaves56", "R21112_Leaves57", "R21112_Leaves58", "R21112_Leaves59", "R21112_Leaves60", "R21112_Leaves61",
+  "R21112_Leaves62", "R21112_Leaves63", "R21112_Leaves64", "R21112_Leaves65", "R21112_Leaves66", "R21112_Leaves67",
+  "R21112_Leaves68", "R21112_Leaves69", "R21112_Pts0", "R21112_Pts1", "R21112_Pts2", "R21112_Pts3", "R21112_Pts4",
+  "R21112_Pts5", "R21112_Pts6", "R21112_Pts7", "R21112_Pts8", "R21112_Pts9", "R21112_Pts10", "R21112_Pts11",
+  "R21112_Pts12",
+  "R21122_Assembly", "R21122_Cells", "R21122_Cert", "R21122_Data", "R21122_Leaves0", "R21122_Leaves1",
+  "R21122_Leaves2", "R21122_Leaves3", "R21122_Leaves4", "R21122_Leaves5", "R21122_Leaves6", "R21122_Leaves7",
+  "R21122_Leaves8", "R21122_Leaves9", "R21122_Leaves10", "R21122_Leaves11", "R21122_Leaves12", "R21122_Leaves13",
+  "R21122_Leaves14", "R21122_Leaves15", "R21122_Leaves16", "R21122_Leaves17", "R21122_Leaves18", "R21122_Leaves19",
+  "R21122_Leaves20", "R21122_Leaves21", "R21122_Leaves22", "R21122_Leaves23", "R21122_Leaves24", "R21122_Leaves25",
+  "R21122_Leaves26", "R21122_Leaves27", "R21122_Leaves28", "R21122_Leaves29", "R21122_Leaves30", "R21122_Leaves31",
+  "R21122_Leaves32", "R21122_Leaves33", "R21122_Leaves34", "R21122_Leaves35", "R21122_Leaves36", "R21122_Leaves37",
+  "R21122_Leaves38", "R21122_Leaves39", "R21122_Leaves40", "R21122_Leaves41", "R21122_Leaves42", "R21122_Leaves43",
+  "R21122_Leaves44", "R21122_Leaves45", "R21122_Leaves46", "R21122_Leaves47", "R21122_Leaves48", "R21122_Leaves49",
+  "R21122_Leaves50", "R21122_Leaves51", "R21122_Leaves52", "R21122_Leaves53", "R21122_Leaves54", "R21122_Leaves55",
+  "R21122_Leaves56", "R21122_Leaves57", "R21122_Leaves58", "R21122_Leaves59", "R21122_Leaves60", "R21122_Leaves61",
+  "R21122_Leaves62", "R21122_Leaves63", "R21122_Pts0", "R21122_Pts1", "R21122_Pts2", "R21122_Pts3", "R21122_Pts4",
+  "R21122_Pts5", "R21122_Pts6", "R21122_Pts7", "R21122_Pts8", "R21122_Pts9", "R21122_Pts10", "R21122_Pts11",
+  "R21122_Pts12", "R21122_Pts13",
+  "R21212_Assembly", "R21212_Cells", "R21212_Cert", "R21212_Data", "R21212_Leaves0", "R21212_Leaves1",
+  "R21212_Leaves2", "R21212_Leaves3", "R21212_Leaves4", "R21212_Leaves5", "R21212_Leaves6", "R21212_Leaves7",
+  "R21212_Leaves8", "R21212_Leaves9", "R21212_Leaves10", "R21212_Leaves11", "R21212_Leaves12", "R21212_Leaves13",
+  "R21212_Leaves14", "R21212_Leaves15", "R21212_Leaves16", "R21212_Leaves17", "R21212_Leaves18", "R21212_Leaves19",
+  "R21212_Leaves20", "R21212_Leaves21", "R21212_Leaves22", "R21212_Leaves23", "R21212_Leaves24", "R21212_Leaves25",
+  "R21212_Leaves26", "R21212_Leaves27", "R21212_Leaves28", "R21212_Leaves29", "R21212_Leaves30", "R21212_Leaves31",
+  "R21212_Leaves32", "R21212_Leaves33", "R21212_Leaves34", "R21212_Leaves35", "R21212_Leaves36", "R21212_Leaves37",
+  "R21212_Leaves38", "R21212_Leaves39", "R21212_Leaves40", "R21212_Leaves41", "R21212_Leaves42", "R21212_Leaves43",
+  "R21212_Leaves44", "R21212_Leaves45", "R21212_Leaves46", "R21212_Leaves47", "R21212_Leaves48", "R21212_Leaves49",
+  "R21212_Leaves50", "R21212_Leaves51", "R21212_Leaves52", "R21212_Leaves53", "R21212_Leaves54", "R21212_Leaves55",
+  "R21212_Leaves56", "R21212_Leaves57", "R21212_Leaves58", "R21212_Leaves59", "R21212_Leaves60", "R21212_Leaves61",
+  "R21212_Pts0", "R21212_Pts1", "R21212_Pts2", "R21212_Pts3", "R21212_Pts4", "R21212_Pts5", "R21212_Pts6",
+  "R21212_Pts7", "R21212_Pts8", "R21212_Pts9", "R21212_Pts10", "R21212_Pts11", "R21212_Pts12",
+  "R21222_Assembly", "R21222_Cells", "R21222_Cert", "R21222_Data", "R21222_Leaves0", "R21222_Leaves1",
+  "R21222_Leaves2", "R21222_Leaves3", "R21222_Leaves4", "R21222_Leaves5", "R21222_Leaves6", "R21222_Leaves7",
+  "R21222_Leaves8", "R21222_Leaves9", "R21222_Leaves10", "R21222_Leaves11", "R21222_Leaves12", "R21222_Leaves13",
+  "R21222_Leaves14", "R21222_Leaves15", "R21222_Leaves16", "R21222_Leaves17", "R21222_Leaves18", "R21222_Leaves19",
+  "R21222_Leaves20", "R21222_Leaves21", "R21222_Leaves22", "R21222_Leaves23", "R21222_Leaves24", "R21222_Leaves25",
+  "R21222_Leaves26", "R21222_Leaves27", "R21222_Leaves28", "R21222_Leaves29", "R21222_Leaves30", "R21222_Leaves31",
+  "R21222_Leaves32", "R21222_Leaves33", "R21222_Leaves34", "R21222_Leaves35", "R21222_Leaves36", "R21222_Leaves37",
+  "R21222_Leaves38", "R21222_Leaves39", "R21222_Leaves40", "R21222_Leaves41", "R21222_Leaves42", "R21222_Leaves43",
+  "R21222_Leaves44", "R21222_Leaves45", "R21222_Leaves46", "R21222_Leaves47", "R21222_Leaves48", "R21222_Leaves49",
+  "R21222_Leaves50", "R21222_Leaves51", "R21222_Leaves52", "R21222_Leaves53", "R21222_Leaves54", "R21222_Leaves55",
+  "R21222_Leaves56", "R21222_Pts0", "R21222_Pts1", "R21222_Pts2", "R21222_Pts3", "R21222_Pts4", "R21222_Pts5",
+  "R21222_Pts6", "R21222_Pts7", "R21222_Pts8", "R21222_Pts9", "R21222_Pts10", "R21222_Pts11", "R21222_Pts12",
+  "R22122_Assembly", "R22122_Cells", "R22122_Cert", "R22122_Data", "R22122_Leaves0", "R22122_Leaves1",
+  "R22122_Leaves2", "R22122_Leaves3", "R22122_Leaves4", "R22122_Leaves5", "R22122_Leaves6", "R22122_Leaves7",
+  "R22122_Leaves8", "R22122_Leaves9", "R22122_Leaves10", "R22122_Leaves11", "R22122_Leaves12", "R22122_Leaves13",
+  "R22122_Leaves14", "R22122_Leaves15", "R22122_Leaves16", "R22122_Leaves17", "R22122_Leaves18", "R22122_Leaves19",
+  "R22122_Leaves20", "R22122_Leaves21", "R22122_Leaves22", "R22122_Leaves23", "R22122_Leaves24", "R22122_Leaves25",
+  "R22122_Leaves26", "R22122_Leaves27", "R22122_Leaves28", "R22122_Leaves29", "R22122_Leaves30", "R22122_Leaves31",
+  "R22122_Leaves32", "R22122_Leaves33", "R22122_Leaves34", "R22122_Leaves35", "R22122_Leaves36", "R22122_Leaves37",
+  "R22122_Leaves38", "R22122_Leaves39", "R22122_Leaves40", "R22122_Leaves41", "R22122_Leaves42", "R22122_Leaves43",
+  "R22122_Leaves44", "R22122_Leaves45", "R22122_Leaves46", "R22122_Leaves47", "R22122_Leaves48", "R22122_Leaves49",
+  "R22122_Leaves50", "R22122_Leaves51", "R22122_Leaves52", "R22122_Leaves53", "R22122_Leaves54", "R22122_Leaves55",
+  "R22122_Leaves56", "R22122_Leaves57", "R22122_Leaves58", "R22122_Pts0", "R22122_Pts1", "R22122_Pts2",
+  "R22122_Pts3", "R22122_Pts4", "R22122_Pts5", "R22122_Pts6", "R22122_Pts7", "R22122_Pts8", "R22122_Pts9",
+  "R22122_Pts10", "R22122_Pts11", "R22122_Pts12",
+  "R22222_Assembly", "R22222_Cells", "R22222_Cert", "R22222_Data", "R22222_Leaves0", "R22222_Leaves1",
+  "R22222_Leaves2", "R22222_Leaves3", "R22222_Leaves4", "R22222_Leaves5", "R22222_Leaves6", "R22222_Leaves7",
+  "R22222_Leaves8", "R22222_Leaves9", "R22222_Leaves10", "R22222_Leaves11", "R22222_Leaves12", "R22222_Leaves13",
+  "R22222_Leaves14", "R22222_Leaves15", "R22222_Leaves16", "R22222_Leaves17", "R22222_Leaves18", "R22222_Leaves19",
+  "R22222_Leaves20", "R22222_Leaves21", "R22222_Leaves22", "R22222_Leaves23", "R22222_Leaves24", "R22222_Leaves25",
+  "R22222_Leaves26", "R22222_Leaves27", "R22222_Leaves28", "R22222_Leaves29", "R22222_Leaves30", "R22222_Leaves31",
+  "R22222_Leaves32", "R22222_Leaves33", "R22222_Leaves34", "R22222_Leaves35", "R22222_Leaves36", "R22222_Leaves37",
+  "R22222_Leaves38", "R22222_Leaves39", "R22222_Leaves40", "R22222_Leaves41", "R22222_Leaves42", "R22222_Leaves43",
+  "R22222_Leaves44", "R22222_Leaves45", "R22222_Leaves46", "R22222_Leaves47", "R22222_Leaves48", "R22222_Leaves49",
+  "R22222_Pts0", "R22222_Pts1", "R22222_Pts2", "R22222_Pts3", "R22222_Pts4", "R22222_Pts5", "R22222_Pts6",
+  "R22222_Pts7", "R22222_Pts8"
+]

@@ -1,0 +1,26 @@
+# Track-C checker v3 (L1_1c): FROZEN files, identified by sha256 (rh72/lean_board/reports/L0_5_integration.md).
+# Stored and checked out byte for byte: no line-ending conversion, so the checksums hold in every tree.
+ZetaS/Cert/CheckerBase.lean -text
+ZetaS/Cert/CheckerLeaves.lean -text
+ZetaS/Cert/CheckerCoreV3.lean -text
+ZetaS/Cert/CheckerTestsV3.lean -text
+# Comparator package FollowUpZeta (L9_1b): checked by sha256 (lead, 12:25); byte for byte as well.
+comparator/ChallengeDeps/FollowUpZeta.lean -text
+comparator/Challenge/FollowUpZeta.lean -text
+comparator/Solution/FollowUpZeta.lean -text
+comparator/PrintAxioms/FollowUpZeta.lean -text
+comparator/config-followup.json -text
+comparator/README_followup.md -text
+# Release v1.0: the K = 5 kernel replay (ZetaSReplay/, checked by ZetaSReplay/MANIFEST.sha256) and the
+# supplementary data (supplementary/, checked by supplementary/CHECKSUMS.sha256 and by the sha256 values printed in
+# the paper and in comparator/ChallengeDeps/FollowUpZeta.lean) are stored byte for byte as well: the generated
+# files have CRLF line endings, and the recorded checksums are those of these exact bytes.
+ZetaSReplay/** -text
+supplementary/** -text
+# Comparator package FollowUpFamily (L9_1c, 3 Oct; lead's integration 56/n): byte for byte as well.
+comparator/ChallengeDeps/FollowUpFamily.lean -text
+comparator/Challenge/FollowUpFamily.lean -text
+comparator/Solution/FollowUpFamily.lean -text
+comparator/PrintAxioms/FollowUpFamily.lean -text
+comparator/config-followup-family.json -text
+comparator/README_followup_family.md -text

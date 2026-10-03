@@ -1,0 +1,784 @@
+⚠ [8710/8992] Replayed Zeta23.XiPrime.Certificate.D1
+warning: Zeta23/XiPrime/Certificate/D1.lean:307:68: `intervalIntegral.integral_finset_sum` has been deprecated: Use `intervalIntegral.integral_finsetSum` instead
+warning: Zeta23/XiPrime/Certificate/D1.lean:316:11: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+⚠ [8711/8992] Replayed Zeta23.XiPrime.Certificate.Poly
+warning: Zeta23/XiPrime/Certificate/Poly.lean:42:6: `intervalIntegral.integral_finset_sum` has been deprecated: Use `intervalIntegral.integral_finsetSum` instead
+⚠ [8718/8992] Replayed Zeta23.ZeroSide
+warning: Zeta23/ZeroSide.lean:701:4: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/ZeroSide.lean:706:66: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/ZeroSide.lean:712:52: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/ZeroSide.lean:755:53: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8720/8992] Replayed Zeta23.XiPrime.Statement
+warning: Zeta23/XiPrime/Statement.lean:365:69: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8723/8992] Replayed Zeta23.Assembly
+warning: Zeta23/Assembly.lean:885:47: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/Assembly.lean:958:34: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/Assembly.lean:962:90: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8727/8992] Replayed Zeta23.Statement
+warning: Zeta23/Statement.lean:148:30: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8728/8992] Replayed Zeta23.Statement.Seam
+warning: Zeta23/Statement/Seam.lean:59:13: `ENat.toNat_coe` has been deprecated: Use `ENat.toNat_natCast` instead
+⚠ [8729/8992] Replayed Zeta23.ZetaReflect
+warning: Zeta23/ZetaReflect.lean:91:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8736/8992] Replayed Zeta23.Tail
+warning: Zeta23/Tail.lean:290:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/Tail.lean:399:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [8746/8992] Replayed Zeta23.GammaFacts.Mu
+info: Zeta23/GammaFacts/Mu.lean:137:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [8748/8992] Replayed Zeta23.GammaFacts.StirlingVert
+info: Zeta23/GammaFacts/StirlingVert.lean:452:6: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [8752/8992] Replayed Zeta23.FromPNTPlus.StrongPNTPrefix
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:61:71: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:202:9: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:343:10: `Set.notMem_setOf_iff` has been deprecated: Use `Set.notMem_ofPred_iff` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:368:48: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:390:10: `Set.notMem_setOf_iff` has been deprecated: Use `Set.notMem_ofPred_iff` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:432:48: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8760/8992] Replayed Zeta23.FromPNTPlus.ZetaBounds
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:859:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:952:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1092:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1099:32: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1105:56: `Set.preimage_setOf_eq` has been deprecated: Use `Set.preimage_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1115:56: `Set.preimage_setOf_eq` has been deprecated: Use `Set.preimage_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1119:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1135:54: `Set.preimage_setOf_eq` has been deprecated: Use `Set.preimage_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1157:22: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1169:15: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1169:59: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1185:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1835:19: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1837:45: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1840:28: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1844:28: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1900:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1906:20: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:2091:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:2884:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:2940:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8762/8992] Replayed Zeta23.RvM.Halving
+warning: Zeta23/RvM/Halving.lean:52:55: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/RvM/Halving.lean:62:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/RvM/Halving.lean:70:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8768/8992] Replayed Zeta23.RvM.ReZeroCount
+warning: Zeta23/RvM/ReZeroCount.lean:272:15: `ENat.toNat_coe` has been deprecated: Use `ENat.toNat_natCast` instead
+⚠ [8773/8992] Replayed Zeta23.RvM.NcountWindow
+warning: Zeta23/RvM/NcountWindow.lean:23:22: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8776/8992] Replayed Zeta23.WeilEF.ZeroSummability
+warning: Zeta23/WeilEF/ZeroSummability.lean:189:4: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8779/8992] Replayed Zeta23.WeilEF.Landau
+warning: Zeta23/WeilEF/Landau.lean:341:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/WeilEF/Landau.lean:437:64: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8781/8992] Replayed Zeta23.WeilEF.Contour
+warning: Zeta23/WeilEF/Contour.lean:69:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [8786/8992] Replayed Zeta23.WeilEF.Main
+info: Zeta23/WeilEF/Main.lean:38:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [8787/8992] Replayed Zeta23.ZeroSide.RankTraceMult
+warning: Zeta23/ZeroSide/RankTraceMult.lean:49:32: Variable name `ht0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:49:60: Variable name `hx` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:56:30: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:56:43: Variable name `hx` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:81:32: Variable name `hp` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:81:58: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:164:20: This simp argument is unused:
+  Matrix.mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:359:28: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8789/8992] Replayed Zeta23.Assembly.SeamMult
+warning: Zeta23/Assembly/SeamMult.lean:26:0: automatically included section variable(s) unused in theorem `Zeta23.Assembly.ctr_sub_frobSq_perturb`:
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8824/8992] Replayed Zeta23.ThmD.WindowCore
+warning: Zeta23/ThmD/WindowCore.lean:388:22: Variable name `u` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _u
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8825/8992] Replayed Zeta23.XiPrime.QuarticWindow.ModWindow
+warning: Zeta23/XiPrime/QuarticWindow/ModWindow.lean:87:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [8826/8992] Replayed ZetaS.Window.CosWindow
+info: ZetaS/Window/CosWindow.lean:571:0: 'ZetaS.CosWindow.integral_cosW' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:572:0: 'ZetaS.CosWindow.integral_cosW_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:573:0: 'ZetaS.CosWindow.jInt_cosW' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:574:0: 'ZetaS.CosWindow.Rquot_cosW' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:575:0: 'ZetaS.CosWindow.HC_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:576:0: 'ZetaS.CosWindow.HC_eight_fifths' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:577:0: 'ZetaS.CosWindow.HC_37_25' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:578:0: 'ZetaS.CosWindow.sigma_K7' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:579:0: 'ZetaS.CosWindow.dist_K7' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:580:0: 'ZetaS.CosWindow.sigma_K5' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:581:0: 'ZetaS.CosWindow.dist_K5' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:582:0: 'ZetaS.CosWindow.admWindow_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:583:0: 'ZetaS.CosWindow.admWindow_phiV_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [8833/8992] Replayed ZetaS.LinAlg.CountHelpers
+warning: ZetaS/LinAlg/CountHelpers.lean:40:0: automatically included section variable(s) unused in theorem `ZetaS.isHermitian_smul_one`:
+  [Fintype n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ZetaS/LinAlg/CountHelpers.lean:143:0: automatically included section variable(s) unused in theorem `ZetaS.hermForm_fromBlocks`:
+  [DecidableEq m]
+  [DecidableEq o]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq m] [DecidableEq o] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8836/8992] Replayed ZetaS.SigmaDist.A1b_BetaBound
+warning: ZetaS/SigmaDist/A1b_BetaBound.lean:12:49: Variable name `hδ0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hδ0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/A1b_BetaBound.lean:12:63: Variable name `hδ1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hδ1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8839/8992] Replayed ZetaS.SigmaDist.M1_MajorantKernel
+warning: ZetaS/SigmaDist/M1_MajorantKernel.lean:162:5: Variable name `hcont` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hcont
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/M1_MajorantKernel.lean:163:5: Variable name `hpos` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hpos
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8842/8992] Replayed ZetaS.SigmaDist.A6_BlockBounds
+warning: ZetaS/SigmaDist/A6_BlockBounds.lean:112:49: Variable name `hκ1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hκ1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/A6_BlockBounds.lean:200:77: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [one_pow, zero_pow two_ne_zero, add_zero, mul_one, mul_zero] at this
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8843/8992] Replayed ZetaS.SigmaDist.A6_TightChains
+warning: ZetaS/SigmaDist/A6_TightChains.lean:416:8: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaS/SigmaDist/A6_TightChains.lean:141:32: Variable name `ha₂` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha₂
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8848/8992] Replayed ZetaS.SigmaDist.OLLHeight
+warning: ZetaS/SigmaDist/OLLHeight.lean:305:21: Variable name `he0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _he0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/OLLHeight.lean:366:54: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/OLLHeight.lean:366:56: Variable name `j` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _j
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/OLLHeight.lean:367:9: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/OLLHeight.lean:367:66: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/OLLHeight.lean:367:68: Variable name `j` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _j
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/OLLHeight.lean:368:9: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/OLLHeight.lean:368:11: Variable name `j` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _j
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/OLLHeight.lean:368:64: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/OLLHeight.lean:369:9: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/OLLHeight.lean:369:11: Variable name `j` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _j
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8864/8992] Replayed Zeta23.ThmD.Window
+warning: Zeta23/ThmD/Window.lean:132:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8877/8992] Replayed Zeta23.PrimeSideA.EndsE1
+warning: Zeta23/PrimeSideA/EndsE1.lean:326:41: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [8882/8992] Replayed Zeta23.PrimeSideA
+info: Zeta23/PrimeSideA.lean:372:0: lem_ends : ∀ (cϱ lam : ℝ),
+  GammaFacts →
+    ChebyshevMertens →
+      0 < lam ∧ lam ≤ 1 →
+        ∃ C, EventuallyAtCore cϱ lam fun p F ↦ |trGt2A p F - MtotalA p F| ≤ C * (p.L * p.l * log p.l * (p.l ^ 2 + p.X))
+info: Zeta23/PrimeSideA.lean:398:0: prop_mumu : ∀ (cϱ lam : ℝ),
+  GammaFacts →
+    ChebyshevMertens →
+      0 < lam ∧ lam ≤ 1 →
+        ∃ C,
+          EventuallyAtCore cϱ lam fun p F ↦
+            |Mform F.Phi p.T mu mu - 2 * π * F.b * p.L * ∫ (τ : ℝ) in p.T..2 * p.T, mu τ ^ 2| ≤ C * (p.l ^ 2 * log p.L)
+info: Zeta23/PrimeSideA.lean:404:0: prop_cross_muP : ∀ (cϱ lam : ℝ),
+  GammaFacts →
+    ChebyshevMertens →
+      0 < lam ∧ lam ≤ 1 → ∃ C, EventuallyAtCore cϱ lam fun p F ↦ |Mform F.Phi p.T mu (PX p.X)| ≤ C * (p.l * √p.X)
+⚠ [8888/8992] Replayed Zeta23.MV.Spacing
+warning: Zeta23/MV/Spacing.lean:58:0: automatically included section variable(s) unused in theorem `Zeta23.MV.Adm.itv_disjoint`:
+  [Fintype ι]
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype ι] [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Zeta23/MV/Spacing.lean:153:8: automatically included section variable(s) unused in theorem `_private.Zeta23.MV.Spacing.0.Zeta23.MV.Adm.mem_window`:
+  [Fintype ι]
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype ι] [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8896/8992] Replayed Zeta23.ThmD.PP
+warning: Zeta23/ThmD/PP.lean:270:29: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/ThmD/PP.lean:276:29: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8903/8992] Replayed ZetaS.ZeroSide.Z9a3_HatDecomp
+warning: ZetaS/ZeroSide/Z9a3_HatDecomp.lean:102:33: This simp argument is unused:
+  Finset.sum_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.sum_apply, Matrix.smul_apply, vecMulVec_apply, smul_eq_mul, hf]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ZetaS/ZeroSide/Z9a3_HatDecomp.lean:103:66: This simp argument is unused:
+  Finset.sum_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [toC, offBlock, Matrix.map_apply, Matrix.sum_apply, Matrix.smul_apply, Matrix.sub_apply,
+    vecMulVec_apply, smul_eq_mul, Complex.ofReal_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8906/8992] Replayed ZetaS.ZeroSide.Z9a4_Frame
+warning: ZetaS/ZeroSide/Z9a4_Frame.lean:37:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ZetaS/ZeroSide/Z9a4_Frame.lean:84:13: Variable name `hP` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hP
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/ZeroSide/Z9a4_Frame.lean:84:28: Variable name `heven` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _heven
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8907/8992] Replayed ZetaS.ZeroSide.Z9a6_Counts
+warning: ZetaS/ZeroSide/Z9a6_Counts.lean:85:86: `Set.setOf_and` has been deprecated: Use `Set.ofPred_and` instead
+⚠ [8908/8992] Replayed ZetaS.ZeroSide.Z9a5_FrameSpec
+warning: ZetaS/ZeroSide/Z9a5_FrameSpec.lean:22:44: This simp argument is unused:
+  Complex.re_sum
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [RHLinalg.rtrace, toC, Matrix.trace]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ℹ [8911/8992] Replayed ZetaS.Window.ProfileMoments
+info: ZetaS/Window/ProfileMoments.lean:184:0: 'ZetaS.ProfileMoments.av_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/ProfileMoments.lean:185:0: 'ZetaS.ProfileMoments.bv_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/ProfileMoments.lean:186:0: 'ZetaS.ProfileMoments.localHypsCore_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8913/8992] Replayed ZetaS.Window.ProfileAutocorr
+info: ZetaS/Window/ProfileAutocorr.lean:341:0: 'ZetaS.ProfileAutocorr.gv_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/ProfileAutocorr.lean:342:0: 'ZetaS.ProfileAutocorr.tendsto_JTV' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/ProfileAutocorr.lean:343:0: 'ZetaS.ProfileAutocorr.tendsto_cRatioV' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [8914/8992] Replayed Zeta23.XiPrime.PrimeSide.Traces
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:359:72: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:361:72: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:364:72: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:367:72: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:369:72: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:372:72: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:395:15: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:418:11: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:435:75: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:437:80: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:464:13: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8915/8992] Replayed Zeta23.XiPrime.PrimeSide.Density
+warning: Zeta23/XiPrime/PrimeSide/Density.lean:248:62: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8916/8992] Replayed Zeta23.XiPrime.PrimeSide.Cross
+warning: Zeta23/XiPrime/PrimeSide/Cross.lean:51:10: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+warning: Zeta23/XiPrime/PrimeSide/Cross.lean:71:58: Variable name `hlam` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hlam
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/PrimeSide/Cross.lean:165:19: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8918/8992] Replayed Zeta23.XiPrime.PrimeSide.Trace
+warning: Zeta23/XiPrime/PrimeSide/Trace.lean:58:10: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+⚠ [8919/8992] Replayed Zeta23.XiPrime.PrimeSide.Abel
+warning: Zeta23/XiPrime/PrimeSide/Abel.lean:69:59: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/XiPrime/PrimeSide/Abel.lean:149:63: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/XiPrime/PrimeSide/Abel.lean:69:59: This simp argument is unused:
+  Set.mem_setOf_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Set.mem_compl_iff, Set.mem_singleton_iff, ne_eq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/XiPrime/PrimeSide/Abel.lean:198:4: 'beta_reduce' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+ℹ [8921/8992] Replayed ZetaS.Window.TracesV
+info: ZetaS/Window/TracesV.lean:214:0: 'ZetaS.TracesV.concreteFactsV' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/TracesV.lean:215:0: 'ZetaS.TracesV.tracesBoundsV' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8926/8992] Replayed ZetaS.Window.EndgameV
+info: ZetaS/Window/EndgameV.lean:363:0: 'ZetaS.EndgameV.thmV_mult2_abstract' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/EndgameV.lean:364:0: 'ZetaS.EndgameV.thmV_mult3_abstract' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8927/8992] Replayed ZetaS.Window.PolyWindow
+info: ZetaS/Window/PolyWindow.lean:886:0: 'ZetaS.PolyWindow.psiTilde_pos_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:887:0: 'ZetaS.PolyWindow.vP8_not_antitoneOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:888:0: 'ZetaS.PolyWindow.tv_mul_ramp_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:889:0: 'ZetaS.PolyWindow.integral_abs_deriv_phiP8_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:890:0: 'ZetaS.PolyWindow.integral_abs_deriv_phiP8_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:891:0: 'ZetaS.PolyWindow.admWindow_phiP8' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:892:0: 'ZetaS.PolyWindow.integral_vP8' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:893:0: 'ZetaS.PolyWindow.integral_vP8_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:894:0: 'ZetaS.PolyWindow.vConv_vP8' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:895:0: 'ZetaS.PolyWindow.jP8' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:896:0: 'ZetaS.PolyWindow.H_P8' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:897:0: 'ZetaS.PolyWindow.cRatio_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8928/8992] Replayed ZetaS.Window.WindowInstances
+info: ZetaS/Window/WindowInstances.lean:100:0: 'ZetaS.WindowInstances.aP8_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowInstances.lean:101:0: 'ZetaS.WindowInstances.bP8_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowInstances.lean:102:0: 'ZetaS.WindowInstances.localHypsCoreP8_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowInstances.lean:103:0: 'ZetaS.WindowInstances.aCos_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowInstances.lean:104:0: 'ZetaS.WindowInstances.bCos_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowInstances.lean:105:0: 'ZetaS.WindowInstances.localHypsCoreCos_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8929/8992] Replayed ZetaS.Window.WindowLimits
+info: ZetaS/Window/WindowLimits.lean:208:0: 'ZetaS.WindowLimits.cWin_psiN' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowLimits.lean:209:0: 'ZetaS.WindowLimits.tendsto_cRatioP8' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowLimits.lean:210:0: 'ZetaS.WindowLimits.HD_P8' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowLimits.lean:211:0: 'ZetaS.WindowLimits.tendsto_cRatioCos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowLimits.lean:212:0: 'ZetaS.WindowLimits.vConv_cosW' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowLimits.lean:213:0: 'ZetaS.WindowLimits.jvConv_cosW' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowLimits.lean:214:0: 'ZetaS.WindowLimits.cWin_cosW' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowLimits.lean:215:0: 'ZetaS.WindowLimits.tendsto_cRatioCos'' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowLimits.lean:216:0: 'ZetaS.WindowLimits.HD_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8930/8992] Replayed ZetaS.Window.HeadlineV
+info: ZetaS/Window/HeadlineV.lean:333:0: 'ZetaS.HeadlineV.simple_V_lam_abstract' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/HeadlineV.lean:334:0: 'ZetaS.HeadlineV.zeta_simple_poly8A' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/HeadlineV.lean:335:0: 'ZetaS.HeadlineV.zeta_simple_cos85' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/HeadlineV.lean:336:0: 'ZetaS.HeadlineV.zeta_simple_cos85'' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/HeadlineV.lean:337:0: 'ZetaS.HeadlineV.dist_V_lam_abstract' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/HeadlineV.lean:338:0: 'ZetaS.HeadlineV.zeta_dist_poly8A' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/HeadlineV.lean:339:0: 'ZetaS.HeadlineV.zeta_dist_cos85' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8931/8992] Replayed ZetaS.Window.GramV
+info: ZetaS/Window/GramV.lean:290:0: 'ZetaS.GramV.frob_two_sided_alg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/GramV.lean:291:0: 'ZetaS.GramV.gram_asymptotics_V' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/GramV.lean:292:0: 'ZetaS.GramV.zeta_gram_poly8A_lam' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/GramV.lean:293:0: 'ZetaS.GramV.zeta_gram_cos85_lam' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [8935/8992] Replayed ZetaS.ZeroSide.Z9e_Seams
+warning: ZetaS/ZeroSide/Z9e_Seams.lean:33:67: Variable name `ρ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ρ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/ZeroSide/Z9e_Seams.lean:80:90: `Set.setOf_and` has been deprecated: Use `Set.ofPred_and` instead
+warning: ZetaS/ZeroSide/Z9e_Seams.lean:93:90: `Set.setOf_and` has been deprecated: Use `Set.ofPred_and` instead
+⚠ [8939/8992] Replayed ZetaS.ZeroSide.Z6Core
+warning: ZetaS/ZeroSide/Z6Core.lean:226:41: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8940/8992] Replayed ZetaS.ZeroSide.Z6_Defect
+warning: ZetaS/ZeroSide/Z6_Defect.lean:99:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaS/ZeroSide/Z6_Defect.lean:81:20: Variable name `hlam` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hlam
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8943/8992] Replayed ZetaS.ZeroSide.ZetaSeams
+warning: ZetaS/ZeroSide/ZetaSeams.lean:35:55: `Set.setOf_and` has been deprecated: Use `Set.ofPred_and` instead
+warning: ZetaS/ZeroSide/ZetaSeams.lean:38:41: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/ZeroSide/ZetaSeams.lean:38:60: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/ZeroSide/ZetaSeams.lean:38:41: '(exfalso; tauto)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/ZeroSide/ZetaSeams.lean:38:60: 'linarith' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8946/8992] Replayed ZetaS.Top.OLLHeight5
+warning: ZetaS/Top/OLLHeight5.lean:311:21: Variable name `he0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _he0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Top/OLLHeight5.lean:372:54: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Top/OLLHeight5.lean:372:56: Variable name `j` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _j
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Top/OLLHeight5.lean:373:9: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Top/OLLHeight5.lean:373:66: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Top/OLLHeight5.lean:373:68: Variable name `j` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _j
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Top/OLLHeight5.lean:374:9: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Top/OLLHeight5.lean:374:11: Variable name `j` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _j
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Top/OLLHeight5.lean:374:64: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Top/OLLHeight5.lean:375:9: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Top/OLLHeight5.lean:375:11: Variable name `j` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _j
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8951/8992] Replayed ZetaS.Majorant.MCert_Cells
+warning: ZetaS/Majorant/MCert_Cells.lean:76:14: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Majorant/MCert_Cells.lean:76:4: 'all_goals
+  first
+  | exact hπ.le
+  | positivity' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8955/8992] Replayed ZetaS.Cert.C01_QIRound
+warning: ZetaS/Cert/C01_QIRound.lean:20:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:21:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:22:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:20:6: 'exact (Rat.le_floor.mp le_rfl)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:21:6: '(rw [← Rat.floor_intCast_div_natCast] at *; exact Int.floor_le _)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:22:6: 'exact Int.floor_le (q * 2 ^ 64)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:31:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:32:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:33:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:31:6: 'exact (Rat.le_ceil (x := q * 2 ^ 64))' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:32:6: 'exact (Rat.ceil_le.mp le_rfl)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:33:6: 'exact Int.le_ceil (q * 2 ^ 64)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8961/8992] Replayed ZetaS.Majorant.MajSoundNPos
+warning: ZetaS/Majorant/MajSoundNPos.lean:133:14: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Majorant/MajSoundNPos.lean:133:4: 'all_goals
+  first
+  | exact hπ.le
+  | positivity' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Majorant/MajSoundNPos.lean:276:5: Variable name `he` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _he
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Majorant/MajSoundNPos.lean:352:34: 'push_cast at hk' ⊢' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Majorant/MajSoundNPos.lean:361:34: 'push_cast at hk' ⊢' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8970/8992] Replayed ZetaS.LinAlg.L6_TraceLipschitz
+warning: ZetaS/LinAlg/L6_TraceLipschitz.lean:98:5: Variable name `hLf` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hLf
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8975/8992] Replayed ZetaS.KSide.KHelpers
+warning: ZetaS/KSide/KHelpers.lean:82:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaS/KSide/KHelpers.lean:89:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [8976/8992] Replayed ZetaS.KSide.K2_Packing
+warning: ZetaS/KSide/K2_Packing.lean:36:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaS/KSide/K2_Packing.lean:107:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaS/KSide/K2_Packing.lean:150:27: This simp argument is unused:
+  hij
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hGa, kerMat, this, Matrix.one_apply_ne hij]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ZetaS/KSide/K2_Packing.lean:217:37: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/KSide/K2_Packing.lean:217:37: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8979/8992] Replayed ZetaS.KSide.K6a_StabConstCont
+warning: ZetaS/KSide/K6a_StabConstCont.lean:25:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [8983/8992] Replayed ZetaS.KSide.K0_FrameToGram
+warning: ZetaS/KSide/K0_FrameToGram.lean:173:9: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ZetaS/KSide/K0_FrameToGram.lean:180:14: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8984/8992] Replayed ZetaS.KSide.K7aux
+warning: ZetaS/KSide/K7aux.lean:24:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaS/KSide/K7aux.lean:30:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaS/KSide/K7aux.lean:37:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaS/KSide/K7aux.lean:61:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+✔ [8991/8992] Built ChallengeDeps.FollowUpZeta (11s)
+✔ [8992/8992] Built Solution.FollowUpZeta (11s)
+Build completed successfully (8992 jobs).

@@ -1,0 +1,67 @@
+\section{The design at the new bandwidth, and the error budget}\label{sec:design}
+
+\subsection{The design}
+Theorem~\ref{thm:shell} runs at $\lambda=191/100$ with the degree-$12$ profile S53-L75 of \S\ref{sec:cert}. The design of~\cite{DSouza} fixes a parameter record $(Q,T,\lambda,w,D_0,\varrho,p)$ and a validity class; the formal
+development reuses both unchanged (the class caps $\lambda$ only by $\lambda<2$) and replaces only the design predicate, which in~\cite{DSouza} pins
+$\lambda=\lambda^*$ and $p=p_{\rm d}$, by one with $\lambda$ and $p$ as parameters that coincides with the old one at $(\lambda^*,p_{\rm d})$ by definition.
+The facts that the design needs at $\lambda=191/100$ and S53-L75 are the following; each is a Lean theorem at the three standard axioms
+unless marked.
+\begin{enumerate}[label=(\roman*)]
+\item \emph{Regime.} $X\le Q^{2-9/200}$ for large $Q$.
+\item \emph{Rows at the literal $\lambda^*$.} The prime part of the trace (``Row 2'') and the $\mu P$ cross term (``Row 9''), which the formal tree of~\cite{DSouza}
+proves only at $\lambda=1.2507321515$, are re-proved for every $0<\lambda<2$.
+\item \emph{Moments.} $a\ge3/4$ and $b\ge1/2$ hold eventually: with the exact integral of $p^2$ as a degree-$25$ antiderivative, the margins are
+$2.40\cdot10^{-8}$ and $4.6\cdot10^{-6}$ at the point used in the proof.
+\item \emph{Gevrey gate.} The product constant of the ramp lemma for the degree-$12$ profile is $B'\le43{,}447\le5\cdot10^4$ (the gate $4\cdot10^4$ of the
+formal tree fails for this profile and is raised).
+\item \emph{Buffer.} $D_0\le1.5\cdot10^7\Lc^2$, with a constant independent of $Q$ (the true value is $D_0\approx5.58\Lc^2$).
+\item \emph{Existence.} For every $r_0\ge3$, $\varepsilon>0$ and all large $Q$ there is a parameter record satisfying the design predicate. The statement is
+eventual because the proof's threshold is implicit; a numerical check at $28$ points ($r_0+\eps$ from $3.001$ to $20$, $\log Q$ from $2.5\cdot10^5$ to
+$10^{40}$) finds every clause satisfied, with $D_0/\Lc^2\in[5.578,5.588]$.
+\item \emph{Other rows.} The trace row, the two counting rows, the tail (the closing condition $(4/e)\sqrt{wD_0/A}\ge L/2+\dots$, with the off-line
+amplification $e^{L/2}$), the window constant, the ends constant $c_1=0.52$ by the Minkowski split, the display of H1, and the rates of all non-Frobenius
+rows, each $O((\log Q)^{-\theta})$.
+\item \emph{Zone slope} (not formalised). $\psi_{v_p}(1)=0.2205333844\le0.2206$ (exact rational), the zone slope $2(\pi^4/18-1)\psi_{v_p}(1)=1.945817\le2(\pi^4/18-1)\cdot0.2206=1.946405<1.95$,
+and the certified Lipschitz constant $1.906$ of the zone comparison, computed in exact rationals \tagN. The comparison uses $\lambda\ge1$ (so that $1-\lambda/2\le\lambda/2$) and $\abs p\le1$ on $[-\lambda/2,\lambda/2]$, which holds for
+S53-L75 since $p(0)=1$ and $p$ is positive and decreasing on $[0,\lambda/2]$. The Lean statement is compiled and
+open; the proof of the statement of record does not use it.
+\end{enumerate}
+With these, the frame of the formal headline (the five rows and the display that Proposition~\ref{prop:3.1} consumes, at $\Bfun_*=2-0.9059137927$ and rate
+$(\log Q)^{-\theta}$) is derived and rests on exactly one open node, the Frobenius row \texttt{frob\_row\_shell} \tagLm. That row is
+Theorem~\ref{thm:shell-K} combined with the in-zone rows at the new bandwidth, and it is derived from Theorem~\ref{thm:shell-K} and the
+Frobenius-row chain \texttt{F1c\_chain}, which is proved. In the released library Theorem~\ref{thm:shell-K} is proved (\S\ref{ssec:formal}(a)), the
+frame with this derivation (\texttt{shell\_frame\_qle\_of\_K}) is kernel-checked with the further hypotheses \texttt{PNTErrorTerm} (the strong prime number theorem, which the tree does not prove) and \texttt{CertS53}
+(a theorem, \S\ref{sec:cert}), and its form without them, \texttt{shell\_frame\_qle\_of\_K\_noP}, which the proof of the statement of record
+uses, is kernel-checked with (J) and (M) as its only hypothesis \tagL. The in-zone rows at $\lambda=1.91$ are covered on paper by \S\ref{ssec:bandwidth}.
+For the profile D53-L75 at $\lambda=93/50$ (Remark~\ref{rem:shell-dyadic}, not claimed) none of (i)--(viii) has been computed or formalised; only its
+moments $a=0.7577$ and $p(\lambda/2)=0.16666687$ are known (the floor $1/6$ is met with margin $2\cdot10^{-7}$).
+
+\subsection{The error budget}
+Proposition~\ref{prop:3.1} is applied with $\Bfun_*=\Bfun_{k_{\alphap}}(v_p)$, $\alphap=2497/1500$, $k_{\alphap}=\abs\alpha$ on $[0,1]$, $1$ on $(1,\alphap]$, $C^+$ on
+$(\alphap,\lambda]$. The rows, with their rates, are listed in Table~\ref{tab:budget}.
+
+\begin{table}[ht]\centering\small
+\caption{The rows of the error budget of Theorem~\ref{thm:shell}. Here $K=\Lc(\log\Lc)^2$, $\epsilon=1/\Lc$, $\delta_1=T^{-1/3}$ and $\theta<503/1994$.}\label{tab:budget}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{7.2cm}>{\raggedright\arraybackslash}p{3.8cm}>{\raggedright\arraybackslash}p{3.6cm}@{}}
+\toprule
+row & rate & source\\
+\midrule
+Shell term (Theorem~\ref{thm:shell-S} through Theorem~\ref{thm:shell-K}) & $(\log Q)^{-\theta}$ & \S\ref{ssec:shell-S}\\
+strip $\Sigma_Q$ at kernel $C\abs\alpha$; weight $(\Lc+\log K)/s$ against $1$ on $(\log Q+4,\Lc]$ & $O(\log\log Q/\log Q)$ & Theorem~\ref{thm:shell-K}\\
+Lemma~\ref{lem:shell-2}(a) bracket, $\epsilon\sinh\kappa$, $N/Q^2$, Lemma~\ref{lem:shell-1prime}, $\log K/\Lc$ & $O(\log\Lc/\Lc)$ & \eqref{eq:shell-pointwise}\\
+killed zone: kink $\log(2\pi\Lc)/\Lc$, $C_1/\log Q$, top edge & $O(\log\log Q/\log Q)$ & Lemma~\ref{lem:K}\\
+family errors of Proposition~\ref{prop:shell-Z} & $Q^{-c}$ & Lemma~\ref{lem:shell-5c}\\
+ramp (the clamp $w\ge1$) & $\Theta(1/\log Q)$ & \S\ref{ssec:bandwidth}(iii)\\
+buffer & $O(\Lc^2/T)$ & \S\ref{ssec:H}, \S\ref{ssec:bandwidth}(iii)\\
+$\mu P$ cross term, prime part of the trace & $Q^{\lambda_{\rm eff}/2-1+o(1)}$ & design (ii)\\
+large-sieve length term $X/Q^2$ & $Q^{\lambda_{\rm eff}-2+o(1)}$ & \S\ref{ssec:bandwidth}(i)\\
+ends (with $c_1=0.52$), tail, counting rows, $\DT$-smearing & $O(\log\log Q/\log Q)$ or smaller & design (vii)\\
+zone row (slope $1.946$) & $O(\log\log Q/\log Q)$ & design (viii)\\
+$C_Q$ against the rational $C^+$ & $O(\log^2Q/Q)$ & \S\ref{sec:cert}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The Shell term dominates, so the error in Theorem~\ref{thm:shell} is $O((\log Q)^{-\theta})$ for every $\theta<503/1994$. The exponent $503/1994$ itself is the value
+at $\eps''=0$ in Lemma~\ref{lem:shell-6d}; for $\eps''>0$ fixed the proof gives $\theta(\alphap)<503/1994$, which is why the theorem is stated for every $\theta<503/1994$
+(the working draft stated the exponent $503/1994$).

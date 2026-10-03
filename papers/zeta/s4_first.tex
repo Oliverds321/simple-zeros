@@ -1,0 +1,152 @@
+\section{The local inequality and simple zeros on the line}\label{sec:first}
+
+This section proves Theorem~\ref{thm:S}. The mechanism is not ours (\S\ref{ssec:others}); we give it in full because
+Section~\ref{sec:simple} builds on it and Corollary~\ref{cor:SC} uses its proof.
+
+\subsection{The local inequality}
+\begin{definition}[Local inequality]\label{def:LI}
+Let $K\ge2$. \emph{Position weights} are numbers $\gamma_{s,i}\ge0$, $1\le s\le K-1$, $1\le i\le K-s$, with $\sum_i\gamma_{s,i}=2$ for every
+$s$; \emph{penalties} are numbers $\mu_i\ge0$, $1\le i\le K-1$, with $\nu:=\sum_i\mu_i$. For an even function $k$ with $k(0)=1$ and
+$c\in\R$ we say that $(\mathrm{LI})$ \emph{holds for $k$ with data $(\gamma,\mu,c)$} if
+\begin{equation}\label{eq:LI}
+F(g):=\sum_{i=1}^{K-1}\mu_ig_i+\sum_{s=1}^{K-1}\sum_{i=1}^{K-s}\gamma_{s,i}\,k(g_i+\dots+g_{i+s-1})^2\ \ge\ c\qquad\text{for all }g\in[0,\infty)^{K-1}.
+\end{equation}
+\end{definition}
+
+The variables $g_i$ are the gaps between $K$ consecutive simple zeros on the line, in normalised units, and $\mu\cdot g$ charges the length that
+such a run occupies. With $\gamma_{s,i}=2/(K-s)$ and $\mu_i=\mu$ this is the uniform functional of~\cite{ainta}. Since $k^2\ge0$, $F(g)\ge\mu_ig_i$,
+so~\eqref{eq:LI} holds automatically outside a bounded box when every $\mu_i>0$; this is what makes it a finite computation (\S\ref{ssec:bnb}).
+Coincident points ($g_i=0$) belong to the domain.
+
+\begin{lemma}[Local to block]\label{lem:local}
+Suppose $(\mathrm{LI})$ holds for $k$ with data $(\gamma,\mu,c)$. Let $y_1<\dots<y_m$ be real, $m\ge K$, with gaps $g_i:=y_{i+1}-y_i$. Then
+\[
+E:=\sum_{i\ne j}k(y_i-y_j)^2\ \ge\ c\,(m-K+1)-\sum_{t=1}^{m-K+1}\sum_{i=1}^{K-1}\mu_i\,g_{t+i-1}.
+\]
+\end{lemma}
+
+\begin{proof}
+Apply~\eqref{eq:LI} to each run $y_t,\dots,y_{t+K-1}$, $1\le t\le m-K+1$, and sum. A pair at index distance $s<K$ receives total weight at most
+$\sum_i\gamma_{s,i}=2$, which is its contribution to $E$ (two ordered pairs); pairs at index distance $\ge K$ are dropped, since $k^2\ge0$.
+\end{proof}
+
+\begin{proposition}[Packing]\label{prop:pack}
+Let $k$ be even and positive definite with $k(0)=1$, and suppose $(\mathrm{LI})$ holds for $k$ with data $(\gamma,\mu,c)$. Let
+$y_1<\dots<y_S$ lie in an interval of length $\Lambda\ge0$ and $G:=(k(y_i-y_j))_{i,j}$. For $m\ge K$ put
+\begin{equation}\label{eq:ABtau}
+A:=c\,(m-K+1),\qquad B:=\Phi_m(A),\qquad \tau:=\frac{\nu\,(m-K+1)}m .
+\end{equation}
+If $A>0$, then $\tr\Psi(G)\ge\frac BmS-2B-\frac BA\tau\Lambda$.
+\end{proposition}
+
+The hypothesis $\Lambda\ge0$ matters only when $S=0$; without it the statement is false ($K=2$, $k\equiv1$, $c=2$, $m=2$, $S=0$, $\Lambda=-10$).
+
+\begin{proof}
+$G\succeq0$ has unit diagonal. Fix an offset $o\in\{0,\dots,m-1\}$ and cut the ordered points into consecutive blocks of $m$, starting after
+the first $o$ points; there are at least $S/m-2$ full blocks. By Lemma~\ref{lem:pinch} (discarding the partial blocks, for which
+$\tr\Psi\ge0$) and Lemma~\ref{lem:Phi}, $\tr\Psi(G)\ge\sum_{\text{full }b}\Phi_m(E_b)$. By Lemma~\ref{lem:local}, $E_b\ge A-P_b$ with
+$P_b\ge0$ the penalty sum of the runs inside $b$, and $\Phi_m(E_b)\ge\frac BA\min(E_b,A)\ge B-\frac BAP_b$. Hence
+$\tr\Psi(G)\ge B(S/m-2)-\frac BA\sum_bP_b$ for every $o$. Now average over $o$. A given gap occupies each relative position
+$j\in\{0,\dots,m-1\}$ in its block for exactly one offset ($j=0$ meaning that it straddles two blocks, where it is not charged); at position
+$j\ge1$ it is charged $\sum_t\mu_{j-t+1}$ over the runs $t$ of the block that contain it, and summing over $j$ gives
+$\sum_{t=1}^{m-K+1}\sum_{i=1}^{K-1}\mu_i=(m-K+1)\nu$. So the average of $\sum_bP_b$ is at most $\tau\sum_ig_i\le\tau\Lambda$.
+\end{proof}
+
+\subsection{From the zeros to the local inequality}
+Let $\mathrm{on}_1$ be the set of simple on-line zeros with $\gamma\in I'$, $s_1:=\#\mathrm{on}_1$, and let
+$M^\circ:=(\langle u_\rho,u_{\rho'}\rangle)_{\rho,\rho'\in\mathrm{on}_1}$ be their Gram matrix.
+
+\begin{lemma}[Transfer]\label{lem:transfer}
+Let $\psi$ be a window and suppose $(\mathrm{LI})$ holds for $k_\psi$ with data $(\gamma,\mu,c)$, $c>0$. Let $0<c'<c$ and let $A',B'$ be as
+in~\eqref{eq:ABtau} with $c'$ in place of $c$. Then for $T\ge T_0(c')$,
+\[
+\tr\Psi(M^\circ)\ \ge\ \frac{B'}m\,s_1-\frac{B'}{A'}\,\tau\,\Lambda-o(N).
+\]
+\end{lemma}
+
+\begin{proof}
+By Lemma~\ref{lem:residue}(i), $M^\circ=K^\circ-\widehat E^\circ$ with $K^\circ:=(k_\varphi(x_\rho-x_{\rho'}))$ and $\widehat E^\circ\succeq0$. Both
+$M^\circ$ and $K^\circ$ are positive semidefinite, $\Psi$ is $2$-Lipschitz on $[0,\infty)$, and $\tr\widehat E^\circ=\sum\delta_\rho=o(N)$, so
+Lemma~\ref{lem:weyl} gives $\abs{\tr\Psi(M^\circ)-\tr\Psi(K^\circ)}=o(N)$. Next $\abs{k_\varphi^2-k_\psi^2}\le2\eps_T$ by
+Lemma~\ref{lem:residue}(ii), so the functional~\eqref{eq:LI} for $k_\varphi$ differs from that for $k_\psi$ by at most
+$2\eps_T\sum_{s,i}\gamma_{s,i}=4(K-1)\eps_T$, and $(\mathrm{LI})$ holds for $k_\varphi$ with $c'$ once $T$ is large. The normalised ordinates of
+$\mathrm{on}_1$ are distinct and lie in an interval of length $\Lambda$; apply Proposition~\ref{prop:pack} to $K^\circ$.
+\end{proof}
+
+\begin{theorem}[Stability plus packing]\label{thm:G}
+Let $\psi$ be a window and suppose $(\mathrm{LI})$ holds for $k_\psi$ with data $(\gamma,\mu,c)$, $c>0$. Let $m\ge K$ with $1-B/m>0$
+\textup{(}automatic when $A<m$, since $B\le A$\textup{)}. Then
+\[
+\liminf_{T\to\infty}\frac{N_0^s(T,2T)}{N(T,2T)}\ \ge\ \frac{H(\psi)-(B/A)\,\tau}{1-B/m}.
+\]
+\end{theorem}
+
+\begin{proof}
+Fix $\lambda\in(0,1)$. Apply Lemma~\ref{lem:stab} with $V:=[u_\rho]_{\rho\in\mathrm{on}_1}$ (real, since $\gamma_\rho$ is real), $P:=VV^{\tsp}$,
+$r=s_1$, $M=V^{\tsp}V=M^\circ$, $Q:=G-P$ and $b:=s_2+p$, where $s_2$ is the number of distinct multiple on-line zeros and $p$ the number of
+off-line pairs with $\Re\gamma\in I'$: each multiple on-line zero contributes a rank-one positive semidefinite term and each pair at most one
+positive eigenvalue (AF2), so $n_+(Q)\le b$ by subadditivity of $n_+$. Since $\tr P+2b\le s_1+2s_2+2p\le N(I')$ by (AF1),
+\[
+2\tr P+4\tr Q-4b=4\tr G-2(\tr P+2b)\ \ge\ 4\tr G-2N(I'),
+\]
+and (AF3)--(AF4) give $s_1\ge(H_\lambda(\psi)-o(1))N+\tr\Psi(M^\circ)$. Insert Lemma~\ref{lem:transfer} with $\Lambda\le N(1+o(1))$:
+$s_1(1-B'/m)\ge(H_\lambda(\psi)-(B'/A')\tau)N-o(N)$. Since $N_0^s(T,2T)\ge s_1-O(\sqrt T\log T)$, the bound holds with $H_\lambda$ and $c'$; let
+$c'\uparrow c$ and $\lambda\to1^-$ (\S\ref{ssec:bandwidth}); the right side is continuous in both.
+\end{proof}
+
+The quantity $\tr\Psi(M^\circ)$ is the Gram energy among the simple on-line zeros that the argument of~\cite{AF} discards: if every eigenvalue
+of $M^\circ$ is at most $2$, then $\tr\Psi(M^\circ)=\HS{M^\circ-I}^2$ up to the diagonal defects $\delta_\rho$. For $\psi=\cos(\alpha s)$ with
+$0<\alpha<\pi$ the positive zeros of $k_\psi$ form a sum-free set (by~\eqref{eq:kcos} each of them satisfies $x\tan(\pi x)=c$ with
+$c=\frac\alpha{2\pi}\tan\frac\alpha2>0$, and if $x$, $y$ and $x+y$ were all zeros, the addition formula for the tangent would give
+$x^2+xy+y^2+c^2=0$), so three simple zeros are never pairwise orthogonal and the energy cannot
+vanish locally (for the Montgomery--Taylor window this observation, with its proof, was published by \mbox{ainta}~\cite{ainta} on
+11~August~2026, and it is the basis of Devine's computation-free improvement of the Montgomery--Taylor constant~\cite{Devine22287432}); it can vanish for the flat window, whose kernel vanishes on $\Z\setminus\{0\}$. No lower bound for this energy can come from the
+prime side alone: the periodic configuration with $\frac46$ of the sites simple, $\frac16$ double and $\frac16$ empty~\cite[\S7.2]{AF} has the
+flat-window trace moments and zero energy. The bound is therefore configuration-wise, which is why Theorem~\ref{thm:G} solves an implicit
+linear inequality for $s_1$.
+
+\subsection{Proof of Theorem~\ref{thm:S}}
+Let
+\[
+\tilde\psi(s):=\frac{50000}{50037}\Big(1+\frac{127}{2500}\,u-\frac{8997}{10000}\,u^2+\frac{6187}{10000}\,u^3+\frac{3}{1250}\,u^4\Big),\qquad u=(2s)^2,
+\]
+on $[-\frac12,\frac12]$. It is even and $C^\infty$, with $0.7679\le\tilde\psi\le1$; it is not monotone on $[0,\frac12]$ (the bracket has maximum
+$1.000731$ at $u=0.0291$, which is why it is normalised by $\frac{50000}{50037}$, and minimum $0.768517$ at $u=0.9357$). Its window constant is the
+exact rational
+\[
+H(\tilde\psi)=\frac{26957030199857}{40103091391077}=0.6721933213820763\ldots,
+\]
+with $\int\tilde\psi$, $\int\tilde\psi^2$ and $J(\tilde\psi)$ exact rationals ($J$ through the kernel $\int\abs{s-s'}\tilde\psi(s')\,ds'$, a
+polynomial of degree $10$ in $s$ on $\abs s\le\frac12$); this is $2.5\cdot10^{-4}$ below $H(\cos1.48s)$, and the gain comes from the packing
+term. Take $K=8$, the exact rational position weights and penalties of the certificate file named in Table~\ref{tab:certs}, with
+$\nu=\frac7{1700}$, and $c=\frac{199}{25000}=0.00796$. Then $(\mathrm{LI})$ holds for $k_{\tilde\psi}$ (Section~\ref{sec:cert}). Take $m=147$: then
+$A=0.00796\cdot140=\frac{1393}{1250}=1.1144>\frac{147}{146}$, so $B=\Phi_{147}(A)=A-(\sqrt{14527/13125}-1)^2$ lies on the concave branch of
+Lemma~\ref{lem:Phi}, and $\tau=\frac{7}{1700}\cdot\frac{140}{147}=\frac1{255}$. Theorem~\ref{thm:G} gives
+\[
+\frac{H(\tilde\psi)-(B/A)\tau}{1-B/m}=0.673373689541190\ldots\ >\ 0.6733736895 .
+\]
+In the formal proof the square root is enclosed in an interval of width $10^{-18}$, and the final inequality, linear in the enclosed quantity,
+is checked in exact rational arithmetic; the margin is $4.1\cdot10^{-11}$. Since every quantity is homogeneous of degree $0$ in the window, the
+formal proof may and does use the window $\frac45v$, with $v$ the bracket above: it satisfies the side conditions of the window class of the
+Lean artifact of~\cite{AF} (which $\tilde\psi$, being non-monotone with total variation on $\R$, including the jumps at $\pm\frac12$, of
+about $2.016$, does not; for $\frac45v$ it is about $1.614$), and it has the same $H$,
+the same kernel and the same certificate. \qed
+
+\medskip
+For distinct zeros the same chain gives $\frac12(1+0.6733736895)=0.8366868$ (Remark~\ref{rem:Sdist}), superseded by
+Theorem~\ref{thm:main}. Earlier certificates of the same kind gave $0.6732063$ (window $\cos1.48s$, $K=7$) and $0.6733246847$
+(window $\tilde\psi$, $K=7$).
+
+\begin{remark}[Credit]\label{rem:credit}
+For this statistic the stability inequality with the term $\tr\Psi(M)$, the $K$-point functional with uniform weights $\gamma_{s,i}=2/(K-s)$
+and the offset-averaged
+aggregation were published by \mbox{ainta}~\cite{ainta}, position weights with span capacity $2$ and non-cosine windows by
+\mbox{trmdy}~\cite{trmdy}, both on 11~August~2026, position-dependent penalties by \mbox{sxuff}~\cite{sxuff} (11~August), the exact count of penalties
+over shifted blocks (our $\tau$; the identification is ours [M]) in \mbox{AMTOPA}'s work~\cite{AMTOPA} and in \mbox{trmdy} (12~August), eight-point
+certificates by \mbox{AMTOPA} (12~August), and the aggregation function $\Phi_m$ by tawanerguo-cn~\cite{TawanRepo} and \mbox{sxuff} (11~August) and \mbox{trmdy}
+(12~August), all before our work on it began (\S\ref{ssec:others}). What is ours here, as far as we have found, is the polynomial window with
+exact rational constants as a window for $\zeta$ and the box bound LB3 of \S\ref{ssec:bnb}, which we have not compared in substance with the
+pruning of other verifiers; Lemma~\ref{lem:Phi} was
+published earlier by tawanerguo-cn, \mbox{sxuff} and \mbox{trmdy} (\S\ref{ssec:others}). Several unrefereed works claim higher values
+(\S\ref{ssec:others}), among them a Lean theorem announced by Zhaoyi-Tian~\cite{ZhaoyiTian}.
+\end{remark}

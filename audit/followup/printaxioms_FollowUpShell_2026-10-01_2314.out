@@ -1,0 +1,2 @@
+'ZetaShell.LemmaK.theorem_one_prime_design' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.certS53' depends on axioms: [propext, Classical.choice, Quot.sound]

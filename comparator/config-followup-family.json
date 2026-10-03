@@ -1,0 +1,14 @@
+{
+  "challenge_module": "Challenge.FollowUpFamily",
+  "solution_module": "Solution.FollowUpFamily",
+  "theorem_names": [
+    "family_simple_on_line_killed",
+    "family_simple_on_line_shell"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

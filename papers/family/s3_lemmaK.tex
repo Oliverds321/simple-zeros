@@ -1,0 +1,303 @@
+\section{The killed kernel and Theorem~\ref{thm:one-prime}}\label{sec:lemmaK}
+
+In~\cite{DSouza} the out-zone is priced by the large sieve pointwise in $s$, which charges the family $Q^2\norm{a(s)}^2$ and
+gives the kernel $C\abs\alpha$. That bound ignores where the mass of $S(\vartheta)=\sum_na_n(s)e(n\vartheta)$ sits: for $s>\Lc$ a fixed
+proportion of it lies in short arcs around rationals $a/r$ of small denominator, and no Farey point of level $Q$ other than $a/r$
+itself comes near those arcs. Lemma~\ref{lem:K} makes this quantitative.
+
+The proof below incorporates the corrections D1--D5 to the working draft listed in Appendix~\ref{app:corr}; the formalisation of this section
+is described after each lemma.
+
+\subsection{Notation and statement}
+Fix $1<\lambda<2$. Put $U:=T/2\pi$ and
+\[
+K_1:=\Lc,\qquad \ell_{K_1}:=\log(QTK_1)=\Lc+\log(2\pi K_1),
+\]
+and, for given $s$,
+\[
+N:=e^s,\qquad R_0:=\frac N{QTK_1},\qquad R':=\max(2,R_0),\qquad \Delta:=\frac{K_1T}{2N}.
+\]
+Thus $\log R_0=s-\ell_{K_1}$, and $R_0\ge1$ exactly when $s\ge\ell_{K_1}$. (The width $K_1$ is the one of the working draft for this lemma; the Shell route of \S\ref{sec:shell} uses a larger width $K$.) $\Farey_R$ denotes the set of $b/q\in\R/\Z$ with $1\le q\le R$,
+$(b,q)=1$, and $\norm\vartheta$ the distance from $\vartheta$ to $\Z$. The prime number theorem is used in the form
+\begin{equation}\label{eq:PNT}
+\sum_{n\le y}\Lam(n)-y=o\bigl(y(\log y)^{-A}\bigr)\qquad(y\to\infty)
+\end{equation}
+for one fixed $A=A(r_0,\eps)$ (\S\ref{ssec:bandwidth}(iv)); we take $A\ge2+2(r_0+\eps)$.
+
+\begin{lemma}[Lemma K: killed kernel]\label{lem:K}
+There are $Q_0$ and $C_1$, depending on $\lambda$, $r_0$ and $\eps$, such that for $Q\ge Q_0$:
+\begin{enumerate}
+\item[\textup{(i)}] \emph{Pointwise.} For every $s\in\R$,
+\begin{equation}\label{eq:K-pointwise}
+\mathbf F(s)\le Q^2\Bigl[\norm{a(s)}^2-\Bigl(1-\frac{C_1}{\log Q}\Bigr)U\,(s-\ell_{K_1})_+\mathbf 1_{\{s\le\log X-1\}}+2\norm{a(s)}\Bigr]
++\bigl(2\pi X+R'^2\bigr)\norm{a(s)}^2 .
+\end{equation}
+\item[\textup{(ii)}] \emph{Integrated.} Let $B_\chi(s):=\sum_nb_n(s)\bar\chi(n)$ with $b_n(s)=\overline{a_n(-s)}$ be the second half of~\cite[Lemma~4.3]{DSouza},
+so that $\sum_\chi\abs{B_\chi(s)}^2=\mathbf F(-s)$. With $O^+=O\cap(0,\infty)$,
+\begin{equation}\label{eq:K-integrated}
+\sum_{\chi\in\FQ}\int_O\gwin(s)\,\abs{A_\chi(s)+B_\chi(s)}^2\,ds\le C_Q\abs{\FQ}\,\frac T\pi\int_{O^+}\gwin(u)\min(u,\Lc)\,du\,(1+E_K)(1+O(\rho)),
+\end{equation}
+where $\rho$ is the cross-term factor of~\cite[Lemma~4.3]{DSouza} and $E_K=O(\log\Lc/\Lc)+O((U\log Q)^{-1/2})+O(Q^{\lambda-2}T^{\lambda})+O(\eps_D)$, $\eps_D$ being
+the $\DT$-smearing error of the diagonal evaluation of~\cite{DSouza}.
+\end{enumerate}
+\end{lemma}
+
+In $\alpha$-units, $u=\alpha\Lc$, part (ii) replaces $u$ by $\min(u,\Lc)$ in the out-zone: the out-zone term
+$C\int_{1<\abs\alpha\le\lambda}\abs\alpha\psi$ becomes $C\int_{1<\abs\alpha\le\lambda}\psi$. For the dyadic family $\FQ^{\rm dy}$, (i) and (ii) hold with $C_Q$ replaced by
+$Q^2/\abs{\FQ^{\rm dy}}\to2\pi^4/27$ and without the term $R'^2$: the family contains no point $a/r$ with $r\le R_0<Q/2$, so nothing is removed (argued in
+the working draft; not formalised; used only in Remark~\ref{rem:shell-dyadic}, which is not claimed).
+
+\emph{Formalisation.} Part (i) is \texttt{ZetaShell.LemmaK.killed\_pointwise} (node K7), in this form with the large sieve in
+Gallagher's form $(Q^2+\pi X)\norm a^2$ applied twice, as displayed; part
+(ii) enters the formal proof directly in the form of the Frobenius row (node K8a, \S\ref{ssec:thm1prime}). The left side of (ii) is the full out-zone block
+$\sum_\chi\int_O\gwin\abs{A_\chi+B_\chi}^2$: this is what the proof of (ii) bounds, what \S\ref{ssec:thm1prime} uses and what Step~3 of \S\ref{sec:proof} cites, not
+the half $\int_O\gwin\mathbf F$. The Lean proof has no separate statement of (ii): node K8a bounds the whole PP block $\sum_\chi\int_{\R}\gwin\abs{A_\chi+B_\chi}^2$
+inside the Frobenius row, with the half $A_\chi$ on the out-zone bounded by (i) integrated against $\gwin$, the half $B_\chi$ by the
+mirror, and the cross term by the plain large sieve; so the formal result does not depend on the printed form of (ii). In the released library
+part (i), node K8a and Lemma~\ref{lem:K-P} are kernel-checked, and Theorem~\ref{thm:one-prime} rests on no open declaration
+(\S\ref{ssec:formal}) \tagL.
+
+\subsection{Proof of Lemma~\ref{lem:K}}\label{ssec:K-proof}
+
+\subsubsection*{(a) The Farey majorant}
+\begin{lemma}[Lemma K.1: Gauss-sum inequality]\label{lem:K-farey}
+For every $q\ge1$ and every finitely supported $(a_n)$,
+$\displaystyle\frac q{\varphi(q)}\sideset{}{^*}\sum_{\chi\bmod q}\abs{A_\chi}^2\le\sideset{}{^*}\sum_{b\bmod q}\abs{S(b/q)}^2$.
+\end{lemma}
+\begin{proof}
+For primitive $\chi\bmod q$ one has $\sum_{b\bmod q}\bar\chi(b)e(bn/q)=\tau(\bar\chi)\chi(n)$ for every $n\in\Z$~\cite[\S9.1]{MV}, and
+$\abs{\tau(\bar\chi)}^2=q$~\cite[Thm.~9.7]{MV}. Hence $\tau(\bar\chi)A_\chi=\sum^*_b\bar\chi(b)S(b/q)$. Summing
+$\abs{\sum^*_b\bar\chi(b)S(b/q)}^2$ over all $\chi\bmod q$ gives $\varphi(q)\sum^*_b\abs{S(b/q)}^2$ by orthogonality; dropping the
+imprimitive $\chi$ gives the claim.
+\end{proof}
+Summing over $1<q\le Q$ and using $\varphi(q)/q\le1$,
+\begin{equation}\label{eq:K-fareysum}
+\mathbf F(s)\le\sum_{\xi\in\Farey_Q}\abs{S(\xi)}^2 .
+\end{equation}
+No support condition is imposed, so the primes in $(R_0,Q]$ are never removed from $a$. \emph{Formalisation:}
+\texttt{gauss\_sum\_ineq}, a rearrangement of \texttt{ZetaQ.primitive\_decomposition} \tagL.
+
+\subsubsection*{(b) Gallagher's inequality with a zero set}
+\begin{lemma}[Lemma K.2]\label{lem:K-G}
+Let $\mathcal P\subset\R/\Z$ be finite, $w_\xi\ge0$, $0<\delta<1$, $D_\delta(\vartheta):=\delta^{-1}\sum_{\norm{\xi-\vartheta}\le\delta/2}w_\xi$ and
+$Z:=\{\vartheta:D_\delta(\vartheta)=0\}$. If $(a_n)$ is supported on the integers of $[1,X]$, then
+\[
+\sum_{\xi\in\mathcal P}w_\xi\abs{S(\xi)}^2\le\sup_\vartheta D_\delta(\vartheta)\,\Bigl(\norm a^2-\Bigl[\int_{Z\cap[0,1)}\abs S^2\,d\vartheta\Bigr]+\pi X\delta\norm a^2\Bigr).
+\]
+\end{lemma}
+\begin{proof}
+For $f\in C^1(I_\xi)$, $I_\xi=[\xi-\delta/2,\xi+\delta/2]$, one has $\abs{f(\xi)}\le\delta^{-1}\int_{I_\xi}\abs f+\frac12\int_{I_\xi}\abs{f'}$
+\cite[Lemma~1]{Mont78}. Apply it to $f=\abs S^2=\abs{\tilde S}^2$, $\tilde S(\vartheta)=e(-n_0\vartheta)S(\vartheta)$, $n_0=(1+X)/2$, so that
+$\abs{f'}\le2\abs{\tilde S}\abs{\tilde S'}$; multiply by $w_\xi$ and sum, using $\sum_\xi w_\xi\mathbf 1_{I_\xi}=\delta D_\delta$:
+$\sum_\xi w_\xi\abs{S(\xi)}^2\le\int_0^1(\abs S^2+\delta\abs{\tilde S}\abs{\tilde S'})D_\delta$. Since $D_\delta=0$ on $Z$, the first term is at most
+$\sup D_\delta(\norm a^2-\int_Z\abs S^2)$ by Parseval; the second is at most $\sup D_\delta\,\delta\norm{\tilde S}_2\norm{\tilde S'}_2
+\le\sup D_\delta\,\delta\,\pi(X-1)\norm a^2$.
+\end{proof}
+\emph{Formalisation:} the first Lean transcription of this
+lemma placed the last term inside the integrand, because a Lean integral extends as far to the right as possible; that statement is
+false (a kernel-checked counterexample exists) and was replaced by the parenthesised form, which is proved
+(\texttt{gallagher\_with\_zero\_set\_corr}) \tagL. The lemma on paper was correct.
+
+For $\mathcal P\subseteq\Farey_Q$ and $\delta=Q^{-2}$ a closed window of length $\delta$ contains at most one point of $\mathcal P$, so
+$\sup D_\delta\le Q^2$ and the error term is $\pi X\norm a^2$.
+
+\begin{lemma}[Lemma K.3: hole cores]\label{lem:K-Z}
+Let $\ell_{K_1}\le s\le\log X$ and $Q\ge Q_0$. Then $R_0<Q/2$. Put $\mathcal P:=\Farey_Q\setminus\Farey_{R_0}$, $w_\xi\equiv1$, $\delta=Q^{-2}$, and for
+$r\le R_0$, $(a,r)=1$, $H_{a/r}:=\{\vartheta:\norm{\vartheta-a/r}<1/(rQ)-\delta/2\}$. Then \textup{(a)} $H_{a/r}\subseteq Z$; \textup{(b)} the
+$H_{a/r}$, $r\le R_0$, are pairwise disjoint; \textup{(c)} $H_{a/r}\supseteq\{\vartheta:\norm{\vartheta-a/r}\le\Delta\}$.
+\end{lemma}
+\begin{proof}
+$R_0\le X/(QTK_1)=Q^{\lambda-1}T^{\lambda-1}(2\pi)^{-\lambda}K_1^{-1}<Q/2$ for large $Q$ since $\lambda<2$. (a) Every $b/q\in\mathcal P$ differs from
+$a/r$, so $\norm{b/q-a/r}\ge1/(qr)\ge1/(Qr)$. (b) $\norm{a/r-a'/r'}\ge1/(rr')\ge1/(rQ)+1/(r'Q)-1/Q^2$, since this is
+$(Q-r)(Q-r')\ge0$; so (b) holds for all $r,r'\le Q$. (c) $1/(rQ)\ge1/(R_0Q)=K_1T/N=2\Delta$, and $\delta/2<\Delta$ because $N\le X<K_1TQ^2$.
+\end{proof}
+\emph{Formalisation:} \texttt{farey\_hole\_cores} \tagL.
+
+Apply Lemma~\ref{lem:K-G} to $\mathcal P=\Farey_Q\setminus\Farey_{R_0}$ with $\delta=Q^{-2}$, and to $\Farey_{R'}\supseteq\Farey_{R_0}$ with
+$\delta=R'^{-2}$ and $Z=\emptyset$. With~\eqref{eq:K-fareysum} and Lemma~\ref{lem:K-Z},
+\begin{equation}\label{eq:K-G-applied}
+\mathbf F(s)\le Q^2\bigl(\norm a^2-\mathrm{Hole}(S)\bigr)+(2\pi X+R'^2)\norm a^2,\qquad
+\mathrm{Hole}(S):=\sum_{r\le R_0}\sideset{}{^*}\sum_{a\bmod r}\int_{\abs\beta\le\Delta}\abs{S(a/r+\beta)}^2d\beta,
+\end{equation}
+since by (a)--(c) the $\Delta$-balls are disjoint subsets of $Z$. For $s<\ell_{K_1}$, $\Farey_{R_0}=\emptyset$ and $\mathrm{Hole}(S)=0$.
+
+\subsubsection*{(c) The hole lower bound}
+\begin{lemma}[Lemma K.4: principal Gauss sum]\label{lem:K-R}
+Let $(a'_n)$ be supported on integers coprime to $r$ and $S'(\vartheta)=\sum_na'_ne(n\vartheta)$. For every $\beta\in\R$,
+$\displaystyle\frac{\mu^2(r)}{\varphi(r)}\abs{S'(\beta)}^2\le\sideset{}{^*}\sum_{a\bmod r}\abs{S'(a/r+\beta)}^2$.
+\end{lemma}
+\begin{proof}
+For $(n,r)=1$ the Ramanujan sum $\sum^*_{a\bmod r}e(na/r)$ equals $\mu(r)$. Hence $\sum^*_aS'(a/r+\beta)=\mu(r)S'(\beta)$, and
+Cauchy--Schwarz over the $\varphi(r)$ reduced residues gives the claim.
+\end{proof}
+\emph{Formalisation:} \texttt{principal\_gauss\_hole}, by exactly this proof \tagL. The identity
+$\sum^*_a\abs{S'(a/r+\beta)}^2=\varphi(r)^{-1}\sum_{\chi\bmod r}\abs{\tau(\chi)}^2\abs{S'_{\bar\chi}(\beta)}^2$ of the working draft, of which
+the lemma is the term $\chi=\chi_0$, is used in \S\ref{ssec:shell-holes}.
+
+We also use $\sum_{r\le R}\mu^2(r)/\varphi(r)\ge\log(R+1)$ for every integer $R\ge0$ (\texttt{log\_succ\_le\_sum\_moebius\_sq\_div\_totient}
+\tagL; compare~\cite[(3.18)]{MV}).
+
+\begin{lemma}[Lemma K.5: small primes]\label{lem:K-S}
+Put $a'_n:=a_n\mathbf 1\{n=p^k,\ p>R_0\}$ and $a'':=a-a'$. For $Q\ge Q_0$ and $\ell_{K_1}\le s\le\log X$, $\norm{a''(s)}^2\le1$.
+\end{lemma}
+\begin{proof}
+$\abs{a_n}^2\le\Lam(n)^2/(\pi^2n(s-\log n)^2)$ by $\abs{\DT(v)}\le2/\abs v$. For $n\le e^{s/2}$ one has $\abs{s-\log n}\ge s/2$ and
+$\Lam(n)^2\le(s/2)\Lam(n)$, and Mertens' estimate $\abs{\sum_{n\le y}\Lam(n)/n-\log y}\le\log4+4$ gives a contribution at most
+$(4\pi^2)^{-1}(8/s)(s/2+\log4+4)$. A surviving $n>e^{s/2}$ is a prime power $p^k$ with $p\le R_0<e^{s/2}<n$ (here $s\le\log X$ and
+$\lambda<2$ give $R_0<e^{s/2}$), hence $k\ge2$, and these contribute at most $T^2C_2e^{-s/8}$ with an absolute $C_2$. Since
+$s\ge\ell_{K_1}\ge\log Q$, the total is at most $8/(4\pi^2)+1/(4\pi^2)<1$ for large $Q$.
+\end{proof}
+The working draft stated this lemma for all $N\ge Q$; its proof covers only $s\le\log X$, which is the only range used (defect D3).
+\emph{Formalisation:} \texttt{small\_primes\_l2}, by this proof, on the range $\ell_{K_1}\le s\le\log X$ \tagL.
+
+Every $n$ in the support of $a'$ is coprime to every $r\le R_0$. The $\Delta$-balls are disjoint, so $\mathrm{Hole}$ is a squared
+$L^2$-norm on their union; $\mathrm{Hole}(S'')\le\norm{a''}^2\le1$ and $\mathrm{Hole}(S')\le\norm a^2$. Since $(x-y)^2\ge x^2-2xy$,
+Lemma~\ref{lem:K-R} and the bound for $\sum\mu^2/\varphi$ give
+\begin{equation}\label{eq:K-hole}
+\mathrm{Hole}(S)\ge\mathrm{Hole}(S')-2\norm a\ge(\log R_0)\,J-2\norm a=(s-\ell_{K_1})\,J-2\norm a,\qquad J:=\int_{\abs\beta\le\Delta}\abs{S'(\beta)}^2d\beta .
+\end{equation}
+\emph{Formalisation:} \texttt{hole\_lower} (node K7b) and \texttt{farey\_hole\_bound} (node K7a) \tagL.
+
+\begin{lemma}[Lemma K.6: principal-arc mass]\label{lem:K-P}
+There is $C_1$, depending on $\lambda$, $r_0$ and $\eps$, such that for all large $Q$, uniformly for $\ell_{K_1}\le s\le\log X-1$, $J\ge(1-C_1/\log Q)\,U$.
+\end{lemma}
+
+\begin{proof}
+Fix $\varrho\in C^\infty(\R,[0,1])$ with $\varrho=1$ on $[-\frac12,\frac12]$, $\operatorname{supp}\varrho\subseteq[-1,1]$, $\abs{\varrho'}\le3$.
+Put $\mathfrak m(y):=-\frac1{2\pi}y^{-1/2}\DT(s-\log y)$ and $\tilde{\mathfrak m}(y):=\mathfrak m(y)\varrho(\log y-s)$, so $\operatorname{supp}\tilde{\mathfrak m}\subseteq[N/e,eN]\subseteq[1,X]$
+and $a_n=\Lam(n)\mathfrak m(n)$. Let $\Lam'(n):=\Lam(n)\mathbf 1\{n=p^k,\ p>R_0\}$, $\tilde M(\beta):=\sum_n\tilde{\mathfrak m}(n)e(n\beta)$,
+$S^\varrho(\beta):=\sum_n\Lam'(n)\tilde{\mathfrak m}(n)e(n\beta)$ and $\norm f_\Delta:=(\int_{\abs\beta\le\Delta}\abs f^2)^{1/2}$. Then
+\[
+\sqrt J\ge\norm{\tilde M}_\Delta-E_1-E_2,\qquad E_1:=\norm{S^\varrho-\tilde M}_\Delta,\quad E_2:=\norm{S'-S^\varrho}_{L^2(\R/\Z)} .
+\]
+\emph{Step 1 (model mass).} By summation by parts and $\abs{1-e(\beta)}\ge4\norm\beta$,
+$\int_{\Delta<\norm\beta\le1/2}\abs{\tilde M}^2\le(16\Delta^2)^{-1}\sum_n\abs{\tilde{\mathfrak m}(n+1)-\tilde{\mathfrak m}(n)}^2\le(16\Delta^2)^{-1}\int\abs{\tilde{\mathfrak m}'}^2$. With
+$\norm{\DT}_2^2=2\pi T$, $\norm{\DT'}_2^2=14\pi T^3/3$ and $y^{-2}\le e^2/N^2$ on the support,
+$\int\abs{\tilde{\mathfrak m}'}^2\le2.88\,T^3/N^2$; as $16\Delta^2=4K_1^2T^2/N^2$, the mass outside $\abs\beta\le\Delta$ is at most $0.72\,T/K_1^2\le4.6\,U/K_1^2$.
+For the total mass, the substitution $y=e^{s-v}$ gives
+\[
+\int_0^\infty\abs{\tilde{\mathfrak m}(y)}^2dy=\frac1{4\pi^2}\int_{\R}\abs{\DT(v)}^2\varrho(-v)^2dv\ge\frac1{4\pi^2}\Bigl(2\pi T-\int_{\abs v>1/2}\frac4{v^2}dv\Bigr)=U-\frac4{\pi^2},
+\]
+and $\abs{\sum_n\abs{\tilde{\mathfrak m}(n)}^2-\int\abs{\tilde{\mathfrak m}}^2}$ is at most the total variation of $\abs{\tilde{\mathfrak m}}^2$, which is
+$\le2\sup\abs{\tilde{\mathfrak m}}\int\abs{\tilde{\mathfrak m}'}\ll T^{5/2}/N=o(1)$ since $N\ge QTK_1$. Hence $\norm{\tilde M}_\Delta^2\ge U-1-4.6\,U/K_1^2$ for large $Q$.
+
+\emph{Step 2 (Gallagher's $L^2$ lemma).} For $h:=1/(2\Delta)$ and finitely supported $(c_n)$,
+$\int_{\abs\beta\le\Delta}\abs{\sum_nc_ne(n\beta)}^2d\beta\le\pi^2\Delta^2\int_{\R}\abs{\sum_{x<n\le x+h}c_n}^2dx$~\cite[Lemma~1]{Gal70}: the function
+$C(x)=\sum_{x<n\le x+h}c_n$ has Fourier transform of modulus $\abs{\sum c_ne(n\beta)}\abs{\sin\pi h\beta}/(\pi\abs\beta)$, which is at least
+$\abs{\sum c_ne(n\beta)}/(\pi\Delta)$ on $\abs\beta\le\Delta$; apply Plancherel.
+
+\emph{Step 3 (partial summation; the prime number theorem).} Take $c_n=(\Lam'(n)-1)\tilde{\mathfrak m}(n)$, so $S^\varrho-\tilde M=\sum c_ne(n\beta)$.
+With $E(y):=\sum_{n\le y}(\Lam'(n)-1)=\sum_{n\le y}\Lam(n)-\floor y-\sum_{p^k\le y,\,p\le R_0}\log p$ and $E^*:=\sup_{N/e\le y\le eN}\abs{E(y)}$, one has
+$\abs{E(y)}\le\abs{\sum_{n\le y}\Lam(n)-y}+1+R_0\log y$, and Stieltjes integration gives $\abs{C(x)}\le E^*(2\sup\abs{\tilde{\mathfrak m}}+\int_x^{x+h}\abs{\tilde{\mathfrak m}'})$
+with $\sup\abs{\tilde{\mathfrak m}}\le e^{1/2}T/(2\pi\sqrt N)$ and $\int_x^{x+h}\abs{\tilde{\mathfrak m}'}\ll T/(K_1\sqrt N)$. As $C(x)\ne0$ only on an $x$-range of length
+$\le eN$, $E_1^2\ll K_1^2T^4(E^*/N)^2$. By~\eqref{eq:PNT}, $\log N\ge\log Q$ and $N\ge QTK_1$, $E^*/N=o((\log Q)^{-A})+O(\log(eN)/(QTK_1))$.
+Since $K_1$ and $T$ are fixed powers of $\log Q$, the choice $A\ge2+2(r_0+\eps)$ gives $E_1^2/U\ll K_1^2T^3(E^*/N)^2=o((\log Q)^{-2})$.
+
+\emph{Step 4 (tails).} With $f(u)=(s-u)^{-2}\mathbf 1\{\abs{s-u}\ge\frac12\}$,
+$E_2^2\le\sum_{n\le X,\,\abs{\log n-s}\ge1/2}\Lam(n)^2\abs{\mathfrak m(n)}^2\le\pi^{-2}\log X\sum_{n\le X}\Lam(n)f(\log n)/n$. Writing
+$\sum_{n\le x}\Lam(n)/n=\log x+R(x)$ with $\abs{R(x)}\le\log4+4$, and using $\int f=4$, $\sup f=4$, $\operatorname{Var}f=16$, Stieltjes integration gives
+$\sum\le4+24(\log4+4)\le134$, so $E_2^2\le13.6\log X$ and $E_2^2/U\le86\,\lambda\Lc/T$.
+
+\emph{Conclusion.} $\sqrt J\ge\sqrt U(\sqrt{1-1/U-4.6/K_1^2}-(E_1+E_2)/\sqrt U)$, and with $\sqrt{1-x}\ge1-x$, $(1-y)^2\ge1-2y$,
+$J\ge U(1-\eta_P)$ with $\eta_P:=2/U+9.2/K_1^2+2(E_1+E_2)/\sqrt U$. With $K_1=\Lc$ and $T=(\log Q)^{r_0+\eps}$, $r_0\ge3$:
+$2/U\ll(\log Q)^{-3}$, $9.2/K_1^2\ll(\log Q)^{-2}$, $2E_2/\sqrt U\le2(86\lambda\Lc/T)^{1/2}\ll(\log Q)^{-(r_0+\eps-1)/2}\le(\log Q)^{-1}$, and
+$2E_1/\sqrt U=o((\log Q)^{-1})$. Hence $\eta_P\le C_1/\log Q$ for large $Q$.
+\end{proof}
+
+\emph{Corrections to the working draft.} The working draft used the prime number theorem with the error term
+$y\exp(-c\sqrt{\log y})$ and the unverified constant $\abs{R(x)}\le2$; both are replaced here by what the proof needs, the form
+\eqref{eq:PNT} and the Mertens bound $\abs{R(x)}\le\log4+4$ of the formal tree. This changes the draft's bounds $E_2^2/U\le33.3\,\lambda\Lc/T$ and $2E_2/\sqrt U\le16.4(\Lc/T)^{1/2}$ into $E_2^2/U\le86\,\lambda\Lc/T$ and
+$2E_2/\sqrt U\le26.3(\Lc/T)^{1/2}$, and nothing asymptotic (defect D4). The argument of Step~1 for $\sum_n\abs{\tilde{\mathfrak m}(n)}^2\ge U-1$, which the draft
+asserts without proof, is written out here.
+
+\emph{Formalisation.} The formal proof of Lemma~\ref{lem:K-P} (\texttt{principal\_arc\_mass}) replaces Step~2 by discrete
+summation by parts (\texttt{sbp\_L2}), which loses a factor of about $\Lc T$ that the prime number theorem at $A=3+3(r_0+\eps)$ absorbs;
+Steps~2--4 in that form are \texttt{sbp\_L2}, \texttt{pnt\_step} and \texttt{tails}. Step~1 is split into \texttt{model\_l2\_lower}
+($\sum_n\abs{\tilde{\mathfrak m}(n)}^2\ge U-C$) and \texttt{model\_outer} (the outer mass is $\le CU/\Lc^2$). The numerical deficit
+$U-\sum\abs{\tilde{\mathfrak m}(n)}^2$ is about $0.157$ at $Q=60$, $100$, $1000$ \tagN, consistent with Step~1. In the released library all of these
+are kernel-checked, and Theorem~\ref{thm:one-prime} rests on no open declaration and depends on the three standard axioms only
+(\S\ref{ssec:formal}) \tagL.
+
+\subsubsection*{(d) Assembly: proof of Lemma~\ref{lem:K}}
+For $\ell_{K_1}\le s\le\log X-1$, \eqref{eq:K-G-applied}, \eqref{eq:K-hole} and Lemma~\ref{lem:K-P} give~\eqref{eq:K-pointwise}. For $s<\ell_{K_1}$ or
+$s>\log X-1$ drop $\mathrm{Hole}\ge0$. This proves (i).
+
+For (ii), integrate~\eqref{eq:K-pointwise} against $\gwin\ge0$ over $O^+$ and use the diagonal evaluation
+$\int_{O^+}\gwin\norm a^2\le U\int_{O^+}s\,\gwin(s)\,ds\,(1+\eps_D)$ of~\cite{DSouza}. Since $s-(s-\ell_{K_1})_+=\min(s,\ell_{K_1})\le\min(s,\Lc)+\log(2\pi K_1)$
+and $(s-\ell_{K_1})_+\le(\lambda-1)\Lc$,
+\[
+\int_{O^+}\gwin\,\mathbf F\le Q^2U\int_{O^+}\gwin(s)\min(s,\Lc)\,ds\,(1+E_K),
+\]
+where $E_K$ collects, relative to the main term: the kink shift $\log(2\pi K_1)/\Lc$; the smearing and the terms $(2\pi X+R'^2)\norm a^2$,
+of relative size $O(\eps_D+Q^{\lambda-2}T^\lambda+Q^{2\lambda-4}T^{2\lambda-2})$; the error $C_1/\log Q$ of the subtracted term and the strip
+$(\log X-1,\log X]$ where the hole is dropped, of relative size $O(\Lc^{-1})$; and $2Q^2\norm a$, bounded by Cauchy--Schwarz in $s$, of relative
+size $O((U\log Q)^{-1/2})$. The full block is then bounded as in Step~3 of \S\ref{sec:proof}: since $B_\chi(s)=\overline{A_\chi(-s)}$, Cauchy--Schwarz in $\chi$ bounds it by
+$2(\sqrt{X_+}+\sqrt{X_-})^2$ with $X_\pm:=\int_{O^\pm}\gwin\mathbf F$ and $O^-:=O\cap(-\infty,0)$; $X_+$ is bounded above, and $X_-=O(Q^2\int_O\gwin)$ by the large sieve,
+since $\norm{a(s)}^2=O(1)$ for $s\le-(1-\delta')\log Q$. The mirror copy doubles $U$ to $T/\pi$, the cross term costs a factor $1+O(\rho)$, and $Q^2=C_Q\abs{\FQ}$.
+This is~\eqref{eq:K-integrated}. \qed
+
+\subsection{The functional and the certified constants}\label{ssec:K-constants}
+In $\alpha$-units $\min(u,\Lc)=\Lc\min(\alpha,1)$. The zone-edge strip $(1-\delta')\log Q/\Lc<\abs\alpha\le1$ keeps the kernel
+$C\abs\alpha$ (row $L_1$ of~\cite{DSouza}), the in-zone term is unchanged, and the out-zone term becomes $C\int_{1<\abs\alpha\le\lambda}\psi$.
+The functional consumed by Proposition~\ref{prop:3.1} is therefore
+\begin{equation}\label{eq:BK}
+\Bfun^{\rm K}_{C}(v)=\psi(0)+\int_{\abs\alpha\le1}\abs\alpha\,\psi(\alpha)\,d\alpha+C\int_{1<\abs\alpha\le\lambda}\psi(\alpha)\,d\alpha,
+\end{equation}
+which is $\Bfun_k$ of~\eqref{eq:B} with $k(\alpha)=C\min(\abs\alpha,1)$ off the strip. Since $\psi\ge0$, $\Bfun^{\rm K}_C$ is increasing in
+$C$, and $\Bfun^{\rm K}_C\le\Bfun$ for every $v$. We evaluate it at the rational upper bound $C^+=541161617/10^8\ge\pi^4/18$.
+
+\begin{table}[ht]\centering\footnotesize
+\caption{Values of $2-\Bfun^{\rm K}_{C^+}(v_p)$, exact rationals truncated to ten digits. ``Lean'' means that the rational inequality is
+checked by the kernel (\texttt{decide +kernel}); $\lambda^*=1.2507321515$ is the bandwidth of the design of~\cite{DSouza}, which the formal
+design fixes exactly.}\label{tab:K}
+\begin{tabular}{@{}llll>{\raggedright\arraybackslash}p{4.9cm}@{}}
+\toprule
+profile & $\lambda$ & degree & $2-\Bfun^{\rm K}_{C^+}$ & status and use\\
+\midrule
+design profile of~\cite{DSouza} & $\lambda^*$ & 6 & $0.7235110849$ & Lean (\texttt{BKdesign\_le}); Theorem~\ref{thm:one-prime}\\
+new profile at $\lambda^*$ & $\lambda^*$ & 8 & $0.7237495018$ & Lean (\texttt{BKlam8\_le}); needs a new design\\
+new profile at $\lambda^*$ & $\lambda^*$ & 10 & $0.7237502555$ & exact rational only; not used\\
+profile (iv$'$) of the working draft & $32/25$ & 8 & $0.7237573823$ & Lean calibration; outside the design\\
+kernel of~\cite{DSouza}, design profile & $\lambda^*$ & 6 & $0.7212536292$ & check of the pipeline\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The design profile of~\cite{DSouza} is $p_{\rm d}(t)=1-0.650056\,t^2+3.458583\,t^4-18.349255\,t^6$ on $[-\lambda^*/2,\lambda^*/2]$ (exact rational
+coefficients in the formal tree). Its real-valued certificate, $\Bfun^{\rm K}_{C^+}(v_{\rm d})\le2-0.72351$ together with $\pi^4/18\le C^+$ and the
+admissibility of $v_{\rm d}$, is the Lean theorem \texttt{certKD\_core} \tagL; it is obtained from the identity
+$\Bfun^{\rm K}_C=\Bfun_{k_{\alpha'}}$ with the Shell kernel of level $C$ (for any $\alpha'$) and the Lean identity of \S\ref{sec:cert} at
+$\alpha'=6/5$, followed by a kernel computation.
+
+\emph{The constant $0.72375$ is not claimed.} The working draft stated Theorem~\ref{thm:one-prime} with $0.7237$, as the truncation of
+$0.72375738$ at profile (iv$'$), $\lambda=32/25$, and said that a profile at $\lambda=5/4$ ``fits the caps'' of the formal design. The formal
+design does not cap the bandwidth but fixes it at $\lambda^*$, so neither profile is admissible there (defects D1, D2). At $\lambda^*$ the
+best degree-$8$ profile gives $0.7237495018<0.72375$ (a kernel-checked control, \texttt{BKlam8\_not\_72375}, shows that $0.72375$ fails for
+it), and a degree-$10$ profile gives $0.7237502555$, a margin of $2.6\cdot10^{-7}$. The value $0.7237$ at the degree-$8$ profile needs the
+design layer (zone constants, ramp link, existence of the design) at that profile, which is not done in Lean; each of these is an $o(1)$ row,
+so the argument of \S\ref{ssec:thm1prime} should give $0.7237$ as well \tagM, but we have not recomputed those constants on paper and do not
+state it. In Lean the companion statement at $0.7237$ (\texttt{theorem\_one\_prime}) still rests on one open node (\S\ref{ssec:formal}).
+
+\subsection{Proof of Theorem~\ref{thm:one-prime}}\label{ssec:thm1prime}
+The proof is that of~\cite[Theorem~1]{DSouza}, at the design of record of~\cite{DSouza} ($\lambda=\lambda^*$, profile $p_{\rm d}$), with the
+out-zone use of the large sieve inside~\cite[Lemma~4.3]{DSouza} replaced by Lemma~\ref{lem:K}(ii). The in-zone analysis, the zone-edge strip,
+the in-zone cross term and the ends are unchanged (the out-zone cross term is the factor $1+O(\rho)$ of Lemma~\ref{lem:K}(ii)). Proposition~\ref{prop:3.1} is applied with $\Bfun_*=\Bfun^{\rm K}_{C^+}(v_{\rm d})$; since
+$C_Q\to\pi^4/18<C^+$, the difference between $C_Q$ and $C^+$ only helps. The budget of~\cite[\S10.3]{DSouza} receives three new rows:
+the kink shift $\log(2\pi K_1)/\Lc=O(\log\log Q/\log Q)$, the error $C_1/\log Q$ of Lemma~\ref{lem:K-P} and the strip $O(\Lc^{-1})$, all within
+the rate $\log\log Q/\log Q$ of~\cite{DSouza}. The certificate is used at $0.72351=0.7235+10^{-5}$, and the formal proof spends this slack
+on finite parts of the design, as~\cite{DSouza} spends its own. \qed
+
+\emph{Formalisation.} The formal proof follows this outline: the killed Frobenius row (node K8a, \texttt{frobenius\_inzone\_killed}) is
+the Frobenius row of~\cite{DSouza} with the out-zone sieve step replaced by the pointwise bound~\eqref{eq:K-pointwise} integrated against
+$\gwin$; its four sub-nodes (the master inequality, the saving $2\cdot\mathrm{Sav}\ge(T/2\pi)\Lc(aL)^2(K_1-K_1^{\rm kill}-\eta)$, the errors, and a
+closing arithmetic in which the saving meets the main term before the conversion to the zero count) are proved, the first from
+Lemma~\ref{lem:K}(i). The frame (node K9a) is derived from K8a, and the assembly (\texttt{k\_assembly}) and the
+headline step are proved. The headline \texttt{theorem\_one\_prime\_design} is quoted in Appendix~\ref{app:lean}; in the
+released library it depends on the three standard axioms only and rests on no open declaration \tagL\ (\S\ref{ssec:formal}).
+
+\begin{remark}[Thresholds]\label{rem:K-asymptotic}
+Lemma~\ref{lem:K} is asymptotic. With the explicit prime number theorem of Fiori, Kadiri and Swidinsky~\cite{FKS} and $T=(\log Q)^3$, the
+working draft computes that the row $E_1$ of Step~3 first becomes smaller than $1$ near $\log Q\approx5900$; the
+formal route through summation by parts has a much larger threshold. Theorem~\ref{thm:one-prime} is a statement about $Q\to\infty$ only,
+and this paper makes no statement about any finite $Q$.
+\end{remark}

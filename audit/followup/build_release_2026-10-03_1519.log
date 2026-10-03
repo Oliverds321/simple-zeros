@@ -1,0 +1,3268 @@
+# lake build at 4874cc0 (release branch, merge of followup-trunk 996b203), Sat Oct  3 15:19:48 AEST 2026, LEAN_NUM_THREADS=4, cloud container 4 CPUs 15 GB
+# targets: Zeta23 ZetaQ ZetaS ZetaSCertShims ZetaShell ChallengeDeps Challenge Solution Solution.FollowUpZeta Challenge.FollowUpFamily Solution.FollowUpFamily
+⚠ [3164/3271] Replayed Zeta23.Statement
+warning: Zeta23/Statement.lean:148:30: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [3585/3622] Replayed Zeta23.Statement.Seam
+warning: Zeta23/Statement/Seam.lean:59:13: `ENat.toNat_coe` has been deprecated: Use `ENat.toNat_natCast` instead
+⚠ [3614/3622] Replayed Zeta23.Assembly
+warning: Zeta23/Assembly.lean:885:47: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/Assembly.lean:958:34: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/Assembly.lean:962:90: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [3617/3622] Replayed Zeta23.ZetaReflect
+warning: Zeta23/ZetaReflect.lean:91:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8723/8971] Replayed Zeta23.Tail
+warning: Zeta23/Tail.lean:290:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/Tail.lean:399:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8724/8971] Replayed Zeta23.ZeroSide
+warning: Zeta23/ZeroSide.lean:701:4: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/ZeroSide.lean:706:66: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/ZeroSide.lean:712:52: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/ZeroSide.lean:755:53: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [8738/8971] Replayed Zeta23.GammaFacts.Mu
+info: Zeta23/GammaFacts/Mu.lean:137:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+ℹ [8740/8971] Replayed Zeta23.GammaFacts.StirlingVert
+info: Zeta23/GammaFacts/StirlingVert.lean:452:6: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [8744/8971] Replayed Zeta23.FromPNTPlus.StrongPNTPrefix
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:61:71: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:202:9: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:343:10: `Set.notMem_setOf_iff` has been deprecated: Use `Set.notMem_ofPred_iff` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:368:48: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:390:10: `Set.notMem_setOf_iff` has been deprecated: Use `Set.notMem_ofPred_iff` instead
+warning: Zeta23/FromPNTPlus/StrongPNTPrefix.lean:432:48: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8752/8971] Replayed Zeta23.FromPNTPlus.ZetaBounds
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:859:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:952:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1092:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1099:32: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1105:56: `Set.preimage_setOf_eq` has been deprecated: Use `Set.preimage_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1115:56: `Set.preimage_setOf_eq` has been deprecated: Use `Set.preimage_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1119:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1135:54: `Set.preimage_setOf_eq` has been deprecated: Use `Set.preimage_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1157:22: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1169:15: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1169:59: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1185:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1835:19: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1837:45: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1840:28: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1844:28: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1900:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:1906:20: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:2091:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:2884:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/ZetaBounds.lean:2940:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8754/8971] Replayed Zeta23.RvM.Halving
+warning: Zeta23/RvM/Halving.lean:52:55: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/RvM/Halving.lean:62:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/RvM/Halving.lean:70:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8763/8971] Replayed Zeta23.RvM.NcountWindow
+warning: Zeta23/RvM/NcountWindow.lean:23:22: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8766/8971] Replayed Zeta23.WeilEF.Landau
+warning: Zeta23/WeilEF/Landau.lean:341:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/WeilEF/Landau.lean:437:64: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8771/8971] Replayed Zeta23.ThmE.SeamL
+warning: Zeta23/ThmE/SeamL.lean:337:13: `ENat.toNat_coe` has been deprecated: Use `ENat.toNat_natCast` instead
+⚠ [8779/8971] Replayed Zeta23.ZeroSide.RankTraceMult
+warning: Zeta23/ZeroSide/RankTraceMult.lean:49:32: Variable name `ht0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ht0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:49:60: Variable name `hx` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:56:30: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:56:43: Variable name `hx` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:81:32: Variable name `hp` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:81:58: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:164:20: This simp argument is unused:
+  Matrix.mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/ZeroSide/RankTraceMult.lean:359:28: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8781/8971] Replayed Zeta23.Assembly.SeamMult
+warning: Zeta23/Assembly/SeamMult.lean:26:0: automatically included section variable(s) unused in theorem `Zeta23.Assembly.ctr_sub_frobSq_perturb`:
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8784/8971] Replayed Zeta23.ZeroSide.TightMult
+warning: Zeta23/ZeroSide/TightMult.lean:45:24: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [ha]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/ZeroSide/TightMult.lean:57:28: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Sum.inl_injective.eq_iff, Ne.symm hk]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/ZeroSide/TightMult.lean:64:14: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Sum.inl_injective.eq_iff, Ne.symm this]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/ZeroSide/TightMult.lean:67:12: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/ZeroSide/TightMult.lean:93:22: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8786/8971] Replayed Zeta23.XiPrime.Statement
+warning: Zeta23/XiPrime/Statement.lean:365:69: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8788/8971] Replayed Zeta23.XiPrime.Certificate.D1
+warning: Zeta23/XiPrime/Certificate/D1.lean:307:68: `intervalIntegral.integral_finset_sum` has been deprecated: Use `intervalIntegral.integral_finsetSum` instead
+warning: Zeta23/XiPrime/Certificate/D1.lean:316:11: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+⚠ [8789/8971] Replayed Zeta23.XiPrime.Transfer.Abstract
+warning: Zeta23/XiPrime/Transfer/Abstract.lean:100:11: `tendsto_finset_sum` has been deprecated: Use `tendsto_finsetSum` instead
+warning: Zeta23/XiPrime/Transfer/Abstract.lean:100:43: `tendsto_finset_sum` has been deprecated: Use `tendsto_finsetSum` instead
+⚠ [8792/9012] Replayed Zeta23.RvM.ReZeroCount
+warning: Zeta23/RvM/ReZeroCount.lean:272:15: `ENat.toNat_coe` has been deprecated: Use `ENat.toNat_natCast` instead
+⚠ [8796/9012] Replayed Zeta23.WeilEF.ZeroSummability
+warning: Zeta23/WeilEF/ZeroSummability.lean:189:4: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8798/9012] Replayed Zeta23.WeilEF.Contour
+warning: Zeta23/WeilEF/Contour.lean:69:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [8803/9012] Replayed Zeta23.WeilEF.Main
+info: Zeta23/WeilEF/Main.lean:38:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [8807/9012] Replayed Zeta23.ThmE.ReZeroCountChi
+warning: Zeta23/ThmE/ReZeroCountChi.lean:204:15: `ENat.toNat_coe` has been deprecated: Use `ENat.toNat_natCast` instead
+ℹ [8808/9012] Replayed Zeta23.ThmE.GammaFactsChiProof
+info: Zeta23/ThmE/GammaFactsChiProof.lean:208:47: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: Zeta23/ThmE/GammaFactsChiProof.lean:272:17: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [8813/9012] Replayed Zeta23.ThmE.ContourChi
+warning: Zeta23/ThmE/ContourChi.lean:74:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8819/9012] Replayed Zeta23.XiPrime.Certificate.Poly
+warning: Zeta23/XiPrime/Certificate/Poly.lean:42:6: `intervalIntegral.integral_finset_sum` has been deprecated: Use `intervalIntegral.integral_finsetSum` instead
+ℹ [8823/9012] Replayed Zeta23.XiPrime.Coeff.ReexpansionGen
+info: Zeta23/XiPrime/Coeff/ReexpansionGen.lean:223:73: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+⚠ [8825/9012] Replayed Zeta23.WeilEF.Effective
+warning: Zeta23/WeilEF/Effective.lean:624:30: This simp argument is unused:
+  Complex.div_re
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Complex.neg_re]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/WeilEF/Effective.lean:669:14: This simp argument is unused:
+  Complex.norm_ofNat
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/WeilEF/Effective.lean:717:23: 'first
+| assumption
+| positivity' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Zeta23/WeilEF/Effective.lean:759:23: 'first
+| assumption
+| positivity' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Zeta23/WeilEF/Effective.lean:717:23: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Zeta23/WeilEF/Effective.lean:759:23: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Zeta23/WeilEF/Effective.lean:912:17: 'linarith' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Zeta23/WeilEF/Effective.lean:912:17: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [8826/9012] Replayed Zeta23.XiPrime.Seam
+warning: Zeta23/XiPrime/Seam.lean:172:8: `ENat.coe_toNat` has been deprecated: Use `ENat.natCast_toNat` instead
+⚠ [8828/9012] Replayed Zeta23.XiPrime.ZeroCount.Basic
+warning: Zeta23/XiPrime/ZeroCount/Basic.lean:30:47: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/XiPrime/ZeroCount/Basic.lean:78:53: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8830/9012] Replayed Zeta23.XiPrime.ZeroCount.Generic
+warning: Zeta23/XiPrime/ZeroCount/Generic.lean:234:8: `intervalIntegral.integral_finset_sum` has been deprecated: Use `intervalIntegral.integral_finsetSum` instead
+⚠ [8835/9012] Replayed Zeta23.XiPrime.ExplicitFormula.PrimeTermJ
+warning: Zeta23/XiPrime/ExplicitFormula/PrimeTermJ.lean:136:8: `MeasureTheory.integrable_finset_sum` has been deprecated: Use `MeasureTheory.integrable_finsetSum` instead
+warning: Zeta23/XiPrime/ExplicitFormula/PrimeTermJ.lean:154:32: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+⚠ [8847/9012] Replayed Zeta23.Taper.Gevrey
+warning: Zeta23/Taper/Gevrey.lean:342:80: Variable name `x` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _x
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8851/9012] Replayed Zeta23.XiPrime.Hardy.ZFunction
+warning: Zeta23/XiPrime/Hardy/ZFunction.lean:60:37: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/Hardy/ZFunction.lean:322:63: `ENat.one_le_iff_ne_zero` has been deprecated: Use `Order.one_le_iff_ne_zero` instead
+
+Note: The updated constant has a different type:
+  ∀ {α : Type u_1} {x : α} [inst : PartialOrder α] [inst_1 : AddMonoidWithOne α] [NeZero 1] [SuccAddOrder α]
+    [IsBotZeroClass α], 1 ≤ x ↔ x ≠ 0
+instead of
+  ∀ {n : ℕ∞}, 1 ≤ n ↔ n ≠ 0
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.one_le_iff_ne_zero` to `Order.one_le_iff_ne_zero x`).
+⚠ [8853/9012] Replayed Zeta23.PairCeiling.Stability
+warning: Zeta23/PairCeiling/Stability.lean:49:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: Zeta23/PairCeiling/Stability.lean:245:4: 'push_cast at this ⊢' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8859/9012] Replayed Zeta23.WindowD
+warning: Zeta23/WindowD.lean:122:34: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/WindowD.lean:127:6: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8861/9012] Replayed Zeta23.XiPrime.ZeroCount.Contour
+warning: Zeta23/XiPrime/ZeroCount/Contour.lean:35:33: `Set.Infinite.diff` has been deprecated: Use `Set.Infinite.sdiff` instead
+⚠ [8865/9012] Replayed Zeta23.XiPrime.ExplicitFormula.Contour
+warning: Zeta23/XiPrime/ExplicitFormula/Contour.lean:94:31: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8871/9012] Replayed Zeta23.XiPrime.ExplicitFormula.EntryError
+warning: Zeta23/XiPrime/ExplicitFormula/EntryError.lean:121:82: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8872/9012] Replayed Zeta23.XiPrime.ExplicitFormula.JTerm
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:64:19: Variable name `hk` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hk
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:64:41: Variable name `hkc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hkc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:65:24: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:65:38: Variable name `ha` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:65:51: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:65:64: Variable name `hW` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hW
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:65:77: Variable name `hW'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hW'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:66:7: Variable name `hw1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:67:7: Variable name `hw2` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw2
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:68:7: Variable name `hw1'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw1'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:69:7: Variable name `hw2'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw2'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:70:20: Variable name `hcs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hcs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:71:7: Variable name `hC1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:72:7: Variable name `hC1'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC1'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:242:19: Variable name `hk` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hk
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:242:41: Variable name `hkc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hkc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:243:24: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:243:38: Variable name `ha` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:243:51: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:243:64: Variable name `hW` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hW
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:243:77: Variable name `hW'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hW'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:244:7: Variable name `hw1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:245:7: Variable name `hw2` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw2
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:246:7: Variable name `hw1'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw1'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:247:7: Variable name `hw2'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw2'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:248:20: Variable name `hcs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hcs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:249:7: Variable name `hC1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/ExplicitFormula/JTerm.lean:250:7: Variable name `hC1'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC1'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8876/9012] Replayed Zeta23.XiPrime.ExplicitFormula.TestWeight
+warning: Zeta23/XiPrime/ExplicitFormula/TestWeight.lean:903:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/XiPrime/ExplicitFormula/TestWeight.lean:912:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/XiPrime/ExplicitFormula/TestWeight.lean:945:11: `HasSubset.Subset.eventuallyLE` has been deprecated: Use `LE.le.eventuallyLE` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.eventuallyLE` to `LE.le.eventuallyLE x`).
+warning: Zeta23/XiPrime/ExplicitFormula/TestWeight.lean:983:11: `HasSubset.Subset.eventuallyLE` has been deprecated: Use `LE.le.eventuallyLE` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.eventuallyLE` to `LE.le.eventuallyLE x`).
+⚠ [8880/9012] Replayed Zeta23.XiPrime.Hardy.Seam
+warning: Zeta23/XiPrime/Hardy/Seam.lean:56:22: `ENat.coe_toNat` has been deprecated: Use `ENat.natCast_toNat` instead
+⚠ [8882/9012] Replayed Zeta23.XiPrime.Hardy.Contour
+warning: Zeta23/XiPrime/Hardy/Contour.lean:39:33: `Set.Infinite.diff` has been deprecated: Use `Set.Infinite.sdiff` instead
+warning: Zeta23/XiPrime/Hardy/Contour.lean:113:25: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8884/9012] Replayed Zeta23.XiPrime.Hardy.EFBasic
+warning: Zeta23/XiPrime/Hardy/EFBasic.lean:291:21: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/XiPrime/Hardy/EFBasic.lean:273:27: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/Hardy/EFBasic.lean:273:44: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8887/9012] Replayed Zeta23.XiPrime.Hardy.EFJTermW
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:44:19: Variable name `hk` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hk
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:44:41: Variable name `hkc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hkc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:45:24: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:45:38: Variable name `ha` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:45:51: Variable name `hb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:45:64: Variable name `hW` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hW
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:45:77: Variable name `hW'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hW'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:46:7: Variable name `hw1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:47:7: Variable name `hw2` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw2
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:48:7: Variable name `hw1'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw1'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:49:7: Variable name `hw2'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw2'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:50:20: Variable name `hcs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hcs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:51:7: Variable name `hC1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/Hardy/EFJTermW.lean:52:7: Variable name `hC1'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC1'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8891/9012] Replayed Zeta23.XiPrime.Hardy.EFContour.Analytic
+warning: Zeta23/XiPrime/Hardy/EFContour/Analytic.lean:237:32: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8893/9012] Replayed Zeta23.XiPrime.Hardy.EFContour.Rectangle
+warning: Zeta23/XiPrime/Hardy/EFContour/Rectangle.lean:201:8: `ENat.coe_toNat` has been deprecated: Use `ENat.natCast_toNat` instead
+warning: Zeta23/XiPrime/Hardy/EFContour/Rectangle.lean:287:31: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8896/9012] Replayed Zeta23.XiPrime.Hardy.EFContour
+warning: Zeta23/XiPrime/Hardy/EFContour.lean:390:57: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8902/9058] Replayed Zeta23.FromPNTPlus.MellinCalculus
+warning: Zeta23/FromPNTPlus/MellinCalculus.lean:839:40: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/MellinCalculus.lean:839:40: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8905/9058] Replayed Zeta23.FromPNTPlus.MediumPNT
+warning: Zeta23/FromPNTPlus/MediumPNT.lean:156:34: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/MediumPNT.lean:1348:14: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/MediumPNT.lean:1354:32: `Set.setOf_subset_setOf` has been deprecated: Use `Set.ofPred_subset_ofPred` instead
+warning: Zeta23/FromPNTPlus/MediumPNT.lean:1355:12: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/FromPNTPlus/MediumPNT.lean:3090:6: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+info: Zeta23/FromPNTPlus/MediumPNT.lean:3731:0: 'MediumPNT' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [8927/9270] Replayed ZetaS.Cert.CheckerTestsV3
+info: ZetaS/Cert/CheckerTestsV3.lean:64:0: 'ZetaS.CertV2.neg_C18' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Cert/CheckerTestsV3.lean:65:0: 'ZetaS.CertV2.pos_C18' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Cert/CheckerTestsV3.lean:66:0: 'ZetaS.CertV2.neg_C19a_zeroPivot' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Cert/CheckerTestsV3.lean:67:0: 'ZetaS.CertV2.neg_C07b' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [8946/9498] Replayed Zeta23.PrimeSideA.EndsE1
+warning: Zeta23/PrimeSideA/EndsE1.lean:326:41: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [8951/9498] Replayed Zeta23.PrimeSideA
+info: Zeta23/PrimeSideA.lean:372:0: lem_ends : ∀ (cϱ lam : ℝ),
+  GammaFacts →
+    ChebyshevMertens →
+      0 < lam ∧ lam ≤ 1 →
+        ∃ C, EventuallyAtCore cϱ lam fun p F ↦ |trGt2A p F - MtotalA p F| ≤ C * (p.L * p.l * log p.l * (p.l ^ 2 + p.X))
+info: Zeta23/PrimeSideA.lean:398:0: prop_mumu : ∀ (cϱ lam : ℝ),
+  GammaFacts →
+    ChebyshevMertens →
+      0 < lam ∧ lam ≤ 1 →
+        ∃ C,
+          EventuallyAtCore cϱ lam fun p F ↦
+            |Mform F.Phi p.T mu mu - 2 * π * F.b * p.L * ∫ (τ : ℝ) in p.T..2 * p.T, mu τ ^ 2| ≤ C * (p.l ^ 2 * log p.L)
+info: Zeta23/PrimeSideA.lean:404:0: prop_cross_muP : ∀ (cϱ lam : ℝ),
+  GammaFacts →
+    ChebyshevMertens →
+      0 < lam ∧ lam ≤ 1 → ∃ C, EventuallyAtCore cϱ lam fun p F ↦ |Mform F.Phi p.T mu (PX p.X)| ≤ C * (p.l * √p.X)
+⚠ [8957/9498] Replayed Zeta23.MV.Spacing
+warning: Zeta23/MV/Spacing.lean:58:0: automatically included section variable(s) unused in theorem `Zeta23.MV.Adm.itv_disjoint`:
+  [Fintype ι]
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype ι] [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Zeta23/MV/Spacing.lean:153:8: automatically included section variable(s) unused in theorem `_private.Zeta23.MV.Spacing.0.Zeta23.MV.Adm.mem_window`:
+  [Fintype ι]
+  [DecidableEq ι]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype ι] [DecidableEq ι] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8966/9498] Replayed Zeta23.ThmD.WindowCore
+warning: Zeta23/ThmD/WindowCore.lean:388:22: Variable name `u` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _u
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8969/9498] Replayed Zeta23.ThmD.Window
+warning: Zeta23/ThmD/Window.lean:132:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8973/9498] Replayed Zeta23.ThmD.PP
+warning: Zeta23/ThmD/PP.lean:270:29: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/ThmD/PP.lean:276:29: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [8984/9498] Replayed Zeta23.ThmE.Main
+warning: Zeta23/ThmE/Main.lean:190:0: automatically included section variable(s) unused in theorem `Zeta23.ThmE.eventually_GzGpChi`:
+  [NeZero q]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero q] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [8985/9498] Replayed Zeta23.ThmE.EFLitChi
+warning: Zeta23/ThmE/EFLitChi.lean:130:24: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8995/9498] Replayed Zeta23.XiPrime.PrimeSide.Traces
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:359:72: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:361:72: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:364:72: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:367:72: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:369:72: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:372:72: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:395:15: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:418:11: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:435:75: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:437:80: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: Zeta23/XiPrime/PrimeSide/Traces.lean:464:13: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8996/9498] Replayed Zeta23.XiPrime.PrimeSide.Density
+warning: Zeta23/XiPrime/PrimeSide/Density.lean:248:62: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8997/9498] Replayed Zeta23.XiPrime.PrimeSide.Cross
+warning: Zeta23/XiPrime/PrimeSide/Cross.lean:51:10: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+warning: Zeta23/XiPrime/PrimeSide/Cross.lean:71:58: Variable name `hlam` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hlam
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/XiPrime/PrimeSide/Cross.lean:165:19: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8998/9498] Replayed Zeta23.XiPrime.PrimeSide.Trace
+warning: Zeta23/XiPrime/PrimeSide/Trace.lean:58:10: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+⚠ [8999/9498] Replayed Zeta23.XiPrime.PrimeSide.Abel
+warning: Zeta23/XiPrime/PrimeSide/Abel.lean:69:59: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/XiPrime/PrimeSide/Abel.lean:149:63: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/XiPrime/PrimeSide/Abel.lean:69:59: This simp argument is unused:
+  Set.mem_setOf_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Set.mem_compl_iff, Set.mem_singleton_iff, ne_eq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/XiPrime/PrimeSide/Abel.lean:198:4: 'beta_reduce' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9003/9498] Replayed Zeta23.XiPrime.QuarticWindow.ModWindow
+warning: Zeta23/XiPrime/QuarticWindow/ModWindow.lean:87:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [9008/9498] Replayed Zeta23.XiPrime.Transfer.Dependence
+warning: Zeta23/XiPrime/Transfer/Dependence.lean:171:10: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+⚠ [9009/9498] Replayed Zeta23.XiPrime.PrimeSide.PP
+warning: Zeta23/XiPrime/PrimeSide/PP.lean:152:8: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+warning: Zeta23/XiPrime/PrimeSide/PP.lean:152:42: `MeasureTheory.integrable_finset_sum` has been deprecated: Use `MeasureTheory.integrable_finsetSum` instead
+warning: Zeta23/XiPrime/PrimeSide/PP.lean:154:8: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+⚠ [9013/9498] Replayed Zeta23.Taper.GevreyRamps
+warning: Zeta23/Taper/GevreyRamps.lean:73:88: `ENat.coe_lt_top` has been deprecated: Use `ENat.natCast_lt_top` instead
+warning: Zeta23/Taper/GevreyRamps.lean:211:83: This simp argument is unused:
+  Rp
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/Taper/GevreyRamps.lean:213:83: This simp argument is unused:
+  Rm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9014/9498] Replayed Zeta23.Tail.GevreyTail
+warning: Zeta23/Tail/GevreyTail.lean:119:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: Zeta23/Tail/GevreyTail.lean:256:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: Zeta23/Tail/GevreyTail.lean:350:61: Variable name `hx₀` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx₀
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/Tail/GevreyTail.lean:583:5: Variable name `hKg` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hKg
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/Tail/GevreyTail.lean:713:12: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: Zeta23/Tail/GevreyTail.lean:713:2: 'all_goals ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: Zeta23/Tail/GevreyTail.lean:796:54: Variable name `hD` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hD
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: Zeta23/Tail/GevreyTail.lean:910:8: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: Zeta23/Tail/GevreyTail.lean:1409:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: Zeta23/Tail/GevreyTail.lean:1478:0: automatically included section variable(s) unused in theorem `Zeta23.Tail.TailHypG.c2_pos`:
+  H
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit H in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: Zeta23/Tail/GevreyTail.lean:1636:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [9021/9498] Replayed ZetaS.Window.PolyWindow
+info: ZetaS/Window/PolyWindow.lean:886:0: 'ZetaS.PolyWindow.psiTilde_pos_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:887:0: 'ZetaS.PolyWindow.vP8_not_antitoneOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:888:0: 'ZetaS.PolyWindow.tv_mul_ramp_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:889:0: 'ZetaS.PolyWindow.integral_abs_deriv_phiP8_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:890:0: 'ZetaS.PolyWindow.integral_abs_deriv_phiP8_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:891:0: 'ZetaS.PolyWindow.admWindow_phiP8' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:892:0: 'ZetaS.PolyWindow.integral_vP8' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:893:0: 'ZetaS.PolyWindow.integral_vP8_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:894:0: 'ZetaS.PolyWindow.vConv_vP8' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:895:0: 'ZetaS.PolyWindow.jP8' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:896:0: 'ZetaS.PolyWindow.H_P8' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/PolyWindow.lean:897:0: 'ZetaS.PolyWindow.cRatio_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9022/9498] Replayed ZetaS.Window.CosWindow
+info: ZetaS/Window/CosWindow.lean:571:0: 'ZetaS.CosWindow.integral_cosW' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:572:0: 'ZetaS.CosWindow.integral_cosW_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:573:0: 'ZetaS.CosWindow.jInt_cosW' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:574:0: 'ZetaS.CosWindow.Rquot_cosW' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:575:0: 'ZetaS.CosWindow.HC_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:576:0: 'ZetaS.CosWindow.HC_eight_fifths' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:577:0: 'ZetaS.CosWindow.HC_37_25' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:578:0: 'ZetaS.CosWindow.sigma_K7' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:579:0: 'ZetaS.CosWindow.dist_K7' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:580:0: 'ZetaS.CosWindow.sigma_K5' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:581:0: 'ZetaS.CosWindow.dist_K5' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:582:0: 'ZetaS.CosWindow.admWindow_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:583:0: 'ZetaS.CosWindow.admWindow_phiV_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9023/9498] Replayed ZetaS.Window.ProfileMoments
+info: ZetaS/Window/ProfileMoments.lean:184:0: 'ZetaS.ProfileMoments.av_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/ProfileMoments.lean:185:0: 'ZetaS.ProfileMoments.bv_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/ProfileMoments.lean:186:0: 'ZetaS.ProfileMoments.localHypsCore_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [9024/9498] Replayed ZetaShell.Challenge
+warning: ZetaShell/Challenge.lean:240:8: declaration uses `sorry`
+warning: ZetaShell/Challenge.lean:250:8: declaration uses `sorry`
+warning: ZetaShell/Challenge.lean:292:8: declaration uses `sorry`
+warning: ZetaShell/Challenge.lean:305:8: declaration uses `sorry`
+ℹ [9025/9498] Replayed ZetaShell.Cert.ShellCertQ
+info: ZetaShell/Cert/ShellCertQ.lean:184:0: 'ZetaShell.CertQ.BS53_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaShell/Cert/ShellCertQ.lean:185:0: 'ZetaShell.CertQ.BD53_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaShell/Cert/ShellCertQ.lean:186:0: 'ZetaShell.CertQ.BS53_not_le_next' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaShell/Cert/ShellCertQ.lean:187:0: 'ZetaShell.CertQ.l75_S53' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaShell/Cert/ShellCertQ.lean:188:0: 'ZetaShell.CertQ.l75_D53' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [9031/9498] Replayed ZetaShell.Lemma2.L711_MuSqPhi
+warning: ZetaShell/Lemma2/L711_MuSqPhi.lean:253:38: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9034/9498] Replayed ZetaShell.Lemma2.A2a_S2_Mobius
+warning: ZetaShell/Lemma2/A2a_S2_Mobius.lean:61:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [9035/9498] Replayed ZetaShell.Lemma2.A2a_S2s_AbsMu
+warning: ZetaShell/Lemma2/A2a_S2s_AbsMu.lean:26:16: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaShell/Lemma2/A2a_S2s_AbsMu.lean:26:16: 'simp [Multiset.toFinset, Multiset.coe_dedup]' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9039/9498] Replayed ZetaShell.LemmaK.LK9_K4b_Aux
+warning: ZetaShell/LemmaK/LK9_K4b_Aux.lean:22:22: Variable name `p` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _p
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9049/9599] Replayed Zeta23.XiPrime.Transfer
+warning: Zeta23/XiPrime/Transfer.lean:718:31: This simp argument is unused:
+  Matrix.diag_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.trace, map_sum, RCLike.re_to_complex, Complex.ofReal_re]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: Zeta23/XiPrime/Transfer.lean:718:81: This simp argument is unused:
+  Complex.ofReal_re
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.trace, Matrix.diag_apply, map_sum, RCLike.re_to_complex]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9050/9599] Replayed Zeta23.XiPrime.PrimeSide.PPUpper
+warning: Zeta23/XiPrime/PrimeSide/PPUpper.lean:57:18: Variable name `hlam` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hlam
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ℹ [9052/9599] Replayed ZetaS.Window.ProfileAutocorr
+info: ZetaS/Window/ProfileAutocorr.lean:341:0: 'ZetaS.ProfileAutocorr.gv_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/ProfileAutocorr.lean:342:0: 'ZetaS.ProfileAutocorr.tendsto_JTV' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/ProfileAutocorr.lean:343:0: 'ZetaS.ProfileAutocorr.tendsto_cRatioV' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9053/9599] Replayed ZetaS.Window.WindowInstances
+info: ZetaS/Window/WindowInstances.lean:100:0: 'ZetaS.WindowInstances.aP8_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowInstances.lean:101:0: 'ZetaS.WindowInstances.bP8_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowInstances.lean:102:0: 'ZetaS.WindowInstances.localHypsCoreP8_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowInstances.lean:103:0: 'ZetaS.WindowInstances.aCos_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowInstances.lean:104:0: 'ZetaS.WindowInstances.bCos_close' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowInstances.lean:105:0: 'ZetaS.WindowInstances.localHypsCoreCos_eventually' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [9059/9599] Replayed ZetaShell.Lemma2.A2a_S2c_ProgGeneral
+warning: ZetaShell/Lemma2/A2a_S2c_ProgGeneral.lean:45:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaShell/Lemma2/A2a_S2c_ProgGeneral.lean:78:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaShell/Lemma2/A2a_S2c_ProgGeneral.lean:26:69: Variable name `hab` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hab
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+ℹ [9061/9599] Replayed ZetaShell.PNT.PNTMedium
+info: ZetaShell/PNT/PNTMedium.lean:56:0: 'L7_2.pntErrorTermMedium' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaShell/PNT/PNTMedium.lean:57:0: 'L7_2.exp_rpow_tenth_isLittleO' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaShell/PNT/PNTMedium.lean:58:0: 'L7_2.psi_sub_id_isLittleO_log_rpow' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9062/9599] Replayed ZetaShell.LemmaK.LK_KCq
+info: ZetaShell/LemmaK/LK_KCq.lean:174:0: 'ZetaShell.LemmaK.CertQ.BKdesign_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaShell/LemmaK/LK_KCq.lean:175:0: 'ZetaShell.LemmaK.CertQ.BKlam8_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaShell/LemmaK/LK_KCq.lean:176:0: 'ZetaShell.LemmaK.CertQ.BKlam8_not_72375' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaShell/LemmaK/LK_KCq.lean:177:0: 'ZetaShell.LemmaK.CertQ.BKivPrime_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaShell/LemmaK/LK_KCq.lean:178:0: 'ZetaShell.LemmaK.CertQ.BKivPrime_not_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaShell/LemmaK/LK_KCq.lean:179:0: 'ZetaShell.LemmaK.CertQ.BKdesign_not_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaShell/LemmaK/LK_KCq.lean:180:0: 'ZetaShell.LemmaK.CertQ.side_design' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaShell/LemmaK/LK_KCq.lean:181:0: 'ZetaShell.LemmaK.CertQ.side_lam8' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [9077/9605] Replayed Zeta23.XiPrime.FamilyHypsV
+warning: Zeta23/XiPrime/FamilyHypsV.lean:223:11: `MeasureTheory.integrable_finset_sum` has been deprecated: Use `MeasureTheory.integrable_finsetSum` instead
+warning: Zeta23/XiPrime/FamilyHypsV.lean:276:16: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+ℹ [9078/9605] Replayed ZetaS.Window.WindowLimits
+info: ZetaS/Window/WindowLimits.lean:208:0: 'ZetaS.WindowLimits.cWin_psiN' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowLimits.lean:209:0: 'ZetaS.WindowLimits.tendsto_cRatioP8' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowLimits.lean:210:0: 'ZetaS.WindowLimits.HD_P8' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowLimits.lean:211:0: 'ZetaS.WindowLimits.tendsto_cRatioCos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowLimits.lean:212:0: 'ZetaS.WindowLimits.vConv_cosW' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowLimits.lean:213:0: 'ZetaS.WindowLimits.jvConv_cosW' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowLimits.lean:214:0: 'ZetaS.WindowLimits.cWin_cosW' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowLimits.lean:215:0: 'ZetaS.WindowLimits.tendsto_cRatioCos'' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/WindowLimits.lean:216:0: 'ZetaS.WindowLimits.HD_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9079/9605] Replayed ZetaS.Window.TracesV
+info: ZetaS/Window/TracesV.lean:214:0: 'ZetaS.TracesV.concreteFactsV' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/TracesV.lean:215:0: 'ZetaS.TracesV.tracesBoundsV' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9080/9605] Replayed ZetaS.Window.EndgameV
+info: ZetaS/Window/EndgameV.lean:363:0: 'ZetaS.EndgameV.thmV_mult2_abstract' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/EndgameV.lean:364:0: 'ZetaS.EndgameV.thmV_mult3_abstract' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [9081/9605] Replayed ZetaS.Window.HeadlineV
+info: ZetaS/Window/HeadlineV.lean:333:0: 'ZetaS.HeadlineV.simple_V_lam_abstract' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/HeadlineV.lean:334:0: 'ZetaS.HeadlineV.zeta_simple_poly8A' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/HeadlineV.lean:335:0: 'ZetaS.HeadlineV.zeta_simple_cos85' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/HeadlineV.lean:336:0: 'ZetaS.HeadlineV.zeta_simple_cos85'' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/HeadlineV.lean:337:0: 'ZetaS.HeadlineV.dist_V_lam_abstract' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/HeadlineV.lean:338:0: 'ZetaS.HeadlineV.zeta_dist_poly8A' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/HeadlineV.lean:339:0: 'ZetaS.HeadlineV.zeta_dist_cos85' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [9088/9605] Replayed ZetaShell.PropZ.ZZ2h_NspCore
+warning: ZetaShell/PropZ/ZZ2h_NspCore.lean:50:20: Variable name `hκ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hκ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/PropZ/ZZ2h_NspCore.lean:134:7: Variable name `f` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _f
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9090/9605] Replayed ZetaShell.Skeleton.Z5_PropZ
+warning: ZetaShell/Skeleton/Z5_PropZ.lean:22:8: declaration uses `sorry`
+⚠ [9095/9605] Replayed ZetaShell.PropZ.ZR_PhiPw0
+warning: ZetaShell/PropZ/ZR_PhiPw0.lean:42:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [9097/9605] Replayed ZetaShell.PropZ.Z5a_Plancherel
+warning: ZetaShell/PropZ/Z5a_Plancherel.lean:178:23: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9100/9605] Replayed ZetaShell.Skeleton.Z5b_SmoothEF
+warning: ZetaShell/Skeleton/Z5b_SmoothEF.lean:21:8: declaration uses `sorry`
+warning: ZetaShell/Skeleton/Z5b_SmoothEF.lean:34:8: declaration uses `sorry`
+⚠ [9101/9605] Replayed ZetaShell.PropZ.Z5c_FamilyErrors
+warning: ZetaShell/PropZ/Z5c_FamilyErrors.lean:22:17: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [9102/9605] Replayed ZetaShell.PropZ.Z5c_FamilyErrorsW
+warning: ZetaShell/PropZ/Z5c_FamilyErrorsW.lean:20:17: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [9103/9605] Replayed ZetaShell.Skeleton.Z5_Steps
+warning: ZetaShell/Skeleton/Z5_Steps.lean:38:8: declaration uses `sorry`
+warning: ZetaShell/Skeleton/Z5_Steps.lean:46:8: declaration uses `sorry`
+⚠ [9106/9605] Replayed ZetaShell.ShellS.L12b_Pair
+warning: ZetaShell/ShellS/L12b_Pair.lean:21:55: Variable name `hbR` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hbR
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9109/9605] Replayed ZetaShell.ShellK.LF_K3bArith
+warning: ZetaShell/ShellK/LF_K3bArith.lean:26:5: Variable name `hCf` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hCf
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9116/9608] Replayed ZetaQ.Certificate
+warning: ZetaQ/Certificate.lean:786:5: Variable name `hBtr` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hBtr
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Certificate.lean:872:5: Variable name `hBtr` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hBtr
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Certificate.lean:872:22: Variable name `hBF` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hBF
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Certificate.lean:959:19: Variable name `hP` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hP
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Certificate.lean:1014:14: `ZetaQ.pair_perturbation'` has been deprecated: Use `ZetaQ.pair_perturbation` instead
+warning: ZetaQ/Certificate.lean:1000:19: Variable name `hP` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hP
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9117/9608] Replayed ZetaQ.Sieve
+warning: ZetaQ/Sieve.lean:2125:8: declaration uses `sorry`
+warning: ZetaQ/Sieve.lean:2436:47: `ZetaQ.SharpAdditiveLargeSieveOfLeOne` has been deprecated: Use `ZetaQ.SharpAdditiveLargeSieve` instead
+warning: ZetaQ/Sieve.lean:2947:12: `ZetaQ.SharpAdditiveLargeSieveOfLeOne` has been deprecated: Use `ZetaQ.SharpAdditiveLargeSieve` instead
+warning: ZetaQ/Sieve.lean:3028:56: `ZetaQ.SharpAdditiveLargeSieve.toLeOne` has been deprecated: Use `ZetaQ.SharpAdditiveLargeSieve` instead
+
+Note: The updated constant has a different type:
+  Prop
+instead of
+  SharpAdditiveLargeSieve → SharpAdditiveLargeSieve
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.toLeOne` to `SharpAdditiveLargeSieve x`).
+⚠ [9119/9608] Replayed ZetaQ.CharSums
+warning: ZetaQ/CharSums.lean:412:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:413:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:595:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:596:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:657:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:658:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:718:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:743:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:784:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:808:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:890:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:901:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:961:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:964:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:998:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:1132:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:1135:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:2274:44: Variable name `hx` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/CharSums.lean:2352:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:2362:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:2383:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:2394:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:2423:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:2440:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:2451:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:2484:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/CharSums.lean:2497:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9120/9608] Replayed ZetaQ.Payoff
+warning: ZetaQ/Payoff.lean:2527:27: Variable name `hCbar` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hCbar
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Payoff.lean:2554:27: Variable name `hCbar` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hCbar
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9121/9608] Replayed ZetaQ.Normalisation
+warning: ZetaQ/Normalisation.lean:876:17: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaQ/Normalisation.lean:878:17: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaQ/Normalisation.lean:876:17: 'linarith' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/Normalisation.lean:878:17: 'linarith' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/Normalisation.lean:2547:5: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Normalisation.lean:2879:29: Variable name `hα1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hα1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Normalisation.lean:3439:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+ℹ [9123/9608] Replayed ZetaS.Window.GramV
+info: ZetaS/Window/GramV.lean:290:0: 'ZetaS.GramV.frob_two_sided_alg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/GramV.lean:291:0: 'ZetaS.GramV.gram_asymptotics_V' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/GramV.lean:292:0: 'ZetaS.GramV.zeta_gram_poly8A_lam' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/GramV.lean:293:0: 'ZetaS.GramV.zeta_gram_cos85_lam' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [9126/9608] Replayed ZetaShell.PropZ.ZZ3b_Irho
+warning: ZetaShell/PropZ/ZZ3b_Irho.lean:66:22: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaShell/PropZ/ZZ3b_Irho.lean:74:85: Variable name `hf` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hf
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9128/9608] Replayed ZetaShell.PropZ.ZZ2g_Nsp
+warning: ZetaShell/PropZ/ZZ2g_Nsp.lean:187:92: Variable name `hk` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hk
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9132/9608] Replayed ZetaShell.PropZ.ZR_Phi
+warning: ZetaShell/PropZ/ZR_Phi.lean:130:15: `EMetric.diam` has been deprecated: Use `Metric.ediam` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.diam` to `Metric.ediam x`).
+warning: ZetaShell/PropZ/ZR_Phi.lean:131:11: `EMetric.diam_le` has been deprecated: Use `Metric.ediam_le` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.diam_le` to `Metric.ediam_le x`).
+warning: ZetaShell/PropZ/ZR_Phi.lean:97:51: Variable name `hs₀` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs₀
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/PropZ/ZR_Phi.lean:97:66: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9138/9608] Built Challenge (49s)
+warning: comparator/Challenge.lean:40:8: declaration uses `sorry`
+warning: comparator/Challenge.lean:45:8: declaration uses `sorry`
+warning: comparator/Challenge.lean:51:8: declaration uses `sorry`
+warning: comparator/Challenge.lean:56:8: declaration uses `sorry`
+warning: comparator/Challenge.lean:61:8: declaration uses `sorry`
+warning: comparator/Challenge.lean:66:8: declaration uses `sorry`
+warning: comparator/Challenge.lean:72:8: declaration uses `sorry`
+warning: comparator/Challenge.lean:78:8: declaration uses `sorry`
+warning: comparator/Challenge.lean:83:8: declaration uses `sorry`
+warning: comparator/Challenge.lean:90:8: declaration uses `sorry`
+warning: comparator/Challenge.lean:97:8: declaration uses `sorry`
+warning: comparator/Challenge.lean:104:8: declaration uses `sorry`
+warning: comparator/Challenge.lean:111:8: declaration uses `sorry`
+warning: comparator/Challenge.lean:117:8: declaration uses `sorry`
+warning: comparator/Challenge.lean:123:8: declaration uses `sorry`
+⚠ [9141/9608] Replayed Challenge.FollowUpFamily
+warning: comparator/Challenge/FollowUpFamily.lean:29:8: declaration uses `sorry`
+warning: comparator/Challenge/FollowUpFamily.lean:41:8: declaration uses `sorry`
+⚠ [9143/9608] Replayed ZetaQ.Ends
+warning: ZetaQ/Ends.lean:3008:5: Variable name `hQn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hQn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9144/9608] Replayed ZetaQ.Zones
+info: ZetaQ/Zones.lean:1560:0: 'ZetaQ.Zones.exists_designFamily_regime' depends on axioms: [propext, Classical.choice, Quot.sound]
+warning: ZetaQ/Zones.lean:1822:21: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+info: ZetaQ/Zones.lean:2087:6: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: ZetaQ/Zones.lean:2003:5: Variable name `hu₁sq` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hu₁sq
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Zones.lean:2004:5: Variable name `hu₂sq` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hu₂sq
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+info: ZetaQ/Zones.lean:2968:6: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: ZetaQ/Zones.lean:2998:4: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+warning: ZetaQ/Zones.lean:2889:34: Variable name `hχ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hχ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Zones.lean:3409:41: Variable name `hP` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hP
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Zones.lean:3409:56: Variable name `hreg` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hreg
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Zones.lean:3859:25: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaQ/Zones.lean:3905:73: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaQ/Zones.lean:3907:81: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ZetaQ/Zones.lean:3914:28: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ZetaQ/Zones.lean:3859:25: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/Zones.lean:3905:73: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/Zones.lean:6053:31: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+warning: ZetaQ/Zones.lean:6066:31: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+warning: ZetaQ/Zones.lean:6304:21: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaQ/Zones.lean:6319:21: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaQ/Zones.lean:6336:70: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaQ/Zones.lean:6304:21: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/Zones.lean:6319:21: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/Zones.lean:6336:70: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/Zones.lean:7829:22: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ZetaQ/Zones.lean:7970:22: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ZetaQ/Zones.lean:8413:29: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ZetaQ/Zones.lean:8419:29: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ZetaQ/Zones.lean:8671:26: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ZetaQ/Zones.lean:12154:5: Variable name `hpos` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hpos
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9146/9608] Replayed ZetaQ.Tail
+warning: ZetaQ/Tail.lean:1296:35: Variable name `hw` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Tail.lean:1296:50: Variable name `hA` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hA
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Tail.lean:1296:63: Variable name `hD` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hD
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Tail.lean:1332:35: Variable name `hw` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hw
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Tail.lean:1332:50: Variable name `hA` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hA
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Tail.lean:1332:63: Variable name `hD` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hD
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Tail.lean:1509:49: Variable name `hCenv` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hCenv
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Tail.lean:1615:5: Variable name `haL` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _haL
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Tail.lean:1645:5: Variable name `haL` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _haL
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Tail.lean:1769:26: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hj]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ZetaQ/Tail.lean:1778:35: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hj]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ZetaQ/Tail.lean:1852:62: Variable name `hBtr` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hBtr
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9147/9608] Replayed ZetaQ.DesignProfile
+warning: ZetaQ/DesignProfile.lean:1114:37: This simp argument is unused:
+  coeff_C_mul_X_pow
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [designProfileQle, coeff_add, coeff_C, Polynomial.coeff_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ZetaQ/DesignProfile.lean:1114:56: This simp argument is unused:
+  coeff_C
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [designProfileQle, coeff_add, coeff_C_mul_X_pow, Polynomial.coeff_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ZetaQ/DesignProfile.lean:1121:40: This simp argument is unused:
+  coeff_C_mul_X_pow
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [designProfileDyadic, coeff_add, coeff_C, Polynomial.coeff_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ZetaQ/DesignProfile.lean:1121:59: This simp argument is unused:
+  coeff_C
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [designProfileDyadic, coeff_add, coeff_C_mul_X_pow, Polynomial.coeff_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ZetaQ/DesignProfile.lean:1195:5: Variable name `hB0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hB0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9152/9608] Replayed ZetaShell.Skeleton.A2P_LineProfile
+warning: ZetaShell/Skeleton/A2P_LineProfile.lean:208:30: Variable name `hp` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/Skeleton/A2P_LineProfile.lean:571:8: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [9153/9608] Replayed ZetaShell.PropZ.ZP_Bridge
+warning: ZetaShell/PropZ/ZP_Bridge.lean:19:43: Variable name `hκ1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hκ1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/PropZ/ZP_Bridge.lean:20:17: Variable name `hf` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hf
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9155/9608] Replayed ZetaShell.PropZ.ZZ3d_Deriv
+warning: ZetaShell/PropZ/ZZ3d_Deriv.lean:67:46: Variable name `hκ1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hκ1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/PropZ/ZZ3d_Deriv.lean:68:56: Variable name `hk` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hk
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/PropZ/ZZ3d_Deriv.lean:117:33: This simp argument is unused:
+  Pi.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hp, Pi.pow_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [9158/9608] Replayed ZetaQ.Budget
+warning: ZetaQ/Budget.lean:1700:8: declaration uses `sorry`
+warning: ZetaQ/Budget.lean:1751:8: declaration uses `sorry`
+warning: ZetaQ/Budget.lean:2257:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/Budget.lean:2323:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/Budget.lean:3117:5: Variable name `hloc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hloc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Budget.lean:3791:5: Variable name `hdes` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hdes
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Budget.lean:3791:46: Variable name `hθ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hθ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/Budget.lean:6360:8: declaration uses `sorry`
+⚠ [9165/9608] Replayed ZetaShell.Lemma2.L711_QphiSum
+warning: ZetaShell/Lemma2/L711_QphiSum.lean:131:11: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ZetaShell/Lemma2/L711_QphiSum.lean:197:13: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ZetaShell/Lemma2/L711_QphiSum.lean:200:13: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ZetaShell/Lemma2/L711_QphiSum.lean:487:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [9166/9608] Replayed ZetaShell.PropZ.ZZ1b_Expand
+warning: ZetaShell/PropZ/ZZ1b_Expand.lean:186:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaShell/PropZ/ZZ1b_Expand.lean:175:33: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/PropZ/ZZ1b_Expand.lean:175:59: Variable name `hΔ1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hΔ1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/PropZ/ZZ1b_Expand.lean:316:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaShell/PropZ/ZZ1b_Expand.lean:308:43: Variable name `hk` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hk
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/PropZ/ZZ1b_Expand.lean:308:56: Variable name `hone` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hone
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9168/9608] Replayed ZetaShell.PropZ.ZP_Pointwise
+warning: ZetaShell/PropZ/ZP_Pointwise.lean:21:55: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9169/9608] Replayed ZetaShell.PropZ.ZR_Remainder
+warning: ZetaShell/PropZ/ZR_Remainder.lean:16:37: Variable name `hA` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hA
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/PropZ/ZR_Remainder.lean:41:5: Variable name `hC` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hC
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/PropZ/ZR_Remainder.lean:41:18: Variable name `hk` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hk
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/PropZ/ZR_Remainder.lean:41:73: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9170/9608] Replayed ZetaShell.ShellS.L12b_Char
+warning: ZetaShell/ShellS/L12b_Char.lean:171:58: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9171/9608] Replayed ZetaShell.ShellS.L10_Z6c
+warning: ZetaShell/ShellS/L10_Z6c.lean:29:40: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/ShellS/L10_Z6c.lean:30:37: Variable name `hε1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hε1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9175/9608] Replayed ZetaShell.Skeleton.L10_AS
+warning: ZetaShell/Skeleton/L10_AS.lean:28:8: declaration uses `sorry`
+⚠ [9176/9608] Replayed ZetaShell.Skeleton.L10_Z6d
+warning: ZetaShell/Skeleton/L10_Z6d.lean:23:8: declaration uses `sorry`
+⚠ [9178/9608] Replayed ZetaQ.FrobRow8
+warning: ZetaQ/FrobRow8.lean:103:33: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaQ/FrobRow8.lean:103:33: 'field_simp' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/FrobRow8.lean:187:23: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/FrobRow8.lean:588:29: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/FrobRow8.lean:603:23: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9179/9608] Replayed ZetaQ.FrobRow9
+warning: ZetaQ/FrobRow9.lean:95:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaQ/FrobRow9.lean:628:10: Variable name `F` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _F
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9180/9608] Replayed ZetaQ.FrobAssembly
+warning: ZetaQ/FrobAssembly.lean:214:37: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ZetaQ/FrobAssembly.lean:241:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ZetaQ/FrobAssembly.lean:253:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ZetaQ/FrobAssembly.lean:260:5: Variable name `ha0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/FrobAssembly.lean:301:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ZetaQ/FrobAssembly.lean:590:43: Variable name `hq` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hq
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/FrobAssembly.lean:791:30: Variable name `q` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _q
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/FrobAssembly.lean:872:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaQ/FrobAssembly.lean:1058:25: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/FrobAssembly.lean:1317:78: Variable name `hQ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hQ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/FrobAssembly.lean:1364:31: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/FrobAssembly.lean:1458:31: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/FrobAssembly.lean:1530:31: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/FrobAssembly.lean:1642:31: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/FrobAssembly.lean:2427:41: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaQ/FrobAssembly.lean:2427:41: 'field_simp' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/FrobAssembly.lean:2537:39: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaQ/FrobAssembly.lean:2522:25: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/FrobAssembly.lean:2534:73: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/FrobAssembly.lean:2537:39: 'field_simp' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/FrobAssembly.lean:2555:62: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/FrobAssembly.lean:2654:81: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaQ/FrobAssembly.lean:2657:39: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaQ/FrobAssembly.lean:2654:81: 'field_simp' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/FrobAssembly.lean:2657:39: 'field_simp' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/FrobAssembly.lean:2698:31: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/FrobAssembly.lean:2707:39: Variable name `ha` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaQ/FrobAssembly.lean:2877:41: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaQ/FrobAssembly.lean:2819:25: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/FrobAssembly.lean:2877:41: 'field_simp' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaQ/FrobAssembly.lean:2985:33: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9186/9608] Replayed ZetaQ.HPre
+warning: ZetaQ/HPre.lean:69:32: Variable name `hs0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9189/9608] Replayed ZetaQ.HFrob
+warning: ZetaQ/HFrob.lean:95:53: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ZetaQ/HFrob.lean:95:76: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ZetaQ/HFrob.lean:128:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ZetaQ/HFrob.lean:547:53: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ZetaQ/HFrob.lean:547:76: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ZetaQ/HFrob.lean:581:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ZetaQ/HFrob.lean:801:53: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ZetaQ/HFrob.lean:801:77: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ZetaQ/HFrob.lean:838:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ZetaQ/HFrob.lean:1073:53: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ZetaQ/HFrob.lean:1073:77: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ZetaQ/HFrob.lean:1109:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [9195/9608] Built ZetaS.ChallengeZetaS (50s)
+⚠ [9196/9608] Replayed ZetaShell.Interfaces
+warning: ZetaShell/Interfaces.lean:101:8: declaration uses `sorry`
+warning: ZetaShell/Interfaces.lean:111:8: declaration uses `sorry`
+⚠ [9199/9608] Replayed ZetaShell.Cert.R3_ShellPayoffFormula
+warning: ZetaShell/Cert/R3_ShellPayoffFormula.lean:24:90: Variable name `h3` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _h3
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9215/9608] Replayed ZetaShell.Lemma2.A2a_S2c_FamData
+warning: ZetaShell/Lemma2/A2a_S2c_FamData.lean:24:22: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [9217/9608] Replayed ZetaShell.Lemma2.A2a_S2s_MainAux
+warning: ZetaShell/Lemma2/A2a_S2s_MainAux.lean:65:44: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ZetaShell/Lemma2/A2a_S2s_MainAux.lean:114:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaShell/Lemma2/A2a_S2s_MainAux.lean:134:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [9218/9608] Replayed ZetaShell.Lemma2.A2a_S2s_Class
+warning: ZetaShell/Lemma2/A2a_S2s_Class.lean:24:31: Variable name `hj` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hj
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/Lemma2/A2a_S2s_Class.lean:25:5: Variable name `hgsq` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hgsq
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9219/9608] Replayed ZetaShell.Lemma2.A2a_S2s_Main
+warning: ZetaShell/Lemma2/A2a_S2s_Main.lean:18:61: Variable name `hf` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hf
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9223/9608] Replayed ZetaShell.Lemma2.A2a_S5_Window
+warning: ZetaShell/Lemma2/A2a_S5_Window.lean:95:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaShell/Lemma2/A2a_S5_Window.lean:270:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [9224/9608] Replayed ZetaShell.Lemma2.L711_S4a_ChangeVar
+warning: ZetaShell/Lemma2/L711_S4a_ChangeVar.lean:37:21: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [9225/9608] Replayed ZetaShell.Lemma2.A2a_S4_Profile
+warning: ZetaShell/Lemma2/A2a_S4_Profile.lean:175:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ZetaShell/Lemma2/A2a_S4_Profile.lean:382:8: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaShell/Lemma2/A2a_S4_Profile.lean:626:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [9230/9608] Replayed ZetaShell.Skeleton.F1_ShellFrameQle
+warning: ZetaShell/Skeleton/F1_ShellFrameQle.lean:13:8: declaration uses `sorry`
+warning: ZetaShell/Skeleton/F1_ShellFrameQle.lean:18:8: declaration uses `sorry`
+ℹ [9231/9608] Replayed ZetaShell.Top.T1_Headline
+info: ZetaShell/Top/T1_Headline.lean:59:0: 'ZetaShell.shell_S53_qle_tree'' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+info: ZetaShell/Top/T1_Headline.lean:60:0: 'ZetaShell.shellRate_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [9237/9608] Replayed ZetaShell.ShellS.S1L_Meas
+warning: ZetaShell/ShellS/S1L_Meas.lean:96:6: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+⚠ [9246/9608] Replayed ZetaShell.ShellS.L12c_Family
+warning: ZetaShell/ShellS/L12c_Family.lean:126:46: Variable name `ha0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9247/9608] Replayed ZetaShell.ShellS.L12c_Counts
+warning: ZetaShell/ShellS/L12c_Counts.lean:155:36: Variable name `χ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _χ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9249/9608] Replayed ZetaShell.ShellS.L12c_Layer
+warning: ZetaShell/ShellS/L12c_Layer.lean:195:76: Variable name `hs` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hs
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9250/9608] Replayed ZetaShell.ShellS.L12c_Bounds
+warning: ZetaShell/ShellS/L12c_Bounds.lean:170:14: Variable name `hX₀` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hX₀
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/ShellS/L12c_Bounds.lean:242:5: Variable name `hεM0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hεM0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/ShellS/L12c_Bounds.lean:338:78: Variable name `hCL` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hCL
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [9253/9608] Built Solution (50s)
+✔ [9255/9608] Built ChallengeDeps.FollowUpZeta (49s)
+⚠ [9260/9608] Replayed ZetaShell.LemmaK.LK9_K2_Aux
+warning: ZetaShell/LemmaK/LK9_K2_Aux.lean:60:19: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ZetaShell/LemmaK/LK9_K2_Aux.lean:75:21: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ZetaShell/LemmaK/LK9_K2_Aux.lean:162:8: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+warning: ZetaShell/LemmaK/LK9_K2_Aux.lean:223:4: `MeasureTheory.integrable_finset_sum` has been deprecated: Use `MeasureTheory.integrable_finsetSum` instead
+warning: ZetaShell/LemmaK/LK9_K2_Aux.lean:235:10: `Set.diff_eq` has been deprecated: Use `Set.sdiff_eq` instead
+⚠ [9261/9608] Replayed ZetaShell.Lemma2.A2a_S3c_Irrelevant
+warning: ZetaShell/Lemma2/A2a_S3c_Irrelevant.lean:23:63: Variable name `hδ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hδ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/Lemma2/A2a_S3c_Irrelevant.lean:44:5: Variable name `hj` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hj
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9262/9608] Replayed ZetaShell.Lemma2.A2a_S3b_LineInt
+warning: ZetaShell/Lemma2/A2a_S3b_LineInt.lean:23:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ZetaShell/Lemma2/A2a_S3b_LineInt.lean:52:8: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaShell/Lemma2/A2a_S3b_LineInt.lean:65:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ZetaShell/Lemma2/A2a_S3b_LineInt.lean:81:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ZetaShell/Lemma2/A2a_S3b_LineInt.lean:113:8: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaShell/Lemma2/A2a_S3b_LineInt.lean:122:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ZetaShell/Lemma2/A2a_S3b_LineInt.lean:128:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaShell/Lemma2/A2a_S3b_LineInt.lean:138:92: Variable name `hδ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hδ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9263/9608] Replayed ZetaShell.Skeleton.A2a_S3d_ArithSplit
+warning: ZetaShell/Skeleton/A2a_S3d_ArithSplit.lean:23:8: declaration uses `sorry`
+warning: ZetaShell/Skeleton/A2a_S3d_ArithSplit.lean:30:8: declaration uses `sorry`
+⚠ [9264/9608] Replayed ZetaShell.Lemma2.A2a_S3d_InnerAux
+warning: ZetaShell/Lemma2/A2a_S3d_InnerAux.lean:65:29: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaShell/Lemma2/A2a_S3d_InnerAux.lean:65:29: '(
+  have : 0 < 1 / (p : ℝ) := by positivity
+  have : 1 / (p : ℝ) ≤ 1 / 2 := by rw [div_le_div_iff₀ (by positivity) (by norm_num)]; linarith
+  linarith)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9290/9608] Replayed ZetaShell.LemmaK.LK_K8a2_Saving
+warning: ZetaShell/LemmaK/LK_K8a2_Saving.lean:247:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaShell/LemmaK/LK_K8a2_Saving.lean:262:8: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaShell/LemmaK/LK_K8a2_Saving.lean:382:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [9291/9608] Replayed ZetaShell.LemmaK.LK_K8a3_Errors
+warning: ZetaShell/LemmaK/LK_K8a3_Errors.lean:184:8: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [9292/9608] Replayed ZetaShell.LemmaK.LK_K8a4_Chain
+warning: ZetaShell/LemmaK/LK_K8a4_Chain.lean:33:33: Variable name `hBX` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hBX
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9296/9608] Replayed ZetaShell.Skeleton.LK9_K6b_GallagherL2
+warning: ZetaShell/Skeleton/LK9_K6b_GallagherL2.lean:15:8: declaration uses `sorry`
+⚠ [9297/9608] Replayed ZetaShell.Skeleton.LK_KC_Cert
+warning: ZetaShell/Skeleton/LK_KC_Cert.lean:24:8: declaration uses `sorry`
+warning: ZetaShell/Skeleton/LK_KC_Cert.lean:28:8: declaration uses `sorry`
+⚠ [9298/9608] Replayed ZetaShell.ShellS.S1_FromZ
+warning: ZetaShell/ShellS/S1_FromZ.lean:188:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaShell/ShellS/S1_FromZ.lean:299:6: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaShell/ShellS/S1_FromZ.lean:397:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: ZetaShell/ShellS/S1_FromZ.lean:413:6: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [9311/9608] Replayed ZetaShell.Design.SD_C3_EndsC1
+warning: ZetaShell/Design/SD_C3_EndsC1.lean:12:40: Variable name `hx0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9313/9608] Replayed ZetaShell.Skeleton.SD_F1c_FrobRow
+warning: ZetaShell/Skeleton/SD_F1c_FrobRow.lean:14:8: declaration uses `sorry`
+⚠ [9314/9608] Replayed ZetaShell.Farey.A3_SignedGallagher
+warning: ZetaShell/Farey/A3_SignedGallagher.lean:151:67: Variable name `hL` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hL
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/Farey/A3_SignedGallagher.lean:187:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [9316/9608] Replayed ZetaShell.Lemma2.A2a_S3a_Collapse
+warning: ZetaShell/Lemma2/A2a_S3a_Collapse.lean:40:44: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ZetaShell/Lemma2/A2a_S3a_Collapse.lean:63:19: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [9317/9608] Replayed ZetaShell.Skeleton.A2a_S3a_Window
+warning: ZetaShell/Skeleton/A2a_S3a_Window.lean:62:8: declaration uses `sorry`
+⚠ [9318/9608] Replayed ZetaShell.Lemma2.A2a_S3a_WindowAux
+warning: ZetaShell/Lemma2/A2a_S3a_WindowAux.lean:42:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [9319/9608] Replayed ZetaShell.Lemma2.A2a_S3d_JsumProof
+warning: ZetaShell/Lemma2/A2a_S3d_JsumProof.lean:49:23: Variable name `hX` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hX
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9320/9608] Replayed ZetaShell.Skeleton.A2a_S3d_CeTau
+warning: ZetaShell/Skeleton/A2a_S3d_CeTau.lean:62:8: declaration uses `sorry`
+⚠ [9322/9608] Replayed ZetaShell.Lemma2.A2a_S3d_Qphi4
+warning: ZetaShell/Lemma2/A2a_S3d_Qphi4.lean:19:42: Variable name `he` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _he
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/Lemma2/A2a_S3d_Qphi4.lean:41:32: Variable name `he` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _he
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9324/9608] Replayed ZetaShell.Lemma2.A2a_S3e_TailPlain
+warning: ZetaShell/Lemma2/A2a_S3e_TailPlain.lean:286:46: This simp argument is unused:
+  true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [he, hr, hJ, if_true, if_false, and_true, true_or, or_true, not_true_eq_false, not_false_eq_true,
+    and_false, false_and, or_false, false_or]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ZetaShell/Lemma2/A2a_S3e_TailPlain.lean:286:66: This simp argument is unused:
+  true_or
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [he, hr, hJ, if_true, if_false, true_and, and_true, or_true, not_true_eq_false, not_false_eq_true,
+    and_false, false_and, or_false, false_or]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ZetaShell/Lemma2/A2a_S3e_TailPlain.lean:287:36: This simp argument is unused:
+  false_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [he, hr, hJ, if_true, if_false, true_and, and_true, true_or, or_true, not_true_eq_false,
+    not_false_eq_true, and_false, or_false, false_or]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ZetaShell/Lemma2/A2a_S3e_TailPlain.lean:287:57: This simp argument is unused:
+  false_or
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [he, hr, hJ, if_true, if_false, true_and, and_true, true_or, or_true, not_true_eq_false,
+    not_false_eq_true, and_false, false_and, or_false]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ZetaShell/Lemma2/A2a_S3e_TailPlain.lean:345:46: This simp argument is unused:
+  true_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [he, hr, hJ, if_true, if_false, and_true, not_true_eq_false, not_false_eq_true, and_false,
+    false_and]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ZetaShell/Lemma2/A2a_S3e_TailPlain.lean:346:36: This simp argument is unused:
+  false_and
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [he, hr, hJ, if_true, if_false, true_and, and_true, not_true_eq_false, not_false_eq_true, and_false]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ZetaShell/Lemma2/A2a_S3e_TailPlain.lean:356:17: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaShell/Lemma2/A2a_S3e_TailPlain.lean:347:13: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ZetaShell/Lemma2/A2a_S3e_TailPlain.lean:348:13: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ZetaShell/Lemma2/A2a_S3e_TailPlain.lean:356:17: 'linarith' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9332/9608] Replayed ZetaShell.LemmaK.LK_K7_HoleGeneric
+warning: ZetaShell/LemmaK/LK_K7_HoleGeneric.lean:87:10: `intervalIntegral.integral_finset_sum` has been deprecated: Use `intervalIntegral.integral_finsetSum` instead
+warning: ZetaShell/LemmaK/LK_K7_HoleGeneric.lean:91:8: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+warning: ZetaShell/LemmaK/LK_K7_HoleGeneric.lean:165:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [9333/9608] Replayed ZetaShell.Skeleton.SD_C2_ZoneSlope
+warning: ZetaShell/Skeleton/SD_C2_ZoneSlope.lean:27:8: declaration uses `sorry`
+⚠ [9349/9608] Replayed ZetaShell.Lemma2.A2a_S3d_Route4
+warning: ZetaShell/Lemma2/A2a_S3d_Route4.lean:37:24: Variable name `hX` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hX
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9351/9608] Replayed ZetaShell.Skeleton.A2a_S3e_TailParts
+warning: ZetaShell/Skeleton/A2a_S3e_TailParts.lean:67:46: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ZetaShell/Skeleton/A2a_S3e_TailParts.lean:28:64: Variable name `hj` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hj
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/Skeleton/A2a_S3e_TailParts.lean:131:31: Variable name `hF` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hF
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9354/9608] Replayed ZetaShell.Lemma2.A2a_Main
+warning: ZetaShell/Lemma2/A2a_Main.lean:69:27: 'push_cast' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9363/9608] Replayed ZetaShell.LemmaK.LK_K7b_HoleLower
+warning: ZetaShell/LemmaK/LK_K7b_HoleLower.lean:180:6: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [9364/9608] Replayed ZetaShell.LemmaK.LK_K7a_FareyHole
+warning: ZetaShell/LemmaK/LK_K7a_FareyHole.lean:168:23: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaShell/LemmaK/LK_K7a_FareyHole.lean:352:24: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ZetaShell/LemmaK/LK_K7a_FareyHole.lean:356:24: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: ZetaShell/LemmaK/LK_K7a_FareyHole.lean:374:20: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [9366/9608] Replayed ZetaShell.LemmaK.LK_K8a1_KilledMaster
+warning: ZetaShell/LemmaK/LK_K8a1_KilledMaster.lean:156:17: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+warning: ZetaShell/LemmaK/LK_K8a1_KilledMaster.lean:161:6: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+warning: ZetaShell/LemmaK/LK_K8a1_KilledMaster.lean:162:9: `MeasureTheory.integrable_finset_sum` has been deprecated: Use `MeasureTheory.integrable_finsetSum` instead
+warning: ZetaShell/LemmaK/LK_K8a1_KilledMaster.lean:182:10: `MeasureTheory.integrable_finset_sum` has been deprecated: Use `MeasureTheory.integrable_finsetSum` instead
+warning: ZetaShell/LemmaK/LK_K8a1_KilledMaster.lean:182:46: `MeasureTheory.integrable_finset_sum` has been deprecated: Use `MeasureTheory.integrable_finsetSum` instead
+⚠ [9369/9608] Replayed ZetaShell.Skeleton.LK_K9_Frame
+warning: ZetaShell/Skeleton/LK_K9_Frame.lean:137:8: declaration uses `sorry`
+⚠ [9375/9608] Replayed ZetaShell.ShellK.L10c_K2Point
+warning: ZetaShell/ShellK/L10c_K2Point.lean:37:33: Variable name `hL2` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hL2
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/ShellK/L10c_K2Point.lean:40:5: Variable name `hlam0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hlam0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/ShellK/L10c_K2Point.lean:161:20: Variable name `hab` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hab
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/ShellK/L10c_K2Point.lean:161:34: Variable name `hB` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hB
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/ShellK/L10c_K2Point.lean:224:5: Variable name `hk3` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hk3
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9378/9608] Replayed ZetaShell.ShellS.L10c_ASD
+warning: ZetaShell/ShellS/L10c_ASD.lean:124:5: Variable name `hHp` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hHp
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9387/9608] Replayed ZetaShell.ShellS.L10c_ASBounds
+warning: ZetaShell/ShellS/L10c_ASBounds.lean:339:81: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9388/9608] Replayed ZetaShell.ShellK.L10_KInt
+warning: ZetaShell/ShellK/L10_KInt.lean:72:12: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+warning: ZetaShell/ShellK/L10_KInt.lean:72:47: `continuous_finset_sum` has been deprecated: Use `continuous_finsetSum` instead
+warning: ZetaShell/ShellK/L10_KInt.lean:22:68: Variable name `hr` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hr
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/ShellK/L10_KInt.lean:22:81: Variable name `hε` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hε
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9391/9608] Replayed ZetaShell.Skeleton.LF_AsmBase
+warning: ZetaShell/Skeleton/LF_AsmBase.lean:49:8: declaration uses `sorry`
+warning: ZetaShell/Skeleton/LF_AsmBase.lean:138:31: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaShell/Skeleton/LF_AsmBase.lean:227:90: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaShell/Skeleton/LF_AsmBase.lean:230:39: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaShell/Skeleton/LF_AsmBase.lean:227:90: 'field_simp' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaShell/Skeleton/LF_AsmBase.lean:230:39: 'field_simp' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9392/9608] Replayed ZetaShell.ShellK.LF_InArith
+warning: ZetaShell/ShellK/LF_InArith.lean:15:28: Variable name `hρ0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hρ0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9394/9608] Replayed ZetaShell.ShellK.LF_OutDiag
+warning: ZetaShell/ShellK/LF_OutDiag.lean:100:4: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+⚠ [9395/9608] Replayed ZetaShell.ShellK.LF_KernelWin
+warning: ZetaShell/ShellK/LF_KernelWin.lean:26:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [9396/9608] Replayed ZetaShell.ShellK.LF_Kernel
+warning: ZetaShell/ShellK/LF_Kernel.lean:64:13: `MeasureTheory.integral_inter_add_diff` has been deprecated: Use `MeasureTheory.integral_inter_add_sdiff` instead
+warning: ZetaShell/ShellK/LF_Kernel.lean:68:15: `Set.mem_diff` has been deprecated: Use `Set.mem_sdiff` instead
+warning: ZetaShell/ShellK/LF_Kernel.lean:68:25: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [9403/9608] Replayed ZetaShell.ShellK.LF_1_Master
+warning: ZetaShell/ShellK/LF_1_Master.lean:96:17: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+warning: ZetaShell/ShellK/LF_1_Master.lean:101:6: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+warning: ZetaShell/ShellK/LF_1_Master.lean:102:9: `MeasureTheory.integrable_finset_sum` has been deprecated: Use `MeasureTheory.integrable_finsetSum` instead
+warning: ZetaShell/ShellK/LF_1_Master.lean:39:32: Variable name `hr` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hr
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/ShellK/LF_1_Master.lean:39:45: Variable name `hε` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hε
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9404/9608] Replayed ZetaShell.ShellK.LF_Rows8
+warning: ZetaShell/ShellK/LF_Rows8.lean:123:41: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaShell/ShellK/LF_Rows8.lean:123:41: 'field_simp' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaShell/ShellK/LF_Rows8.lean:233:39: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaShell/ShellK/LF_Rows8.lean:218:25: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaShell/ShellK/LF_Rows8.lean:230:82: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaShell/ShellK/LF_Rows8.lean:233:39: 'field_simp' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaShell/ShellK/LF_Rows8.lean:251:71: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [9408/9608] Replayed ZetaShell.ShellK.L10_KT
+warning: ZetaShell/ShellK/L10_KT.lean:29:26: Variable name `hA` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hA
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9409/9608] Replayed ZetaShell.ShellS.L10c_ASPoint
+warning: ZetaShell/ShellS/L10c_ASPoint.lean:28:73: Variable name `hL2` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hL2
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/ShellS/L10c_ASPoint.lean:241:28: Variable name `hl0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hl0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9416/9608] Replayed ZetaShell.ShellK.LF_K3bA
+warning: ZetaShell/ShellK/LF_K3bA.lean:33:51: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [9418/9608] Replayed ZetaShell.ShellK.L10_F1cChain
+warning: ZetaShell/ShellK/L10_F1cChain.lean:37:70: Variable name `hθ'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hθ'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9420/9608] Replayed ZetaShell.ShellK.LF_K3bM
+warning: ZetaShell/ShellK/LF_K3bM.lean:58:37: Variable name `hCf` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hCf
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9424/9608] Replayed ZetaShell.ShellK.L10_F1c
+warning: ZetaShell/ShellK/L10_F1c.lean:37:49: Variable name `hP` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hP
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaShell/ShellK/L10_F1c.lean:37:69: Variable name `hcert` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hcert
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9428/9608] Replayed ZetaShell.Top.HeadlineReduced
+warning: ZetaShell/Top/HeadlineReduced.lean:51:8: declaration uses `sorry`
+warning: ZetaShell/Top/HeadlineReduced.lean:61:8: declaration uses `sorry`
+warning: ZetaShell/Top/HeadlineReduced.lean:75:8: declaration uses `sorry`
+✔ [9432/9608] Built ZetaS.Top.TopDefs (4.6s)
+✔ [9433/9608] Built ZetaS.Top.KPsiCos (4.8s)
+✔ [9434/9608] Built ZetaS.Interfaces (6.4s)
+⚠ [9435/9608] Built ZetaS.KSide.K6a_StabConstCont (8.1s)
+warning: ZetaS/KSide/K6a_StabConstCont.lean:25:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+✔ [9436/9608] Built ZetaS.Top.PolyMoments (9.7s)
+✔ [9437/9608] Built ZetaS.KSide.K3_LocalCertTransfer (8.1s)
+✔ [9438/9608] Built ZetaS.SigmaDist.OLLHelpers (6.9s)
+✔ [9439/9608] Built ZetaS.Majorant.MCert_Majorant (24s)
+✔ [9440/9608] Built ZetaS.Top.N2_Robust (29s)
+✔ [9441/9608] Built ZetaS.SigmaDist.N2_KPsiThreeQuarters (16s)
+✔ [9442/9608] Built ZetaS.SigmaDist.SigmaHelpers (6.0s)
+✔ [9443/9608] Built ZetaS.SigmaDist.C1_ReversalClasses (5.6s)
+✔ [9444/9608] Built ZetaS.SigmaDist.N3_KernelAntitone (6.5s)
+⚠ [9445/9608] Built ZetaS.SigmaDist.A1b_BetaBound (5.6s)
+warning: ZetaS/SigmaDist/A1b_BetaBound.lean:12:49: Variable name `hδ0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hδ0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/A1b_BetaBound.lean:12:63: Variable name `hδ1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hδ1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9446/9608] Built ZetaS.SigmaDist.A6_BlockBounds (28s)
+warning: ZetaS/SigmaDist/A6_BlockBounds.lean:112:49: Variable name `hκ1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hκ1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/A6_BlockBounds.lean:200:77: This simp argument is unused:
+  zero_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [one_pow, zero_pow two_ne_zero, add_zero, mul_one, mul_zero] at this
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [9447/9608] Built ZetaS.SigmaDist.A1_OnSlackIdentity (5.6s)
+✔ [9448/9608] Built ZetaS.SigmaDist.A2_AggTrueWindow (28s)
+✔ [9449/9608] Built ZetaS.LinAlg.L5_PairRemoval (9.2s)
+✔ [9450/9608] Built ZetaS.LinAlg.L1_StabRankTrace (9.9s)
+✔ [9451/9608] Built ZetaS.LinAlg.SpecHelpers (9.2s)
+✔ [9452/9608] Built ZetaS.LinAlg.PhiMHelpers (6.4s)
+✔ [9453/9608] Built ZetaS.InterfacesV2 (5.8s)
+✔ [9454/9608] Built ZetaS.Skeleton.K6a_StabConstCont (6.6s)
+✔ [9455/9608] Built ZetaS.LinAlg.Helpers (10s)
+✔ [9456/9608] Built ZetaS.Skeleton.K3_LocalCertTransfer (4.3s)
+✔ [9457/9608] Built ZetaS.Top.N1_Numerics (6.5s)
+✔ [9458/9608] Built ZetaS.Majorant.FP_FourierPair (9.5s)
+⚠ [9459/9608] Built ZetaS.SigmaDist.M1_MajorantKernel (8.2s)
+warning: ZetaS/SigmaDist/M1_MajorantKernel.lean:162:5: Variable name `hcont` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hcont
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/M1_MajorantKernel.lean:163:5: Variable name `hpos` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hpos
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [9460/9608] Built ZetaS.Cert.CertSpecAM5 (12s)
+✔ [9461/9608] Built ZetaS.KSide.K4_StabFixedT (6.7s)
+✔ [9462/9608] Built ZetaS.KSide.K1_LocalToBlock (8.4s)
+⚠ [9463/9608] Built ZetaS.LinAlg.L6_TraceLipschitz (6.2s)
+warning: ZetaS/LinAlg/L6_TraceLipschitz.lean:98:5: Variable name `hLf` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hLf
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9464/9608] Built ZetaS.Majorant.MCert_Cells (23s)
+warning: ZetaS/Majorant/MCert_Cells.lean:76:14: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Majorant/MCert_Cells.lean:76:4: 'all_goals
+  first
+  | exact hπ.le
+  | positivity' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [9465/9608] Built ZetaS.LinAlg.L8_NegIndexAdd (7.3s)
+⚠ [9466/9608] Built ZetaS.LinAlg.CountHelpers (9.9s)
+warning: ZetaS/LinAlg/CountHelpers.lean:40:0: automatically included section variable(s) unused in theorem `ZetaS.isHermitian_smul_one`:
+  [Fintype n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: ZetaS/LinAlg/CountHelpers.lean:143:0: automatically included section variable(s) unused in theorem `ZetaS.hermForm_fromBlocks`:
+  [DecidableEq m]
+  [DecidableEq o]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq m] [DecidableEq o] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [9467/9608] Built ZetaS.LinAlg.L3b_PhiM_props (9.8s)
+✔ [9468/9608] Built ZetaS.ZeroSide.Helpers (7.9s)
+✔ [9469/9608] Built ZetaS.ZeroSide.KWinHelpers (11s)
+✔ [9470/9608] Built ZetaS.LinAlg.L3_PhiM (17s)
+✔ [9471/9608] Built ZetaS.ZeroSide.Z9a1_OnLineSort (5.9s)
+✔ [9472/9608] Built ZetaS.ZeroSide.Z9s_Spec (5.3s)
+✔ [9473/9608] Built ZetaS.Bandwidth.R1_Realify (5.4s)
+✔ [9474/9608] Built ZetaS.Bandwidth.KL3_TendstoRlam (5.4s)
+✔ [9475/9608] Built ZetaS.Bandwidth.KL2_LamLimit (5.0s)
+✔ [9476/9608] Built ZetaS.Bandwidth.KL1_BandwidthTransfer (4.8s)
+✔ [9477/9608] Built ZetaS.Bandwidth.KL1m_BandwidthTransferAM (5.0s)
+✔ [9478/9608] Built ZetaS.Bandwidth.Hom_Homogeneity (5.2s)
+✔ [9479/9608] Built ZetaS.Skeleton.N1_Numerics (4.2s)
+✔ [9480/9608] Built ZetaS.LinAlg.L2_StabRankTraceTwo (7.3s)
+✔ [9481/9608] Built ZetaS.Skeleton.M1_MajorantKernel (6.7s)
+✔ [9482/9608] Built ZetaS.Cert.NodeDefs (6.9s)
+✔ [9483/9608] Built ZetaS.Skeleton.K4_StabFixedT (6.1s)
+✔ [9484/9608] Built ZetaS.SigmaDist.A5_SeparatedRoom (13s)
+✔ [9485/9608] Built ZetaS.Skeleton.K1_LocalToBlock (4.9s)
+✔ [9486/9608] Built ZetaS.Majorant.CertMajV2 (5.0s)
+✔ [9487/9608] Built ZetaS.ZeroSide.Z7_PairBlockInertia (4.6s)
+✔ [9488/9608] Built ZetaS.LinAlg.L7_SchurLocalisation (8.4s)
+✔ [9489/9608] Built ZetaS.ZeroSide.Z5_KWinDominated (6.3s)
+✔ [9490/9608] Built ZetaS.LinAlg.L4_Pinching (7.9s)
+✔ [9491/9608] Built ZetaS.ZeroSide.Z4_KWinClose (6.8s)
+✔ [9492/9608] Built ZetaS.ZeroSide.Z8_VHatConj (7.1s)
+✔ [9493/9608] Built ZetaS.ZeroSide.Z2_KWinPosDef (7.4s)
+✔ [9494/9608] Built ZetaS.ZeroSide.Z3_OffGridPSD (7.2s)
+✔ [9495/9608] Built ZetaS.ZeroSide.Z1_GramPoisson (6.8s)
+✔ [9496/9608] Built ZetaS.ZeroSide.Z9d_Span (7.6s)
+⚠ [9497/9608] Built ZetaS.ZeroSide.Z9e_Seams (8.8s)
+warning: ZetaS/ZeroSide/Z9e_Seams.lean:33:67: Variable name `ρ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ρ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/ZeroSide/Z9e_Seams.lean:80:90: `Set.setOf_and` has been deprecated: Use `Set.ofPred_and` instead
+warning: ZetaS/ZeroSide/Z9e_Seams.lean:93:90: `Set.setOf_and` has been deprecated: Use `Set.ofPred_and` instead
+✔ [9498/9608] Built ZetaS.ZeroSide.Z9c_JIdentity (8.2s)
+✔ [9499/9608] Built ZetaS.Skeleton.R1_Realify (6.2s)
+✔ [9500/9608] Built ZetaS.ZeroSide.Z9b_TailTransfer (9.1s)
+✔ [9501/9608] Built ZetaS.Skeleton.KL3_TendstoRlam (5.1s)
+✔ [9502/9608] Built ZetaS.Skeleton.KL2_LamLimit (4.8s)
+✔ [9503/9608] Built ZetaS.Skeleton.KL1_BandwidthTransfer (4.0s)
+✔ [9504/9608] Built ZetaS.Skeleton.KL1m_BandwidthTransferAM (5.0s)
+✔ [9505/9608] Built ZetaS.Skeleton.Hom_Homogeneity (4.0s)
+✔ [9506/9608] Built ZetaS.Cert.C24_W5Fields (6.0s)
+✔ [9507/9608] Built ZetaS.Cert.C23_KPsiCos (5.8s)
+✔ [9508/9608] Built ZetaS.Cert.C19a_PsdLDL (7.3s)
+⚠ [9509/9608] Built ZetaS.Cert.C17_CapLeaf (5.0s)
+warning: ZetaS/Cert/C17_CapLeaf.lean:28:5: Variable name `hg0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hg0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [9510/9608] Built ZetaS.Cert.C15_ChordMinorant (7.5s)
+✔ [9511/9608] Built ZetaS.Cert.C14_Taylor2Minorant (6.7s)
+⚠ [9512/9608] Built ZetaS.ZeroSide.Z6Core (50s)
+warning: ZetaS/ZeroSide/Z6Core.lean:226:41: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [9513/9608] Built ZetaS.Cert.C22_ShardAssembly (5.6s)
+✔ [9514/9608] Built ZetaS.Cert.C07a_SincDeriv (9.7s)
+✔ [9515/9608] Built ZetaS.Cert.C04_PiEncl (6.4s)
+⚠ [9516/9608] Built ZetaS.Cert.C01_QIRound (4.0s)
+warning: ZetaS/Cert/C01_QIRound.lean:20:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:21:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:22:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:20:6: 'exact (Rat.le_floor.mp le_rfl)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:21:6: '(rw [← Rat.floor_intCast_div_natCast] at *; exact Int.floor_le _)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:22:6: 'exact Int.floor_le (q * 2 ^ 64)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:31:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:32:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:33:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:31:6: 'exact (Rat.le_ceil (x := q * 2 ^ 64))' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:32:6: 'exact (Rat.ceil_le.mp le_rfl)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:33:6: 'exact Int.le_ceil (q * 2 ^ 64)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [9517/9608] Built ZetaS.Skeleton.A5_SeparatedRoom (4.6s)
+✔ [9518/9608] Built ZetaS.Skeleton.Z7_PairBlockInertia (4.6s)
+✔ [9519/9608] Built ZetaS.ZeroSide.Z9a2_OffBlock (5.3s)
+⚠ [9520/9608] Built ZetaS.Skeleton.A8g_SigmaDistGeneral (4.9s)
+warning: ZetaS/Skeleton/A8g_SigmaDistGeneral.lean:21:8: declaration uses `sorry`
+warning: ZetaS/Skeleton/A8g_SigmaDistGeneral.lean:31:8: declaration uses `sorry`
+warning: ZetaS/Skeleton/A8g_SigmaDistGeneral.lean:39:8: declaration uses `sorry`
+✔ [9521/9608] Built ZetaS.Skeleton.Z5_KWinDominated (4.7s)
+✔ [9522/9608] Built ZetaS.Skeleton.L7_SchurLocalisation (4.8s)
+✔ [9523/9608] Built ZetaS.Skeleton.L4_Pinching (5.5s)
+✔ [9524/9608] Built ZetaS.Skeleton.Z4_KWinClose (5.6s)
+⚠ [9525/9608] Built ZetaS.KSide.KHelpers (7.9s)
+warning: ZetaS/KSide/KHelpers.lean:82:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaS/KSide/KHelpers.lean:89:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+✔ [9526/9608] Built ZetaS.Skeleton.Z8_VHatConj (5.0s)
+✔ [9527/9608] Built ZetaS.Skeleton.Z2_KWinPosDef (5.0s)
+✔ [9528/9608] Built ZetaS.Skeleton.Z3_OffGridPSD (4.5s)
+✔ [9529/9608] Built ZetaS.Skeleton.Z1_GramPoisson (5.0s)
+✔ [9530/9608] Built ZetaS.Skeleton.C24_W5Fields (4.6s)
+⚠ [9531/9608] Built ZetaS.ZeroSide.ZetaSeams (10s)
+warning: ZetaS/ZeroSide/ZetaSeams.lean:35:55: `Set.setOf_and` has been deprecated: Use `Set.ofPred_and` instead
+warning: ZetaS/ZeroSide/ZetaSeams.lean:38:41: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/ZeroSide/ZetaSeams.lean:38:60: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/ZeroSide/ZetaSeams.lean:38:41: '(exfalso; tauto)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/ZeroSide/ZetaSeams.lean:38:60: 'linarith' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [9532/9608] Built ZetaS.Cert.C25_ClassBridge (5.8s)
+✔ [9533/9608] Built ZetaS.Skeleton.C23_KPsiCos (5.0s)
+⚠ [9534/9608] Built ZetaS.SigmaDist.A6_TightChains (26s)
+warning: ZetaS/SigmaDist/A6_TightChains.lean:416:8: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaS/SigmaDist/A6_TightChains.lean:141:32: Variable name `ha₂` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha₂
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [9535/9608] Built ZetaS.ZeroSide.Z6_Defect_fix (4.0s)
+⚠ [9536/9608] Built ZetaS.ZeroSide.Z6_Defect (5.7s)
+warning: ZetaS/ZeroSide/Z6_Defect.lean:99:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaS/ZeroSide/Z6_Defect.lean:81:20: Variable name `hlam` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hlam
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [9537/9608] Built ZetaS.Cert.C08_KCosDerivs (5.9s)
+✔ [9538/9608] Built ZetaS.Cert.C02_QIOps (6.6s)
+✔ [9539/9608] Built ZetaS.Skeleton.C25_ClassBridge (5.6s)
+⚠ [9540/9608] Built ZetaS.ZeroSide.Z9a3_HatDecomp (7.9s)
+warning: ZetaS/ZeroSide/Z9a3_HatDecomp.lean:102:33: This simp argument is unused:
+  Finset.sum_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.sum_apply, Matrix.smul_apply, vecMulVec_apply, smul_eq_mul, hf]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ZetaS/ZeroSide/Z9a3_HatDecomp.lean:103:66: This simp argument is unused:
+  Finset.sum_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [toC, offBlock, Matrix.map_apply, Matrix.sum_apply, Matrix.smul_apply, Matrix.sub_apply,
+    vecMulVec_apply, smul_eq_mul, Complex.ofReal_sum]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [9541/9608] Built ZetaS.Skeleton.A6_TightChains (7.0s)
+✔ [9542/9608] Built ZetaS.Skeleton.Z6_Defect (7.2s)
+⚠ [9543/9608] Built ZetaS.KSide.K2_Packing (16s)
+warning: ZetaS/KSide/K2_Packing.lean:36:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaS/KSide/K2_Packing.lean:107:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaS/KSide/K2_Packing.lean:150:27: This simp argument is unused:
+  hij
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hGa, kerMat, this, Matrix.one_apply_ne hij]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ZetaS/KSide/K2_Packing.lean:217:37: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/KSide/K2_Packing.lean:217:37: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [9544/9608] Built ZetaS.Cert.C03_Horner (6.9s)
+⚠ [9545/9608] Built ZetaS.ZeroSide.Z9a4_Frame (7.2s)
+warning: ZetaS/ZeroSide/Z9a4_Frame.lean:37:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ZetaS/ZeroSide/Z9a4_Frame.lean:84:13: Variable name `hP` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hP
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/ZeroSide/Z9a4_Frame.lean:84:28: Variable name `heven` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _heven
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [9546/9608] Built ZetaS.Cert.C10_KCosD3 (10s)
+✔ [9547/9608] Built ZetaS.Skeleton.K2_Packing (7.7s)
+✔ [9548/9608] Built ZetaS.KSide.K5_TransferMcirc (10s)
+⚠ [9549/9608] Built ZetaS.Top.OLLHeight5 (31s)
+warning: ZetaS/Top/OLLHeight5.lean:311:21: Variable name `he0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _he0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Top/OLLHeight5.lean:372:54: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Top/OLLHeight5.lean:372:56: Variable name `j` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _j
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Top/OLLHeight5.lean:373:9: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Top/OLLHeight5.lean:373:66: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Top/OLLHeight5.lean:373:68: Variable name `j` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _j
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Top/OLLHeight5.lean:374:9: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Top/OLLHeight5.lean:374:11: Variable name `j` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _j
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Top/OLLHeight5.lean:374:64: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Top/OLLHeight5.lean:375:9: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Top/OLLHeight5.lean:375:11: Variable name `j` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _j
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [9550/9608] Built ZetaS.Cert.C05_SinCosTaylor (7.6s)
+✔ [9551/9608] Built ZetaS.Cert.C07b_SincEncl (7.5s)
+⚠ [9552/9608] Built ZetaS.ZeroSide.Z9a6_Counts (7.7s)
+warning: ZetaS/ZeroSide/Z9a6_Counts.lean:85:86: `Set.setOf_and` has been deprecated: Use `Set.ofPred_and` instead
+✔ [9553/9608] Built ZetaS.Skeleton.C10_KCosD3 (4.9s)
+✔ [9554/9608] Built ZetaS.Skeleton.K5_TransferMcirc (5.6s)
+⚠ [9555/9608] Built ZetaS.SigmaDist.OLLHeight (29s)
+warning: ZetaS/SigmaDist/OLLHeight.lean:305:21: Variable name `he0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _he0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/OLLHeight.lean:366:54: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/OLLHeight.lean:366:56: Variable name `j` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _j
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/OLLHeight.lean:367:9: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/OLLHeight.lean:367:66: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/OLLHeight.lean:367:68: Variable name `j` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _j
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/OLLHeight.lean:368:9: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/OLLHeight.lean:368:11: Variable name `j` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _j
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/OLLHeight.lean:368:64: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/OLLHeight.lean:369:9: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/SigmaDist/OLLHeight.lean:369:11: Variable name `j` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _j
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [9556/9608] Built ZetaS.KSide.K6_ThmG (8.8s)
+✔ [9557/9608] Built ZetaS.Cert.C06_SinCosPi (7.0s)
+⚠ [9558/9608] Built ZetaS.ZeroSide.Z9a5_FrameSpec (5.9s)
+warning: ZetaS/ZeroSide/Z9a5_FrameSpec.lean:22:44: This simp argument is unused:
+  Complex.re_sum
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [RHLinalg.rtrace, toC, Matrix.trace]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [9559/9608] Built ZetaS.Skeleton.K6_ThmG (4.6s)
+✔ [9560/9608] Built ZetaS.SigmaDist.A7_OLL (5.8s)
+✔ [9561/9608] Built ZetaS.ZeroSide.Z9a_FrameAt (8.3s)
+✔ [9562/9608] Built ZetaS.Skeleton.A7_OLL (8.8s)
+✔ [9563/9608] Built ZetaS.Cert.C09_KEncl (13s)
+✔ [9564/9608] Built ZetaS.ZeroSide.Z9_FrameOfZeroConfig_fix (9.7s)
+✔ [9565/9608] Built ZetaS.SigmaDist.A8_SigmaDistAbstract (13s)
+✔ [9566/9608] Built ZetaS.Cert.C11_TaylorModel (15s)
+⚠ [9567/9608] Built ZetaS.Majorant.MajSoundNPos (31s)
+warning: ZetaS/Majorant/MajSoundNPos.lean:133:14: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Majorant/MajSoundNPos.lean:133:4: 'all_goals
+  first
+  | exact hπ.le
+  | positivity' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Majorant/MajSoundNPos.lean:276:5: Variable name `he` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _he
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ZetaS/Majorant/MajSoundNPos.lean:352:34: 'push_cast at hk' ⊢' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Majorant/MajSoundNPos.lean:361:34: 'push_cast at hk' ⊢' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [9568/9608] Built ZetaS.Cert.C16_TangentLine (10s)
+✔ [9569/9608] Built ZetaS.Window.W2L_ZetaFramePoly_fix (5.8s)
+✔ [9570/9608] Built ZetaS.ZeroSide.Z9_FrameOfZeroConfig (5.3s)
+✔ [9571/9608] Built ZetaS.Cert.C12_CellSound (6.3s)
+⚠ [9572/9608] Built ZetaS.KSide.K0_FrameToGram (7.9s)
+warning: ZetaS/KSide/K0_FrameToGram.lean:173:9: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ZetaS/KSide/K0_FrameToGram.lean:180:14: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [9573/9608] Built ZetaS.Top.A8K (8.4s)
+✔ [9574/9608] Built ZetaS.Skeleton.C11_TaylorModel (5.1s)
+✔ [9575/9608] Built ZetaS.Majorant.NPosProof (4.8s)
+✔ [9576/9608] Built ZetaS.Window.W2L_ZetaFramePoly (5.5s)
+✔ [9577/9608] Built ZetaS.Window.W2L_ZetaFrameCos (6.0s)
+✔ [9578/9608] Built ZetaS.Skeleton.Z9_FrameOfZeroConfig (7.6s)
+✔ [9579/9608] Built ZetaS.Cert.C13_SpanBounds (10s)
+✔ [9580/9608] Built ZetaS.Skeleton.C12_CellSound (8.6s)
+✔ [9581/9608] Built ZetaS.KSide.K0_FrameToGramHEq (8.7s)
+✔ [9582/9608] Built ZetaS.Skeleton.K0_FrameToGram (7.0s)
+⚠ [9583/9608] Built ZetaS.KSide.K7aux (15s)
+warning: ZetaS/KSide/K7aux.lean:24:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaS/KSide/K7aux.lean:30:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaS/KSide/K7aux.lean:37:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ZetaS/KSide/K7aux.lean:61:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+✔ [9584/9608] Built ZetaS.Majorant.MajSoundNMaj (28s)
+✔ [9585/9608] Built ZetaS.Skeleton.W2L_ZetaFramePoly (5.4s)
+✔ [9586/9608] Built ZetaS.Top.A7K5 (6.4s)
+✔ [9587/9608] Built ZetaS.Skeleton.W2L_ZetaFrameCos (4.6s)
+✔ [9588/9608] Built ZetaS.Skeleton.C13_SpanBounds (6.0s)
+✔ [9589/9608] Built ZetaS.Window.W1L_ZetaGramPoly (8.3s)
+⚠ [9590/9608] Built ZetaS.Cert.C19b_CvxLeaf (11s)
+warning: ZetaS/Cert/C19b_CvxLeaf.lean:69:92: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ZetaS/Cert/C19b_CvxLeaf.lean:201:53: Variable name `hg0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hg0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [9591/9608] Built ZetaS.Cert.C18_LPLeaf (14s)
+warning: ZetaS/Cert/C18_LPLeaf.lean:297:20: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C18_LPLeaf.lean:298:16: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ZetaS/Cert/C18_LPLeaf.lean:299:16: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ZetaS/Cert/C18_LPLeaf.lean:297:20: 'omega' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Cert/C18_LPLeaf.lean:308:51: Variable name `hg0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hg0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [9592/9608] Built ZetaS.Majorant.CertMajV2Proof (6.1s)
+✔ [9593/9608] Built ZetaS.Top.A7K7b (6.7s)
+✔ [9594/9608] Built ZetaS.Skeleton.W1L_ZetaGramPoly (4.7s)
+✔ [9595/9608] Built ZetaS.Skeleton.C19b_CvxLeaf (4.6s)
+✔ [9596/9608] Built ZetaS.Cert.C20_NodeSound (5.1s)
+✔ [9597/9608] Built ZetaS.KSide.K7_SCAbstract (13s)
+ℹ [9598/9608] Built ZetaS.Majorant.CertMajProof (5.9s)
+info: ZetaS/Majorant/CertMajProof.lean:50:0: 'ZetaS.MajSound.certMaj_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [9599/9608] Built ZetaS.Top.TopSolution (6.1s)
+✔ [9600/9608] Built ZetaS.Skeleton.K7_SCAbstract (4.6s)
+✔ [9601/9608] Built ZetaS.Cert.C21_CertSound (5.5s)
+✔ [9602/9608] Built ZetaS.Top.TopFinal (5.9s)
+✔ [9603/9608] Built ZetaS.Top.TopSolutionGeneral (6.3s)
+ℹ [9604/9608] Built ZetaS.Cert.ChainV3 (6.3s)
+info: ZetaS/Cert/ChainV3.lean:34:0: 118 V3 constants (98 without auxiliary matchers/recursors): [ZetaS.CertV2.Acc, ZetaS.CertV2.Acc.kap, ZetaS.CertV2.Acc.mk, ZetaS.CertV2.Acc.ok, ZetaS.CertV2.Acc.rho, ZetaS.CertV2.Box, ZetaS.CertV2.Box.center, ZetaS.CertV2.Box.half, ZetaS.CertV2.Box.splitAt, ZetaS.CertV2.CAcc, ZetaS.CertV2.CAcc.Flo, ZetaS.CertV2.CAcc.P, ZetaS.CertV2.CAcc.grad, ZetaS.CertV2.CAcc.mk, ZetaS.CertV2.CAcc.ok, ZetaS.CertV2.Cell, ZetaS.CertV2.Cell.mk, ZetaS.CertV2.Cell.n, ZetaS.CertV2.Cell.phi, ZetaS.CertV2.Cell.plo, ZetaS.CertV2.Cell.wlo, ZetaS.CertV2.KPt, ZetaS.CertV2.KPt.k0, ZetaS.CertV2.KPt.k1, ZetaS.CertV2.KPt.k2, ZetaS.CertV2.KPt.mk, ZetaS.CertV2.KPt.x, ZetaS.CertV2.LIQ, ZetaS.CertV2.LIQ.claim, ZetaS.CertV2.LIQ.d, ZetaS.CertV2.LIQ.mk, ZetaS.CertV2.LIQ.mu, ZetaS.CertV2.LIQ.spans, ZetaS.CertV2.Leaf, ZetaS.CertV2.Leaf.cap, ZetaS.CertV2.Leaf.check, ZetaS.CertV2.Leaf.convex, ZetaS.CertV2.Leaf.lp, ZetaS.CertV2.M3, ZetaS.CertV2.Node, ZetaS.CertV2.Node.check, ZetaS.CertV2.Node.leaf, ZetaS.CertV2.Node.split, ZetaS.CertV2.QI, ZetaS.CertV2.QI.absMax, ZetaS.CertV2.QI.add, ZetaS.CertV2.QI.grid, ZetaS.CertV2.QI.hi, ZetaS.CertV2.QI.inv, ZetaS.CertV2.QI.lo, ZetaS.CertV2.QI.mk, ZetaS.CertV2.QI.mul, ZetaS.CertV2.QI.neg, ZetaS.CertV2.QI.pt, ZetaS.CertV2.QI.rdn, ZetaS.CertV2.QI.rup, ZetaS.CertV2.QI.smul, ZetaS.CertV2.QI.sq, ZetaS.CertV2.QI.sub, ZetaS.CertV2.QI.superset, ZetaS.CertV2.QI.widen, ZetaS.CertV2.SpanD, ZetaS.CertV2.SpanD.a, ZetaS.CertV2.SpanD.b, ZetaS.CertV2.SpanD.c, ZetaS.CertV2.SpanD.cells, ZetaS.CertV2.SpanD.h, ZetaS.CertV2.SpanD.mk, ZetaS.CertV2.addOn, ZetaS.CertV2.boxMinLin, ZetaS.CertV2.cellOk, ZetaS.CertV2.checkCap, ZetaS.CertV2.checkConvex, ZetaS.CertV2.checkLP, ZetaS.CertV2.chunks5, ZetaS.CertV2.consecCells, ZetaS.CertV2.cosA, ZetaS.CertV2.cosQI, ZetaS.CertV2.cvxSpan, ZetaS.CertV2.cw, ZetaS.CertV2.fact, ZetaS.CertV2.horner, ZetaS.CertV2.inv2sincA, ZetaS.CertV2.kEnclQ, ZetaS.CertV2.kptOk, ZetaS.CertV2.lpSpan, ZetaS.CertV2.lsum, ZetaS.CertV2.minLin, ZetaS.CertV2.piQ, ZetaS.CertV2.psdLDL, ZetaS.CertV2.qabs, ZetaS.CertV2.sinA, ZetaS.CertV2.sinCosPiQ, ZetaS.CertV2.sinQI, ZetaS.CertV2.sincDerivsQI, ZetaS.CertV2.spanBounds, ZetaS.CertV2.tangentLine, ZetaS.CertV2.taylorModel]
+✔ [9605/9608] Built ZetaS.Top.TopSSC (6.9s)
+✔ [9606/9608] Built ZetaS (4.8s)
+✔ [9608/9608] Built Solution.FollowUpZeta (5.6s)
+Build completed successfully (9608 jobs).
+lake build exit=0
+
+real	7m28.438s
+user	20m9.551s
+sys	6m15.934s

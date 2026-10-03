@@ -1,0 +1,15 @@
+comparator/PrintAxioms/FollowUpReplay.lean:9:0: error: unknown module prefix 'ReplayHeadlines'
+
+No directory 'ReplayHeadlines' or file 'ReplayHeadlines.olean' in the search path entries:
+C:\Users\olive\Claude\Projects\mathsrh\zeta-23-lean-release\.lake\packages\Cli\.lake\build\lib\lean
+C:\Users\olive\Claude\Projects\mathsrh\zeta-23-lean-release\.lake\packages\batteries\.lake\build\lib\lean
+C:\Users\olive\Claude\Projects\mathsrh\zeta-23-lean-release\.lake\packages\Qq\.lake\build\lib\lean
+C:\Users\olive\Claude\Projects\mathsrh\zeta-23-lean-release\.lake\packages\aesop\.lake\build\lib\lean
+C:\Users\olive\Claude\Projects\mathsrh\zeta-23-lean-release\.lake\packages\proofwidgets\.lake\build\lib\lean
+C:\Users\olive\Claude\Projects\mathsrh\zeta-23-lean-release\.lake\packages\importGraph\.lake\build\lib\lean
+C:\Users\olive\Claude\Projects\mathsrh\zeta-23-lean-release\.lake\packages\LeanSearchClient\.lake\build\lib\lean
+C:\Users\olive\Claude\Projects\mathsrh\zeta-23-lean-release\.lake\packages\plausible\.lake\build\lib\lean
+C:\Users\olive\Claude\Projects\mathsrh\zeta-23-lean-release\.lake\packages\mathlib\.lake\build\lib\lean
+C:\Users\olive\Claude\Projects\mathsrh\zeta-23-lean-release\.lake\build\lib\lean
+c:\Users\olive\.elan\toolchains\leanprover--lean4---v4.33.0-rc2\lib\lean
+c:\Users\olive\.elan\toolchains\leanprover--lean4---v4.33.0-rc2\lib\lean

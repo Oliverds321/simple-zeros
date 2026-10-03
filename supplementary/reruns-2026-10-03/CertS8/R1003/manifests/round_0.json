@@ -1,0 +1,89 @@
+{
+ "format": "CertS8 run manifest v1",
+ "created": "2026-10-03 12:18:10",
+ "objective": {
+  "objective": "CertS8 bnb_lb3.py v1",
+  "K": 8,
+  "alpha": "poly8A",
+  "muinv": "1700",
+  "claim": "199/25000",
+  "weights_sha256": "257b340d9da4f343600a21589f16d8915f3e082499d475e153c5453980671e78",
+  "window_sha256": "c4005f57a7920f78aa2df33b093c9c5030efac2b8e39fc6cf7371b0c0f32dc14",
+  "window_coeffs_u": [
+   "1",
+   "127/2500",
+   "-8997/10000",
+   "6187/10000",
+   "3/1250"
+  ],
+  "sym": true,
+  "lb3": true,
+  "engine": "numpy",
+  "pure": false,
+  "backend": "auto",
+  "prec": 64
+ },
+ "objective_sha256": "9b09b50eb8f0b5dfd0d95055a994f206cbf3700c3c02098b51e7af2d3e5536f7",
+ "args": "('poly:1,127/2500,-8997/10000,6187/10000,3/1250', 8, '1700', '0.00796', 'flint', 64, False, 'numpy+lb3+sym')",
+ "status": "open",
+ "failure": null,
+ "root": {
+  "init_log": {
+   "name": "init.log",
+   "sha256": "c335a5df9234c9146e5f101f41e295b3e3467869e4c4a95c78af20b8b3219367"
+  },
+  "init_ckpt": {
+   "name": "init.ckpt",
+   "sha256": "6cabee52d7f01694813936eed81412e24292941502ca2261b8ec17fe4a46e896",
+   "boxes": 824
+  },
+  "processed": 19164,
+  "rows_sha256": "623dd67c29750464d6e1cf2d5c145808c8c8c7d1cd20dad7b9311b94874e6091",
+  "rows": 824
+ },
+ "rounds": [
+  {
+   "round": 0,
+   "N": 4,
+   "parents": [
+    {
+     "name": "init.ckpt",
+     "sha256": "6cabee52d7f01694813936eed81412e24292941502ca2261b8ec17fe4a46e896",
+     "boxes": 824
+    }
+   ],
+   "rows": 824,
+   "rows_sha256": "623dd67c29750464d6e1cf2d5c145808c8c8c7d1cd20dad7b9311b94874e6091",
+   "shards": [
+    {
+     "name": "r0_0.ckpt",
+     "sha256": "65b57386f7f26a97c187d9b98aa019c63b7bb0f7675c2189fd2528197525494b",
+     "boxes": 206
+    },
+    {
+     "name": "r0_1.ckpt",
+     "sha256": "aa8440870ea1bb86a68494c1b1b21fa922c01e600b1467ca8312810f58bb6947",
+     "boxes": 206
+    },
+    {
+     "name": "r0_2.ckpt",
+     "sha256": "3cf7f3d30fcd71e36922cae4b42abab3c6bc56438dcffa418bccdb0bdf1dfaf2",
+     "boxes": 206
+    },
+    {
+     "name": "r0_3.ckpt",
+     "sha256": "43a6582a4d3149885288abdb571b105304649bf37b235610aafcff5296f4e593",
+     "boxes": 206
+    }
+   ],
+   "text_manifest": {
+    "name": "r0.manifest.txt",
+    "sha256": "d8174f32efd06f0fcd53d45ba4b833847168df2b75359dc794782e839b286194"
+   },
+   "state": "open",
+   "attempts": 0,
+   "outcome": null,
+   "from": "init"
+  }
+ ]
+}

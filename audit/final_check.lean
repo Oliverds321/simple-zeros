@@ -1,0 +1,13 @@
+import ZetaQ
+#check @ZetaQ.JoinProved.corollary_two_dyadic_proved'
+#check @ZetaQ.JoinProved.theorem_one_generic_proved'
+#check @ZetaQ.JoinProved.corollary_three_even_dyadic_proved'
+#check @ZetaQ.JoinProved.corollary_three_odd_dyadic_proved'
+#check @ZetaQ.JoinProved.corollary_three_even_qQ_proved'
+#check @ZetaQ.JoinProved.corollary_three_odd_qQ_proved'
+#print sorries ZetaQ.JoinProved.theorem_one_generic_proved'
+#print sorries ZetaQ.JoinProved.corollary_two_dyadic_proved'
+#print sorries ZetaQ.JoinProved.corollary_three_even_dyadic_proved'
+#print sorries ZetaQ.JoinProved.corollary_three_odd_dyadic_proved'
+#print sorries ZetaQ.JoinProved.corollary_three_even_qQ_proved'
+#print sorries ZetaQ.JoinProved.corollary_three_odd_qQ_proved'

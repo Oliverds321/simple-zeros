@@ -1,0 +1,357 @@
+CHANGES.txt - modifications made to the staged copies, relative to the working tree
+(none of these changes were made to the originals; this file lists every edit).
+
+Rationale:
+1. certificates/CertMajV2/r4_majorant_arb.py had an absolute Windows path with the
+   writer's username hardcoded as the location of its input .npy file. Fixed to a
+   path relative to the script's own file location, since the data file ships
+   alongside the script in this archive.
+2. replay-K5/run_replay.sh and replay-K5/run_pools.py defaulted to the writer's
+   absolute Windows checkout path for the zeta-23-lean repository if the
+   LEANRUN_TREE environment variable was not set. A relative path is not meaningful
+   here (the Lean repository is not part of this archive and may be checked out
+   anywhere), so the default was removed and the scripts now fail with a clear
+   message asking the user to set LEANRUN_TREE, instead of silently guessing an
+   absolute path that does not exist on another machine. See VERIFY.md.
+
+Known caveat, not fixed here (out of scope: it is a directory-depth assumption, not a
+username leak). run_replay.sh line 29 (`TOOLS="$(cd "$R/../../../lean_tools" && pwd)"`)
+and run_pools.py line 37-38 (`HEAVY_LEANRUN`) assume the driver still lives 4 levels
+under the project root, as it did in the working tree,
+and that a sibling `lean_tools/leanrun.sh` exists. Neither holds once this folder is
+staged or archived on its own. `lean_tools/` is this project's own internal Lean
+harness and is not part of the supplementary archive. A third party who wants to run
+the two-pool driver as-is should either restore the original relative depth or point
+TOOLS/HEAVY_LEANRUN at their own `lake env lean` wrapper; see VERIFY.md, which gives
+the two-command "quick check" path that does not depend on this driver at all.
+
+Syntax checks (python -m py_compile / bash -n), no certifier was run:
+  certificates/CertMajV2/r4_majorant_arb.py : python -X utf8 -m py_compile -> OK
+  replay-K5/run_pools.py                    : python -X utf8 -m py_compile -> OK
+  replay-K5/run_replay.sh                   : bash -n -> OK
+
+----------------------------------------------------------------------
+diff --git a/certificates/CertMajV2/r4_majorant_arb.py b/certificates/CertMajV2/r4_majorant_arb.py
+@@ -8,10 +8,10 @@
+  (d) int B' = B'^(0) = beta_0 (exact double) ;  2 beta_0 < s = 2 + sqrt(2(1 - a1)), a1 = 0.01280197.
+ Negative controls: beta_0 lowered by d in {1.2e-3, 2e-3}: (b) must FAIL with a certified negative value g(s*) < 0 at a point s*.
+ Usage: python r4_majorant_arb.py"""
+-import sys, time, numpy as np
++import sys, os, time, numpy as np
+ from flint import arb, ctx
+ ctx.prec = 106
+-BETA = np.load('<redacted local path>/round2/d6_6b_numerics/majorant_delta1_beta.npy')
++BETA = np.load(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'majorant_delta1_beta.npy'))
+ NH = 60
+ PI = arb.pi()
+ h = arb(1) / NH
+
+----------------------------------------------------------------------
+diff --git a/replay-K5/run_replay.sh b/replay-K5/run_replay.sh
+@@ -27,7 +27,7 @@
+ set -u
+ R="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ TOOLS="$(cd "$R/../../../lean_tools" && pwd)"
+-GREEN="${LEANRUN_TREE:-<redacted local path>/zeta-23-lean}"
++GREEN="${LEANRUN_TREE:?set LEANRUN_TREE to your zeta-23-lean checkout path (e.g. export LEANRUN_TREE=/path/to/zeta-23-lean)}"
+ LOG="$R/replay.log"
+ ALL=(11111 11112 11121 11122 11211 11212 11221 11222 12112 12121 12122 12212 12221 12222 21112 21122 21212 21222 22122 22222)
+ CLASSES=(); JOBS=2; ALLOW4=0; BUDGET=0; TOP=0; O="$R/olean_lib"; RESET=0
+
+----------------------------------------------------------------------
+diff --git a/replay-K5/run_pools.py b/replay-K5/run_pools.py
+@@ -37,7 +37,9 @@
+ RH72 = os.path.normpath(os.path.join(R, '..', '..', '..')).replace('\\', '/')
+ HEAVY_LEANRUN = f'{RH72}/lean_tools/leanrun.sh'
+ LIGHT_LEANRUN = f'{R}/light_tools/leanrun.sh'
+-GREEN = os.environ.get('LEANRUN_TREE', '<redacted local path>/zeta-23-lean')
++GREEN = os.environ.get('LEANRUN_TREE')
++if not GREEN:
++    raise SystemExit('set the LEANRUN_TREE environment variable to your zeta-23-lean checkout path')
+ LOG = f'{R}/replay.log'
+ STATUS = f'{R}/STATUS.txt'
+ ALL = ['11111', '11112', '11121', '11122', '11211', '11212', '11221', '11222', '12112', '12121', '12122', '12212',
+
+======================================================================
+Changes made on 1 October 2026, when the folder was placed in the repository
+======================================================================
+
+3. replay-K5/gen_replay.py looked for the certificate JSON and gen_v2_lean.py one
+   directory above itself (their place in the working tree); here they sit next to it.
+-HERE = os.path.dirname(os.path.abspath(__file__)); L11 = os.path.dirname(HERE)
++HERE = os.path.dirname(os.path.abspath(__file__)); L11 = HERE
+
+4. replay-K5/proto_v2.py and replay-K5/proto_cert.py added. gen_v2_lean.py and
+   replay_v3.py import them, and the staged folder lacked them, so the shards could not
+   be regenerated from it. proto_v2.py is unchanged. proto_cert.py had the writer's
+   absolute Windows paths for its input folder and for an output file of its own
+   command-line mode; both now point next to the scripts. Its input folder is
+   ../certificates/CertAM5/, where the same xpat_K5_*.json ship, and the claims file
+   there is claims_d15e6_a1.6_K5_mu500.json, byte-identical to the
+   claims_a1.6_K5_mu500.json the script read (sha256 cf055dd2...).
+-import sys, json, math, time
++import sys, os, json, math, time
+-HERE = '<redacted local path>/round1/X2_numerics'
++HERE = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'certificates', 'CertAM5')
+-    cj = json.load(open(f'{HERE}/claims_a1.6_K5_mu500.json'))
++    cj = json.load(open(f'{HERE}/claims_d15e6_a1.6_K5_mu500.json'))
+-    open(f'<redacted local path>/lean_work/L1_1/cert_K5_{tag}.json', 'w').write(blob)
++    open(os.path.join(os.path.dirname(os.path.abspath(__file__)), f'cert_K5_{tag}.json'), 'w').write(blob)
+   Test, 1 October 2026, on Windows: `python -X utf8 gen_replay.py` with these files
+   reproduced all 1,478 shard files byte for byte (`sha256sum -c MANIFEST.sha256`:
+   1,478 of 1,478 OK; about 1.5 minutes); `python -X utf8 replay_v3.py 11111` ran
+   (1725 leaves, 0 failures).
+
+5. replay-K5/run_replay.sh, run_pools.sh and run_pools.py moved, unchanged, to
+   replay-K5/drivers/. They are kept for provenance: they need the project's internal
+   job runner (see the caveat above), and `lake build ZetaSReplay` is the supported route.
+
+6. README.md, VERIFY.md and PROVENANCE.md rewritten for the folder's place in the
+   repository (the 1,478 shards are in ZetaSReplay/; the Lean commands are the
+   repository's own; the licence is Apache-2.0, as for the rest of the follow-up work).
+   CHECKSUMS.sha256 regenerated.
+
+The certificate data files (.json, .npy) are unchanged; the seven sha256 values printed
+in the paper and in the doc-strings were re-checked after the copy: seven of seven match.
+
+======================================================================
+Changes made on 3 October 2026, after the audit of the same day
+======================================================================
+
+The audit found that certificates/CertS8/ lacked two helpers its commands need (R1), that
+several scripts exited with status 0 on a missing, false or incomplete result (R2), and that
+the optional scalar multiprocessing path checked the default weights instead of the given
+ones (R3). The changes below touch only failure handling, argument checks, one configuration
+guard, missing files and documentation. A run that succeeded before computes the same thing
+and prints the same lines (the drivers runcert.sh and runlb3.sh add one summary line on
+standard output). No data file was changed (.json, .npy, logs/, replay-K5/MANIFEST.sha256);
+the seven printed sha256 values still match. Line endings of the edited files are unchanged
+(CRLF where they were CRLF). Python additions are marked "(Oct 2026)" in comments.
+
+7. Added certificates/CertS8/localK.py, shard_ckpt.py, run_lb3_loop.sh (R1). bnb_lb3.py
+   imports localK, and mkinit.sh and round_lb3.sh call shard_ckpt.py; neither was in the
+   folder, so the documented CertS8 commands stopped at once (ModuleNotFoundError; "can't
+   open file shard_ckpt.py"). run_lb3_loop.sh is the loop over round_lb3.sh that wrote
+   logs/DRIVER_P8.log and logs/DRIVER_P8b.log. The three are copied byte for byte from the
+   project's copy of the working folder of the recorded runs, round2/d6_5_numerics/:
+     localK.py        b1a82ca4159d1b90652e17b8c55781a7ae6e25b72d8ca5f015e0fd6797a23e31
+                      (= certificates/CertAM5/localK.py = certificates/CertAM7/localK.py)
+     shard_ckpt.py    f06667b462226b76b6d7c30a9533c4fdca43247cf242a923612f140cff890f22
+                      (the only version in round2/d3_1, d6_5 and d8_17_numerics)
+     run_lb3_loop.sh  771bbb6597003e965e2772f74e7a019d109c6abd57a895a8fc92fbe0254748b9
+   That copy stores some files with LF line endings where the original working tree had
+   CRLF (bnb_lb3.py, for one); these three may therefore differ from the originals in line
+   endings, never in content.
+
+8. Exit status of the Python entry points (R2); each change adds lines, none is removed.
+   common/verify_inputs.py: exits 1 ("FAIL: n of m canonical patterns are not certified")
+     unless every canonical pattern (20 for K = 5, 72 for K = 7) is certified in the logs;
+     refuses to run under python -O (its checks are assert statements).
+   common/d819_exact.py: sys.exit(0 if okall else 1) after its last line.
+   CertAM5/bnb_interval_w.py, CertAM7/bnb_lb3_w.py, CertS8/bnb_lb3.py: after print(res),
+     exit 0 only if res['ok'] is True (a budget stop, a minimum-width stop or a
+     counterexample now exits 1); refuse to run under python -O.
+   CertAM7/pexact2.py: exits 1 unless both robustness conditions it prints hold.
+   CertMajV2/r4_majorant_arb.py: exits 1 unless 2I' < s, (a) and (b) are certified and both
+     negative controls fail.
+   replay-K5/replay_v3.py: exits 1 ("FAIL: n failed leaves") if any leaf fails; refuses to
+     run under python -O.
+   replay-K5/gen_replay.py: exits 1 if its generator subprocess gen_v2_lean.py fails for a
+     class (it went on before).
+
+9. Drivers (R2).
+   CertAM5/runcert.sh, CertAM7/runlb3.sh: set -u -o pipefail; exit 1 if the claims file (or
+     the pattern folder) is missing or no pattern is given; a pattern without a claim is a
+     failure; each pattern counts as certified only if its result contains {'ok': True and
+     the pipeline exited 0 (a timeout, a failed run or a grep with no result line does not);
+     the log line is written as before; a final line "runcert.sh: k of n patterns certified
+     (ok: True)" on standard output; exit status 0 only if k = n. Coverage of all classes
+     stays the job of verify_inputs.py on the log.
+   CertS8/mkinit.sh: N must be a positive integer; exits 1 unless the initial run stopped at
+     its box budget ('reason': 'budget') with a checkpoint, shard_ckpt.py succeeded and the N
+     shards r0_<i>.ckpt exist. The last line "cat DRIVER.log | head -3" became
+     "head -n 3 DRIVER.log" (same output).
+   CertS8/round_lb3.sh: it printed ALLOK and wrote "ALL SHARDS OK: certificate claim=...
+     holds" for a folder with no shard at all. Now: the run folder must exist; N must be a
+     positive integer and R a nonnegative integer; the shards of round R must be exactly
+     r<R>_0 ... r<R>_<N-1>, each a checkpoint to run or the log of an earlier attempt of this
+     round that ended with 'ok': True for the same alpha, K, mu and claim (any other
+     r<R>_* file is refused); the exit status of every shard process is checked (0 or 124,
+     the time limit; anything else is a failure, exit 5); after the round, the shards ok plus
+     the shards left must be N; ALLOK and "ALL SHARDS OK" only when all N shards ended with
+     'ok': True. Failures write "FAIL round R: <reason>" to DRIVER.log and standard error, print
+     FAIL and exit nonzero. The lines written on success are unchanged.
+
+10. Scalar multiprocessing (R3). In bnb_interval_w.py, bnb_lb3_w.py and bnb_lb3.py the
+    worker initialiser _winit built its IntervalCertifier without the weights (and, in
+    bnb_lb3_w.py and bnb_lb3.py, without the polynomial window), so with --engine scalar,
+    --workers > 1 and hybrid mode the workers checked the default objective. certify() now
+    refuses that configuration when weights or a window are given (SystemExit with an error
+    message, exit status 1), before any box is processed. The documented runs use the
+    default --engine numpy, which never starts worker processes, and are unaffected.
+
+11. Documentation and tests. VERIFY.md: requirements and exit statuses in the introduction;
+    step 2 states the exit statuses; step 3 rewritten (for each route: folder, files needed,
+    command, expected last line and exit status; scipy and sympy listed; the unsharded
+    CertS8 command ends with a line beginning {'ok': True, while "ALL SHARDS OK" belongs to
+    the sharded route mkinit.sh + run_lb3_loop.sh; runlb3.sh runs sequentially; coverage
+    checked by verify_inputs.py on the fresh log; the scalar multiprocessing refusal); step 6
+    states the exit statuses and the results of 3 October; new step 7 (regression tests).
+    New: requirements.txt (the tested versions), tests/run_negative_controls.sh (24
+    controls, among them the six negative tests of the audit), tests/run_positive_smoke.sh
+    (steps 1 to 3 from a clean copy). README.md (tables), PROVENANCE.md (file lists) updated;
+    CHECKSUMS.sha256 regenerated.
+
+Tests, 3 October 2026, Linux x86-64, Python 3.11.15 with requirements.txt, at most two cores:
+  tests/run_negative_controls.sh: 24 of 24 controls behave as required (about 40 s). On the
+    scripts as they were before these changes (with localK.py and shard_ckpt.py added so that
+    the CertS8 controls can run), 22 of the 24 controls report a wrong behaviour.
+  tests/run_positive_smoke.sh: all checks succeed (about 3 minutes).
+  CertAM5, runcert.sh on all 20 classes: 20 of 20 ok: True in 53 s, box counts and minima
+    identical to the shipped logs; verify_inputs.py and d819_exact.py on that log: 20/20,
+    True, exit status 0.
+  CertAM7, class 1111111: ok: True in 50 s, 1,781,312 boxes as in logs/cert_lb3_rerun.txt.
+  r4_majorant_arb.py, pexact2.py: same output as before, exit status 0.
+  gen_replay.py: 1,478 of 1,478 OK against MANIFEST.sha256 after the CRLF conversion of
+    VERIFY.md step 6; replay_v3.py on all 20 classes: 46,047 leaves, 0 failed, exit status 0.
+  CertS8: both routes start from a clean copy (box budget 20,000; mkinit.sh with 5 and with
+    2 shards; rounds of round_lb3.sh and run_lb3_loop.sh with a 20 s time limit). The full
+    CertS8 run (hours) was not repeated.
+
+======================================================================
+Changes made on 3 October 2026 (evening), after the review of the corrected release
+======================================================================
+
+A review of the corrected release (commit 12eb6a7) found: (a) run_lb3_loop.sh re-sharded
+whatever checkpoint files were left in a run folder when their number differed from N,
+before round_lb3.sh checked anything, so lost shards vanished; with 824 of 825 shards lost
+(the one left naturally empty) the loop exited 0 with ALLOK and "ALL SHARDS OK"; (b) the
+success logs and receipts of round_lb3.sh named only alpha, K, mu and the claim (a rerun
+with nonexistent weights and window files printed ALLOK), and the checkpoints of bnb_lb3.py
+did not bind the weights, so a resume with changed weights was accepted; (c)
+verify_inputs.py ignored alpha in the logs (a=999 still gave 20/20); (d) shard_ckpt.py
+checked with assert statements, so python -O merged mismatched checkpoints and exited 0;
+(e) r4_majorant_arb.py raised IndexError when reporting a failed check (b) (exit status 1
+all the same). The changes below touch only coverage and input bookkeeping, failure
+handling, diagnostics, tests and documentation. A run that succeeded before computes the
+same boxes and prints the same lines, plus identity lines: bnb_lb3.py prints the objective
+after its first line and, on a resume, the sha256 of the checkpoint; shard_ckpt.py prints the
+objective after its shard lines; DRIVER.log gets the objective and coverage line before "ALL
+SHARDS OK", which stays the last line. No data file was changed (.json, .npy, logs/,
+MANIFEST.sha256). Line endings unchanged (CRLF in bnb_lb3.py and verify_inputs.py). Python
+additions are marked "(Oct 2026)".
+
+12. CertS8 run manifest (new: certificates/CertS8/s8_manifest.py). mkinit.sh writes
+    runs/<TAG>/run_manifest.json and every round updates it: the objective of the run and its
+    sha256 (item 13); the root (init.log: a fresh start that stopped at its box budget;
+    init.ckpt: sha256, boxes, processed; sha256 of the sorted rows of its stack); for every
+    round N, its shards as written (name, sha256, boxes), its parents and the sha256 of the
+    sorted rows of their union, and, once closed, each shard's outcome (certified: its log
+    and sha256; left: its log and the checkpoint it left, sha256 and boxes). The parents of
+    round R+1 are exactly the checkpoints left in round R, or after a change of N all shards
+    of round R. A copy of the manifest as it stood when each round opened is kept in
+    runs/<TAG>/manifests/. Before any round or re-shard it refuses (exit status 4): a folder
+    without a manifest; a command of another objective (missing files included); a failed or
+    complete run; a round other than the current one; a missing shard or one whose sha256
+    differs; any shard-like file the manifest does not explain (extra, duplicate, stale,
+    x<R>_* of the old loop); a missing or changed log or text manifest of a closed round; a
+    lineage copy that disagrees. After a round it accepts a shard as certified only if its
+    process exited 0, its log ends with {'ok': True, and names the objective and the sha256
+    of the shard it resumed, and its checkpoint is gone; as left only if it stopped at the
+    time limit (124) with a checkpoint of the objective. 'ok': False marks the run failed for
+    good (exit 2); a checkpoint gone without an ok line (3) or a failed process (5) fails the
+    round, which can be run again. "verify TAG -- ..." checks a complete run again and prints
+    its receipt; "status TAG" names the current round. All checks are explicit (they hold
+    under python -O); interrupt signals are ignored while it updates the manifest.
+
+13. CertS8/bnb_lb3.py: objective_identity() (K, alpha, muinv and claim as exact rationals,
+    sha256 of the weights and window files, window coefficients, and --sym, --lb3, --engine,
+    --pure, --backend, --prec; not the options that only steer or stop the search) and its
+    sha256 are computed before the run; a missing weights or window file is an error. The
+    sha256 is stored in every checkpoint ('identity') and printed as the second line
+    ("objective: sha256=..."); a resume of a checkpoint with other arguments or another
+    objective is refused by an explicit check (it was an assert of the arguments only), and a
+    resume prints "resumed checkpoint sha256=...". The argument parser became the function
+    build_parser() so that s8_manifest.py parses the same arguments.
+
+14. CertS8/shard_ckpt.py: explicit checks with exit status 1 in place of the two asserts: N a
+    positive integer; at least one parent; every parent readable and a checkpoint, not given
+    twice; the same args and the same objective in all parents (a checkpoint without one is
+    refused); no output file may exist; the partition check. The shards carry the objective.
+    The split itself and its lines are unchanged; it is now also a function, shard(), which
+    s8_manifest.py calls.
+
+15. CertS8/mkinit.sh: refuses a folder that holds a manifest or checkpoints; shards through
+    s8_manifest.py init (same DRIVER.log lines, plus the objective). round_lb3.sh: checks
+    through s8_manifest.py begin and end; runs every shard of the round (the acceptance of a
+    log of an earlier attempt in place of a checkpoint is gone: the round restarts from its
+    start copies, runs/<TAG>/start/, and the logs of the stopped attempt move to
+    runs/<TAG>/attempts/); on INT, TERM or HUP it stops its shard processes and exits
+    nonzero. run_lb3_loop.sh: no longer re-shards the files it finds; s8_manifest.py prepare
+    checks the run, and a new N re-shards the complete current round into the next round
+    (the round number advances; nothing is deleted from the record). Lines written on success
+    are unchanged apart from the identity lines above.
+
+16. common/verify_inputs.py: a log entry counts only if its alpha equals the claims file's
+    alpha (as a rational), its printed weight check names its own pattern, and --sym appears
+    only for a palindromic pattern; the claims file's K and muinv, if given, must be those of
+    the command line. A line "ignored n log entries ..." is printed only when entries were
+    ignored. On the shipped logs the output is unchanged (20/20, 72/72). d819_exact.py already
+    rejected such logs and is unchanged.
+
+17. CertMajV2/r4_majorant_arb.py: a failed check (b) is reported as "(b) ...: FAIL (n
+    evaluations; <reason>)" instead of raising IndexError; exit status 1 as before. The
+    output of the passing run is unchanged.
+
+18. Documentation and tests. VERIFY.md step 3 (the run manifest, what the drivers refuse, the
+    identity binding, how to resume and check a run), step 2 (the alpha binding), step 7 and
+    the note on python -O. README.md (tables), PROVENANCE.md (file list), CHECKSUMS.sha256
+    regenerated. tests/run_negative_controls.sh keeps its 24 controls and adds 37 lines (31
+    controls and 6 setup steps that must succeed): the documented loop with a missing shard, with 825
+    shards of which the 824 nonempty ones are lost (with and without a manifest), with a
+    duplicate, extra, corrupt or replaced shard, with a change of N while a shard is missing,
+    after a shard ended 'ok': False, with a missing or changed log of a closed round, with a
+    closed round run again, with changed or nonexistent weights or window files; resumes of
+    bnb_lb3.py with changed weights or another window file; a complete run with other inputs
+    (round_lb3.sh, s8_manifest.py verify) or a missing shard log; python -O on s8_manifest.py
+    and shard_ckpt.py (mismatched args, missing parent, N = 0); verify_inputs.py with a=999 or
+    with weight checks of another pattern, d819_exact.py with a=999; the majorant's failure
+    report. tests/run_positive_smoke.sh adds 6 checks: a loop stopped by a time limit and the
+    round resumed; mkinit.sh and run_lb3_loop.sh to ALLOK on the claim 0.005 (seconds), with
+    the receipt lines checked and "s8_manifest.py verify"; and a change of N from 2 to 3 after
+    the complete round 0, ending ALLOK in round 1.
+
+Tests, 3 October 2026 (evening), Linux x86-64, Python 3.11.15 with requirements.txt, at most
+three cores:
+  tests/run_negative_controls.sh: 61 of 61 controls behave as required (about 1 minute). On
+    the scripts as they were before these changes, 21 of the 37 new lines report a wrong
+    behaviour (among them exit status 0 with ALLOK and "ALL SHARDS OK" for the lost 825-shard
+    work and for a complete run rerun with nonexistent or changed inputs, python -O
+    shard_ckpt.py exiting 0, verify_inputs.py accepting a=999); the others failed there too
+    (corrupt pickle, changed window coefficients, missing files, d819_exact.py) or need the
+    new s8_manifest.py.
+  tests/run_positive_smoke.sh: all 20 checks succeed (about 3 minutes).
+  The reviewer's reproduce_shard_coverage.sh, run unchanged against this folder: loop exit
+    status 1 ("runs/LOST has no run manifest"), no receipt; "False-success counterexample did
+    not reproduce".
+  A complete small run (claim 0.005, N = 2): DRIVER.log and the shard logs equal those of the
+    scripts before these changes apart from dates, times and the identity lines. The full
+    CertS8 run (hours) was not repeated.
+
+3 October 2026, night (the first full S8 run with the run manifest)
+  certificates/CertS8/s8_manifest.py: a shard's result counted as certified only if the LAST
+    non-blank line of its log began with {'ok': True,. In a full run Python prints the result
+    record over two lines (its numpy array 'worst' wraps), so the four certified shards of the
+    last round were reported "checkpoint gone but no ok line" and the loop stopped with exit
+    status 1 (failing closed: no receipt). New function result_ok: the result record is the
+    last line that starts with '{', followed only by continuation lines (which start with
+    white space); it must start with {'ok': True,. Any other line after it (a traceback, other
+    output) makes the result not ok.
+  tests/run_positive_smoke.sh: one check (a wrapped result record counts as ok).
+  tests/run_negative_controls.sh: two controls ('ok': True followed by a traceback; 'ok': False).
+
+3 October 2026, night (reruns)
+  reruns-2026-10-03/ (new): full reruns of CertAM5 (20 classes), CertAM7 (72 classes) and CertS8
+    (route (b), N = 4, rounds 0 to 4, with the run manifest) with the scripts of this release:
+    all certified; verify_inputs.py, d819_exact.py and pexact2.py pass; s8_manifest.py verify
+    prints COMPLETE. The original logs under certificates/*/logs/ are unchanged.

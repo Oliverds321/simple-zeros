@@ -1,0 +1,4 @@
+'ZetaS.Top.zeta_simple_K5_uncond' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaS.Top.zeta_distinct_K5_uncond' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaS.CertV2.certAM5_replayed' depends on axioms: [propext, Classical.choice, Quot.sound]
+leanrun: exit=0 elapsed=26.4s peak_mem=4434MB slot=3/4 waited=0s file=comparator/PrintAxioms/FollowUpReplay.lean

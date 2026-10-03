@@ -1,0 +1,32 @@
+bnb_interval: alpha=poly8A K=8 mu=1/1700 c_claim=0.00796 backend=auto prec=64 engine=numpy mode=hybrid workers=1 lb3=True sym=True axis=grad
+objective: sha256=9b09b50eb8f0b5dfd0d95055a994f206cbf3700c3c02098b51e7af2d3e5536f7 (K=8 alpha=poly8A mu=1/1700 claim=199/25000 weights=w_poly8A_K8_mu1700.json sha256=257b340d9da4f343600a21589f16d8915f3e082499d475e153c5453980671e78 window=win_poly8A.json sha256=c4005f57a7920f78aa2df33b093c9c5030efac2b8e39fc6cf7371b0c0f32dc14 sym=True lb3=True engine=numpy pure=False backend=auto prec=64)
+  resumed from runs/R1003/r0_3.ckpt: processed=0.000e+00 stack_boxes=2.060e+02
+  resumed checkpoint sha256=43a6582a4d3149885288abdb571b105304649bf37b235610aafcff5296f4e593
+  it=40 processed=1.088e+06 stack_boxes=4.878e+05 min centre F=0.0083306 t=82s iv_checked=1.064e+06 iv_rejected=0
+  it=80 processed=1.884e+06 stack_boxes=4.771e+05 min centre F=0.0082313 t=136s iv_checked=1.855e+06 iv_rejected=0
+  it=120 processed=2.376e+06 stack_boxes=4.428e+05 min centre F=0.0081367 t=168s iv_checked=2.343e+06 iv_rejected=0
+  it=160 processed=3.005e+06 stack_boxes=4.435e+05 min centre F=0.0081367 t=208s iv_checked=2.968e+06 iv_rejected=0
+  it=200 processed=3.489e+06 stack_boxes=3.812e+05 min centre F=0.0081367 t=239s iv_checked=3.448e+06 iv_rejected=0
+  it=240 processed=4.142e+06 stack_boxes=4.243e+05 min centre F=0.0081367 t=283s iv_checked=4.095e+06 iv_rejected=0
+  it=280 processed=4.831e+06 stack_boxes=3.572e+05 min centre F=0.0081367 t=327s iv_checked=4.779e+06 iv_rejected=0
+  it=320 processed=5.555e+06 stack_boxes=4.070e+05 min centre F=0.0081367 t=376s iv_checked=5.497e+06 iv_rejected=0
+  it=360 processed=6.273e+06 stack_boxes=3.757e+05 min centre F=0.0081367 t=425s iv_checked=6.208e+06 iv_rejected=0
+  it=400 processed=6.883e+06 stack_boxes=3.445e+05 min centre F=0.0081367 t=466s iv_checked=6.813e+06 iv_rejected=0
+  it=440 processed=7.585e+06 stack_boxes=4.289e+05 min centre F=0.0081367 t=512s iv_checked=7.509e+06 iv_rejected=0
+  it=480 processed=8.250e+06 stack_boxes=4.245e+05 min centre F=0.0081367 t=558s iv_checked=8.169e+06 iv_rejected=0
+  it=520 processed=8.629e+06 stack_boxes=3.465e+05 min centre F=0.0081367 t=583s iv_checked=8.544e+06 iv_rejected=0
+  it=560 processed=9.213e+06 stack_boxes=3.528e+05 min centre F=0.0081367 t=624s iv_checked=9.123e+06 iv_rejected=0
+  it=600 processed=9.965e+06 stack_boxes=3.382e+05 min centre F=0.0081367 t=672s iv_checked=9.868e+06 iv_rejected=0
+  it=640 processed=1.029e+07 stack_boxes=3.103e+05 min centre F=0.0081367 t=691s iv_checked=1.019e+07 iv_rejected=0
+  it=680 processed=1.094e+07 stack_boxes=4.193e+05 min centre F=0.0081367 t=736s iv_checked=1.083e+07 iv_rejected=0
+  it=720 processed=1.177e+07 stack_boxes=3.709e+05 min centre F=0.0081367 t=795s iv_checked=1.165e+07 iv_rejected=0
+  it=760 processed=1.233e+07 stack_boxes=3.703e+05 min centre F=0.0081367 t=832s iv_checked=1.221e+07 iv_rejected=0
+  it=800 processed=1.273e+07 stack_boxes=3.159e+05 min centre F=0.0081367 t=857s iv_checked=1.261e+07 iv_rejected=0
+  it=840 processed=1.328e+07 stack_boxes=3.563e+05 min centre F=0.0081367 t=894s iv_checked=1.315e+07 iv_rejected=0
+  it=880 processed=1.397e+07 stack_boxes=2.850e+05 min centre F=0.0081367 t=941s iv_checked=1.384e+07 iv_rejected=0
+  it=920 processed=1.449e+07 stack_boxes=3.207e+05 min centre F=0.0081367 t=975s iv_checked=1.435e+07 iv_rejected=0
+  it=960 processed=1.490e+07 stack_boxes=3.037e+05 min centre F=0.0081367 t=999s iv_checked=1.476e+07 iv_rejected=0
+  it=1000 processed=1.559e+07 stack_boxes=4.155e+05 min centre F=0.0081367 t=1045s iv_checked=1.544e+07 iv_rejected=0
+  it=1040 processed=1.646e+07 stack_boxes=3.657e+05 min centre F=0.0081367 t=1104s iv_checked=1.631e+07 iv_rejected=0
+  it=1080 processed=1.687e+07 stack_boxes=4.160e+05 min centre F=0.0081367 t=1131s iv_checked=1.671e+07 iv_rejected=0
+  it=1120 processed=1.728e+07 stack_boxes=3.343e+05 min centre F=0.0081367 t=1157s iv_checked=1.712e+07 iv_rejected=0

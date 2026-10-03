@@ -1,0 +1,90 @@
+census: 3680 public theorems, 3680 lines written to audit/followup/census_2026-10-03_1557.tsv
+SORRY-LEAVES ZetaS.Top.zeta_simple_K5_final (0): []
+SORRY-LEAVES ZetaS.Top.zeta_distinct_K5_final (0): []
+SORRY-LEAVES ZetaS.Top.zeta_simple_K7_final (0): []
+SORRY-LEAVES ZetaS.Top.zeta_distinct_K7_final (0): []
+SORRY-LEAVES ZetaS.Top.zeta_simple_on_line (0): []
+SORRY-LEAVES ZetaS.Top.zeta_simple_or_critical (0): []
+'ZetaS.Top.zeta_simple_K5_final' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaS.Top.zeta_distinct_K5_final' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaS.Top.zeta_simple_K7_final' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaS.Top.zeta_distinct_K7_final' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaS.Top.zeta_simple_on_line' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaS.Top.zeta_simple_or_critical' depends on axioms: [propext, Classical.choice, Quot.sound]
+SORRY-LEAVES ZetaShell.LemmaK.theorem_one_prime_design (0): []
+SORRY-LEAVES ZetaShell.certS53 (0): []
+SORRY-LEAVES ZetaShell.certD53 (0): []
+SORRY-LEAVES ZetaShell.PropZ.propZ_W (0): []
+SORRY-LEAVES ZetaShell.TrackF.lemma2a (0): []
+SORRY-LEAVES ZetaShell.Design.shell_frame_qle_of_nodes (1): [ZetaShell.Design.frob_row_shell [ZetaShell.Skeleton.SD_F1c_FrobRow]]
+SORRY-LEAVES ZetaShell.LemmaK.theorem_one_prime (1): [ZetaShell.LemmaK.killed_frame_lamStar8 [ZetaShell.Skeleton.LK_K9_Frame]]
+SORRY-LEAVES ZetaShell.PropZ.Z5R_W (0): []
+SORRY-LEAVES ZetaShell.ShellK.F1c_chain (0): []
+SORRY-LEAVES ZetaShell.Design.shell_frame_qle_of_K (0): []
+SORRY-LEAVES ZetaShell.ShellK.frob_row_shell' (0): []
+SORRY-LEAVES ZetaShell.ShellS.shell_S (0): []
+SORRY-LEAVES ZetaShell.ShellK.thmK (0): []
+'ZetaShell.LemmaK.theorem_one_prime_design' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.certS53' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.certD53' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.PropZ.propZ_W' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.TrackF.lemma2a' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.ShellK.F1c_chain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.Design.shell_frame_qle_of_K' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.ShellS.shell_S' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.ShellK.thmK' depends on axioms: [propext, Classical.choice, Quot.sound]
+SORRY-LEAVES ZetaShell.shell_S53_qle_reduced (0): []
+SORRY-LEAVES ZetaShell.Design.shell_frame_qle_of_K_noP (0): []
+SORRY-LEAVES ZetaShell.ShellK.K2_shellZone (0): []
+SORRY-LEAVES ZetaShell.ShellS.AS_pointwise_corr (0): []
+SORRY-LEAVES ZetaShell.ShellK.F1c.K3b_integrated (0): []
+SORRY-LEAVES ZetaShell.ShellS.S2_zero_side (0): []
+SORRY-LEAVES ZetaShell.ShellS.Z6a_zero_sums (0): []
+SORRY-LEAVES ZetaShell.ShellS.Z6d_counts_corr (0): []
+SORRY-LEAVES ZetaShell.TrackF.ring_le_primitive_corr (0): []
+SORRY-LEAVES ZetaShell.ShellS.S1_ring_to_zeros (0): []
+'ZetaShell.shell_S53_qle_reduced' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.Design.shell_frame_qle_of_K_noP' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.ShellK.K2_shellZone' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.ShellS.AS_pointwise_corr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.ShellS.S2_zero_side' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.TrackF.ring_le_primitive_corr' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.ShellK.F1c.K3b_integrated' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.ShellS.S1_ring_to_zeros' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.ShellS.Z6a_zero_sums' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.ShellS.Z6d_counts_corr' depends on axioms: [propext, Classical.choice, Quot.sound]
+SORRY-LEAVES ZetaShell.ShellK.KT_transfer (0): []
+SORRY-LEAVES ZetaShell.TrackF.lemmaP (0): []
+SORRY-LEAVES ZetaShell.TrackF.signed_gallagher (0): []
+SORRY-LEAVES ZetaShell.ShellS.S3_family_errors (0): []
+'ZetaShell.ShellK.KT_transfer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.TrackF.lemmaP' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.TrackF.signed_gallagher' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.ShellS.S3_family_errors' depends on axioms: [propext, Classical.choice, Quot.sound]
+ZetaShell.shell_S53_qle_reduced : ZetaShell.ZeroDensityInput →
+  ∀ (r ε θ : ℝ),
+    3 ≤ r →
+      0 < ε →
+        0 < θ →
+          θ < 503 / 1994 →
+            ∃ Q₀ c,
+              0 < c ∧
+                ∀ (Qn : ℕ),
+                  Q₀ ≤ ↑Qn →
+                    (↑ZetaShell.PcertS53 - c * Real.log ↑Qn ^ (-θ)) *
+                        ZetaShell.famN (ZetaShell.modQle Qn) (ZetaShell.twin (↑Qn) r ε) (2 * ZetaShell.twin (↑Qn) r ε) ≤
+                      ZetaShell.famN0s (ZetaShell.modQle Qn) (ZetaShell.twin (↑Qn) r ε) (2 * ZetaShell.twin (↑Qn) r ε)
+ZetaShell.LemmaK.theorem_one_prime_design : ∀ (r ε : ℝ),
+  3 ≤ r →
+    0 < ε →
+      ∃ Q₀ c,
+        0 < c ∧
+          ∀ (Qn : ℕ),
+            Q₀ ≤ ↑Qn →
+              (↑ZetaShell.LemmaK.PcertKD - c * Real.log (Real.log ↑Qn) / Real.log ↑Qn) *
+                  ZetaQ.NfamCount ZetaQ.Family.qle Qn (ZetaQ.Twin (↑Qn) r ε) (2 * ZetaQ.Twin (↑Qn) r ε) ≤
+                ZetaQ.N0sFamCount ZetaQ.Family.qle Qn (ZetaQ.Twin (↑Qn) r ε) (2 * ZetaQ.Twin (↑Qn) r ε)
+
+real	10m0.423s
+user	9m50.789s
+sys	0m4.056s

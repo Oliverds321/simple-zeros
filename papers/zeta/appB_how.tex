@@ -1,0 +1,16 @@
+\section{How the work was done}\label{app:how}
+
+\emph{Disclosure of generative-AI use.} This paper and its Lean development were produced substantially by a generative AI system, Claude
+(Anthropic), working under the direction of the named author, who takes full responsibility for its contents. No AI system is listed as an author.
+
+The local inequalities of Section~\ref{sec:cert} were found by linear programming over gap vectors located by floating-point search and
+verified by interval branch-and-bound; the certificates were re-run, some box for box, and their inputs and closing constants were checked
+again with independently written code. What is checked by the Lean kernel, and under which hypotheses, is stated in \S\ref{ssec:formal}. The
+Lean libraries, the certificate data with their certifiers and logs, the generator of the replay files, and the build logs and
+\texttt{\#print axioms} outputs of the release are in the repository \repourl{} at tag \repotag{} (Appendix~\ref{app:layout}).
+
+\emph{Scope of the verification.} Theorems~\ref{thm:main} and~\ref{thm:S} and Corollary~\ref{cor:SC} are Lean theorems that depend only on
+the three standard axioms. For the $K=5$ pair of Theorem~\ref{thm:main} the local certificate is replayed in the Lean kernel, so these two
+statements have no hypothesis. For the $K=7$ pair, Theorem~\ref{thm:S} and Corollary~\ref{cor:SC} the local certificate is a displayed
+hypothesis: a finite inequality checked outside Lean by interval arithmetic. The paper has not been refereed, and the Lean development has
+not been rebuilt outside this project.

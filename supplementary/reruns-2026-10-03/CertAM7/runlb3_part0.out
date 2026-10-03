@@ -1,0 +1,6 @@
+runlb3.sh: 36 of 36 patterns certified (ok: True)
+
+real	94m51.652s
+user	91m1.496s
+sys	1m40.760s
+exit=0

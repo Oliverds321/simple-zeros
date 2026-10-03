@@ -1,0 +1,25 @@
+== K=7 mu=1/500  claims=CertAM7/claims_a1.6_K7_mu500_L1e5.json
+H (sympy closed form -> Arb) = [0.6719815510003707465579448 +/- 2.18e-26] ; mpmath quad from definition = 0.6719815510003707465579448
+k(0) = 1.000000000 ; k(3/4) = [0.3556941746570779063776 +/- 3.68e-23] ; mpmath quad = 0.3556941746570779063776
+a1 = 1824837/100000000 = 0.018248370000; a2 = 1168069/50000000 = 0.023361380000; nu = 3/250; max(a1,a2) = a2
+  [OK] a1 = sum b1 (json)
+  [OK] a2 = sum b2 (json)
+  [OK] nu = (K-1)/muinv (json)
+  [OK] b1, b2 reversal-symmetric
+  [OK] all b_i(j) > 0 (boundary-window bookkeeping, d8_10)
+  [OK] claim(m) = claim(rev m) for all 2^K
+  [OK] claims json = sum_i b_i(m_i) (canonical)
+  [OK] one base gamma & one mu in all pattern files; gam = base*m_i*m_{i+s}
+  [OK] base gamma >= 0
+  [OK] sum_i gamma_{s,i} = 2 for every s
+  [OK] base gamma reversal-symmetric
+  [OK] mu > 0, symmetric, sum mu = nu
+  [OK] certified ok at claim >= required, all 72 canonical patterns
+p   = [0.6761026669641377749397 +/- 3.96e-23]   lower 0.676102666964
+D   = [0.8380513334820688874698 +/- 3.03e-23]   lower 0.838051333482
+D - (1+p)/2 = [+/- 2.95e-76]
+c = 2-2a1 = [1.96350326000000 +/- 3e-19] ; (2b0+4b*-2)^2 = [1.45531382362 +/- 1.28e-12] ; c - that = [0.5081894364 +/- 1.88e-11] ; lambda_c = [3.40125060571 +/- 9.43e-13] ; lambda_c - 3.2063638852 = [0.1948867205 +/- 3.41e-11] ; eps'_T threshold = [0.060781224 +/- 3.34e-10]
+2k*^2 = [0.253036691770 +/- 4.04e-14] ; 2a1 + max(a1,a2) = 0.05985812 ; (1,1)-margin surplus 2k*^2 - 2a1 - max = [0.1931785718 +/- 3.01e-11]
+margins: (1,1) [0.2165399518 +/- 3.01e-11]  (2,2) [0.4593506235 +/- 4.00e-11]  (1,2) [0.4206777379 +/- 2.91e-11] ; per-chain surplus min(...) - max(a1,a2) = [0.1931785718 +/- 3.01e-11]
+sec 2.3 table: 2-2a2+2a1 = 1.98977398; 2-3a2/2 = 1.96495793; 1+a1-2a2 = 0.97152561
+ALL STRUCTURE + ROBUSTNESS CHECKS PASS: True

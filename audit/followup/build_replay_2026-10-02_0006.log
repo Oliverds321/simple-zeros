@@ -1,0 +1,234 @@
+lake build ZetaSReplay (jobs=3) started 2026-10-02 00:06:55 at dcd371e
+✔ [8715/8768] Built R11111_Leaves2 (31s)
+✔ [8716/8768] Built R11111_Leaves0 (32s)
+✔ [8717/8768] Built R11111_Leaves1 (32s)
+✔ [8718/8768] Built R11111_Leaves5 (30s)
+✔ [8719/8768] Built R11111_Leaves4 (31s)
+✔ [8720/8768] Built R11111_Leaves3 (32s)
+✔ [8721/8768] Built R11111_Leaves6 (29s)
+✔ [8722/8768] Built R11111_Leaves7 (30s)
+✔ [8723/8768] Built R11111_Leaves8 (32s)
+✔ [8724/8768] Built R11111_Leaves9 (32s)
+✔ [8725/8768] Built R11111_Leaves10 (32s)
+✔ [8726/8768] Built R11111_Leaves11 (32s)
+✔ [8727/8768] Built R11111_Leaves12 (30s)
+✔ [8728/8768] Built R11111_Leaves13 (32s)
+✔ [8729/8768] Built R11111_Leaves14 (32s)
+✔ [8730/8768] Built R11111_Leaves15 (30s)
+✔ [8731/8768] Built R11111_Leaves16 (31s)
+✔ [8732/8768] Built R11111_Leaves17 (31s)
+✔ [8733/8768] Built R11111_Leaves18 (30s)
+✔ [8734/8768] Built R11111_Leaves19 (33s)
+✔ [8735/8768] Built R11111_Leaves20 (34s)
+✔ [8736/8768] Built R11111_Leaves21 (31s)
+✔ [8737/8768] Built R11111_Leaves22 (31s)
+✔ [8738/8768] Built R11111_Leaves23 (31s)
+✔ [8739/8768] Built R11111_Leaves24 (27s)
+✔ [8740/8768] Built R11111_Leaves25 (33s)
+✔ [8741/8768] Built R11111_Leaves26 (33s)
+✔ [8742/8768] Built R11111_Leaves27 (33s)
+✔ [8743/8768] Built R11111_Leaves28 (30s)
+✔ [8744/8768] Built R11111_Leaves29 (31s)
+✔ [8745/8768] Built R11111_Leaves30 (31s)
+✔ [8746/8768] Built R11111_Leaves32 (20s)
+✔ [8747/8768] Built R11111_Leaves31 (25s)
+✔ [8748/8768] Built R11111_Leaves34 (18s)
+✔ [8749/8768] Built R11111_Leaves35 (21s)
+✔ [8750/8768] Built R11111_Leaves33 (28s)
+✔ [8751/8768] Built R11111_Leaves37 (16s)
+✔ [8752/8768] Built R11111_Leaves38 (16s)
+✔ [8753/8768] Built R11111_Leaves36 (24s)
+✔ [8754/8768] Built R11111_Leaves40 (15s)
+✔ [8755/8768] Built R11111_Leaves39 (19s)
+✔ [8764/8791] Built R11111_Leaves43 (713ms)
+⚠ [8783/10236] Replayed Zeta23.ThmD.WindowCore
+warning: Zeta23/ThmD/WindowCore.lean:388:22: Variable name `u` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _u
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8784/10236] Replayed Zeta23.XiPrime.QuarticWindow.ModWindow
+warning: Zeta23/XiPrime/QuarticWindow/ModWindow.lean:87:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+ℹ [8785/10236] Replayed ZetaS.Window.CosWindow
+info: ZetaS/Window/CosWindow.lean:571:0: 'ZetaS.CosWindow.integral_cosW' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:572:0: 'ZetaS.CosWindow.integral_cosW_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:573:0: 'ZetaS.CosWindow.jInt_cosW' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:574:0: 'ZetaS.CosWindow.Rquot_cosW' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:575:0: 'ZetaS.CosWindow.HC_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:576:0: 'ZetaS.CosWindow.HC_eight_fifths' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:577:0: 'ZetaS.CosWindow.HC_37_25' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:578:0: 'ZetaS.CosWindow.sigma_K7' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:579:0: 'ZetaS.CosWindow.dist_K7' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:580:0: 'ZetaS.CosWindow.sigma_K5' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:581:0: 'ZetaS.CosWindow.dist_K5' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:582:0: 'ZetaS.CosWindow.admWindow_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: ZetaS/Window/CosWindow.lean:583:0: 'ZetaS.CosWindow.admWindow_phiV_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [8787/10236] Replayed ZetaS.Cert.C17_CapLeaf
+warning: ZetaS/Cert/C17_CapLeaf.lean:28:5: Variable name `hg0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hg0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8788/10236] Replayed ZetaS.Cert.C01_QIRound
+warning: ZetaS/Cert/C01_QIRound.lean:20:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:21:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:22:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:20:6: 'exact (Rat.le_floor.mp le_rfl)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:21:6: '(rw [← Rat.floor_intCast_div_natCast] at *; exact Int.floor_le _)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:22:6: 'exact Int.floor_le (q * 2 ^ 64)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:31:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:32:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:33:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:31:6: 'exact (Rat.le_ceil (x := q * 2 ^ 64))' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:32:6: 'exact (Rat.ceil_le.mp le_rfl)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ZetaS/Cert/C01_QIRound.lean:33:6: 'exact Int.le_ceil (q * 2 ^ 64)' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [8888/10236] Built R11111_Leaves41 (18s)
+✔ [8889/10236] Built R11111_Leaves42 (11s)
+✔ [8890/10236] Built R11222_Pts5 (90s)
+✔ [8891/10236] Built R11222_Pts6 (90s)
+✔ [8892/10236] Built R11222_Pts7 (90s)
+✔ [8893/10236] Built R11222_Pts8 (90s)
+✔ [8894/10236] Built R11222_Pts9 (91s)
+✔ [8895/10236] Built R11222_Pts10 (90s)
+✔ [8896/10236] Built R12112_Data (672ms)
+✔ [8897/10236] Built R11222_Pts12 (32s)
+✔ [8898/10236] Built R11222_Pts11 (90s)
+✔ [8899/10236] Built R12112_Pts0 (91s)
+✔ [8900/10236] Built R12112_Pts1 (90s)
+✔ [8901/10236] Built R12112_Pts2 (90s)
+✔ [8902/10236] Built R12112_Pts3 (89s)
+✔ [8903/10236] Built R12112_Pts4 (90s)
+✔ [8904/10236] Built R12112_Pts5 (91s)
+✔ [8905/10236] Built R12112_Pts6 (91s)
+✔ [8906/10236] Built R12112_Pts7 (90s)
+✔ [8907/10236] Built R12112_Pts8 (90s)
+✔ [8908/10236] Built R12112_Pts9 (90s)
+✔ [8909/10236] Built R12121_Data (670ms)
+✔ [8910/10236] Built R12112_Pts10 (90s)
+✔ [8911/10236] Built R12112_Pts11 (85s)
+✔ [8912/10236] Built R12121_Pts0 (91s)
+✔ [8913/10236] Built R12121_Pts1 (91s)
+✔ [8914/10236] Built R12121_Pts2 (90s)
+✔ [8915/10236] Built R12121_Pts3 (90s)
+✔ [8916/10236] Built R12121_Pts4 (91s)
+✔ [8917/10236] Built R12121_Pts5 (91s)
+✔ [8918/10236] Built R12121_Pts6 (91s)
+✔ [8919/10236] Built R12121_Pts7 (90s)
+✔ [8920/10236] Built R12122_Data (677ms)
+✔ [8921/10236] Built R12121_Pts9 (30s)
+✔ [8922/10236] Built R12121_Pts8 (90s)
+✔ [8923/10236] Built R12122_Pts0 (91s)
+✔ [8924/10236] Built R12122_Pts1 (90s)
+✔ [8925/10236] Built R12122_Pts2 (89s)
+✔ [8926/10236] Built R12122_Pts3 (89s)
+✔ [8927/10236] Built R12122_Pts4 (89s)
+✔ [8928/10236] Built R12122_Pts5 (90s)
+✔ [8929/10236] Built R12122_Pts6 (90s)
+✔ [8930/10236] Built R12122_Pts7 (90s)
+✔ [8931/10236] Built R12122_Pts8 (91s)
+✔ [8932/10236] Built R12122_Pts11 (35s)
+✔ [8933/10236] Built R12212_Data (678ms)
+✔ [8934/10236] Built R12122_Pts9 (90s)
+✔ [8935/10236] Built R12122_Pts10 (91s)
+✔ [8936/10236] Built R12212_Pts0 (91s)
+✔ [8937/10236] Built R12212_Pts1 (89s)
+✔ [8938/10236] Built R12212_Pts2 (89s)
+✔ [8939/10236] Built R12212_Pts3 (89s)
+✔ [8940/10236] Built R12212_Pts4 (89s)
+✔ [8941/10236] Built R12212_Pts5 (90s)
+✔ [8942/10236] Built R12212_Pts6 (91s)
+✔ [8943/10236] Built R12212_Pts7 (90s)
+✔ [8944/10236] Built R12212_Pts8 (91s)
+✔ [8945/10236] Built R12212_Pts9 (91s)
+✔ [8946/10236] Built R12212_Pts10 (91s)
+✔ [8947/10236] Built R12221_Data (687ms)
+✔ [8948/10236] Built R12212_Pts11 (85s)
+✔ [8949/10236] Built R12221_Pts1 (90s)
+✔ [8950/10236] Built R12221_Pts2 (90s)
+✔ [8951/10236] Built R12221_Pts0 (91s)
+✔ [8952/10236] Built R12221_Pts3 (89s)
+✔ [8953/10236] Built R12221_Pts5 (89s)
+✔ [8954/10236] Built R12221_Pts4 (91s)
+✔ [8955/10236] Built R12221_Pts6 (91s)
+✔ [8956/10236] Built R12221_Pts7 (91s)
+✔ [8957/10236] Built R12221_Pts8 (90s)
+✔ [8958/10236] Built R12222_Data (711ms)
+✔ [8959/10236] Built R12221_Pts9 (3.1s)
+✔ [8960/10236] Built R12222_Pts1 (90s)
+✔ [8961/10236] Built R12222_Pts2 (90s)
+✔ [8962/10236] Built R12222_Pts0 (93s)
+✔ [8963/10236] Built R12222_Pts3 (90s)
+✔ [8964/10236] Built R12222_Pts4 (90s)
+✔ [8965/10236] Built R12222_Pts5 (90s)
+✔ [8966/10236] Built R12222_Pts6 (90s)
+✔ [8967/10236] Built R12222_Pts7 (90s)
+✔ [8968/10236] Built R12222_Pts8 (90s)
+✔ [8969/10236] Built R12222_Pts11 (40s)
+✔ [8970/10236] Built R21112_Data (681ms)
+✔ [8971/10236] Built R12222_Pts9 (91s)
+✔ [8972/10236] Built R12222_Pts10 (91s)
+✔ [8973/10236] Built R21112_Pts0 (92s)
+✔ [8974/10236] Built R21112_Pts1 (91s)
+✔ [8975/10236] Built R21112_Pts2 (91s)
+✔ [8976/10236] Built R21112_Pts3 (90s)
+✔ [8977/10236] Built R21112_Pts4 (89s)
+✔ [8978/10236] Built R21112_Pts5 (90s)
+✔ [8979/10236] Built R21112_Pts6 (90s)
+✔ [8980/10236] Built R21112_Pts7 (90s)
+✔ [8981/10236] Built R21112_Pts8 (90s)
+✔ [8982/10236] Built R21112_Pts9 (90s)
+✔ [8983/10236] Built R21112_Pts10 (90s)
+✔ [8984/10236] Built R21122_Data (693ms)
+✔ [8985/10236] Built R21112_Pts12 (45s)
+✔ [8986/10236] Built R21112_Pts11 (91s)
+✔ [8987/10236] Built R21122_Pts1 (90s)
+✔ [8988/10236] Built R21122_Pts0 (92s)
+✔ [8989/10236] Built R21122_Pts2 (91s)
+✔ [8990/10236] Built R21122_Pts3 (89s)
+✔ [8991/10236] Built R21122_Pts4 (89s)
+✔ [8992/10236] Built R21122_Pts5 (90s)
+✔ [8993/10236] Built R21122_Pts6 (90s)
+✔ [8994/10236] Built R21122_Pts7 (89s)
+✔ [8995/10236] Built R21122_Pts8 (90s)
+✔ [8996/10236] Built R21122_Pts9 (91s)
+✔ [8997/10236] Built R21122_Pts10 (91s)
+✔ [8998/10236] Built R21122_Pts11 (91s)
+✔ [8999/10236] Built R21212_Data (675ms)
+✔ [9000/10236] Built R21122_Pts13 (26s)
+✔ [9001/10236] Built R21122_Pts12 (91s)
+✔ [9002/10236] Built R21212_Pts0 (92s)
+✔ [9003/10236] Built R21212_Pts1 (91s)
+✔ [9004/10236] Built R21212_Pts2 (89s)
+✔ [9005/10236] Built R21212_Pts3 (89s)
+✔ [9006/10236] Built R21212_Pts4 (90s)
+✔ [9007/10236] Built R21212_Pts5 (90s)
+✔ [9008/10236] Built R21212_Pts6 (90s)
+✔ [9009/10236] Built R21212_Pts7 (90s)
+lake build exit=127 finished 2026-10-02 01:08:26
+errors: 0; sorry warnings: 0

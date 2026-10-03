@@ -1,0 +1,26 @@
+{
+  "challenge_module": "Challenge.FollowUpZeta",
+  "solution_module": "Solution.FollowUpZeta",
+  "theorem_names": [
+    "zeta_simple_K5",
+    "zeta_simple_K5_cumulative",
+    "zeta_distinct_K5",
+    "zeta_distinct_K5_cumulative",
+    "zeta_simple_K7",
+    "zeta_simple_K7_cumulative",
+    "zeta_distinct_K7",
+    "zeta_distinct_K7_cumulative",
+    "zeta_simple_on_line",
+    "zeta_simple_on_line_cumulative",
+    "zeta_simple_or_critical",
+    "zeta_simple_or_critical_cumulative",
+    "zeta_zerosIn_finite",
+    "zeta_tendsto_Ncount"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

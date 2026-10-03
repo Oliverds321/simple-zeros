@@ -1,0 +1,174 @@
+\section{Linear algebra}\label{sec:linalg}
+
+All matrices are finite. For a Hermitian matrix $X$, $\lambda_1(X)\ge\lambda_2(X)\ge\cdots$ are its eigenvalues, $n_\pm(X)$ the numbers of positive
+and negative eigenvalues, $\HS X^2=\tr X^2$, and $\tr f(X)=\sum_if(\lambda_i(X))$ for a function $f$ on the spectrum.
+
+\subsection{The stability rank--trace inequality}
+Let
+\begin{equation}\label{eq:Psi}
+\Psi(t):=\begin{cases}(t-1)^2,&0\le t\le2,\\ 2t-3,&t\ge2,\end{cases}
+\end{equation}
+so that $\Psi\ge0$, $\Psi(0)=1$, $\Psi$ is $2$-Lipschitz on $[0,\infty)$, and $\Psi(t)=(t-1)^2-((t-2)_+)^2$. It is convex, being the supremum of
+the tangent lines to $(t-1)^2$ at the points $s\le2$.
+
+\begin{lemma}[Stability rank--trace inequality]\label{lem:stab}
+Let $P,Q$ be Hermitian $d\times d$ matrices with $P=VV^*$, $V\in\C^{d\times r}$, and $n_+(Q)\le b$. Put $M:=V^*V\in\C^{r\times r}$. Then
+\begin{equation}\label{eq:stab}
+r\ \ge\ 2\tr P+4\tr Q-4b-\HS{P+Q}^2+\tr\Psi(M).
+\end{equation}
+\end{lemma}
+
+Dropping $\tr\Psi(M)\ge0$ gives~\cite[Lemma~3.2]{AF}. Equality holds for $P=\Pi_1$, $Q=2\Pi_2$ with orthogonal projections $\Pi_1\perp\Pi_2$.
+This form of the inequality, with the term $\tr\Psi(M)$, was published by \mbox{ainta}~\cite{ainta} on 11~August~2026; we know of no earlier
+source [V$\sim$].
+
+\begin{proof}
+The nonzero eigenvalues of $VV^*$ and $V^*V$ agree with multiplicity, so $\sum_{i\le r}g(\lambda_i(M))=\sum_{j\le d}g(\lambda_j(P))$ for every $g$
+with $g(0)=0$. Applied to $g=\Psi-1$ this gives $\tr\Psi(M)-r=\sum_{j\le d}(\Psi(p_j)-1)$, where $p_1\ge\dots\ge p_d\ge0$ are the eigenvalues of
+$P$; no case distinction between $r\le d$ and $r>d$ is needed. Write $Q=Q_+-Q_-$ with $Q_\pm\succeq0$, $Q_+Q_-=0$; let $q_1,\dots,q_{b'}$
+($b'\le b$) be the positive eigenvalues of $Q_+$ and $n_1\ge n_2\ge\dots\ge0$ those of $Q_-$. Since $\tr(PQ_+)\ge0$ and $\tr(Q_+Q_-)=0$,
+\[
+\HS{P+Q}^2\ \ge\ \HS{P-Q_-}^2+\sum_jq_j^2\ \ge\ \sum_i(p_i-n_i)^2+\sum_jq_j^2,
+\]
+the second step by von Neumann's trace inequality $\tr(PQ_-)\le\sum_ip_in_i$. Using $\tr P=\sum p_i$, $\tr Q=\sum q_j-\sum n_i$ and the identity
+$1-2p+4n+(p-n)^2=(p-n-1)^2+2n$,
+\[
+d-\big[2\tr P+4\tr Q-4b-\HS{P+Q}^2\big]\ \ge\ \sum_{i\le d}\big[(p_i-n_i-1)^2+2n_i\big]+\sum_{j\le b'}(q_j-2)^2+4(b-b').
+\]
+For $p\ge0$ the minimum over $n\ge0$ of $(p-n-1)^2+2n$ is attained at $n=(p-2)_+$ and equals $\Psi(p)$. Hence the right side is at least
+$\sum_{i\le d}\Psi(p_i)$, and subtracting $d-r=\sum_{i\le d}1-r$ gives~\eqref{eq:stab} by the first sentence.
+\end{proof}
+
+\begin{lemma}[Two-parameter form]\label{lem:Ast}
+In the setting of Lemma~\ref{lem:stab}, let $0\le s\le t$ and
+\[
+\Psi_{s,t}(p):=\begin{cases}(p-s)^2,&0\le p\le t,\\ (t-s)^2+2(t-s)(p-t),&p\ge t.\end{cases}
+\]
+Then $s^2r+t^2b\ge2s\tr P+2t\tr Q-\HS{P+Q}^2+\tr\Psi_{s,t}(M)$. For $(s,t)=(1,2)$ this is Lemma~\ref{lem:stab}.
+\end{lemma}
+
+\begin{proof}
+As above, by the identity $s^2-2sp+(p-n)^2+2tn=(p-n-s)^2+2(t-s)n$,
+\[
+s^2d+t^2b-\big[2s\tr P+2t\tr Q-\HS{P+Q}^2\big]\ \ge\ \sum_{i\le d}\big[(p_i-n_i-s)^2+2(t-s)n_i\big]+\sum_{j\le b'}(q_j-t)^2+t^2(b-b').
+\]
+For $p\ge0$ the minimum over $n\ge0$ of $(p-n-s)^2+2(t-s)n$ is attained at $n=(p-t)_+$ and equals $\Psi_{s,t}(p)$, so the right side is at
+least $\sum_{i\le d}\Psi_{s,t}(p_i)$. Since $\Psi_{s,t}(0)=s^2$ (as $t\ge0$), the first sentence of the proof of Lemma~\ref{lem:stab},
+applied to $g=\Psi_{s,t}-s^2$, gives $\tr\Psi_{s,t}(M)-s^2r=\sum_{i\le d}\Psi_{s,t}(p_i)-s^2d$; subtracting $s^2(d-r)$ from both sides of
+the display gives the claim.
+\end{proof}
+
+$\Psi_{s,t}$ is convex (the supremum of the tangents to $(p-s)^2$ at the points $\le t$), $C^1$ and nonnegative, and $\Psi_{1,t}\ge\Psi$ for
+$t\ge2$ and every real $p$. The one-parameter case $(s,t)=(c/2,c)$, which contains Lemma~\ref{lem:stab} ($c=2$), is proved in Lean in
+Zhaoyi-Tian's development~\cite{ZhaoyiTian}, in the form $c\tr P+\sum_i\mathrm{gc}_c(\lambda_i)+2c\tr Q-c^2b\le\HS{P+Q}^2$ [V$\sim$; that this is the
+case $(c/2,c)$ of Lemma~\ref{lem:Ast} is our reading, M]. Corollary~\ref{cor:SC} needs the point $(1,2+\sqrt2)$, which lies off that ray.
+
+\subsection{Energy and the function \texorpdfstring{$\Phi_m$}{Phi\_m}}
+\begin{lemma}[Aggregation function]\label{lem:Phi}
+Let $G\succeq0$ be $m\times m$ with unit diagonal, $m\ge2$, and $E:=\HS{G-I}^2$. Then $\tr\Psi(G)\ge\Phi_m(E)$, where
+\[
+\Phi_m(E):=\begin{cases}E,& E\le\frac{m}{m-1},\\[2pt]
+E-\Big(\sqrt{\tfrac{(m-1)E}{m}}-1\Big)^2,& E\ge\frac m{m-1}.\end{cases}
+\]
+$\Phi_m$ is increasing and concave on $[0,\infty)$, $\Phi_m(0)=0$ and $\Phi_m(E)\le E$; equality holds for $G=(1-t)I+tJ$, $0\le t\le1$.
+\end{lemma}
+
+\begin{proof}
+Let $1+u_i$ be the eigenvalues of $G$; then $\sum u_i=0$, $\sum u_i^2=E$ and $u_i\ge-1$, and $\tr\Psi(G)=E-\sum_{i\in S}(u_i-1)^2$ with
+$S:=\{i:u_i>1\}$. If $S=\emptyset$ we are done. Otherwise let $j:=\abs S$ (so $1\le j<m$), $\sigma:=\sum_Su_i>j$, $F:=\sum_S(u_i-1)^2$ and
+$V:=1+\sqrt F$. The numbers $u_i-1$, $i\in S$, are positive with sum $\sigma-j$, so $\sqrt F\le\sigma-j$; also $\sum_Su_i^2=F+2(\sigma-j)+j$, and
+the $m-j$ remaining $u_i$ have sum $-\sigma$, hence sum of squares $\ge\sigma^2/(m-j)$. So
+\[
+E\ \ge\ (V-1)^2+2(V-1)+j+\frac{(V+j-1)^2}{m-j}=V^2+(j-1)+\frac{(V+j-1)^2}{m-j}\ \ge\ V^2\frac m{m-1},
+\]
+with equality in the last step for $j=1$, and for $j\ge2$ because $V+j-1\ge V$ and $m-j<m-1$. Thus $V\le U:=\sqrt{E(m-1)/m}$. If
+$E\le m/(m-1)$ then $U\le1\le V$ forces $F=0$; otherwise $F=(V-1)^2\le(U-1)^2$. The two branches have slope $1$ at $E=m/(m-1)$ and the second is
+concave.
+\end{proof}
+
+The inequality $\tr\Psi(G)\ge\Phi_m(E)$ is kernel-checked (the formal version does not need $m\ge2$); the properties of $\Phi_m$ listed after it
+in the lemma and the equality case are not formalised, and the formal proofs do not use them. The function $\Phi_m$ and this inequality
+were published earlier by tawanerguo-cn~\cite{TawanRepo} and \mbox{sxuff}~\cite{sxuff} (11~August~2026) and by \mbox{trmdy}~\cite{trmdy}
+(12~August) [V$\sim$].
+
+We use Lemma~\ref{lem:Phi} on its concave branch in Theorem~\ref{thm:S}. A consequence used there: for $0\le E$ and $0<A$,
+$\Phi_m(E)\ge\frac{\Phi_m(A)}A\min(E,A)$, by concavity and $\Phi_m(0)=0$.
+
+\subsection{Pinching and monotonicity}
+\begin{lemma}[Pinching]\label{lem:pinch}
+Let $G\succeq0$ be real symmetric and let $f$ be convex on $[0,\infty)$. For every partition of the index set into blocks $b$,
+$\tr f(G)\ge\sum_b\tr f(G_{bb})$.
+\end{lemma}
+
+\begin{proof}
+For each block let $w_{b,1},w_{b,2},\dots$ be an orthonormal eigenbasis of $G_{bb}$, extended by zero outside $b$. These vectors form an
+orthonormal basis, in particular a Parseval frame of unit vectors, and $\langle w_{b,j},Gw_{b,j}\rangle=\lambda_j(G_{bb})$. For a unit vector $w$,
+$\langle w,Gw\rangle=\sum_kc_k^2\lambda_k(G)$ with $\sum_kc_k^2=1$, where $c_k$ are the coordinates of $w$ in an eigenbasis of $G$; by Jensen,
+$f(\langle w,Gw\rangle)\le\sum_kc_k^2f(\lambda_k(G))$. Summing over the frame, and using $\sum_{b,j}c_{k}(w_{b,j})^2=1$ for each $k$,
+$\sum_b\tr f(G_{bb})\le\tr f(G)$.
+\end{proof}
+
+No convexity of $X\mapsto\tr f(X)$ is needed. The lemma applies to $\Psi$, to $\Psi_{s,t}$ and to $(2-t)_+^2$.
+
+\begin{lemma}[Monotonicity]\label{lem:weyl}
+Let $A,B$ be positive semidefinite of the same size with $A-B\succeq0$, and let $f$ be $c$-Lipschitz on $[0,\infty)$. Then
+$\abs{\tr f(A)-\tr f(B)}\le c\tr(A-B)$.
+\end{lemma}
+
+\begin{proof}
+By Weyl's inequality $\lambda_i(A)\ge\lambda_i(B)$ for every $i$, so
+$\abs{\tr f(A)-\tr f(B)}\le c\sum_i(\lambda_i(A)-\lambda_i(B))=c\tr(A-B)$.
+\end{proof}
+
+This is the form that is formalised and used (in Lemma~\ref{lem:transfer}); the same proof gives it for Hermitian $A,B$ and $f$ Lipschitz on
+an interval containing both spectra.
+
+\subsection{Pair removal}
+\begin{lemma}[Pair removal]\label{lem:pairrem}
+Let $G\succeq0$ and $Q$ be real symmetric of the same size, with $n_+(Q)\le b$ and $n_-(Q)\le p$. Then
+\[
+\HS{G+Q}^2-\HS G^2-2\tr Q\ \ge\ 2(\tr Q-2b)-\sum_{i\le p}\big(\lambda_i(G)-2\big)_+^2 .
+\]
+\end{lemma}
+
+\begin{proof}
+Write $Q=Q_+-Q_-$ with $Q_\pm\succeq0$, $Q_+Q_-=0$, $\tau_+:=\tr Q_+$, $\tau_-:=\tr Q_-$. Since $\tr(GQ_+)\ge0$ and $\rank Q_+\le b$,
+$\HS{G+Q}^2\ge\HS G^2-2\tr(GQ_-)+\HS{Q_-}^2+\tau_+^2/b$. For every real $\tau_+$,
+$\tau_+^2/b-2\tau_+=2(\tau_+-2b)+(\tau_+-2b)^2/b\ge2(\tau_+-2b)$ (if $b=0$ then $Q_+=0$ and this step is void), and $\tau_+=\tr Q+\tau_-$. So the left
+side is at least $2(\tr Q-2b)+4\tau_-+\HS{Q_-}^2-2\tr(GQ_-)$. By von Neumann, $\tr(GQ_-)\le\sum_{i\le p}\lambda_i(G)n_i$, where $n_1\ge\dots\ge n_p\ge0$
+are the eigenvalues of $Q_-$, and $n^2+4n-2\lambda n\ge-(\lambda-2)_+^2$ for all $n\ge0$.
+\end{proof}
+
+The inequality is sharp: $G=\operatorname{diag}(3.5,0,0)$, $Q=\operatorname{diag}(-1.5,2,0)$.
+
+\subsection{Localisation of the large eigenvalues}
+Fix $c_*\ge0$ and put $\lambda_c:=2+\sqrt{c_*}$,
+\[
+\kappa(\lambda):=\big[(\lambda-2)_+^2-c_*\big]_+,\qquad \ch(X):=\sum_i\kappa(\lambda_i(X))
+\]
+for real symmetric $X$. The \emph{charge} $\ch(X)$ sees only the eigenvalues above $\lambda_c$; $\kappa$ is nondecreasing.
+
+\begin{theorem}[Localisation]\label{thm:loc}
+Let $M=\begin{pmatrix}A&Y\\Y^{\tsp}&R\end{pmatrix}$ be real symmetric, $A\in\R^{n\times n}$, $R\in\R^{r\times r}$, with $\lambda_{\max}(R)\le\lambda_c$
+\textup{(}no condition if $r=0$\textup{)}. Then
+\[
+\ch(M)\ \le\ \HS{A-2I}^2+2\HS Y^2-\tr(2I-A)_+^2 .
+\]
+\end{theorem}
+
+\begin{proof}
+Let $\widetilde M:=\begin{pmatrix}A&Y\\Y^{\tsp}&\lambda_cI_r\end{pmatrix}$. Then $\widetilde M-M=0\oplus(\lambda_cI-R)\succeq0$; this is the only use
+of the hypothesis. By Weyl, $\lambda_l(M)\le\lambda_l(\widetilde M)=:\tilde\mu_l$ for every $l$, and since $\kappa$ is nondecreasing,
+$\ch(M)\le\ch(\widetilde M)$. By Cauchy interlacing in counting form: the subspace $0\oplus\R^r$, on which the form of $\widetilde M$ is
+$\lambda_c\norm x^2$, shows that $\widetilde M$ has at least $r$ eigenvalues $\ge\lambda_c$, so $\tilde\mu_l\ge\lambda_c$ for $l\le r$; and the
+number of eigenvalues of $\widetilde M$ above any $\theta$ is at most that of $A$ plus $r$, so $\tilde\mu_{r+j}\le\alpha_j:=\lambda_j(A)$ for
+$1\le j\le n$. Let $h(\mu):=(\mu-2)^2-\kappa(\mu)\ge0$. Then $h(\tilde\mu_l)=c_*$ for $l\le r$, and $h(\tilde\mu_{r+j})\ge(2-\alpha_j)_+^2$
+(if $\tilde\mu_{r+j}\le2$ then $h=(2-\tilde\mu_{r+j})^2$ and $\tilde\mu_{r+j}\le\alpha_j$; otherwise $\alpha_j>2$). Since
+$\sum_l(\tilde\mu_l-2)^2=\HS{\widetilde M-2I}^2=\HS{A-2I}^2+2\HS Y^2+r\,c_*$,
+\[
+\ch(\widetilde M)=\sum_l(\tilde\mu_l-2)^2-\sum_lh(\tilde\mu_l)\ \le\ \HS{A-2I}^2+2\HS Y^2-\sum_{j\le n}(2-\alpha_j)_+^2 .\qedhere
+\]
+\end{proof}
+
+No positivity is used, and no Schur complement or integral over thresholds: the domination by $\widetilde M$ above suffices. The
+hypothesis $\lambda_{\max}(R)\le\lambda_c$ cannot be dropped.

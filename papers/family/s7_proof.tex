@@ -1,0 +1,60 @@
+\section{Proof of Theorem~\ref{thm:shell}}\label{sec:proof}
+
+Fix $r_0\ge3$, $\eps>0$ and $\theta<503/1994$, and choose $\eps''>0$ in Lemma~\ref{lem:shell-6d} so small that $\theta<\theta(\alphap)$ at
+$\alphap=2497/1500$. The family is $\FQ$.
+
+\emph{Step 1 (design).} For large $Q$ choose a parameter record at $\lambda=191/100$ with profile S53-L75 (\S\ref{sec:design}(vi)); its ramp width is $w\ge1$, with $w=o(\Lc)$ (\S\ref{ssec:bandwidth}(iii)), so that $w\le(\lambda-\alphap)\Lc/8$ for large $Q$, as
+Theorem~\ref{thm:shell-K} requires; and
+its buffer $D_0\asymp\Lc^2$, and the window satisfies $a\ge3/4$, $b\ge1/2$. Since $\lambda_{\rm eff}<2$, $X=o(Q^2/(\log Q)^B)$ for every $B$ (\S\ref{ssec:bandwidth}).
+
+\emph{Step 2 (the rows other than the Frobenius row).} The display (i) of Proposition~\ref{prop:3.1} is H1. The trace row, the buffer count, the tail
+perturbation and the Frobenius error $B_F$ are those of~\cite[\S\S7--10]{DSouza} at the new bandwidth (\S\ref{ssec:bandwidth}, \S\ref{sec:design}), with
+$\mathfrak r_1,\mathfrak r_3,\mathfrak r_4,\mathfrak r_5=O(\log\log Q/\log Q)$, and $\mathfrak r_1$ also absorbs the rows $Q^{\lambda_{\rm eff}/2-1+o(1)}$ of the prime part.
+
+\emph{Step 3 (the Frobenius row).} By Parseval and the positivity of $\gwin$~\cite[Lemmas~4.1, 4.2]{DSouza}, the Frobenius main term is the integral of
+$\gwin(s)$ against $\sum_\chi\abs{A_\chi(s)+B_\chi(s)}^2$, where $B_\chi(s)=\sum_nb_n(s)\bar\chi(n)$ with $b_n(s)=\overline{a_n(-s)}$~\cite[Lemma~4.3]{DSouza}. Thus
+$B_\chi(s)=\overline{A_\chi(-s)}$ and $\sum_\chi\abs{B_\chi(s)}^2=\mathbf F(-s)$. On the in-zone $\abs s\le(1-\delta')\log Q$ it is evaluated as in~\cite[\S\S4--5]{DSouza}
+(kernel $\abs\alpha$). On the out-zone $O=O^+\cup O^-$, $O^+=O\cap(0,\infty)$, $O^-=O\cap(-\infty,0)$, Cauchy--Schwarz in $\chi$ gives
+$\sum_\chi\abs{A_\chi+B_\chi}^2\le\mathbf F(s)+\mathbf F(-s)+2\sqrt{\mathbf F(s)\mathbf F(-s)}$. Put $X_\pm:=\int_{O^\pm}\gwin\mathbf F$. Since $\gwin$ is even and $O$ is
+symmetric, $\int_O\gwin(s)\mathbf F(-s)\,ds=X_++X_-$ and $\int_O2\gwin(s)\sqrt{\mathbf F(s)\mathbf F(-s)}\,ds\le4\sqrt{X_+X_-}$, so
+\[
+\sum_\chi\int_O\gwin\abs{A_\chi+B_\chi}^2\le2\bigl(\sqrt{X_+}+\sqrt{X_-}\bigr)^2 .
+\]
+\begin{itemize}
+\item Theorem~\ref{thm:shell-K} gives $X_+\le\int_O\gwin\mathbf F\le M+O(Q^2\int_O\gwin)$ with $M:=(1+c(\log Q)^{-\theta})\abs{\FQ}\int_{O^+}\gwin\norm a^2\omega_K$,
+since the part of its right side on $O^-$ is $O(Q^2\int_O\gwin)$;
+\item on $O^-$, that is for $s\le-(1-\delta')\log Q$, the large sieve and $\norm{a(s)}^2=O(1)$ (proof of Theorem~\ref{thm:shell-K}) give $X_-\le Y:=C'Q^2\int_O\gwin$ for some constant $C'$,
+which is negligible against $M$, of size $\abs{\FQ}U\Lc\int_{O^+}\gwin$;
+\item hence the out-zone block is at most $2(\sqrt{M+O(Y)}+\sqrt Y)^2=2M(1+O(\sqrt{Y/M}))$: the factor $2$ is the mirror copy, and the cross term costs $1+O((U\Lc)^{-1/2})$, which is
+$1+O(\rho)$ with the cross-term factor $\rho$ of~\cite[Lemma~4.3]{DSouza}.
+\end{itemize}
+With the diagonal evaluation $\int_{O^+}\gwin\norm a^2\,\omega_K=U\int_{O^+}s\,\gwin(s)\,\omega_K(s)\,ds\,(1+\eps_D)$, the out-zone total is
+\[
+2U\abs{\FQ}\int_{O^+}s\,\gwin(s)\,\omega_K(s)\,ds\,(1+\eps_D)(1+O(\rho))\bigl(1+O((\log Q)^{-\theta})\bigr),
+\]
+the factor $2$ being the mirror copy (it is the $T/\pi=2U$ of Lemma~\ref{lem:K}(ii)). The dictionary $\gwin(\alpha\Lc)=(a\lambda)^2\Lc\,\psi(\alpha)$ of \S\ref{ssec:notation} converts the bound into
+\[
+\frob{\widehat G_{\rm fam}}^2\le\bigl(\Bfun_{k_{\alphap}}(v)+O((\log Q)^{-\theta})\bigr)\mathcal N,
+\]
+where $v$ is the window's own density of \S\ref{ssec:notation} and $k_{\alphap}$ is the kernel of \S\ref{sec:cert} with $C_Q$ in place of $C^+$: the strip and the interval $(\log Q+4)/\Lc<\alpha\le1$ are
+absorbed in the error as in Table~\ref{tab:budget}. Since $\norm{v-v_p}_1=O(w/\Lc)$ with $v$, $v_p$ bounded uniformly (\S\ref{ssec:notation}), and since
+$\abs{\psi(0)-\psi_{v_p}(0)}\le(\norm v_\infty+\norm{v_p}_\infty)\norm{v-v_p}_1$, $\norm{v\star v-v_p\star v_p}_1\le2\norm{v-v_p}_1$ and $k_{\alphap}$ is bounded
+on $[-\lambda,\lambda]$, $\Bfun_{k_{\alphap}}(v)\le\Bfun_{k_{\alphap}}(v_p)+c_{\rm ramp}w/L$ (the ramp row of
+\cite{DSouza}, recomputed for the certified profile). Since $C_Q\to\pi^4/18<C^+$, eventually $\Bfun_{k_{\alphap}}(v_p)\le\Bfun_{\alphap}(v_p)\le2-0.9059137927$ by the
+certificate. So (ii) holds with $\Bfun_*=2-0.9059137927$ and $\mathfrak r_2=O((\log Q)^{-\theta})$.
+
+\emph{Step 4.} Proposition~\ref{prop:3.1} gives
+$\sum_\chi N^s_{0,\chi}(T,2T)\ge(0.9059137927-O((\log Q)^{-\theta}))\mathcal N$. \qed
+
+\emph{Status.} Proved on paper; the proof uses the results of \S\S\ref{sec:setting}--\ref{sec:cert}. In Lean the proof has the following shape: the Mathlib-only counts of the formal statement are those of \texttt{ZetaQ} by definition;
+a proved step turns any frame (the rows of Proposition~\ref{prop:3.1} at a constant $\Bfun_*$ and a rate) into the headline \tagL; the frame at $\lambda=191/100$ is
+derived from the design nodes and rests on the Frobenius row alone \tagLm; the Frobenius row is derived from Theorem~\ref{thm:shell-K} and one chain node, which is proved, and
+Theorem~\ref{thm:shell-K} from four nodes, the strip, integrability, the killed zone and the Shell zone, which is derived from Theorem~\ref{thm:shell-S}
+and the pointwise assembly. In the released library all of these nodes are proved, and the statement of record is derived through this frame, in a
+form that does not use \texttt{PNTErrorTerm}: it depends on the three standard axioms only, with (J) and (M) as its hypothesis \tagL\
+(\S\ref{ssec:formal}). As for Theorem~\ref{thm:one-prime} (\S\ref{ssec:thm1prime}), the formal proof spends slack: the Frobenius-row chain
+\texttt{F1c\_chain} absorbs the eventual errors of the Frobenius row, the factor $1+c(\log Q)^{-\theta}$ of Theorem~\ref{thm:shell-K} included, in part
+of the slack $3.79\cdot10^{-11}$ of the certificate (\S\ref{sec:cert}), so it does not verify the rates of these errors in Table~\ref{tab:budget};
+Theorem~\ref{thm:shell-K} itself is a Lean theorem with its rate, and the other rows of Proposition~\ref{prop:3.1} are proved there at the rate
+$(\log Q)^{-\theta}$ (\S\ref{sec:design}(vii)). The
+certificate is a theorem \tagL.

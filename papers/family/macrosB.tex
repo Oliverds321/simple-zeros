@@ -1,0 +1,53 @@
+% Macros for Paper B.
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\floor}[1]{\lfloor #1\rfloor}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\FQ}{\mathfrak F_Q}
+\newcommand{\Farey}{\mathcal F}
+\newcommand{\Lc}{\mathcal L}
+\newcommand{\XX}{X}
+\newcommand{\Lam}{\Lambda}
+\newcommand{\DT}{D_T}
+\newcommand{\Csieve}{C}
+\newcommand{\alphap}{\alpha'}
+\newcommand{\alphaz}{\alpha_0}
+\newcommand{\Bfun}{\mathcal B}
+\newcommand{\Om}{\Omega}
+\newcommand{\Hw}{H_w}
+\newcommand{\gwin}{g}
+\newcommand{\Nsimp}{N^{s}_{0,\chi}}
+\newcommand{\Nchi}{N_\chi}
+\newcommand{\frob}[1]{\lVert #1\rVert_F}
+% repository address and tag of the release (one place each)
+\newcommand{\repourl}{\url{https://github.com/Oliverds321/simple-zeros}}
+\newcommand{\repotag}{\texttt{v1.0}}
+% the commit whose Lean sources the release contains
+\newcommand{\relcommit}{\texttt{4874cc0}}
+% the census quoted in sec. 1.5 and Appendix A (files audit/followup/census_2026-10-03_1557.* of the Lean repository);
+% gen_appA_r5.py reads this definition and takes the census files of the commit that it names
+\newcommand{\censusref}{the release commit \texttt{4874cc0}}
+% Text that the author still has to confirm. To switch the marker off: \newcommand{\draftnote}[1]{#1}
+\newcommand{\draftnote}[1]{#1\textbf{ [DRAFT, author to confirm]}}
+% trust tags
+\newcommand{\tagL}{\textup{[L]}}
+\newcommand{\tagLm}{\textup{[L$\circ$]}}
+\newcommand{\tagLs}{\textup{[L-stated]}}
+\newcommand{\tagC}{\textup{[C]}}
+\newcommand{\tagN}{\textup{[N]}}
+\newcommand{\Vsim}{\textup{[V$\sim$]}}
+\newcommand{\tagM}{\textup{[M]}}

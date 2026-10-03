@@ -1,0 +1,59 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,margin=2.6cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancyvrb}
+\usepackage{fvextra}
+\input{unicode_lean}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=green!40!black,urlcolor=blue!50!black]{hyperref}
+\hypersetup{pdftitle={Simple zeros on the critical line of primitive Dirichlet L-functions on average over moduli q <= Q: the killed kernel and the Shell kernel},pdfauthor={Oliver D'Souza},pdfkeywords={Dirichlet L-functions; simple zeros; critical line; families; zero density; Lean 4; formal verification}}
+\input{macrosB}
+\setlength{\emergencystretch}{3em}
+\allowdisplaybreaks
+
+\title{Simple zeros on the critical line of primitive Dirichlet $L$-functions\\ on average over moduli $q\le Q$:
+the killed kernel and the Shell kernel}
+\author{Oliver D'Souza\thanks{\copyright~2026 Oliver D'Souza. This paper is licensed under CC~BY~4.0.}}
+\date{Release version, October 2026 (repository tag \repotag)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let $\FQ$ be the set of primitive Dirichlet characters of modulus $1<q\le Q$ and $T=(\log Q)^{r_0+\eps}$ with $r_0\ge3$, $\eps>0$
+fixed. The preprint~\cite{DSouza} proved that, as $Q\to\infty$, at least $0.7212$ of the zeros of the $L(s,\chi)$, $\chi\in\FQ$,
+with ordinate in $(T,2T]$, counted with multiplicity and summed over the family, are simple and lie on the critical line. We raise
+this constant in two ways. First, a large-sieve lemma for the part of the dual variable beyond the diagonal (Farey points of level
+$Q$ avoid the major arcs of small denominator) gives the constant $0.7235$ with the rate $\log\log Q/\log Q$ and no hypothesis of any
+kind. Second, the ``Shell route'', which uses the explicit formula for the characters of small modulus and two published
+zero-density estimates for the family (Jutila's log-free hybrid estimate and Montgomery's hybrid estimate), gives $0.9059137927$,
+with an error $O((\log Q)^{-\theta})$ for every $\theta<503/1994$. Both results are asymptotic; the thresholds implicit in the proofs
+are very large. Each is proved on paper, and each statement is a Lean~4 theorem in the release of the accompanying Lean repository
+that depends only on the three standard axioms: the first has no hypothesis beyond $r_0\ge3$, $\eps>0$, and the second none beyond the two
+zero-density estimates and $r_0\ge3$, $\eps>0$, $0<\theta<503/1994$ (\S\ref{ssec:formal}). The results have not been independently refereed,
+and the Lean development has not been rebuilt outside this project. A corresponding value for the moduli $Q/2<q\le Q$ is not claimed. The
+results are family averages and say nothing about an individual $L$-function.
+\end{abstract}
+
+\tableofcontents
+\sloppy
+
+\input{s1_intro}
+\input{s2_setting}
+\input{s3_lemmaK}
+\input{s4_shell}
+\input{s5_design}
+\input{s6_cert}
+\input{s7_proof}
+\input{s8_remarks}
+
+\appendix
+\input{appA_lean}
+\input{appB_corr}
+
+\bibliographystyle{plain}
+\bibliography{bib}
+\end{document}

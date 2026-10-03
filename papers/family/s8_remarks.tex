@@ -1,0 +1,52 @@
+\section{Remarks}\label{sec:remarks}
+
+\subsection{Rates and thresholds}
+Theorem~\ref{thm:one-prime} has the rate $\log\log Q/\log Q$ of~\cite{DSouza}; Theorem~\ref{thm:shell} has $(\log Q)^{-\theta}$ for every $\theta<503/1994$, which comes from the
+zeros counted by the log-free estimate (J) near $\sigma=1$ (the ``mid'' and ``near'' zeros of Lemma~\ref{lem:shell-6d}). A Landau--Page zero is a single near term with
+$x_\rho=O(1)$ and contributes $O(\log K\log\log Q/\log Q)$. All thresholds are ineffective in the proofs as written, and the ones that have been estimated are very
+large (\S\ref{ssec:not}): the lossless range of the large sieve at $\lambda=1.91$ begins near $\log_{10}Q\approx177$ (at $r_0+\eps=3.5$), and it recedes to
+$\log_{10}Q\approx5400$ as $\lambda\to1.995$; the moment floor and the existence of the design need $\log Q$ at least of order $10^5$ (the formal proof's
+threshold is larger and implicit); and the Weil-form error
+$Q^{\alpha''-2+o(1)}$ of Proposition~\ref{prop:shell-Z} is small only for very large $Q$. Nothing is claimed at any finite $Q$.
+
+\subsection{What would improve the constants}
+\emph{The zero-density input.} The threshold $\alphaz=5/3$ is set by the bulk estimate (M) on $[\frac34,\frac45]$, where $3/(2-\sigma)$ rises from $\frac{12}5$ to $\frac52$;
+the log-free input (J) allows $\alphaz$ up to $2$. The working draft records that a bulk exponent $12/5$ (as stated in~\cite[Theorem~4.1]{DFS25}, whose primary sources we
+have not opened) would give $\alphaz=12/7$ and $0.9117$, and Heath-Brown's bulk estimate~\cite{HBCanad79} (seen only through~\cite{Pintz18}) would give $\alphaz=20/11$ and
+$0.9226$. These are not claimed here. The density hypothesis for the family would give $\alphaz=2$.
+
+\emph{The limit of this route.} With the kernel $1$ on all of $(1,\lambda]$ and $\lambda\to2$ the functional is the one with kernel $\min(\abs\alpha,1)$ on $\abs\alpha<2$,
+whose variational value is $0.9322826\ldots$; the preprint~\cite{DSouza} reports that this reproduces Sono's constant under the generalised Riemann
+hypothesis~\cite{Sono16} \Vsim. At $\alphaz=5/3$ the variational limit is $0.9061786$ (at $\lambda\le1.99$); the certified $0.9059137927$ lies $2.6\cdot10^{-4}$ below
+it, almost all of which is the cost of $\alphap<\alphaz$ (the degree-$12$ profile costs about $9\cdot10^{-6}$).
+
+\emph{The killed kernel.} At the bandwidth $\lambda^*$ of the formal design, $0.7237$ needs only a new design at a degree-$8$ profile whose certificate is already a
+Lean theorem (\S\ref{ssec:K-constants}); the variational supremum of the killed functional is $0.723795$ at $\lambda\approx1.2768$.
+
+\subsection{What is in the working draft and not claimed here}
+\begin{remark}[Distinct zeros]\label{rem:distinct}
+The rank--trace inequality at $c=3$ gives $2\sum_\chi N^d_\chi\ge(3-\Bfun_*-o(1))\mathcal N$ for the number $N^d_\chi$ of distinct zeros, where $\Bfun_*$ is the Frobenius
+constant; the working draft derives from it the values $(3-\Bfun)/2=0.9529568963$ ($\FQ$) and $0.9515888098$ ($\FQ^{\rm dy}$) from the Shell certificates, and
+$0.8618$ from the killed kernel. The per-block inequality at $c=3$ is a theorem of the Lean artifact of~\cite{AF}, but the family statement is not formalised and the
+derivation has not been brought to the standard of this paper. It is not claimed.
+\end{remark}
+
+\begin{remark}[Parity subfamilies]\label{rem:parity}
+A reflected form of the multiplicative large sieve (coefficients placed on $[-N,N]$ with a sign, so that one parity class is charged $Q^2/2$) gives the even and the
+odd primitive characters the constants of the full families in~\cite{DSouza}'s method; for the constants $0.7212$ and $0.7098$ this is a Lean theorem on a branch of the
+formal tree of~\cite{DSouza}. The working draft extends it to the killed and Shell kernels. Those extensions are not formalised and have not been brought to the standard of this paper, and they are not claimed.
+\end{remark}
+
+\begin{remark}[Bounded height]\label{rem:bounded}
+The working draft contains a sketch of a version at bounded height, with a stated gap; no bounded-height statement is claimed.
+\end{remark}
+
+\subsection{Open problems}
+\begin{enumerate}
+\item Formalise, or replace, the zero-density estimates (J) and (M). Their proofs use large-value estimates for Dirichlet polynomials and hybrid fourth moments, and are
+long; they are the only inputs of Theorem~\ref{thm:shell} that are neither proved here nor formalised.
+\item Rebuild the formal proofs of Theorems~\ref{thm:one-prime} and~\ref{thm:shell} independently, with the commands of
+Appendix~\ref{app:lean-release}.
+\item Make the thresholds explicit, or reduce them; the factor $KT$ lost in Step~3 of Lemma~\ref{lem:K-P} by using the long-range error of the prime number theorem is
+the obvious place for Theorem~\ref{thm:one-prime}.
+\end{enumerate}

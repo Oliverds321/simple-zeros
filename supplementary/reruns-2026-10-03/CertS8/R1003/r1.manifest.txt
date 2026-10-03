@@ -1,0 +1,7 @@
+parents ['runs/R1003/r0_0.ckpt', 'runs/R1003/r0_1.ckpt', 'runs/R1003/r0_2.ckpt', 'runs/R1003/r0_3.ckpt']: args=('poly:1,127/2500,-8997/10000,6187/10000,3/1250', 8, '1700', '0.00796', 'flint', 64, False, 'numpy+lb3+sym') stack_boxes=1135416 processed(sum)=7.0278e+07 cpu_time(sum)=4677s worst=0.0080661
+sha256(sorted rows): union of parents = union of shards = 13c9ef7080cdffed67d7e6c0feaa49a5735e00fe9d42419ed73d5b65f7a6aa98 (1135416 rows)
+shard 0: runs/R1003/r1_0.ckpt boxes=283854
+shard 1: runs/R1003/r1_1.ckpt boxes=283854
+shard 2: runs/R1003/r1_2.ckpt boxes=283854
+shard 3: runs/R1003/r1_3.ckpt boxes=283854
+objective: sha256=9b09b50eb8f0b5dfd0d95055a994f206cbf3700c3c02098b51e7af2d3e5536f7

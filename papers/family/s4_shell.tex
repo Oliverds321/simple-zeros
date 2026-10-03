@@ -1,0 +1,608 @@
+\section{The Shell route}\label{sec:shell}
+
+This section replaces, on an initial segment $1<\abs\alpha\le\alphap$ of the out-zone, the kernel $C\abs\alpha$ by the kernel $1$.
+Beyond $\alphap$ the killed kernel of Lemma~\ref{lem:K} is used. All lemmas are stated in their corrected forms; each correction is
+listed in Appendix~\ref{app:corr}.
+
+\subsection{Notation}\label{ssec:shell-notation}
+Let $\log Q+3\le s\le\alpha''\log Q$ with a fixed $\alpha''<2$, and $s\le\log X-1$, $N:=e^s$. Put $U:=T/2\pi$, so that $\norm{a(s)}^2=U(s+O(1))$ for
+$s\ge(1+\delta_1)\log Q$, where $\delta_1:=T^{-1/3}$. Fix $\kappa\in(0,1]$, $c\in(0,1)$ and
+$\Xi\in C_c^\infty((-1,1))$ with $0\le\Xi\le1$ and
+\begin{equation}\label{eq:Xi}
+\Xi=1\ \text{on}\ [-c,c].
+\end{equation}
+Put $a^{\rm near}_n:=a_n\,\Xi((\log n-s)/\kappa)$, $a^{\rm far}:=a-a^{\rm near}$, and
+\[
+A_s(y):=y^{-1/2}\DT(s-\log y)\,\Xi\bigl((\log y-s)/\kappa\bigr),\qquad a^{\rm near}_n=-\tfrac1{2\pi}\Lam(n)A_s(n).
+\]
+Let $K=K(Q)\to\infty$ with $K\le(\log Q)^B$ for a fixed $B$ (in the design $K=\Lc(\log\Lc)^2$), and let $\epsilon=\epsilon(Q)$ satisfy
+\begin{equation}\label{eq:eps}
+(\log Q)^{-B}\le\epsilon\le1,\qquad \epsilon\to0
+\end{equation}
+(in the design $\epsilon=1/\Lc$); this parameter $\epsilon$ is not the exponent $\varepsilon$ of $T=(\log Q)^{r_0+\varepsilon}$. Put
+\[
+R_1:=\frac{N(\log Q)^6}{\epsilon Q},\qquad R_0:=\frac N{QTK},\qquad \delta:=\frac\epsilon N .
+\]
+For $s\le\alpha''\log Q$ one has $R_1\le Q/(2K)$ for large $Q$. For $a/r$ reduced write $\vartheta=a/r+\beta$; the \emph{hole} of $a/r$ is
+$\abs\beta<1/(rQ)$, its \emph{ring} is $1/(rQ)\le\abs\beta<K/(rQ)$, and the \emph{shell set} is
+$\mathcal S=\bigcup_{r\le R_1}\{\abs{\vartheta-a/r}<K/(rQ)\}$. With $S^{\rm near}(\vartheta)=\sum_na^{\rm near}_ne(n\vartheta)$ restricted to primes $n>Q$,
+\begin{gather*}
+\mathrm{Ring}(s):=\sum_{r\le R_1}\sideset{}{^*}\sum_{a\bmod r}\int_{\rm ring}\abs{S^{\rm near}(a/r+\beta)}^2d\beta,\\
+\mathrm{Hole}(s):=\sum_{r\le R_0}\sideset{}{^*}\sum_{a}\int_{\rm hole}\abs{S^{\rm near}(a/r+\beta)}^2d\beta .
+\end{gather*}
+The condition~\eqref{eq:eps} is stronger than the working draft's $\epsilon\to0$; it is needed in Lemma~\ref{lem:shell-6d} through $R_1$
+(\S\ref{ssec:shell-S}).
+
+\subsection{The signed Farey identity}\label{ssec:shell-farey}
+\begin{lemma}[Lemma 1]\label{lem:shell-1}
+Let $(a_n)$ be finitely supported, with every prime factor of every $n$ in the support greater than $Q$. Let
+$\omega:\{1,\dots,Q\}\to\R$ and $F_\chi=\sum_na_n\chi(n)$. Then
+\[
+\sum_{1\le q\le Q}\omega(q)\sideset{}{^*}\sum_{\chi\bmod q}\abs{F_\chi}^2=\sum_{d\le Q}\Om_\omega(d)\sideset{}{^*}\sum_{b\bmod d}\abs{S(b/d)}^2,\qquad
+\Om_\omega(d):=\frac{\varphi(d)}d\sum_{\substack{e\le Q/d\\(e,d)=1}}\frac{\mu(e)\,\omega(de)}e .
+\]
+\end{lemma}
+\begin{proof}
+(1) Every $n$ in the support is coprime to every $q'\le Q$, so
+$G(q'):=\sum_{\chi\bmod q'}\abs{F_\chi}^2=\varphi(q')\sum_{c\in(\Z/q')^\times}\abs{\sum_{n\equiv c}a_n}^2=\frac{\varphi(q')}{q'}\sum_{b\bmod q'}\abs{S(b/q')}^2$.
+(2) Each $\chi\bmod q$ is induced by a unique primitive $\chi^*\bmod q^*\mid q$, and $F_\chi=F_{\chi^*}$ on the support; so $G=1*H$ with
+$H(q)=\sum^*_{\chi\bmod q}\abs{F_\chi}^2$, i.e.\ $H=\mu*G$. (3) Expanding $\sum_{b\bmod q'}=\sum_{d\mid q'}\sum^*_{b\bmod d}$, with $q=de$, $q'=df$,
+$f\mid e$, the coefficient of $P(d):=\sum^*_{b\bmod d}\abs{S(b/d)}^2$ in $H(q)$ is $\sum_{f\mid e}\mu(e/f)\varphi(df)/(df)$. (4) Write
+$\varphi(df)/(df)=\frac{\varphi(d)}dh_d(f)$ with $h_d(f)=\prod_{p\mid f,\,p\nmid d}(1-1/p)$; then $\mu*h_d=(\mu(e)/e)\mathbf 1[(e,d)=1]$. (5) Multiply by
+$\omega(de)$ and sum over $de\le Q$.
+\end{proof}
+\emph{Formalisation:} \texttt{ZetaShell.signed\_farey\_identity}, proved by a different route
+(expansion of both sides as $\sum_{n,m}a_n\bar a_mK(n,m)$, the orthogonality of primitive characters from \texttt{ZetaQ}, Ramanujan sums
+and a local identity proved by induction over primes) \tagL; the identity was also tested by exact arithmetic, including $Q=0,1$, primes and
+prime powers. The support hypothesis is needed: without it the identity fails in tests, with relative errors from
+$1.4\%$ to $182\%$.
+
+For $\omega\equiv1$, $\Om(d)=\frac{\varphi(d)}d\sum_{m\le Q/d,(m,d)=1}\mu(m)/m$ and $\abs{\Om(d)}\le\varphi(d)/d\le1$ by Tao's
+inequality~\cite{Tao10} \tagC; for the dyadic weight $\omega=\mathbf 1_{(Q/2,Q]}$ the same inequality gives $\abs{\Om_{\rm dy}}\le2$.
+
+\begin{lemma}[Lemma 1$'$: primes $\le Q$, prime powers, far part]\label{lem:shell-1prime}
+Let $M\subseteq[1,Q]$ be a set of moduli, $\mathbf F_M(a):=\sum_{q\in M}\sum^*_{\chi\bmod q}\abs{\sum_{n\le N'}a_n\chi(n)}^2$, and $N'\ge1$.
+\begin{enumerate}[label=(\alph*)]
+\item For all $b,c$: $\mathbf F_M(b+c)\le\bigl(\sqrt{\mathbf F_M(b)}+\sqrt{(Q^2+\pi N')\norm c^2}\bigr)^2$.
+\item If $s>\log Q$, then $\sum_{n\le Q}\abs{a_n(s)}^2\le\bigl(\sum_{n\le Q}\Lam(n)^2/n\bigr)/(\pi^2(s-\log Q)^2)$.
+\item If $\Xi$ satisfies~\eqref{eq:Xi}, then $\norm{a^{\rm far}}^2\le\pi^{-2}\sum_{\abs{\log n-s}>c\kappa}\Lam(n)^2/(n(\log n-s)^2)$.
+\end{enumerate}
+Consequently, for $s\ge(1+\delta_1)\log Q$, the part of $a$ on $n\le Q$ has $\norm\cdot^2\le(1+o(1))/(2\pi^2\delta_1^2)$; the prime powers
+$p^k>Q$ with $p\le Q$ have $\norm\cdot^2=O(1)$; $\norm{a^{\rm far}}^2\le(2s/(\pi^2c\kappa))(1+o(1))$; and replacing $a$ by its near part on
+primes $>Q$ changes $\mathbf F(s)/(\abs{\FQ}\norm{a(s)}^2)$ by a relative $O((c\kappa T)^{-1/2}+(\delta_1^2T\log Q)^{-1/2})$.
+\end{lemma}
+\begin{proof}
+(a) is Minkowski's inequality in $\ell^2$ with the large sieve in Gallagher's form. (b) and (c) follow from $\abs{\DT(v)}\le2/\abs v$;
+in (c), $a^{\rm far}_n=0$ unless $\abs{\log n-s}>c\kappa$ by~\eqref{eq:Xi}. The consequences: $\sum_{n\le Q}\Lam(n)^2/n=(\frac12+o(1))\log^2Q$
+in (b); the peak of the prime powers is $\ll T^2(\log N)^2N^{-1/2}$; in (c), the sum is $\le(2s/(c\kappa))(1+o(1))$ by the prime number
+theorem, which is $4/(\pi c\kappa T)$ relative to $\norm a^2\approx sT/2\pi$; then (a) with the optimal splitting gives the relative costs.
+\end{proof}
+\emph{Status:} the consequences are the working draft's argument with the factor $c$ added. \emph{Formalisation:} (a), (b), (c) are
+\texttt{replace\_cost}, \texttt{small\_prime\_norm}, \texttt{far\_norm} \tagL. The asymptotic consequences are not formalised. \emph{Correction:} the working draft required only
+$0\le\Xi\le1$ and $\operatorname{supp}\Xi\subseteq(-1,1)$, which allows $\Xi\equiv0$, and then the far part is all of $a$ (numerically $55.5$,
+$274$, $1396$ at $T=50$, $200$, $800$ against a claimed $1.42$). Condition~\eqref{eq:Xi} is added; since $\kappa$ is free, it only
+changes constants by the factor $c$.
+
+\subsection{Local density of weighted Farey points}\label{ssec:shell-density-farey}
+For real weights $\mathcal W_\xi$ on $\xi\in\Farey_Q$ and $\delta>0$ put $D^{\mathcal W}_\delta(\vartheta):=\delta^{-1}\sum_{\norm{\xi-\vartheta}\le\delta/2}\mathcal W_\xi$,
+the distance being taken on $\R/\Z$. The weights of Lemma~\ref{lem:shell-1} are $\mathcal W_{b/d}=\Om_\omega(d)$.
+
+\emph{Families.} Let $\mathfrak w:[0,\infty)\to\R$ be supported in $[0,1]$ and of bounded variation, $V^*:=\norm{\mathfrak w}_\infty+\operatorname{Var}(\mathfrak w)$,
+$W_1:=\int_0^1x\mathfrak w(x)\,dx$, and $\omega(q)=\mathfrak w(q/Q)$. Then $\Om_\omega(d)=\sum_ec_e\,\mathfrak w(de/Q)\,h_e(d)$ with $c_e=\mu(e)/e$ and
+$h_e(q)=\frac{\varphi(q)}q\mathbf 1[(e,q)=1]$. Put $H_{\mathfrak w}:=\sum_{q\ge2}\omega(q)\varphi^*(q)$, where $\varphi^*(q)$ is the number of primitive characters mod $q$.
+The family of this paper is the sharp one, $\mathfrak w=\mathbf 1_{[0,1]}$ ($V^*=2$, $W_1=\frac12$, $H_{\mathfrak w}/Q^2\to18/\pi^4$); the dyadic one,
+$\mathfrak w=\mathbf 1_{(1/2,1]}$ ($V^*=3$, $W_1=\frac38$, $H_{\mathfrak w}/Q^2\to27/(2\pi^4)$), appears only in Remark~\ref{rem:shell-dyadic}.
+
+\begin{lemma}[Lemma 2: local density]\label{lem:shell-2}
+Fix a family. Let $\delta=\epsilon/N$ and $R_1=N(\log Q)^6/(\epsilon Q)$.
+\begin{enumerate}[label=(\alph*)]
+\item \emph{(Outside shells.)} There are $B_{\mathfrak w}$ and $Q_0$ such that for $Q\ge Q_0$, $N,\epsilon>0$, $K\ge1$, $W_\infty\ge\max_{d\le Q}\abs{\Om(d)}$, with
+$1\le R_1\le Q/(2K)$, and every $\vartheta\notin\mathcal S$,
+\[
+\bigl|D^{\Om}_\delta(\vartheta)-H_{\mathfrak w}\bigr|\le B_{\mathfrak w}H_{\mathfrak w}\Bigl[\frac{(1+\log K)^3}K+\frac{N(\log Q)^2}{\epsilon QR_1}+\frac{N(\log Q)^8}{\epsilon Q^2}+\frac{W_\infty N}{\epsilon H_{\mathfrak w}}\Bigr].
+\]
+If moreover $N/\epsilon\le Q^2(\log Q)^{-12}$, the bracket is $O((1+\log K)^3/K+(\log Q)^{-4})$.
+\item \emph{(Everywhere.)} For every $Q$, every real $\mathcal W$ with $\abs{\mathcal W}\le W_\infty$, every $\delta>0$ and every $\vartheta$:
+$\abs{D^{\mathcal W}_\delta(\vartheta)}\le D^{\abs{\mathcal W}}_\delta(\vartheta)\le W_\infty(Q^2+1/\delta)$.
+\item \emph{(Holes.)} For every $a/r\in\Farey_Q$, every real $\mathcal W$, every $\delta>0$ and every $\beta$ with $\delta/2<\abs\beta<1/(rQ)-\delta/2$,
+$D^{\mathcal W}_\delta(a/r+\beta)=0$. If moreover $\delta<1/(rQ)$, then $D^{\mathcal W}_\delta(a/r+\beta)=\mathcal W_{a/r}/\delta$ for $\abs\beta\le\delta/2$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(b) Consecutive points of $\Farey_Q$ are at least $Q^{-2}$ apart, so a window of length $\delta$ holds at most $\delta Q^2+1$ of them.
+(c) If $b/q\ne a/r$ and $q\le Q$, then $\norm{b/q-a/r}\ge1/(qr)\ge1/(rQ)$; the second sentence uses that for $\delta<1/(rQ)$ the window of
+half-length $\delta/2$ around $a/r+\beta$ contains no other point.
+
+(a) \emph{Step 0 (lines).} Take a Dirichlet approximation $a/r$ of $\vartheta$ with $r\le R_1$ (this uses $R_1\ge1$), $\abs\eta\le1/(rR_1)$,
+$\eta=\vartheta-a/r$; since $\vartheta\notin\mathcal S$, $u:=rQ\abs\eta\in[K,Q/R_1]$. Fix $a'/r'$ with $ar'-a'r=1$. The map
+$(k,j)\mapsto(b,q)=(ak-a'j,\,rk-r'j)$ is a bijection from primitive pairs with $q>0$ onto reduced fractions, and $b/q-a/r=j/(qr)$. A point
+with $q\le Q$ lies in the window $\mathcal I=[\vartheta-\delta/2,\vartheta+\delta/2]$ only if $0<\abs j\le J:=Q/R_1+R_1Q\delta+1$ or $j=0$; for each
+line, $I_j:=\{q\in[1,Q]:j/(qr)\in\mathcal I-a/r\}$ is an interval.
+
+\emph{Step 1 (expansion).} Each $h_e$ is multiplicative with $h_e=1*\lambda_e$, $\lambda_e$ supported on squarefree numbers,
+$\lambda_e(p)=h_e(p)-1$. Hence
+$\delta D^{\Om}_\delta(\vartheta)=\Om(r)\mathbf 1[a/r\in\mathcal I]+\sum_{0<\abs j\le J}\sum_ec_e\sum_{f\le Q}\lambda_e(f)N_j(e,f)$ with
+$N_j(e,f):=\sum_{k:(k,j)=1,\ q\in I_j,\ f\mid q}\mathfrak w(qe/Q)$.
+
+\emph{Step 2 (Chinese remainder theorem).} Write $\mathbf 1[(k,j)=1]=\sum_{g\mid j}\mu(g)\mathbf 1[g\mid k]$. For $p\mid f$: if $p\nmid r$, $p\mid q$ fixes
+$k\bmod p$; if $p\mid r$, then $p\mid q\iff p\mid j$. So for each $g$ the admissible $k$ form one class modulo $\operatorname{lcm}(g,f_{(r)})$,
+$f_{(r)}=\prod_{p\mid f,\,p\nmid r}p$, or none, and $q$ runs through one progression restricted to $I_j$. The restricted function has variation
+at most $\operatorname{Var}(\mathfrak w)+2\norm{\mathfrak w}_\infty\le2V^*$, so
+\[
+N_j(e,f)=\frac1r\int_{I_j}\mathfrak w(qe/Q)\,dq\cdot\frac{\varphi(j)}j\prod_{p\mid f}\delta_p+E_j,\qquad\abs{E_j}\le2V^*2^{\omega(j)},
+\]
+with $\delta_p=1/p$ if $p\nmid rj$, $\delta_p=1$ if $p\mid(r,j)$, and $\delta_p=0$ otherwise.
+
+\emph{Step 3 (sum over $f$).} Put $\mathfrak E_{j,r}(e):=\sum_{f\ge1}\lambda_e(f)\prod_{p\mid f}\delta_p=\prod_{p\nmid rj}(1+\lambda_e(p)/p)\prod_{p\mid(r,j)}h_e(p)$. The
+discrepancy of Step~2 summed over $f\le Q$ is at most $2V^*2^{\omega(j)+\omega(e)}(1+\log Q)$. The tail $f>Q$ of the main term is at most
+$\frac1r\int_{I_j}\abs{\mathfrak w}\cdot2^{\omega(e)+1}\sigma(\operatorname{rad}(r,j))/Q$, since for $p\mid(r,j)$ one has $\delta_p=1$ and $\abs{\lambda_e(p)}\le1$; summed over
+$j\le J$ and $e$ this is $\ll\delta Qr(1+\log Q)$. With $\sum_{e\le y}\abs{c_e}2^{\omega(e)}\ll(1+\log y)^2$ the total count error is
+$\ll V^*J(1+\log J)(1+\log Q)+\delta Qr(1+\log Q)$. Divided by $\delta H_{\mathfrak w}\asymp\delta Q^2$, and with $r\le R_1$, this gives the second and third
+terms of the bracket; the $j=0$ term gives the fourth.
+
+\emph{Step 4 (profile).} Substituting $q=\abs j/(r\abs\beta)$, $\beta\in\mathcal I-a/r$ of the sign of $j$, the main term equals
+$\int_{\mathcal I-a/r}Q^2g_r(rQ\abs\beta)\,d\beta$ up to $O(\delta(1+\log Q))$, where
+$g_r(v):=v^{-2}\sum_{1\le j\le v}\varphi(j)\sum_ec_e\,\mathfrak w(je/v)\,\mathfrak E_{j,r}(e)$ ($g_r(v)=0$ for $v<1$). By Lemma~\ref{lem:shell-P},
+$\abs{g_r(v)-\bar g_{\mathfrak w}}\le B_{\mathfrak w}(1+\log v)^2/v$ uniformly in $r$, and $Q^2\bar g_{\mathfrak w}=H_{\mathfrak w}(1+O(V^*\log^2Q/Q))$.
+
+\emph{Step 5 (window average).} In $u$-units the window is $[u-\Delta',u+\Delta']$, $\Delta'=rQ\delta/2$. With $E(v):=\abs{g_r(\abs v)-\bar g_{\mathfrak w}}$: if
+$\Delta'\le u/2$ the average of $E$ is $\ll B_{\mathfrak w}(1+\log K)^2/K$; if $\Delta'>u/2\ge K/2$ it is $\le(2\Delta')^{-1}2\int_0^{3\Delta'}E\ll B_{\mathfrak w}(1+\log K)^3/K$.
+\end{proof}
+
+\begin{lemma}[Lemma P: universality of the line profile]\label{lem:shell-P}
+For all integers $r\ge1$ and real $v\ge1$, $\abs{g_r(v)-\bar g_{\mathfrak w}}\le B_{\mathfrak w}(1+\log v)^2/v$, where $\bar g_{\mathfrak w}=W_1\sum_ec_e\Pi(e)/e^2$ and
+$\Pi(e)=\prod_p(1-\frac1p)(1+\frac{h_e(p)}p)$ does not depend on $r$. For the plain kind $\bar g_{\mathfrak w}=W_1\cdot36/\pi^4$.
+\end{lemma}
+\begin{proof}
+(i) Write $\varphi(j)\mathfrak E_{j,r}(e)=P_0\,j\,b(j)$ with $P_0=\prod_{p\nmid r}(1+\lambda_e(p)/p)\le1$ and $b$ multiplicative on squarefree kernels:
+$b_p=(1-\frac1p)/(1+\lambda_e(p)/p)$ for $p\nmid r$, $b_p=(1-\frac1p)h_e(p)$ for $p\mid r$. Then $b=1*\nu_e$ with $\abs{\nu_e(p)}\le2/p$ for $p\nmid e$ and
+$\abs{\nu_e(p)}\le1$ for $p\mid e$.
+(ii) From $\sum_{m\le x}m=x^2/2+O(x)$, $\sum_{j\le y}jb(j)=\frac{y^2}2\sum_f\frac{\nu_e(f)}f+O(2^{\omega(e)}y(1+\log y)^2)$, the tail $\sum_{f>y}\abs{\nu_e(f)}/f$
+included; the bound is uniform in $r$ because $\abs{\nu_e(p)}\le2/p$ for $p\nmid e$ whether or not $p\mid r$.
+(iii) At each prime, $(1+\lambda_e(p)/p)(1+\nu_e(p)/p)$ for $p\nmid r$ and $1+\nu_e(p)/p$ for $p\mid r$ both equal $(1-\frac1p)(1+\frac{h_e(p)}p)$. Hence
+$P_0\sum_f\nu_e(f)/f=\Pi(e)$ and $\sum_{j\le y}\varphi(j)\mathfrak E_{j,r}(e)=\Pi(e)y^2/2+O(2^{\omega(e)}y(1+\log y)^2)$ uniformly in $r$.
+(iv) Partial summation against $\mathfrak w(je/v)$ up to $y=v/e$ and summation over $e\le v$ with $\sum_e\abs{c_e}2^{\omega(e)}/e=\prod_p(1+2/p^2)<\infty$ give
+the bound; the tail $e>v$ is $O(1/v)$. For the plain kind $\sum_e\mu(e)\Pi(e)/e^3=\prod_p(1-p^{-2})^2=36/\pi^4$.
+\end{proof}
+
+\emph{Status of Lemmas~\ref{lem:shell-2} and~\ref{lem:shell-P}.} The proofs above include the corrections of Appendix~\ref{app:corr} (the hypothesis
+$R_1\ge1$; the eventual form $Q\ge Q_0$, since the statement fails at $Q=2$ where $H_{\mathfrak w}=0$; the error $2V^*$ in Step~2; the tail bound in
+Step~3, which could not be reproduced in the draft's form and is replaced by the bound above with the same conclusion; Step~4 as an
+inequality); every step was also tested numerically against exact enumeration at $Q=200$ and $400$ \tagN. The end of Lemma~P,
+$H_{\mathfrak w}=Q^2\bar g_{\mathfrak w}(1+O(V^*\log^2Q/Q))$ for $Q\ge2$, is a direct computation: with
+$\varphi^*=\mu*\varphi$ write $\varphi^*(q)=q\,g(q)$ and $g=1*h$, where $h(p)=-2/p$, $h(p^2)=1/p^2$ and $h(p^k)=0$ for $k\ge3$. Then
+$\sum_dh(d)/d=\prod_p(1-p^{-2})^2=36/\pi^4$, $\sum_{d\le x}\abs{h(d)}\ll\log^2x$ and $\sum_{d>x}\abs{h(d)}/d\ll(\log x)/x$, so
+$\sum_{q\le x}\varphi^*(q)=\frac{36}{\pi^4}\frac{x^2}2+O(x(1+\log x)^2)$, and Abel summation against $\mathfrak w(q/Q)$ gives
+$\abs{H_{\mathfrak w}-Q^2\bar g_{\mathfrak w}}\le B\,V^*Q(1+\log Q)^2$ with $B$ absolute. The relative form uses $Q\ge2$ and $\bar g_{\mathfrak w}>0$. An exact enumeration
+for the sharp and the dyadic family at every $Q\le10^6$ agrees \tagN.
+\emph{Formalisation:} (b) and (c) are \texttt{lemma2b}, \texttt{lemma2c\_hole}, \texttt{lemma2c\_spike} \tagL; (a) is assembled
+from its steps (\texttt{lemma2a}), among them the line-sum asymptotic under Lemma~P (\texttt{line\_sum\_asymp}) and two parts of the tail of Step~3
+(\texttt{s3\_tail\_plain\_pt}, \texttt{s3\_tail\_sum}); in the released library \texttt{lemma2a} and Lemma~P (\texttt{lemmaP}) are
+kernel-checked \tagL. \emph{Correction:} the draft's spike sentence in (c) omitted
+$\delta<1/(rQ)$ and is false without it ($a/r=0/1$, $\delta=1/Q$); it is not used, since the spikes lie in the set $\mathcal X_\delta$ of
+Lemma~\ref{lem:shell-F1}.
+
+\begin{lemma}[Lemma 3: signed Gallagher localisation]\label{lem:shell-3}
+Let $(a_n)$ be supported in $[Ne^{-\kappa},Ne^{\kappa}]$, let $\mathcal W$ be real weights on $\Farey_Q$ with $\abs{\mathcal W}\le W_\infty$, $W_\infty\ge0$, and
+$\delta=\epsilon/N$ with $0<\epsilon<N$. Then
+$\bigl|\sum_\xi\mathcal W_\xi\abs{S(\xi)}^2-\int_0^1\abs S^2D^{\mathcal W}_\delta\bigr|\le2\pi\sinh\kappa\,W_\infty(\epsilon Q^2+N)\norm a^2$; consequently
+$\sum_\xi\mathcal W_\xi\abs{S(\xi)}^2\le\int_0^1\abs S^2(D^{\mathcal W}_\delta)^++2\pi\sinh\kappa\,W_\infty(\epsilon Q^2+N)\norm a^2$.
+\end{lemma}
+\begin{proof}
+Put $n_0=N\cosh\kappa$ and $\tilde S(\vartheta)=e(-n_0\vartheta)S(\vartheta)$, so $\abs{\tilde S}=\abs S$ and $\norm{\tilde S'}_2\le2\pi N\sinh\kappa\norm a$. For
+$f\in C^1(I)$ on an interval of length $\delta$ with midpoint $\xi$, $\abs{f(\xi)-\delta^{-1}\int_If}\le\frac12\int_I\abs{f'}$~\cite[proof of Lemma~1]{Mont78}. Apply
+it to $f=\abs{\tilde S}^2$ on $I_\xi$ and sum with weights: the main terms give $\int\abs S^2D^{\mathcal W}_\delta$ exactly (the windows fold injectively onto
+$\R/\Z$ since $\delta<1$), and the remainders are at most $\delta\sup D^{\abs{\mathcal W}}_\delta\norm S_2\norm{\tilde S'}_2$, which Lemma~\ref{lem:shell-2}(b) bounds.
+\end{proof}
+Relative to $\abs{\FQ}\norm a^2$ the error is $\frac{\pi^5}9\sinh\kappa(\epsilon+N/Q^2)=o(1)$ for $N\le Q^{2-\eta}$. \emph{Formalisation:}
+\texttt{signed\_gallagher} \tagL.
+
+\subsection{Holes, and the reduction to primitive characters}\label{ssec:shell-holes}
+\begin{lemma}[Lemma 4: holes]\label{lem:shell-4}
+Let $a=a^{\rm near}$ be supported on primes $>Q$, with $\Xi$ as in~\eqref{eq:Xi}, and put $S_\chi(\beta):=\sum_na_n\chi(n)e(n\beta)$. For $r\le R_0$ and every
+$\beta$,
+\begin{equation}\label{eq:shell-gauss}
+\sideset{}{^*}\sum_{a\bmod r}\abs{S(a/r+\beta)}^2=\frac1{\varphi(r)}\sum_{\chi\bmod r}\abs{\tau(\bar\chi)}^2\abs{S_\chi(\beta)}^2\ \ge\ \frac{\mu^2(r)}{\varphi(r)}\abs{S(\beta)}^2,
+\end{equation}
+and, for the design width $K=\Lc(\log\Lc)^2$, $\mathrm{Hole}(s)\ge U(\log R_0+O(1))(1-O(1/\log Q))$, the implied constants depending on $\kappa$, $c$ and $\Xi$.
+\end{lemma}
+\begin{proof}
+The identity follows from $e(m/r)=\varphi(r)^{-1}\sum_{\chi\bmod r}\bar\chi(m)\tau(\chi)$ for $(m,r)=1$ and orthogonality; the inequality is
+Lemma~\ref{lem:K-R}, since every $n$ in the support is a prime $>Q\ge r$. The holes of $r\le R_0$ contain $\abs\beta\le KT/N$ and are disjoint, so
+$\mathrm{Hole}\ge(\sum_{r\le R_0}\mu^2(r)/\varphi(r))\int_{\abs\beta\le KT/N}\abs S^2$. The arc mass is bounded below as in Lemma~\ref{lem:K-P}, with the
+near model $\mathcal M(\beta):=\sum_n\mathfrak m(n)\Xi((\log n-s)/\kappa)e(n\beta)$ in place of $\tilde M$, the cutoff $\Xi((\log y-s)/\kappa)$ in place of $\varrho(\log y-s)$, primes
+$>Q$ in place of $\Lam'$, and no tail term; in Step~3 the counting error is now $\sum_{p\le y}\log p-\floor y$ minus the constant $\sum_{p\le Q}\log p$, and the
+constant cancels because only increments over intervals of length $h$ enter. The model mass is where~\eqref{eq:Xi} enters: with $y=e^{s-v}$,
+$\int\abs{\mathfrak m(y)\Xi(-v/\kappa)}^2dy\ge(4\pi^2)^{-1}\int_{\abs v\le c\kappa}\abs{\DT(v)}^2dv\ge U-2/(\pi^2c\kappa)$, since $\abs{\DT(v)}^2\le4/v^2$; the outer mass is
+$O(U/K^2)$ as in Step~1 of Lemma~\ref{lem:K-P}, with a constant depending on $\kappa$ and $\Xi'$, which is $O(U/\log^2Q)$ for $K=\Lc(\log\Lc)^2$ (for a
+general $K$ this relative error $O(1/K^2)$ is $O(1/\log Q)$ only if $K^2\gg\log Q$). Finally
+$\sum_{r\le R}\mu^2(r)/\varphi(r)\ge\log(R+1)$.
+\end{proof}
+The working draft stated this lemma without~\eqref{eq:Xi}; with $\Xi\equiv0$ the model mass vanishes and the lower bound fails.
+The prime number theorem is used here with the exponent $A\ge2+2(r_0+\eps)$ of
+\eqref{eq:PNT}, which also covers the larger width $K=\Lc(\log\Lc)^2$.
+Only $\norm a^2-\mathrm{Hole}\le U(\Lc+\log K+O(1))$, at $K=\Lc(\log\Lc)^2$, is used below; it follows from the lemma and $\norm a^2=U(s+O(1))$, since
+$\log R_0=s-\log(QTK)$ and $s\cdot O(1/\log Q)=O(1)$.
+
+\begin{lemma}[Hole-edge mass]\label{lem:shell-F1}
+Let $2R_1\le Q$, let $a$ be supported on the integers of $[1,N_{\rm sup}]$, and let $\mathcal X:=\{a/r,\ a/r\pm1/(rQ):r\le R_1\}$ (as a multiset). Then
+$\sum_{\xi\in\mathcal X}\int_{\abs{\vartheta-\xi}\le\delta}\abs{S(\vartheta)}^2d\vartheta\le6\delta(2R_1^2+\pi N_{\rm sup})\norm a^2$. For the near part, supported in
+$[Ne^{-\kappa},Ne^\kappa]$, one may take $N_{\rm sup}=\floor{Ne^\kappa}\le e^\kappa N$, and the bound is
+$O(\epsilon+N(\log Q)^{12}/(\epsilon Q^2))\norm a^2=o(\norm a^2)$.
+\end{lemma}
+\begin{proof}
+$\mathcal X$ is the union of three families, each $1/(2R_1^2)$-spaced: $\norm{b/r-b'/r'}\ge1/(rr')$, and the shifts differ by at most
+$R_1/(rr'Q)\le1/(2rr')$. For each family and each $\abs t\le\delta$ Gallagher's inequality gives $\sum_\xi\abs{S(\xi+t)}^2\le(2R_1^2+\pi N_{\rm sup})\norm a^2$;
+integrate over $t$.
+\end{proof}
+\emph{Formalisation:} \texttt{hole\_edge\_mass}, with this explicit constant, the coefficients being read on $0<n\le N_{\rm sup}$
+\tagL; the pointwise assembly applies it with $N_{\rm sup}=\floor{e^{s+1}}\le eN$, whose range $n\le e^{s+1}$ contains the near window since $\kappa\le1$,
+and carries the term $\pi N_{\rm sup}$ through. Inside a hole of $R_0<r\le R_1$ the density is
+$0$ except within $\delta$ of $a/r$ or of the hole boundary (Lemma~\ref{lem:shell-2}(c)), where it can be as large as $Q^2+N/\epsilon$; that mass is
+charged at $\norm\Om_\infty(Q^2+N/\epsilon)=O(Q^2)$ and is $o(\norm a^2)$ by the lemma.
+
+\begin{lemma}[Reduction to primitive characters]\label{lem:shell-star}
+Let $a$ be supported on primes $>Q$ in $[Ne^{-\kappa},Ne^\kappa]$, let $R_1\ge1$ and $2KR_1\le Q$ (so that $2K\le Q$), and let $\Upsilon_K\ge0$ be such that
+$\sum_{y\le m<Ky}\mu^2(m)/\varphi(m)\le\Upsilon_K$ for all $y>0$. Let $\mathcal M$ be the near model of Lemma~\ref{lem:shell-4}, so $\int_0^1\abs{\mathcal M}^2\le U+o(1)$. Then
+\begin{multline*}
+\mathrm{Ring}\le2\Upsilon_K\sum_{r^*\le R_1}\frac{r^*}{\varphi(r^*)}\sideset{}{^*}\sum_{\chi^*\bmod r^*}
+\int_{\frac1{R_1Q}\le\abs\beta\le\frac K{r^*Q}}\bigl|S_{\chi^*}(\beta)-[r^*{=}1]\mathcal M(\beta)\bigr|^2d\beta\\
++2\Upsilon_K\,(U+o(1)) .
+\end{multline*}
+The choice $\Upsilon_K=c_\mu(1+\log K)$, with $c_\mu:=\zeta(2)\zeta(3)/\zeta(6)=1.9435964\ldots$, is admissible for $K\ge1$.
+\end{lemma}
+\begin{proof}
+For $\chi\bmod r$ induced by $\chi^*\bmod r^*$, $\tau(\chi)=\mu(r/r^*)\chi^*(r/r^*)\tau(\chi^*)$~\cite[Thm.~9.10]{MV}, so
+$\abs{\tau(\bar\chi)}^2=r^*\mu^2(r/r^*)\mathbf 1[(r/r^*,r^*)=1]$. The identity~\eqref{eq:shell-gauss} is stated in Lemma~\ref{lem:shell-4} for $r\le R_0$; its proof
+uses only that every $n$ in the support is a prime $>Q\ge r$, so it holds for every $r\le Q$, and here it is used for $r\le R_1$. With $m=r/r^*$ it gives
+$\sum^*_{a\bmod r}\abs{S(a/r+\beta)}^2=\sum_{r^*m=r,\,(m,r^*)=1}\frac{r^*}{\varphi(r^*)}\frac{\mu^2(m)}{\varphi(m)}\sum^*_{\chi^*}\abs{S_{\chi^*}(\beta)}^2$. For fixed $\beta$ and $r^*$ the $m$
+for which $\beta$ lies in the ring of modulus $r^*m$ form a range $[y,Ky)$, so their sum is at most $\Upsilon_K$; a nonempty range needs $r^*m\le R_1$ for some
+$m\ge1$, which gives the displayed range of $\beta$. For $r^*=1$ split $\abs S^2\le2\abs{S-\mathcal M}^2+2\abs{\mathcal M}^2$; the range $\abs\beta\le K/Q\le\frac12$ lies in
+one period because $2K\le Q$. The hypothesis $R_1\ge1$ only excludes the empty case.
+
+For the choice of $\Upsilon_K$: for squarefree $m$, $1/\varphi(m)=m^{-1}\sum_{\operatorname{rad}k\mid m}1/k$, so
+$\sum_{y\le m<Ky}\mu^2(m)/\varphi(m)\le\sum_kk^{-1}\sum_{y\le m<Ky,\ \operatorname{rad}k\mid m}m^{-1}\le(1+\log K)\sum_k1/(k\operatorname{rad}k)$, since
+$\sum_{z\le l<Kz,\,l\ge1}1/l\le1+\log K$ for $z>0$; and $\sum_k1/(k\operatorname{rad}k)=\prod_p\bigl(1+1/(p(p-1))\bigr)=\zeta(2)\zeta(3)/\zeta(6)$.
+\end{proof}
+The lemma is linear in $\Upsilon_K$, and Theorem~\ref{thm:shell-S} uses it with $\Upsilon_K=c_\mu(1+\log K)$. The working draft used $\log K+1.4708$ instead: the
+value $41/12-\log7=1.47075\ldots$ is the supremum of $\sum_{m\le x}\mu^2(m)/\varphi(m)-\log x$ over $1\le x\le10^7$, attained at $x=7$ (a numerical check \tagN);
+it is not proved for larger $x$, and it is not used here. \emph{Formalisation:} \texttt{ring\_le\_primitive\_corr}, with a parameter $C_\mu\ge0$, $K\ge1$ and the
+hypothesis $\sum_{y\le m<Ky}\mu^2(m)/\varphi(m)\le\log K+C_\mu$, which covers $\Upsilon_K=c_\mu(1+\log K)$; it is proved with the
+Gauss sums of imprimitive characters, which Mathlib lacks, in a new module \tagL. It replaces
+a first Lean form that was false as Lean parses it; the inequality displayed above was not affected (Appendix~\ref{app:corr}).
+
+\subsection{Proposition Z: the ring mass through the explicit formula}\label{ssec:shell-propZ}
+For $\chi$ primitive mod $r\ge1$ ($r=1$: $\chi=1$, $L=\zeta$) define
+\[
+S_\chi(\beta;s):=\sum_n\Lam(n)\chi(n)A_s(n)e(n\beta)-\delta_{r=1}\tilde M_s(\beta),\qquad\tilde M_s(\beta):=\int_0^\infty A_s(y)e(y\beta)\,dy .
+\]
+By Poisson summation, $\tilde M_s$ differs from the discrete model $\sum_nA_s(n)e(n\beta)$ by $O_m(N^{-m})$ for every $m$ on $\abs\beta\le\frac12$, since $A_s$ is
+smooth at scale $\gg N/(2T+\kappa^{-1})$; Lemma~\ref{lem:shell-star} subtracts the discrete model $\mathcal M=-\frac1{2\pi}\sum_nA_s(n)e(n\beta)$, and the
+difference is included in Lemma~\ref{lem:shell-5c}(1).
+Let $f\in C_c^\infty((-\frac18,\frac18))$ be even, $f\ge0$, $f\not\equiv0$; then $\hat f(\eta)\ge2^{-1/2}\int f>0$ for $\abs\eta\le1$. Put
+$c_f:=\min_{[-1,1]}\hat f^2$ and $\Phi:=\hat f^2/c_f$, so $\Phi\ge\mathbf 1_{[-1,1]}$. Let $W\in C_c^\infty((-1,1))$, $W\ge0$, and
+$\norm W_{C^A}:=\sum_{j\le A}\sup\abs{W^{(j)}}$.
+
+\begin{lemma}[Lemma 5a: Plancherel majorant]\label{lem:shell-5a}
+Let $\nu$ be a finite sum of point masses on $(0,\infty)$ plus a continuous compactly supported density, $S(\beta)=\int e(y\beta)\,d\nu(y)$, and $\Delta>0$.
+Then $\int_{\abs\beta\le\Delta}\abs S^2\le\int_{\R}\abs{S(\beta)}^2\Phi(\beta/\Delta)\,d\beta=\frac{\Delta^2}{c_f}\int_{\R}\bigl|\int f(\Delta(y-x))\,d\nu(y)\bigr|^2dx$.
+\end{lemma}
+\begin{proof}
+With $G(x)=\int f(\Delta(y-x))\,d\nu(y)$, $\hat G(\beta)=\Delta^{-1}\hat f(\beta/\Delta)S(-\beta)$ since $f$ is even; apply Plancherel.
+\end{proof}
+\emph{Formalisation:} \texttt{plancherel\_majorant}, for exactly this class of measures, with the integrability of the majorant in the
+conclusion \tagL.
+
+\begin{lemma}[Lemma 5b: smooth explicit formula, Weil form]\label{lem:shell-5b}
+For $\chi$ primitive mod $r$ of parity $\mathfrak a_\chi$, $V\in C_c^\infty$ with support in $(1,\infty)$, and $\tilde V(w)=\int_0^\infty V(y)y^{w-1}dy$,
+\begin{multline*}
+\sum_n\Lam(n)\chi(n)V(n)=\delta_{r=1}\bigl(\tilde V(1)+\tilde V(0)\bigr)-\sum_\rho m_\rho\tilde V(\rho)\\
++\frac1{2\pi}\int_{\R}\tilde V(\tfrac12+it)\Bigl[\Re\frac{\Gamma'}{\Gamma}\bigl(\tfrac14+\tfrac{\mathfrak a_\chi}2+\tfrac{it}2\bigr)+\log\frac r\pi\Bigr]dt,
+\end{multline*}
+the sum over the nontrivial zeros $\rho$ of $L(s,\chi)$ with multiplicity $m_\rho$ being absolutely convergent.
+\end{lemma}
+This is Weil's explicit formula for the test function $k(u)=e^{u/2}V(e^u)$; the conjugate prime leg vanishes because
+$V=0$ on $(0,1]$. \emph{Formalisation:} \texttt{smooth\_explicit\_formula\_weil}, derived from the explicit formulas of the Lean artifact of~\cite{AF}
+for primitive $\chi$ with $q>1$ and for $\zeta$, whose zero sets are the nontrivial zeros of Mathlib's $L$-functions with multiplicity
+\tagL. The working draft used instead a contour at $\Re w=-\frac12$ with $L'/L(w,\chi)$; that form is not formalised. In the Weil form the archimedean
+term stays on the critical line, and bounded in absolute value it is larger than the draft's remainder by a factor of about $N$ (when $\Delta N\le1$) or
+$1/\Delta$ (when $\Delta N\ge1$). This changes the error term of Proposition~\ref{prop:shell-Z} from the draft's $E$ to $E'$.
+
+\begin{proposition}[Proposition Z, Weil form]\label{prop:shell-Z}
+Let $s_0\ge3$, $N_0=e^{s_0}$, $T\ge2$, $0<\Delta\le1$, $\mu:=\Delta N_0$ and $A,k\ge2$. There is $C_0=C_0(\kappa,\Xi,f,A,k)$ such that for every primitive
+$\chi\bmod r$ with $1\le r\le N_0$ and every $W$ as above,
+\[
+\int W(s-s_0)\int_{\R}\abs{S_\chi(\beta;s)}^2\Phi(\beta/\Delta)\,d\beta\,ds\le C_0\norm W_{C^A}\Bigl[T\sum_{\rho,\rho'}m_\rho m_{\rho'}
+\frac{N_0^{\beta+\beta'-2}\varpi_\rho\varpi_{\rho'}}{(1+\abs{\gamma-\gamma'})^A}+E'(r,\Delta)\Bigr],
+\]
+the double sum being absolutely convergent, where $\varpi_\rho:=(1+(\abs\gamma-2T)_+/(\mu+1))^{-k}$ and
+\[
+E'(r,\Delta):=T^2\Bigl(\Delta^2+\frac\Delta{N_0}\Bigr)+\frac{T^2(T+\Delta N_0+1)^2\log^2(rN_0T)}{N_0}.
+\]
+\end{proposition}
+
+\begin{proof}
+\emph{Step 1.} Apply Lemma~\ref{lem:shell-5a} to $d\nu=\sum\Lam\chi(n)A_s(n)\delta_n-\delta_{r=1}A_s(y)dy$ and put $V_{x,s}(y):=A_s(y)f(\Delta(y-x))$; the inner
+function is $\sum_n\Lam\chi(n)V_{x,s}(n)-\delta_{r=1}\tilde V_{x,s}(1)$. Its support lies in $[Ne^{-\kappa},Ne^\kappa]\subset(1,\infty)$ since $s-\kappa\ge1$.
+
+\emph{Step 2 (the Weil remainder).} By Lemma~\ref{lem:shell-5b} the inner function equals $-\sum_\rho m_\rho\tilde V_{x,s}(\rho)+R^W_{x,s}$ with
+$R^W:=\delta_{r=1}\tilde V(0)+\frac1{2\pi}\int\tilde V(\frac12+it)\varpi^{\rm arch}_r(t)\,dt$, $\varpi^{\rm arch}_r(t):=\Re\frac{\Gamma'}{\Gamma}(\frac14+\frac{\mathfrak a_\chi}2+\frac{it}2)+\log(r/\pi)$. Then:
+(a1) $\abs{\varpi^{\rm arch}_r(t)}\le C\log(r(\abs t+2))$ uniformly in $r$ and $\chi$, by Stirling's formula and the finiteness of $\frac{\Gamma'}{\Gamma}(\frac14)$ and $\frac{\Gamma'}{\Gamma}(\frac34)$;
+(a2) $\abs V\le\norm f_\infty e^{\kappa/2}TN^{-1/2}$, on a set of length $\le\min(1/(4\Delta),2e^\kappa N)$;
+(a3) $(y\partial_y)^jV\ll_jX_1^jTN^{-1/2}$ with $X_1:=T+\Delta N+1$;
+(a4) integrating by parts twice, $\tilde V(w)=w^{-2}\int((y\partial_y)^2V)y^{w-1}dy$, and $\abs w^2\ge(1+\abs t)^2/8$ on $\Re w=\frac12$, so
+$\abs{\tilde V(\frac12+it)}\le CTN^{-1}\min(\Delta^{-1},N)\min(1,X_1^2/(1+\abs t)^2)$;
+(a5) $\int\min(1,X_1^2/(1+\abs t)^2)\log(r(\abs t+2))\,dt\le CX_1\log(r(X_1+2))$;
+(a6) $\abs{\tilde V(0)}\le CTN^{-3/2}\min(\Delta^{-1},N)$.
+Hence $\abs{R^W_{x,s}}\le C[\delta_{r=1}TN^{-3/2}\min(\Delta^{-1},N)+TN^{-1}\min(\Delta^{-1},N)X_1\log(r(X_1+2))]$. As $R^W_{x,s}=0$ off a set of $x$ of
+measure $\le2e^\kappa N+1/(4\Delta)$, in both cases $\Delta N\ge1$ and $\Delta N<1$ one gets
+$\Delta^2\int\abs{R^W_{x,s}}^2dx\le C[\delta_{r=1}T^2N^{-2}+T^2X_1^2\log^2(r(X_1+2))/N]$, and for $\abs{s-s_0}\le1$ this is $\le C_RE'(r,\Delta)$.
+
+\emph{Step 3 (scaling).} With $y=Nt$, $x=N\xi$: $\tilde V_{N\xi,s}(\rho)=N^{\rho-1/2}I_\rho(\xi;\mu_s)$, where $\mu_s:=\Delta e^s$,
+$I_\rho(\xi;\mu):=\int_0^\infty H_\rho(t)f(\mu(t-\xi))\,dt$ and $H_\rho(t):=\DT(-\log t)\Xi(\log t/\kappa)t^{\rho-3/2}$ does not depend on $s$. Hence
+$\Delta^2\int\abs{\sum_\rho m_\rho\tilde V_{x,s}(\rho)}^2dx=\sum_{\rho,\rho'}m_\rho m_{\rho'}e^{is(\gamma-\gamma')}\Psi_{\rho\rho'}(s)$ with
+$\Psi_{\rho\rho'}(s):=\mu_s^2e^{s(\beta+\beta'-2)}\int I_\rho\overline{I_{\rho'}}\,d\xi$; the interchange is justified by Step~4 and the zero count.
+
+\emph{Step 4 (one zero).} By Plancherel in $\xi$, $\norm{I_\rho(\cdot;\mu)}_2^2=\mu^{-2}w_\rho(\mu;f)$ with $w_\rho(\mu;f):=\int\abs{\hat H_\rho(\eta)}^2\hat f(\eta/\mu)^2d\eta$, and
+likewise for $f_j$ ($f_0=f$, $f_{j+1}(z)=zf_j'(z)$). (i) $\norm{H_\rho}_2^2\le2\pi e^{2\kappa}T$, so $w_\rho\le2\pi e^{2\kappa}\norm{\hat f}_\infty^2T$. (ii) Let
+$D:=(\abs\gamma-2T)_+\ge1$. For $\abs\eta\le D/(8\pi e^\kappa)$ the phase of $\hat H_\rho(\eta)$ in $t$ has derivative $\ge\frac34e^{-\kappa}\abs{\gamma-\tau}$ for
+$\tau\in[T,2T]$, and $m$ integrations by parts give $\abs{\hat H_\rho(\eta)}\ll_m\kappa^{-m}D^{1-m}$; for $\abs\eta>D/(8\pi e^\kappa)$,
+$\hat f(\eta/\mu)^2\ll_k(1+D/\mu)^{-2k}$. With $m=k+2$, $w_\rho(\mu;f_j)\ll T\varpi_\rho(\mu)^2$.
+
+\emph{Step 5 ($s$-average).} Since $\partial_s\mu_s=\mu_s$, $\partial^j_s\Psi_{\rho\rho'}$ is a bounded combination of
+$\mu_s^2e^{s(\beta+\beta'-2)}\int I_\rho[f_a]\overline{I_{\rho'}[f_b]}$, $a+b\le j$; by Cauchy--Schwarz and Step~4,
+$\abs{\partial^j_s\Psi_{\rho\rho'}(s)}\ll_jTe^{s(\beta+\beta'-2)}\varpi_\rho(\mu_s)\varpi_{\rho'}(\mu_s)$, and for $\abs{s-s_0}\le1$,
+$e^{s(\beta+\beta'-2)}\le e^2N_0^{\beta+\beta'-2}$ and $\varpi(\mu_s)\le e^k\varpi(\mu)$. Integrating $\int W(s-s_0)e^{is(\gamma-\gamma')}\Psi_{\rho\rho'}\,ds$ by parts $A$
+times gives the factor $(1+\abs{\gamma-\gamma'})^{-A}$ and the dependence on $\norm W_{C^A}$. The sums converge absolutely by Step~4 and the unit-window
+zero count.
+\end{proof}
+
+\emph{Formalisation:} \texttt{propZ\_W} is assembled from Lemmas~\ref{lem:shell-5a}, \ref{lem:shell-5b} and the steps above, among them the Weil
+remainder bound (Step~2) and the boundedness and measurability of the two parts in $x$; in the released library it depends on the three standard
+axioms only and rests on no open declaration \tagL.
+
+\begin{lemma}[Lemma 5c: family errors]\label{lem:shell-5c}
+Take $\Delta_r=K/(rQ)$ for $r\le R_1\le Q/(2K)$, $s_0\ge\log Q+3$, $s_0+1+\kappa\le\log X$ and $N_0\le Q^{2-\eta}$.
+\begin{enumerate}[label=(\arabic*)]
+\item On $\abs\beta\le\frac12$, $S^{\rm near}_\chi-[r=1]\mathcal M$ (primes $>Q$) and $-\frac1{2\pi}S_\chi(\cdot;s)$ differ by the prime powers $p^k\in[Ne^{-\kappa},Ne^\kappa]$, $k\ge2$,
+whose coefficients have $\ell^1$ norm at most $T(\kappa/2\pi+o(1))$, and, for $r^*=1$, by the difference of the discrete and the continuous model, which is
+$O_m(N^{-m})$ on $\abs\beta\le\frac12$ only. This uses $Ne^\kappa\le X$, that is $s+\kappa\le\log X$; for $\abs{s-s_0}\le1$ it holds when $s_0+1+\kappa\le\log X$, which is assumed
+here. In Theorem~\ref{thm:shell-K} the centres satisfy $s_0\le\alphap\Lc+1$ with $\alphap<\lambda$, so it holds for large $Q$. The replacement
+is made on $\abs\beta\le\Delta_r$, before the majorisation of (4), with $\abs{x+d}^2\le2\abs x^2+2\abs d^2$ (a factor $2$ on the main term, absorbed in the
+constant of Theorem~\ref{thm:shell-S}); the family ring error from these is $\ll T^2KR_1/Q$.
+\item[(2$'$)] If $1\le Q$, $1\le K$, $2\le T\le N_0$, $e^3Q\le N_0$ and $R_1\le Q/(2K)$, then
+$\sum_{r\le R_1}rE'(r,\Delta_r)\le128\,T^4K^2(\log N_0)^3\bigl(R_1^2/N_0+N_0/Q^2+1/Q^2+R_1/(QN_0)\bigr)$.
+\item[(3)] With $R_1=e^{s_0+1}(\log Q)^6/(\epsilon Q)$ (its actual size, fixed on $\abs{s-s_0}\le1$), $N_0\le Q^{\alpha''}$ and~\eqref{eq:eps}, the sums of (1) and
+(2$'$) are $\le(\log Q)^{C}Q^{\alpha''-2}\epsilon^{-2}\cdot Ts_0\le Q^{-c}\,Ts_0$ for some $c>0$.
+\item[(4)] The inner cutoff $1/(R_1Q)$ of Lemma~\ref{lem:shell-star} is dropped by positivity, and the outer one is majorised by $\Phi(\beta/\Delta_r)$.
+\end{enumerate}
+\end{lemma}
+\emph{Proof of (2$'$).} With $L_0=\log N_0$, $rN_0T\le N_0^3$ gives $\log(rN_0T)\le3L_0$ (this uses $T\le N_0$); $(T+\Delta_rN_0+1)^2\le5T^2+2K^2N_0^2/(r^2Q^2)$;
+then $\sum_{r\le R_1}r\le R_1^2$, $\sum1/r\le1+\log R_1\le\frac43L_0$. \qed
+
+\emph{Status and formalisation.} (2$'$) is \texttt{family\_EW\_sum} \tagL; the draft's (2) for its $E$ is \texttt{family\_E\_sum},
+both with the hypothesis $T\le N_0$, which the draft left implicit and without which no absolute constant exists. (3) uses the actual size of $R_1$: the
+binding term is $T^3s_0R_1^2/N_0\asymp(\log Q)^CQ^{\alpha''-2}\epsilon^{-2}$, and the bound $R_1\le Q/(2K)$ alone would not suffice.
+
+\subsection{Zero sums, blocks and the density estimates}\label{ssec:shell-density}
+Put $b_\rho:=N_0^{\beta-1}\varpi_\rho$, $x_\rho:=(1-\beta)s_0$, and let $\mathfrak X:=\{(\chi,\rho):\chi$ primitive mod $r\le R_1\}$, $\zeta$ included. By H6, and for $r=1$ by the local count for $\zeta$ of the same artifact (with $A_0$ enlarged if necessary), a unit window $[m,m+1)$
+contains at most $n_m\le2A_0\log(r(\abs m+4))$ zeros of $L(s,\chi)$, $\chi$ primitive mod $r$, counted with multiplicity.
+
+\begin{lemma}[Lemma 6a: zero sums]\label{lem:shell-6a}
+For $A\ge2$, $k\ge3$, $X_0\ge0$, and $2\le T\le N_0$, $N_0\ge e^3$, $1\le K\le Q$, $R_1\le N_0$,
+\begin{multline*}
+\mathfrak Z:=\sum_\chi\frac r{\varphi(r)}\sum_{\rho,\rho'\in\chi}\frac{m_\rho m_{\rho'}b_\rho b_{\rho'}}{(1+\abs{\gamma-\gamma'})^A}\\
+\ll\log\log N_0\Bigl[\Bigl(\sum_{\mathfrak X,\,x_\rho\le X_0}m_\rho b_\rho\Bigr)^2+\log N_0\sum_{\mathfrak X,\,x_\rho>X_0}m_\rho b_\rho^2\Bigr]+N_0^{-1}.
+\end{multline*}
+\end{lemma}
+\begin{proof}
+Group zeros into unit windows, $B_m:=\sum_{\gamma\in[m,m+1)}m_\rho b_\rho$; Schur's test with the kernel $(1+\abs{m-m'})^{-A}$ gives $\sum_{\rho,\rho'}\ll\sum_mB_m^2$. Split
+$B_m$ by $x_\rho\le X_0$; $\sum_m(B^{\rm near}_m)^2\le(\sum_mB^{\rm near}_m)^2$ and $(B^{\rm rest}_m)^2\le n_m\sum_{{\rm rest},\,\gamma\in[m,m+1)}m_\rho b_\rho^2$ by Cauchy--Schwarz, with
+$n_m\le2A_0\log(N_0(N_0^2+4))\le2A_0(3\log N_0+1)$ for $r\le N_0$, $\abs m\le N_0^2$: one factor $\log N_0$. For $\abs m>N_0^2$ the decay of $\varpi_\rho$ in $\abs\gamma$
+is used: $K\le Q$ gives $\mu_r+1\le2N_0$, and $T\le N_0$ with $\abs\gamma>N_0^2-1\ge4N_0$ gives $\abs\gamma-2T\ge\abs\gamma/2$, so $\varpi_\rho\le(\abs\gamma/(4N_0))^{-k}$,
+and $b_\rho\le\varpi_\rho$. Hence $B_m\ll\log(N_0\abs m)\,(4N_0/\abs m)^k$ and $\sum_{\abs m>N_0^2}B_m^2\ll N_0^{2-2k}\log^2N_0$; over the at most $R_1^2\le N_0^2$
+primitive characters, with the weight below, the tail is $\ll N_0^{4-2k}\log^2N_0\log\log N_0\le N_0^{-1}$ for $k\ge3$ and large $N_0$. Finally
+$r/\varphi(r)\ll\log\log N_0$ for $r\le R_1\le N_0$.
+\end{proof}
+The hypotheses $K\le Q$, $T\le N_0$, $R_1\le N_0$ were implicit in the draft. \emph{Formalisation:} \texttt{Z6a\_zero\_sums}, in the form that
+Theorem~\ref{thm:shell-S} uses ($R_1=\lfloor\bar R_1\rfloor$), with $Q\ge3$ \tagL.
+
+\emph{The hyperbolic family.} $\varpi_\rho\ge2^{-k}$ iff $\abs\gamma\le H_r:=2T+1+\mu_r$, $\mu_r=KN_0/(rQ)$. Put $R_1:=e^{s_0+1}(\log Q)^6/(\epsilon Q)$ and
+\begin{equation}\label{eq:shell-Zsize}
+\mathcal Z:=9\bigl[R_1^2(2T+1)^2+(KN_0/Q)^2\bigr],\qquad\alpha:=s_0/\log Q .
+\end{equation}
+Under~\eqref{eq:eps}, $\log(1/\epsilon)=O(\log\log Q)$, so $\mathcal Z=N_0^{2-2/\alpha+o(1)}$.
+
+\begin{lemma}[Lemma 6b: rectangles]\label{lem:shell-6b}
+If $j\in\mathbb N$, $0\le R\le R_1$, $0\le H\le2^j(2T+1+KN_0^{1+\eps'}/(RQ))$, $T,K\ge0$, $N_0\ge1$, $\eps'\ge0$, $Q>0$, then $R^2H^h\le4^j\mathcal ZN_0^{2\eps'}$ for every
+$h\in[0,2]$.
+\end{lemma}
+\begin{proof}
+$(x+y)^h\le2^h\max(x,y)^h$ with $x=2T+1$, $y=KN_0^{1+\eps'}/(RQ)$. If $x\ge y$, $R^2(2x)^h\le4R_1^2x^2\le\mathcal Z$. If $y>x$, then $R^2y^h=R^{2-h}Y^h\le Y^2$ with
+$Y:=Ry=KN_0^{1+\eps'}/Q$ and $R<Y$.
+\end{proof}
+\emph{Formalisation:} \texttt{shell\_rectangles} \tagL. The hypotheses $j\in\mathbb N$ and $H\ge0$ are needed (counterexamples at $j=-3$ and at
+$H=-100$ with real powers).
+
+\begin{lemma}[Lemma 6c: $O(1/\eps')$ blocks]\label{lem:shell-6c}
+Let $1\le R_1\le N_0$, $0<\eps'\le1$, $R_i:=R_1N_0^{-i\eps'}$, $H_i:=2T+1+KN_0^{1+\eps'}/(R_iQ)$. Every $r\in[1,R_1]$ lies in a block $R_{i+1}<r\le R_i$ with
+$i\le\lceil1/\eps'\rceil$ and $H_r\le H_i$; every nonempty block has $R_i\ge1$ and $R_i^2H_i^h\le\mathcal ZN_0^{2\eps'}$ for $h\in[0,2]$; above the height $2^j(2T+1+\mu)$,
+$\varpi\le2^{-jk}$; and $H_i\ge2T+1$.
+\end{lemma}
+\emph{Formalisation:} \texttt{Z6c\_blocks}, all four parts proved \tagL. The draft's ``every block has $R\ge1$'' holds only for
+nonempty blocks, and the cover needs $R_1\le N_0$ (a numerical control with $R_1>N_0$ leaves $158$ moduli uncovered). Dyadic blocks in $r$ would cost a
+factor $\log N_0$ in the log-free count, which is fatal near $\sigma=1$; the $O(1/\eps')$ blocks avoid it.
+
+\emph{Density estimates.} Let $N(\sigma,H,\chi)$ be the number of zeros of $L(s,\chi)$ with $\beta\ge\sigma$ and $\abs\gamma\le H$, with multiplicity, and
+$N^*(\sigma,H,R):=\sum_{r\le R}\sum^*_{\chi\bmod r}N(\sigma,H,\chi)$, the character mod $1$ ($\zeta$) included.
+\begin{enumerate}
+\item[\textbf{(J)}] (Jutila~\cite[Theorem~1, (1.8)]{Jutila77}.) For every $\eps_1>0$: $N^*(\sigma,H,R)\ll_{\eps_1}(R^2H)^{(2+\eps_1)(1-\sigma)}$ for $\frac45\le\sigma\le1$,
+$H\ge1$, $R\ge1$.
+\item[\textbf{(M)}] (Montgomery~\cite{Montgomery69}; \cite[2nd ed., \S10, Th\'eor\`eme~20, p.~77]{BombieriAst18}.) There is $A$ such that
+$N^*(\sigma,H,R)\ll(HR^2)^{3(1-\sigma)/(2-\sigma)}(\log HR)^A$ for $\frac12\le\sigma\le1$, $H\ge2$, $R\ge1$.
+\end{enumerate}
+Both are quoted as stated in the sources, read in the original (Jutila's Theorem~1 in the journal; Bombieri's Th\'eor\`eme~20 with its
+proof), and neither is strengthened: Jutila's exponent, range and dependence of the constant on
+$\eps_1$ are kept; Bombieri's proof gives $A=19$~\cite[2nd ed., p.~80]{BombieriAst18}, and we use only that some $A$ exists \tagC. Both sources count primitive characters in the closed rectangle, with $\zeta$ included. For $\sigma$
+between $\frac45$ and a neighbourhood of $1$, Jutila's proof refers to Huxley and Jutila~\cite{HuxleyJutila77}, which we have not opened; we rely on
+the refereed statement.
+\emph{Formalisation:} the Prop \texttt{ZeroDensityInput} states (J) and (M) in exactly this form (Appendix~\ref{app:lean}); a Lean theorem derives from it the
+abstract hypotheses below with $\alphaz=5/3$ and $\theta=503/1994$ \tagL.
+
+In the abstract form of the working draft: (B) for $\frac12+\eps_1\le\sigma\le\frac45$, $N^*\ll_{\eps_1}(R^2H)^{c(\sigma)(1-\sigma)+\eps_1}(\log RH)^{b_0}$ with
+$c(\sigma)=3/(2-\sigma)$, from (M); (LF) for $\sigma\ge\frac45$, $N^*\ll_{\eps_1}(R^2H)^{(c_0+\eps_1)(1-\sigma)}$ with $c_0=2$, from (J). Put $A^*:=\sup_{[1/2,4/5]}c=5/2$,
+$M:=\max(A^*,c_0)=5/2$ and
+\[
+\alphaz:=\min\Bigl(\frac M{M-1},2\Bigr)=\frac53 .
+\]
+
+\begin{lemma}[Lemma 6d: counts]\label{lem:shell-6d}
+Assume \textup{(J)} and \textup{(M)}. Let $k\ge3$, $\alpha\le\alphap<\alphaz$, $\eps''>0$ and $\mathfrak c:=c_0(2-2/\alphap)+\eps''=4-4/\alphap+\eps''$.
+\textup{(low, $\beta<\frac12+\eps_2$)} $\log N_0\sum b^2\ll N_0^{1-2/\alpha+2\eps_2+o(1)}\to0$.
+\textup{(bulk)} By (B) on the blocks and height shells, $\log N_0\sum_{\rm bulk}b_\rho^2\le N_0^{-c}$ for some $c>0$; the condition is $A^*(2-2/\alpha)<2$, i.e.\
+$\alpha<A^*/(A^*-1)=5/3$.
+\textup{(mid/near, $\sigma\ge\frac45$)} By (LF) on the blocks, $N_{\mathfrak X}(x):=\sum_{x_\rho\le x}m_\rho\varpi_\rho\le Ce^{\mathfrak cx}$ for
+$0\le x\le s_0/5$, so, for every $X_0\ge0$, $\log N_0\sum_{\rm mid}b^2\ll\log N_0\,e^{-(2-\mathfrak c)X_0}$ (mid: $X_0<x_\rho\le s_0/5$), and, for
+$0\le X_0\le s_0/5$, $(\sum_{\rm near}b)^2\ll(1+X_0)^2e^{2(\mathfrak c-1)_+X_0}$ (near: $x_\rho\le X_0$, as in Lemma~\ref{lem:shell-6a}); the condition
+is $\mathfrak c<2$.
+\end{lemma}
+\begin{proof}
+(low) The $\varpi^2$-weighted count is $\ll\sum_{r\le R_1}\varphi(r)H_r\log\ll\mathcal Z\log N_0$. (bulk) On each block of Lemma~\ref{lem:shell-6c} and height shell,
+(B) gives $\ll(\log N_0)^{b_0}(\mathcal ZN_0^{2\eps'}4^j)^{c(\sigma)(1-\sigma)+\eps_1}$, and $\sum_j2^{-2kj}4^{j(c(1-\sigma)+\eps_1)}<\infty$ for $k\ge3$; with a $\sigma$-grid of mesh $1/s_0$,
+$\log N_0\sum_{\rm bulk}b^2\ll(\log N_0)^{C}\max_\sigma N_0^{-(1-\sigma)(2-c(\sigma)(2-2/\alpha))+O(\eps_1+\eps')}$, which is $\le N_0^{-c}$ when $A^*(2-2/\alpha)<2$ and $\eps_1,\eps'$
+are small in terms of $\alphaz-\alphap$. (mid/near) For $0\le x\le s_0/5$, that is $\sigma=1-x/s_0\ge\frac45$, (LF) on the blocks gives
+$N_{\mathfrak X}(x)\le C_{\eps_1,\eps'}\exp((c_0+\eps_1)(\log\mathcal Z/s_0+2\eps')x)\le Ce^{\mathfrak cx}$, and partial summation over $x\le s_0/5$ gives the two
+bounds. For $X_0>s_0/5$ the near sum contains zeros with $\beta<\frac45$, which only (M) counts, with the larger exponent $c(\sigma)(2-2/\alpha)$ in
+place of $c_0(2-2/\alpha)$; the near bound is not claimed there.
+\end{proof}
+Here~\eqref{eq:eps} is used: with $\epsilon=Q^{-c'}$ one would have $\log\mathcal Z/s_0\ge2-2/\alpha+2c'/\alpha$, and at $\alphap=2497/1500$ the bulk condition would hold
+only for $c'<3/2500=0.0012$. The working draft's condition $\epsilon\to0$ does not suffice, nor does $\epsilon\ge Q^{-\eta/3}$; $\epsilon=1/\Lc$
+does. The bulk margin is $2-A^*(2-2/\alphap)=9/2497$, and the minimum of the bulk saving $(1-\sigma)(2-c(\sigma)(2-2/\alphap))$ over
+$[\frac12,\frac45]$ is $9/12485$, at $\sigma=\frac45$; $\theta(\alphap)\to503/1994$ in the limit $\eps''\to0$. Since $\theta(\alphap)$ is
+computed with $\eps''>0$, a rate $\theta<503/1994$ is obtained by choosing $\eps''$ so small that $\theta<\theta(\alphap)$. \emph{Formalisation:}
+\texttt{Z6d\_counts\_corr}, with the near bound under $5X_0\le s_0$ and with (J) and (M) as its hypothesis \tagL. The
+first formal statement \texttt{Z6d\_counts} asserted the near bound for every $X_0\ge0$, which
+(J) and (M) do not give; it is kept in the library, open, and not used (Appendix~\ref{app:corr}).
+
+\emph{The inputs are used inside their hypotheses.} Every block and height shell has $R\ge1$ (or $r=1$) and $H\ge2T+1\ge3$, so $H\ge1$ and $H\ge2$ hold at every
+height used, including $R\approx R_1=Q^{\alphap-1+o(1)}$ with $H$ polylogarithmic; (M) is needed only on $[\frac12+\eps_1,\frac45]$ and (J) only for $\sigma\ge\frac45$. The
+bulk binds: the log-free condition $2(2-2/\alphap)<2$ is only $\alphap<2$. At $\alphap=2497/1500$ and $\eps''\to0$, $\mathfrak c\to4-4/\alphap=3988/2497$ and
+$\theta(\alphap):=\min(1,(2-\mathfrak c)/\mathfrak c)\to503/1994$.
+
+\subsection{Theorem S and Theorem K}\label{ssec:shell-S}
+\begin{theorem}[Theorem S: the Shell lemma, $s$-averaged]\label{thm:shell-S}
+Assume \textup{(J)} and \textup{(M)}. Fix $1<\alphap<5/3$, $B\ge2$, $A\ge2$, $\kappa$ and $\Xi$ as above, and $\theta<\theta(\alphap)$ with $\eps''$ small. There is $C$ such that
+for all large $Q$, all $K,\epsilon,s_0$ with $2\le K\le(\log Q)^B$, $(\log Q)^{-B}\le\epsilon\le1$ and $\log Q+3\le s_0\le\alphap\log Q$ with $s_0\le\log X-2$, and every $W\in C_c^\infty((-1,1))$ with
+$W\ge0$,
+\[
+\int W(s-s_0)\,\mathrm{Ring}(s)\,ds\le C\norm W_{C^A}(\log Q)^{-\theta}\,T s_0 .
+\]
+\end{theorem}
+\begin{proof}
+Fix $\abs{s-s_0}<1$. Enlarging $R_1(s)$ to $\bar R_1:=e^{s_0+1}(\log Q)^6/(\epsilon Q)$ only adds nonnegative terms. Start from Lemma~\ref{lem:shell-star} with
+$\Upsilon_K=c_\mu(1+\log K)$; for large $Q$ its conditions hold, and $1\le\bar R_1\le N_0$, since $\bar R_1=e^{s_0+1}(\log Q)^6/(\epsilon Q)\le Q^{\alphap-1+o(1)}$ and $K\le(\log Q)^B$, $\epsilon\ge(\log Q)^{-B}$. The order of the next two steps matters. First, on $\abs\beta\le\Delta_r:=K/(rQ)$ (where $\Delta_r\le K/Q<\frac12$) replace
+$S^{\rm near}_{\chi^*}-[r^*{=}1]\mathcal M$ by $-\frac1{2\pi}S_{\chi^*}(\beta;s)$, by Lemma~\ref{lem:shell-5c}(1) (for $r^*=1$ with the Poisson comparison of the two
+models). Only then majorise the cutoff by $\Phi(\beta/\Delta_r)$ over $\R$ (Lemma~\ref{lem:shell-5c}(4)) and apply Lemma~\ref{lem:shell-5a} and
+Proposition~\ref{prop:shell-Z}, with $k=3$, to each primitive $\chi^*\bmod r^*\le\bar R_1$ ($\zeta$ with $\tilde M_s$). In the other order the step would not be justified: on
+$\R$ the discrete model is periodic and the continuous one is not. The errors of Lemma~\ref{lem:shell-5c}(1),(2$'$),(3) contribute $\ll Q^{-c}\norm W_{C^A}Ts_0$.
+After these steps the $\beta$-domain and the factors $r^*/\varphi(r^*)$ and $\Upsilon_K$ do not depend on $s$, so the integration against $W(s-s_0)$ is
+legitimate. What remains is $2\Upsilon_KC_0\norm W_{C^A}\,T\,\mathfrak Z$ and the principal-arc term $4\Upsilon_K\norm W_\infty(U+o(1))\ll(\log K)T\norm W_{C^A}$.
+By Lemmas~\ref{lem:shell-6a} and~\ref{lem:shell-6d}, relative to $\norm W_{C^A}Ts_0$:
+the low and bulk zeros give $\ll N_0^{-c}$; the mid zeros give $\ll\log K\log\log Q\,e^{-(2-\mathfrak c)X_0}$, since the single window factor $\log N_0$ is
+$\asymp s_0$; the near zeros give $\ll\log K\log\log Q\,(1+X_0)^2e^{2(\mathfrak c-1)_+X_0}/\log Q$. Put $e^{X_0}=(\log Q)^{\eta_1}$. If $1<\mathfrak c<2$, the balance
+$\eta_1(2-\mathfrak c)=1-2\eta_1(\mathfrak c-1)$ gives $\eta_1=1/\mathfrak c$ and the rate $(\log Q)^{-(2-\mathfrak c)/\mathfrak c}$ up to powers of $\log\log Q$, which are absorbed
+by taking $\theta<\theta(\alphap)$ and $\eps''$ small. If $\mathfrak c\le1$, take $X_0=(2-\mathfrak c)^{-1}\log\log Q$: the rate is $(\log\log Q)^{O(1)}/\log Q$, and
+$\theta<1=\theta(\alphap)$. In both cases $X_0=O(\log\log Q)$, so $5X_0\le s_0$ for large $Q$, as the near bound of Lemma~\ref{lem:shell-6d} requires. The principal-arc term is $\ll(\log K)T\ll(\log\log Q/\log Q)Ts_0$. Every term is linear in $\norm W_{C^A}$ (and
+$\norm W_\infty\le\norm W_{C^A}$).
+\end{proof}
+\emph{Changes from the working draft:} the right side is $\norm W_{C^A}Ts_0$ rather than $\eta_Q\int W\norm a^2$, since the transfer below needs a bound
+linear in $\norm W_{C^A}$ and $\int W_j\norm a^2\asymp\gwin(j)Ts_0$ would need a lower bound on the mass of $W_j$ that does not hold uniformly; the rate is stated for every
+$\theta<\theta(\alphap)$; $K$ and $\epsilon$ are explicit. \emph{Formalisation:} \texttt{ZetaShell.ShellS.shell\_S}, with this statement for the near
+polynomial not cut at $X$ (so without the condition $s_0\le\log X-2$) and with $B\ge1$, which implies the statement printed here, derived from four
+nodes: S1, the reduction to zero sums through Lemma~\ref{lem:shell-star} and Proposition~\ref{prop:shell-Z}; S2, the zero side through
+Lemmas~\ref{lem:shell-6a} and~\ref{lem:shell-6d}; S3, the family errors; and S4, the elementary terms. In the released library all four are proved (S1
+from the corrected statement of Lemma~\ref{lem:shell-star} by a kernel-checked implication, \texttt{S1\_ring\_to\_zeros\_of\_astar}; S2 from
+Lemma~\ref{lem:shell-6a} and the corrected Lemma~\ref{lem:shell-6d}), and \texttt{shell\_S} is kernel-checked, with (J) and (M) as its hypothesis
+\tagL.
+
+\emph{Assembly, pointwise in $s$.} Let $\log Q+4\le s\le\alpha''\log Q$ with $s\le\log X-1$, and $S=S^{\rm near,P}$. Partition $[0,1)$ into (i) the complement of $\mathcal S$ minus the
+$\delta$-neighbourhood $\mathcal X_\delta$ of $\mathcal X$; (ii) the rings of $r\le R_1$; (iii) the holes of $r\le R_1$ minus $\mathcal X_\delta$; (iv) $\mathcal X_\delta$. The rings of
+distinct $a/r$ are disjoint because $2KR_1\le Q$, and (i) is disjoint from the holes of $r\le R_0$ and from all rings. By Lemmas~\ref{lem:shell-1}, \ref{lem:shell-3}
+and~\ref{lem:shell-2}: $(D^{\Om}_\delta)^+\le H_{\mathfrak w}(1+E_g)$ on (i), with $E_g$ the bracket of Lemma~\ref{lem:shell-2}(a); $\le\norm\Om_\infty(Q^2+N/\epsilon)=O(Q^2)$ on (ii) and (iv);
+$=0$ on (iii). With Lemma~\ref{lem:shell-1prime}, for any $\eta_0>0$,
+\begin{multline}\label{eq:shell-assembly}
+\mathbf F(s)\le(1+\eta_0)\Bigl[\abs{\FQ}(1+E_g)\bigl(\norm a^2-\mathrm{Hole}-\mathrm{Ring}\bigr)\\
++Q^2(1+o(1))\bigl(\mathrm{Ring}+\mathrm{Edge}\bigr)+2\pi\sinh\kappa(\epsilon Q^2+N)\norm a^2\Bigr]\\
++(1+\eta_0^{-1})\,C\abs{\FQ}\,O\bigl((c\kappa T)^{-1}+(\delta_1^2T\log Q)^{-1}\bigr)\norm a^2,
+\end{multline}
+where $\mathrm{Edge}:=\int_{\mathcal X_\delta}\abs S^2=o(\norm a^2)$ by Lemma~\ref{lem:shell-F1}. By Lemma~\ref{lem:shell-4}, at the design width $K=\Lc(\log\Lc)^2$ of Theorem~\ref{thm:shell-K},
+$\norm a^2-\mathrm{Hole}\le U(\Lc+\log K+O(1))$. For the sharp family $\norm\Om_\infty\le1$ by Tao's inequality; without it, the ring points have $q>Q/K$, so
+$\abs{\Om(q)}\le1+\log K$ there, which costs $O(\log K)$ times an $o(1)$ quantity \tagM. \emph{Formalisation:} this statement, in the form that Theorem~\ref{thm:shell-K}
+uses ($K=\Lc(\log\Lc)^2$, $\epsilon=1/\Lc$, with Lemma~\ref{lem:shell-4} applied), is \texttt{AS\_pointwise\_corr}, the corrected form of
+\texttt{AS\_pointwise}, which adds $\alpha''<\lambda$ (Appendix~\ref{app:corr}) \tagL; the first form is kept in the library, open, and not used.
+
+Divided by $\abs{\FQ}\norm a^2=\abs{\FQ}U(s+O(1))$:
+\begin{multline}\label{eq:shell-pointwise}
+\frac{\mathbf F(s)}{\abs{\FQ}\norm a^2}\le\frac{\Lc+\log K+O(1)}s+C_Q\frac{\mathrm{Ring}(s)+\mathrm{Edge}(s)}{\norm{a(s)}^2}\\
++O\bigl(E_g+\epsilon\sinh\kappa+N/Q^2+(c\kappa T)^{-1/2}+(\delta_1^2T\log Q)^{-1/2}\bigr).
+\end{multline}
+
+\begin{theorem}[Theorem K: the Shell kernel]\label{thm:shell-K}
+Assume \textup{(J)} and \textup{(M)}. Let $1<\lambda<2$, fix $1<\alphap<5/3$ with $\alphap<\lambda$, let the window have ramp width $w\le(\lambda-\alphap)\Lc/8$ (the design has $w=o(\Lc)$,
+\S\ref{ssec:bandwidth}(iii)), and take $K=\Lc(\log\Lc)^2$, $\epsilon=1/\Lc$; these satisfy the
+ranges of Theorem~\ref{thm:shell-S} with $B=2$. Define the weight on the out-zone
+$O=\{(1-\delta')\log Q<\abs s\le\log X\}$ by
+\[
+\omega_K(s):=\begin{cases}C_Q,&s<0\ \text{or}\ (1-\delta')\log Q<s\le\log Q+4,\\ \Lc/s,&\log Q+4<s\le\alphap\Lc,\\ C_Q\Lc/s,&\alphap\Lc<s\le\log X.\end{cases}
+\]
+Then for every $\theta<\theta(\alphap)$ there is $c$ such that for large $Q$ (on $s\le-(1-\delta')\log Q$ one has $\norm{a(s)}^2=O(1)$, so that part of the right side is negligible)
+\[
+\int_O\gwin(s)\,\mathbf F(s)\,ds\le\bigl(1+c(\log Q)^{-\theta}\bigr)\abs{\FQ}\int_O\gwin(s)\norm{a(s)}^2\,\omega_K(s)\,ds .
+\]
+\end{theorem}
+In $\alpha$-units, since $\norm{a(s)}^2=U(s+O(1))$, the weight $\omega_K$ is the kernel $C\abs\alpha$ on the strip $\Sigma_Q=\{(1-\delta')\log Q<s\le\log Q+4\}$ (width
+$O(\log\log Q/\log Q)$), the kernel $1$ on $(\log Q+4)/\Lc<\alpha\le\alphap$, and the kernel $C$ on $(\alphap,\lambda]$.
+
+\begin{proof}
+\emph{The strip and $O^-$.} On $\Sigma_Q$, Theorem~\ref{thm:shell-S} is not available ($s_0\ge\log Q+3$ is needed by Lemma~\ref{lem:shell-5c}), and the pointwise
+large sieve $\mathbf F\le(Q^2+\pi X)\norm a^2$ is kept. The same bound is used on $O^-:=O\cap(-\infty,0)$, that is, for $s\le-(1-\delta')\log Q$, where
+$\abs{\DT(s-\log n)}\le2/(\abs s+\log n)$ gives $\norm{a(s)}^2\le\pi^{-2}\sum_{n\le X}\Lam(n)^2/(n(\abs s+\log n)^2)=O(1)$. (This fails near $s=0$, where
+$\norm{a(s)}^2$ grows like $\log\log X$, but $s=0$ is not in the out-zone. The half $B_\chi$ does not occur in $\mathbf F$; its mirror is used in Step~3 of
+\S\ref{sec:proof}.)
+
+\emph{On $(\log Q+4,\alphap\Lc]$.} Multiply~\eqref{eq:shell-pointwise} by $\gwin\ge0$ and integrate. The first term is $\Lc/s\cdot(1+O(\log K/\Lc))$. The Ring term is
+handled by Theorem~\ref{thm:shell-S} through the transfer: write $1=\sum_jW_0(s-j)$ with $0\le W_0\in C_c^\infty((-1,1))$ (for instance $W_0=\mathfrak b/\sum_i\mathfrak b(\cdot-i)$ with $\mathfrak b\in C_c^\infty((-1,1))$, $\mathfrak b\ge0$, $\mathfrak b>0$ on $[-\frac12,\frac12]$), and $W_j:=W_0(\cdot-j)\gwin$. Since $\varphi=p(u/\Lc)\varphi_{\rm flat}$
+with ramp width $w\ge1$, H4 and Leibniz give $\norm{\gwin^{(i)}}_\infty\le\norm{(\varphi^2)^{(i)}}_1\norm{\varphi^2}_\infty\ll_i1$ for $1\le i\le A$, and $\gwin$ is bounded
+below on the zone: $\varphi\ge p(\lambda/2)\ge\frac16$ on $\abs u\le L/2-w$, so $\gwin(s)\ge6^{-4}(L-\abs s-2w)\ge6^{-4}(\lambda-\alphap)\Lc/2$ for
+$\abs s\le\alphap\Lc+2$ and large $Q$, since $w\le(\lambda-\alphap)\Lc/8$. Hence $\sup_{\abs{u-j}\le1}\gwin(u)\le\gwin(j)+O(1)\ll\gwin(j)$ and $\norm{W_j}_{C^A}\ll\gwin(j)$, and Theorem~\ref{thm:shell-S} applied with $B=2$, with some
+$\alpha''\in(\alphap,5/3)$ in place of $\alphap$ and with $\eps''$ chosen so that $\theta<\theta(\alpha'')$ (possible because $\theta(\cdot)$ is continuous and
+$\theta<\theta(\alphap)$), and with $Q$ so large that $\alphap\Lc+1\le\alpha''\log Q$ (so that every window meeting the zone has its centre in
+$[\log Q+3,\alpha''\log Q]$, and below $\log X-2$ since $\alphap<\lambda$), gives $\sum_j\int W_j\,\mathrm{Ring}\ll(\log Q)^{-\theta}\sum_j\gwin(j)Tj\ll(\log Q)^{-\theta}\int\gwin\norm a^2$. Windows meeting $[\log Q+4,\infty)$
+have centre $\ge\log Q+3$, and over-counting inside the strip is harmless since $\mathrm{Ring}\ge0$. The other terms of~\eqref{eq:shell-pointwise} are
+$O(\log\Lc/\Lc)$ with $K=\Lc(\log\Lc)^2$, $\epsilon=1/\Lc$, $\delta_1=T^{-1/3}$.
+
+\emph{On $(\alphap\Lc,\log X]$.} Here Lemma~\ref{lem:K}(i) is used, with its width $K_1=\Lc$, integrated against $\gwin$ over $(\alphap\Lc,\log X]$ as in the first display of \S\ref{ssec:K-proof}(d): $\mathbf F\le Q^2(\norm a^2-\mathrm{Hole})+\dots$ gives the weight
+$C_Q\Lc/s$ up to $1+O(\log\Lc/\Lc)$. On the top edge $\log X-1<s\le\log X$ the hole is not available and the large sieve gives $C_Q$, about $\lambda$ times
+$C_Q\Lc/s$; since $\int_{\log X-1}^{\log X}\gwin=O(\Lc^{-1})\int_O\gwin$, the integrated statement holds.
+\end{proof}
+
+\emph{Changes from the working draft:} the draft's Theorem~K stated the kernel $\abs\alpha$ on $(\log Q+4,\Lc]$, while the proof gives
+$(\Lc+\log K+O(1))/s$, which is larger by $1+O(\log\log Q/\log Q)$ on an $\alpha$-interval of width $O(\log\log Q/\log Q)$; the weight $\omega_K$ records what is proved.
+The draft's pointwise claim beyond $\alphap$ fails on the top edge, and the statement is integrated. The draft's ``by the symmetry $s\mapsto-s$, take $s>0$'' is not a
+symmetry of $\mathbf F$; the negative side of the out-zone is handled by the large sieve above, and the half $B_\chi$ by the mirror in Step~3 of \S\ref{sec:proof}. ``$\int_{\rm out}$'' in the draft means the out-zone $O$ of~\cite[Lemma~4.3]{DSouza}.
+None of these changes the rate or the constant. \emph{Formalisation:} \texttt{ZetaShell.ShellK.thmK}, derived from four leaves (the strip, the Shell zone, the killed
+zone and integrability); it is stated at the design point ($\lambda=191/100$, profile S53-L75, $w=1$) and with $C$ in place of $C_Q$ in the weight, a
+difference absorbed in $1+c(\log Q)^{-\theta}$. In the released library the strip and integrability are proved, the killed zone is derived from a
+proved pointwise part and the integrated part \texttt{K3b\_integrated}, and the Shell-zone part \texttt{K2\_shellZone} is derived from the corrected
+assembly and Theorem~\ref{thm:shell-S}, applied on unit windows as in the proof above (the transfer node \texttt{KT\_transfer} is proved as well but
+not used); \texttt{thmK} is kernel-checked, with (J) and (M) as its hypothesis \tagL.
+
+\begin{remark}[The moduli $Q/2<q\le Q$: not claimed]\label{rem:shell-dyadic}
+Let $\FQ^{\rm dy}\subset\FQ$ be the characters with $Q/2<q\le Q$. The same argument, run at $\lambda=93/50$ with the profile D53-L75 of \S\ref{sec:cert}, should
+give the constant $0.9031776196$ for $\FQ^{\rm dy}$, with $\omega=\mathbf 1_{(Q/2,Q]}$ in Lemma~\ref{lem:shell-1}, the limit $27/(2\pi^4)$ in
+Lemma~\ref{lem:shell-2}(a) and the constant $2\pi^4/27$ beyond $\alphap$. We do not claim it. What exists is exactly this: the certificate
+$2-\Bfun_{\alphap}(v_p)=0.90317761969178\ldots$ for D53-L75 is a Lean theorem (\texttt{ZetaShell.certD53}; \S\ref{sec:cert}); nothing else has been
+checked or formalised at the bandwidth $93/50$; the bandwidth analysis of \S\ref{ssec:bandwidth} does not cover the dyadic family; and the dyadic
+design layer (moments, Gevrey gate, ends constant, zone slope, existence of the design) has not been computed.
+\end{remark}

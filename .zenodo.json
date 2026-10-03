@@ -1,0 +1,14 @@
+{
+  "upload_type": "software",
+  "title": "Simple zeros: Lean formalisation of zero-proportion theorems for ζ and for families of Dirichlet L-functions",
+  "creators": [
+    {"name": "D'Souza, Oliver"}
+  ],
+  "description": "A Lean 4 / Mathlib formalisation of zero-proportion theorems for the Riemann zeta function and for families of Dirichlet L-functions, built as a modified copy of the Lean artifact zeta-23-lean. It contains Lean theorems, depending only on Lean's three standard axioms, that at least 0.675158622 of the zeros of the Riemann zeta function with T < γ ≤ 2T are simple and at least 0.837579311 are distinct as T → ∞ (with the K = 5 certificate replayed in the Lean kernel), further results for ζ under displayed finite numerical certificates, and, for the family of primitive Dirichlet characters of conductor at most Q, a proportion 0.7235 − o(1) of simple zeros on the critical line unconditionally and 0.9059137927 − o(1) under the zero-density estimates of Jutila and Montgomery, displayed as the theorem's one hypothesis. The release also contains the certificate data, certifier scripts and logs, the 1,478-module kernel replay, the two accompanying papers (their text under CC BY 4.0, the code under Apache-2.0), and the build logs and axiom censuses of the release commit.",
+  "license": "Apache-2.0",
+  "keywords": ["Lean 4", "Mathlib", "Riemann zeta function", "simple zeros", "Dirichlet L-functions", "formal verification"],
+  "version": "1.0.0",
+  "related_identifiers": [
+    {"identifier": "https://github.com/anthropics/zeta-23-lean", "relation": "isDerivedFrom", "scheme": "url"}
+  ]
+}

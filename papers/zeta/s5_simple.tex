@@ -1,0 +1,282 @@
+\section{Simple and distinct zeros}\label{sec:simple}
+
+Throughout this section $\psi(s)=\cos(1.6s)$, a window in the sense of \S\ref{ssec:family} ($\cos0.8\le\psi\le1$), with
+$H=H(\psi)=0.67198155100037074\ldots$ and $v_\psi(s)=\cos(8s/5)/(\frac54\sin\frac45)$. The kernel $k=k_\psi$ is given by~\eqref{eq:kcos} with
+$\alpha=1.6$.
+
+\subsection{The all-marks local inequality}
+\begin{definition}[All-marks local inequality]\label{def:LIm}
+Let $K\ge2$, let $\gamma_{s,i}$ and $\mu_i\ge0$ be position weights and penalties as in Definition~\ref{def:LI}, $\nu:=\sum_i\mu_i$, and let
+$b_i(1),b_i(2)\in\R$ ($1\le i\le K$) be \emph{site credits}, with no sign condition; put $a_j:=\sum_ib_i(j)$. For a \emph{mark pattern}
+$\bm\in\{1,2\}^K$ and $g\in[0,\infty)^{K-1}$ let
+\[
+F_{\bm}(g):=\sum_{s=1}^{K-1}\sum_{i=1}^{K-s}\gamma_{s,i}\,m_im_{i+s}\,k(g_i+\dots+g_{i+s-1})^2+\sum_{i=1}^{K-1}\mu_ig_i .
+\]
+We say that $(\mathrm{LI}_{\mathrm m})$ holds for $k$ with data $(\gamma,\mu,b)$ if $F_{\bm}(g)\ge C(\bm):=\sum_ib_i(m_i)$ for every $\bm$ and
+every $g\in[0,\infty)^{K-1}$.
+\end{definition}
+
+The marks are multiplicities capped at $2$. With $\bm\equiv\mathbf1$ this is Definition~\ref{def:LI} with $c=a_1$.
+
+\subsection{The slack of an on-line set}
+Let $\cO$ be a finite set of distinct on-line zeros with $\gamma\in I'$ and multiplicities $m_\rho$. Put $d_\rho:=\norm{u_\rho}^2=1-\delta_\rho$,
+\[
+G_\cO:=\sum_{\rho\in\cO}m_\rho u_\rho u_\rho^{\tsp},\qquad M_\cO:=\big(\sqrt{m_\rho m_{\rho'}}\,\langle u_\rho,u_{\rho'}\rangle\big)_{\rho,\rho'\in\cO},
+\qquad E(\cO):=\sum_{\rho\ne\rho'}(M_\cO)_{\rho\rho'}^2
+\]
+(ordered pairs), and $\Slack(\cO):=s_1(\cO)-2\tr G_\cO+\HS{G_\cO}^2$, where $s_j(\cO)$ is the number of sites of multiplicity $j$. The matrices
+$G_\cO$ and $M_\cO$ have the same nonzero spectrum.
+
+\begin{lemma}[On-line slack identity]\label{lem:onslack}
+Exactly,
+\begin{gather*}
+\Slack(\cO)=\sum_{\rho\in\cO}\beta_\rho+E(\cO),\\
+\beta_\rho:=\mathbf 1_{m_\rho=1}-2m_\rho d_\rho+m_\rho^2d_\rho^2\ \ge\ m_\rho(m_\rho-2)\mathbf1_{m_\rho\ge3}-2m_\rho(m_\rho-1)\,\delta_\rho .
+\end{gather*}
+\end{lemma}
+
+\begin{proof}
+$\tr G_\cO=\sum m_\rho d_\rho$ and $\HS{G_\cO}^2=\HS{M_\cO}^2=\sum_\rho m_\rho^2d_\rho^2+E(\cO)$. For $m=1$, $\beta=\delta^2\ge0$. For $m\ge2$,
+$\beta=f(d)$ with $f(x)=m^2x^2-2mx$, and $f(1)-f(d)=m(1-d)(m(1+d)-2)\le2m(m-1)\delta$.
+\end{proof}
+
+With every $d_\rho=1$ and all zeros on the line, this says that the slack of the rank--trace inequality is exactly the Gram energy among all
+on-line zeros plus $m(m-2)$ for each zero of multiplicity $m\ge3$; the stability term of Lemma~\ref{lem:stab} is the part of this energy
+among simple zeros.
+
+\begin{proposition}[Aggregation]\label{prop:agg}
+Assume $(\mathrm{LI}_{\mathrm m})$ holds for $k_\psi$ with data $(\gamma,\mu,b)$. Let $\cO$ be as above; its Gram entries
+$\langle u_\rho,u_{\rho'}\rangle$ are symmetric in $\rho,\rho'$. Let $s_{\ge2}(\cO)$ be the number of its sites with $m_\rho\ge2$ and
+$B_b:=\sum_i(\abs{b_i(1)}+\abs{b_i(2)})$. Then
+\[
+E(\cO)\ \ge\ a_1s_1(\cO)+a_2s_{\ge2}(\cO)-\nu\Lambda-16K^2\Big(\eps_T\abs\cO+\sum_{\rho\in\cO}\delta_\rho\Big)-2KB_b .
+\]
+\end{proposition}
+
+\begin{proof}
+Order $\cO$ by ordinate, cap the marks, $\tilde m:=\min(m,2)$, and let $W$ run over the runs of $K$ consecutive sites, with gap vector $g_W$.
+Put $F^\varphi(W):=\sum_{s,i}\gamma_{s,i}\tilde m_{W_i}\tilde m_{W_{i+s}}\langle u_{W_i},u_{W_{i+s}}\rangle^2+\sum_i\mu_ig_{W,i}$, and let
+$F^\psi(W)=F_{\tilde\bm_W}(g_W)$ be the same with $k_\psi(x_{W_i}-x_{W_{i+s}})^2$ in place of $\langle u,u'\rangle^2$.
+\emph{Upper bound.} A pair of sites at index distance $s<K$ occurs in the runs containing it with total weight at most $\sum_i\gamma_{s,i}=2$, and
+$2\tilde m\tilde m'\langle u,u'\rangle^2\le mm'(\langle u,u'\rangle^2+\langle u',u\rangle^2)$ is the contribution of its two ordered pairs to
+$E(\cO)$ --- this is where the symmetry is used; each gap receives at most $\nu$, and the gaps add up to at most $\Lambda$. So
+$\sum_WF^\varphi(W)\le E(\cO)+\nu\Lambda$.
+\emph{Transfer.} By Lemma~\ref{lem:residue}, $\abs{\langle u,u'\rangle-k_\psi}\le\eps_T+(\delta\delta')^{1/2}$ and both are at most $1$ in absolute
+value, so $\abs{F^\varphi(W)-F^\psi(W)}\le8\sum_{s,i}\gamma_{s,i}(\eps_T+\frac12(\delta_{W_i}+\delta_{W_{i+s}}))$. A site lies in at most $K$ runs,
+and $\sum_{s,i}\gamma_{s,i}=2(K-1)$; hence $\sum_W\abs{F^\varphi-F^\psi}\le16K^2(\eps_T\abs\cO+\sum\delta_\rho)$.
+\emph{Lower bound.} $F^\psi(W)\ge C(\tilde\bm_W)$ for every run, and $\sum_WC(\tilde\bm_W)=a_1s_1+a_2s_{\ge2}$ up to the first and last $K-1$
+sites, which miss positions; the defect is at most $2KB_b$.
+\end{proof}
+
+The symmetry cannot be dropped: for a general matrix $C$ in place of the Gram entries, and a kernel that is not even, the inequality fails
+(with $K=2$, $\gamma_{1,1}=2$, $\mu_1=1$, $b\equiv1$, the kernel $k(t)=\sqrt{1-t/2}$ on $[0,2]$ and $0$ elsewhere, including $t<0$, and $100$ simple
+sites at spacing $1.5$ with entries $C_{pq}=k(x_p-x_q)$, the right side of the inequality is $\frac{71}2$ while $E=\frac{99}4$; with $C$
+symmetrised, $E=\frac{99}2$).
+
+\subsection{Removing off-line pairs and heavy zeros}\label{ssec:removal}
+Split the zeros with $\Re\gamma\in I'$ into the \emph{light} on-line zeros $\cO_L$ (multiplicity $1$ or $2$; $s_1$ and $s_2$ of them), with
+$G_L:=G_{\cO_L}$ and $M_L:=M_{\cO_L}$; the \emph{heavy} on-line zeros (multiplicity $\ge3$; $s_H$ distinct ones, $N_H$ with multiplicity), with
+$G_H:=\sum m_\rho u_\rho u_\rho^{\tsp}$; and the off-line pairs ($p$ of them, $p_1$ simple, $N_{\mathrm{off}}$ zeros with multiplicity), with
+$G_{\mathrm{off}}:=G-G_L-G_H$. Put $Q:=G_H+G_{\mathrm{off}}$, $b_Q:=s_H+p$ and $N_Q:=N_H+N_{\mathrm{off}}\ge3s_H+2p$, so that
+$N(I')=s_1+2s_2+N_Q$.
+
+\begin{lemma}[Pair and heavy removal]\label{lem:removal}
+$n_+(Q)\le b_Q$ and $n_-(Q)\le p$. For a count $X$ of zeros with $\Re\gamma\in I'$ let $X_L$ be its part carried by $\cO_L$,
+$\Slack_X:=X-2\tr G+\HS G^2$ and $\Slack^L_X:=X_L-2\tr G_L+\HS{G_L}^2$. Then
+\begin{gather*}
+\Slack_X\ \ge\ \Slack^L_X+(X-X_L)+2(N_Q-2b_Q)-2E_T-\sum_{i\le p}\big(\lambda_i(M_L)-2\big)_+^2,\\
+E_T:=(N(I')-\tr G)_+=o(N).
+\end{gather*}
+\end{lemma}
+
+\begin{proof}
+Each pair block has $n_\pm\le1$ (AF2), $G_H\succeq0$ has rank at most $s_H$, and $n_\pm$ are subadditive; $G_H$ adds nothing to $n_-$. By (AF1),
+$\tr G_L\le s_1+2s_2$, so $\tr Q=\tr G-\tr G_L\ge N_Q-E_T$, and $E_T=o(N)$ by (AF3). Apply Lemma~\ref{lem:pairrem} with $G=G_L$, whose nonzero
+eigenvalues are those of $M_L$; its right side is increasing in $\tr Q$.
+\end{proof}
+
+Only (AF1), (AF3) and the inertia of the pair blocks enter; no pair vector is ever evaluated, so no estimate at complex arguments is needed.
+
+\subsection{The on-line spectral condition}
+Given claims $a_1,a_2$ with $a_1<1$, let $c_*:=2-2a_1$, $\lambda_c:=2+\sqrt{c_*}$, and let $\kappa$, $\ch$ be as in Theorem~\ref{thm:loc}. Put
+\[
+\mg_L:=\Slack(\cO_L)-a_1s_1-a_2s_2+\nu\Lambda .
+\]
+The \emph{on-line spectral condition} is the statement $\ch(M_L)\le\mg_L+o(N)$. It is proved in Theorem~\ref{thm:OLL} from three
+ingredients: room on separated sets, tight chains, and aggregation. The device of Lemmas~\ref{lem:room} and~\ref{lem:tight}, close pairs
+paid for locally and a separated set whose Gram norm is bounded by a Fourier majorant, was published earlier, for simple zeros on the line
+and with a sinc-square majorant, by \mbox{gfreund123} in pull request~\#888 to \mbox{GettysburgResearch/riemann} (14~September~2026)~\cite{Gettysburg888}
+[V$\sim$]; the priority is theirs.
+
+\begin{lemma}[Separated sites have room]\label{lem:room}
+Let $\cB$ be an even, integrable function on $\R$ with $\cB\ge0$ on $\R$, $\cB\ge v_\psi$ on $[-\frac12,\frac12]$, and
+$\widehat\cB(t):=\int\cB(s)\cos(2\pi ts)\,ds=0$ for $\abs t\ge1$; let $\beta_*\ge\sup_{3/4\le t\le1}\abs{\widehat\cB(t)}$. If $\cR\subset\cO_L$
+has normalised ordinates pairwise at least $\frac34$ apart, then
+$\lambda_{\max}(M_\cR)\le(1+\eps'_T)\,(2\widehat\cB(0)+4\beta_*)$.
+\end{lemma}
+
+\begin{proof}
+For $y\in\R^\cR$, by Lemma~\ref{lem:residue}(i)--(ii) (dropping $-\widehat E\preceq0$),
+\begin{align*}
+\langle y,M_\cR y\rangle&\le\int v_\varphi\Big|\sum_ay_a\sqrt{m_a}\,e(x_as)\Big|^2ds\\
+&\le(1+\eps'_T)\int_\R\cB\,\Big|\sum_ay_a\sqrt{m_a}\,e(x_as)\Big|^2ds=(1+\eps'_T)\langle y,\mathcal Ny\rangle,
+\end{align*}
+with $e(u)=e^{2\pi iu}$ and $\mathcal N_{ab}:=\sqrt{m_am_b}\,\widehat\cB(x_a-x_b)$. Since $\widehat\cB$ vanishes on $\abs t\ge1$ and the sites are
+pairwise $\ge\frac34$ apart, each site has at most one other site within distance $<1$ on each side, at distance in $[\frac34,1)$. So each row of
+$\mathcal N$ has diagonal entry $\le2\widehat\cB(0)$ and at most two off-diagonal entries, each of absolute value $\le2\beta_*$; Gershgorin gives
+$\lambda_{\max}(\mathcal N)\le2\widehat\cB(0)+4\beta_*$.
+\end{proof}
+
+\paragraph{The majorant.} Let $\beta_0,\dots,\beta_{59}$ be sixty binary64 numbers, read as exact rationals (the certificate file of
+Table~\ref{tab:certs}), and
+\[
+\cB(s):=\tfrac1{60}\sinc(\pi s/60)^2\,P(s),\qquad P(s):=\beta_0+2\sum_{j=1}^{59}\beta_j\cos(\pi js/30).
+\]
+From $\int\sinc(\pi u)^2\cos(2\pi\omega u)\,du=(1-\abs\omega)_+$ one gets $\widehat\cB(t)=\sum_{\abs j\le59}\beta_{\abs j}(1-\abs{60t-j})_+$, the
+piecewise-linear interpolant of the $\beta_j$ at the nodes $j/60$, which vanishes for $\abs t\ge1$; so $\int\cB=\widehat\cB(0)=\beta_0=1.5556524027186915$,
+and, since $\frac34=\frac{45}{60}$, $\sup_{[3/4,1]}\abs{\widehat\cB}=\max_{45\le j\le59}\abs{\beta_j}=\abs{\beta_{52}}=0.0237647699514\ldots=:\beta_*$. In
+exact rational arithmetic $2\beta_0+4\beta_*=3.2063638852\ldots<\frac{33}{10}$. The two remaining conditions, $P\ge0$ on $[0,30]$ ($P$ is even and
+$60$-periodic; its minimum is about $1.12\cdot10^{-3}$, near $s=3.50$) and $\cB\ge v_\psi$ on $[0,\frac12]$ (margin about $1.95\cdot10^{-5}$, near
+$s=0.4994$), are finite computations, certified in Section~\ref{sec:cert}. Hence, as soon as $\eps'_T\le\frac1{40}$,
+\begin{equation}\label{eq:room}
+\lambda_{\max}(M_\cR)\le\tfrac{41}{40}\cdot\tfrac{33}{10}<3.4\le\lambda_c
+\end{equation}
+for the claims used below ($c_*\ge1.96$).
+
+\begin{lemma}[Tight chains pay for themselves]\label{lem:tight}
+Let $\cT\subset\cO_L$ be a union of $n_{\mathrm{ch}}$ maximal \emph{tight chains}: maximal runs of consecutive sites with consecutive gaps
+$<\frac34$, each with at least two sites. Let $k_*\ge0$ with $k_\varphi(t)\ge k_*$ for $0\le t<\frac34$, and put
+\[
+\varpi(k):=\min\Big\{2k^2-2a_1,\ 4k^2-2a_2,\ \big(\tfrac12+(\tfrac14+2k^2)^{1/2}\big)^2-1-a_1-a_2\Big\}.
+\]
+Assume $a_1,a_2\ge0$ and $\varpi(k_*)\ge0$. Then
+\[
+\Delta_\cT:=\tr(2I-M_\cT)_+^2-(1+a_1)s_1(\cT)-a_2s_2(\cT)\ \ge\ n_{\mathrm{ch}}\big(\varpi(k_*)-\max(a_1,a_2)\big).
+\]
+\end{lemma}
+
+\begin{proof}
+$f(x):=(2-x)_+^2$ is convex and nonincreasing. Split each chain greedily into consecutive pairs and at most one singleton. By
+Lemma~\ref{lem:pinch}, $\tr f(M_\cT)\ge\sum_w\tr f(M_w)$ over the blocks. By Lemma~\ref{lem:residue}(i),
+$M_w=D_w^{1/2}(K^\varphi_w-\widehat E_w)D_w^{1/2}\preceq M'_w:=D_w^{1/2}K^\varphi_wD_w^{1/2}$ with $D_w=\operatorname{diag}(m)$ and $K^\varphi_w$ the
+kernel matrix; as $f$ is nonincreasing, Weyl gives $\tr f(M_w)\ge\tr f(M'_w)$. For a pair at gap $<\frac34$ with $k:=k_\varphi(\text{gap})\in[k_*,1]$,
+the eigenvalues of $M'_w$ are $1\pm k$, $2\pm2k$, $\frac32\pm(\frac14+2k^2)^{1/2}$ for marks $(1,1)$, $(2,2)$, $(1,2)$, so $\tr f(M'_w)$ minus the
+claims of the block is $2k^2-2a_1$, $4k^2-2a_2$, $(\frac12+(\frac14+2k^2)^{1/2})^2-1-a_1-a_2$ respectively, each increasing in $k^2$, hence
+$\ge\varpi(k_*)$. A singleton costs at least $-a_1$ (simple: $f(d)\ge1$) or $-a_2$ (double: $f(2d)\ge0$). A chain with $q\ge1$ pairs therefore
+contributes at least $q\varpi(k_*)-\max(a_1,a_2)\ge\varpi(k_*)-\max(a_1,a_2)$ if it has a singleton (using $\varpi(k_*)\ge0$), and $q\varpi(k_*)\ge\varpi(k_*)-\max(a_1,a_2)$
+if not (using $a_1,a_2\ge0$).
+\end{proof}
+
+Both hypotheses are needed. Take $k_*=0$, the kernel equal to $1$ at $0$ and $0$ elsewhere, and $\widehat E=0$. With the $K=7$ claims (so
+$a_1,a_2>0$ but $\varpi(0)<0$) and one chain of six simple sites at gaps $\frac12$, the left side is $-6a_1=-0.10949\ldots$ and the right side
+$-3a_2=-0.07008\ldots$. With $a_1=a_2=-\frac1{10}$ (so $\varpi(0)=\frac15\ge0$) and one chain of two simple sites, the left side is $\frac15$ and the right
+side $\frac3{10}$. Since $k_\psi$ is nonincreasing on
+$[0,1]$ ($k_\psi'(t)=-\int2\pi\sigma v_\psi(\sigma)\sin(2\pi t\sigma)\,d\sigma\le0$ there), Lemma~\ref{lem:residue}(ii) allows
+$k_*=k_\psi(\frac34)-\eps_T$, with $k_\psi(\frac34)=0.3556941746\ldots$. At $\eps_T=0$ the three entries of $\varpi$ are $0.2165399517$, $0.4593506235$ and
+$0.4206777378$ for the $K=7$ claims, and $\varpi-\max(a_1,a_2)=0.1931785717$ ($0.2118330717$ for $K=5$).
+
+\begin{theorem}[On-line spectral condition]\label{thm:OLL}
+Assume $(\mathrm{LI}_{\mathrm m})$ for $k_\psi$ with data $(\gamma,\mu,b)$, with $a_1,a_2\ge0$, $\lambda_c>\frac{33}{10}$ and
+$\max(a_1,a_2)<\varpi(k_\psi(\frac34))$. Let $\cT$ be the set of light sites that have another light site within normalised distance $<\frac34$, and $\cR:=\cO_L\setminus\cT$.
+Then, exactly,
+\begin{equation}\label{eq:OLLid}
+\mg_L-\Big[\HS{M_\cT-2I}^2+2\HS{M_{\cT\cR}}^2-\tr(2I-M_\cT)_+^2\Big]=\mg(\cR)+\Delta_\cT-2\sum_{\rho\in\cT}m_\rho\delta_\rho,
+\end{equation}
+with $\mg(\cR):=\Slack(\cR)-a_1s_1(\cR)-a_2s_2(\cR)+\nu\Lambda$; and for $T\ge T_0$,
+\[
+\ch(M_L)\ \le\ \mg_L+(16K^2+4)\sum_{\rho\in\cO_L}m_\rho\delta_\rho+16K^2\eps_T\abs{\cO_L}+2KB_b=\mg_L+o(N).
+\]
+\end{theorem}
+
+\begin{proof}
+\emph{Structure.} Any two sites of $\cR$ are at least $\frac34$ apart. Every site of $\cT$ has a site of $\cT$ within $\frac34$ that is adjacent to it in
+the order of $\cT$ (a closer partner lies in between), so $\cT$ is the disjoint union of its maximal tight chains.
+\emph{Localisation.} By Lemma~\ref{lem:room} and the majorant, $\lambda_{\max}(M_\cR)\le(1+\eps'_T)\frac{33}{10}<\lambda_c$ once $\eps'_T$ is small. After a permutation of indices, under which
+$\tr f$ is invariant, $M_L=\begin{pmatrix}M_\cT&M_{\cT\cR}\\M_{\cR\cT}&M_\cR\end{pmatrix}$, and Theorem~\ref{thm:loc} bounds $\ch(M_L)$ by the bracket
+in~\eqref{eq:OLLid}.
+\emph{The identity.} $E(\cO_L)=E(\cT)+E(\cR)+2\HS{M_{\cT\cR}}^2$ (ordered pairs), the claims are additive, $\HS{M_\cT-2I}^2=\sum_{\rho\in\cT}(m_\rho d_\rho-2)^2+E(\cT)$,
+and $(md-2)^2-\beta_\rho=\mathbf1_{m=1}+2m\delta$. Insert Lemma~\ref{lem:onslack} for $\Slack(\cO_L)$ and $\Slack(\cR)$.
+\emph{The bound.} Take $k_*:=k_\psi(\frac34)-\eps_T$ in Lemma~\ref{lem:tight} (valid since $k_\psi$ is nonincreasing on $[0,1]$); for $\eps_T$
+small, $\varpi(k_*)\ge\max(a_1,a_2)\ge0$ by the hypothesis and continuity, so $\Delta_\cT\ge0$. By Lemma~\ref{lem:onslack} ($\beta_\rho\ge-4\delta_\rho$
+for $m_\rho\le2$) and Proposition~\ref{prop:agg} applied to $\cO=\cR$ (removing sites only lengthens gaps, and $(\mathrm{LI}_{\mathrm m})$ holds for all
+$g\ge0$), $\mg(\cR)\ge-4\sum_\cR\delta_\rho-16K^2(\eps_T\abs\cR+\sum_\cR\delta_\rho)-2KB_b$. Finally $2\sum_\cT m_\rho\delta_\rho\le4\sum_\cT\delta_\rho$,
+and the error is $o(N)$ by Lemma~\ref{lem:residue}(iii)--(iv) and $\eps_T\to0$.
+\end{proof}
+
+The truncation matrix $\widehat E$ enters only with the favourable sign and through $\abs{\widehat E_{\rho\rho'}}\le(\delta_\rho\delta_{\rho'})^{1/2}$, and
+the charge is computed on the true matrix, so no perturbation bound for $M_L$ is needed. For the certificates used, the formal proof needs of
+the numerical constants only $k_\psi(\frac34)\ge\frac14$ (proved by the fundamental theorem of calculus and $3.14<\pi<3.15$; already $\varpi(\frac14)>\max(a_1,a_2)$
+for these claims), $\lambda_c\ge3.4$ and $2\beta_0+4\beta_*\le\frac{33}{10}$, not the more precise values quoted above.
+
+\subsection{Proof of Theorem~\ref{thm:main}}
+\begin{theorem}\label{thm:SigmaD}
+Let $\psi=\cos(1.6s)$ and suppose $(\mathrm{LI}_{\mathrm m})$ holds for $k_\psi$ with data $(\gamma,\mu,b)$ whose claims $a_1,a_2,\nu$ satisfy:
+$a_1,a_2,\nu\ge0$; $\lambda_c=2+\sqrt{2-2a_1}>\frac{33}{10}$; $\max(a_1,a_2)<\varpi(k_\psi(\frac34))$; $1-a_1+\frac{a_2}2>0$; and, for all integers $m\ge2$
+and $m'\ge3$,
+\begin{gather*}
+(4-a_2)m-4-c_*\ge0,\quad 2m(1-a_2+a_1)-4a_1+2a_2-c_*\ge0,\\
+(2-\tfrac{a_2}2)m'-4\ge0,\quad m'(1-a_2+a_1)-2-2a_1+a_2\ge0 .
+\end{gather*}
+Then
+\begin{gather*}
+\liminf_{T\to\infty}\frac{N^s(T,2T)}{N(T,2T)}\ge\Sigma:=\frac{H+\frac{a_2}2-\nu}{1-a_1+\frac{a_2}2},\\
+\liminf_{T\to\infty}\frac{N^d(T,2T)}{N(T,2T)}\ge D:=\frac{1+H+a_2-a_1-\nu}{2-2a_1+a_2}=\frac{1+\Sigma}2 .
+\end{gather*}
+\end{theorem}
+
+\begin{proof}
+Fix $\lambda\in(0,1)$ and let $X$ be $s_1+2p_1$ (the simple zeros with $\Re\gamma\in I'$: a simple off-line zero and its partner are both simple) or
+$s_1+s_2+s_H+2p$ (the distinct ones); they differ from $N^s(T,2T)$, $N^d(T,2T)$ by $O(\sqrt T\log T)$.
+
+\emph{Step 1.} By definition $X=2\tr G-\HS G^2+\Slack_X$, so (AF3) and (AF4) give $X\ge(H_\lambda-o(1))N+\Slack_X$.
+
+\emph{Step 2.} By Lemma~\ref{lem:removal}, the inequality $(\lambda-2)_+^2\le c_*+\kappa(\lambda)$, and Theorem~\ref{thm:OLL},
+\[
+\Slack_X\ \ge\ \big(\Slack^L_X-\Slack(\cO_L)\big)+a_1s_1+a_2s_2-\nu\Lambda+(X-X_L)+2(N_Q-2b_Q)-c_*p-o(N),
+\]
+where $\Slack^L_X-\Slack(\cO_L)=X_L-s_1$ is $0$ for simple zeros and $s_2$ for distinct zeros.
+
+\emph{Step 3.} For simple zeros compare the right side with $a_1X+\frac{a_2}2(N(I')-X)-\nu\Lambda$; for distinct zeros with
+$(2a_1-1-a_2)X+(1+a_2-a_1)N(I')-\nu\Lambda$. On the light zeros the two sides agree. Using $N(I')=s_1+2s_2+N_Q$, the remaining difference (available
+minus required) is a sum over objects:
+\begin{itemize}
+\item a simple off-line pair: $2-2a_1-c_*=0$, for both counts;
+\item an off-line pair of multiplicity $m\ge2$: $(4-a_2)m-4-c_*$, resp.\ $2m(1-a_2+a_1)-4a_1+2a_2-c_*$;
+\item a heavy on-line zero of multiplicity $m\ge3$: $(2-\frac{a_2}2)m-4$, resp.\ $m(1-a_2+a_1)-2-2a_1+a_2$;
+\end{itemize}
+all nonnegative by hypothesis. So $\Slack_X\ge a_1X+\frac{a_2}2(N(I')-X)-\nu\Lambda-o(N)$, resp.\
+$\Slack_X\ge(2a_1-1-a_2)X+(1+a_2-a_1)N(I')-\nu\Lambda-o(N)$.
+
+\emph{Step 4.} Insert into Step~1 with $N(I')=N+o(N)$ and $\Lambda\le N(1+o(1))$ (and $\nu\ge0$):
+$X(1-a_1+\frac{a_2}2)\ge(H_\lambda+\frac{a_2}2-\nu)N-o(N)$, resp.\ $X(2-2a_1+a_2)\ge(1+H_\lambda+a_2-a_1-\nu)N-o(N)$. Divide by the positive
+denominators and let $\lambda\to1^-$ (\S\ref{ssec:bandwidth}).
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The $K=5$ and $K=7$ certificates of Table~\ref{tab:allmarks} satisfy $(\mathrm{LI}_{\mathrm m})$ for $k_\psi$ (Section~\ref{sec:cert}) and the conditions of
+Theorem~\ref{thm:SigmaD} with wide margins: $\lambda_c\ge3.401$, $\varpi(k_\psi(\frac34))-\max(a_1,a_2)\ge0.193$, and every entry of the table in
+Step~3 for a multiple off-line pair or a heavy on-line zero is at least $0.97$ (the entry for a simple off-line pair is exactly $0$, by the
+choice of $c_*$). With $H=H(\cos1.6s)$, enclosed in an interval of width
+$4\cdot10^{-21}$ (the formal proof uses an enclosure of width $10^{-16}$ from alternating Taylor series), the constants are those of
+Table~\ref{tab:allmarks}.
+\end{proof}
+
+\begin{table}[ht]\centering\small
+\caption{The all-marks certificates for $\psi=\cos1.6s$ ($\nu=(K-1)/500$). The digits of $\Sigma$ and $D$ are truncated. The $K=6$ row is
+given for comparison; its certificate is not used and is not listed in Table~\ref{tab:certs}.}\label{tab:allmarks}
+\begin{tabular}{@{}rllllll@{}}
+\toprule
+$K$ & $a_1$ & $a_2$ & $\nu$ & $\Sigma$ & $D$ & $\lambda_c$\\
+\midrule
+$5$ & $\frac{1280197}{10^8}$ & $\frac{48749}{3125000}$ & $\frac1{125}$ & $0.675158622199$ & $0.837579311099$ & $3.40513$\\[2pt]
+$6$ & $\frac{195379}{12500000}$ & $\frac{976263}{50000000}$ & $\frac1{100}$ & $0.675709032131$ & $0.837854516065$ & $3.40312$\\[2pt]
+$7$ & $\frac{1824837}{10^8}$ & $\frac{1168069}{5\cdot10^7}$ & $\frac3{250}$ & $0.676102666964$ & $0.838051333482$ & $3.40125$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{remark}[What is not claimed]\label{rem:notS}
+The proportion of zeros that are simple \emph{and} on the line is not improved by this route. For it a simple off-line pair brings no bonus, the
+threshold in the charge would be $2$ instead of $\lambda_c$, and Theorem~\ref{thm:loc} would need $\lambda_{\max}(M_\cR)\le2$, which fails already
+for unit-spaced double zeros (two of them give $\lambda_{\max}=2(1+k_\psi(1))=2.1387$, and long runs approach $2/\!\int\psi=2.2304$).
+\end{remark}

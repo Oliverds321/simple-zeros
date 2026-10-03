@@ -1,0 +1,33 @@
+bnb_interval: alpha=poly8A K=8 mu=1/1700 c_claim=0.00796 backend=auto prec=64 engine=numpy mode=hybrid workers=1 lb3=True sym=True axis=grad
+objective: sha256=9b09b50eb8f0b5dfd0d95055a994f206cbf3700c3c02098b51e7af2d3e5536f7 (K=8 alpha=poly8A mu=1/1700 claim=199/25000 weights=w_poly8A_K8_mu1700.json sha256=257b340d9da4f343600a21589f16d8915f3e082499d475e153c5453980671e78 window=win_poly8A.json sha256=c4005f57a7920f78aa2df33b093c9c5030efac2b8e39fc6cf7371b0c0f32dc14 sym=True lb3=True engine=numpy pure=False backend=auto prec=64)
+  resumed from runs/R1003/r1_2.ckpt: processed=0.000e+00 stack_boxes=2.839e+05
+  resumed checkpoint sha256=30dd2c20e38b68baf9802de17d2636b1e9e2403c4855efacaaa4f8d3b5022e09
+  it=40 processed=7.122e+05 stack_boxes=2.778e+05 min centre F=0.0080661 t=55s iv_checked=7.055e+05 iv_rejected=0
+  it=80 processed=9.372e+05 stack_boxes=2.609e+05 min centre F=0.0080661 t=68s iv_checked=9.281e+05 iv_rejected=0
+  it=120 processed=1.584e+06 stack_boxes=3.439e+05 min centre F=0.0080661 t=114s iv_checked=1.569e+06 iv_rejected=0
+  it=160 processed=2.455e+06 stack_boxes=2.982e+05 min centre F=0.0080661 t=174s iv_checked=2.432e+06 iv_rejected=0
+  it=200 processed=3.103e+06 stack_boxes=3.790e+05 min centre F=0.0080661 t=218s iv_checked=3.074e+06 iv_rejected=0
+  it=240 processed=3.474e+06 stack_boxes=3.247e+05 min centre F=0.0080661 t=243s iv_checked=3.442e+06 iv_rejected=0
+  it=280 processed=4.071e+06 stack_boxes=2.639e+05 min centre F=0.0080661 t=282s iv_checked=4.034e+06 iv_rejected=0
+  it=320 processed=5.043e+06 stack_boxes=3.330e+05 min centre F=0.0080661 t=355s iv_checked=4.997e+06 iv_rejected=0
+  it=360 processed=5.514e+06 stack_boxes=3.086e+05 min centre F=0.0080661 t=387s iv_checked=5.464e+06 iv_rejected=0
+  it=400 processed=6.093e+06 stack_boxes=2.445e+05 min centre F=0.0080661 t=427s iv_checked=6.039e+06 iv_rejected=0
+  it=440 processed=6.731e+06 stack_boxes=3.045e+05 min centre F=0.0080661 t=472s iv_checked=6.673e+06 iv_rejected=0
+  it=480 processed=7.210e+06 stack_boxes=2.712e+05 min centre F=0.0080661 t=501s iv_checked=7.148e+06 iv_rejected=0
+  it=520 processed=7.950e+06 stack_boxes=3.660e+05 min centre F=0.0080661 t=556s iv_checked=7.883e+06 iv_rejected=0
+  it=560 processed=8.321e+06 stack_boxes=2.960e+05 min centre F=0.0080661 t=579s iv_checked=8.253e+06 iv_rejected=0
+  it=600 processed=9.075e+06 stack_boxes=2.417e+05 min centre F=0.0080661 t=632s iv_checked=9.004e+06 iv_rejected=0
+  it=640 processed=9.993e+06 stack_boxes=3.011e+05 min centre F=0.0080661 t=697s iv_checked=9.916e+06 iv_rejected=0
+  it=680 processed=1.021e+07 stack_boxes=2.839e+05 min centre F=0.0080661 t=711s iv_checked=1.014e+07 iv_rejected=0
+  it=720 processed=1.078e+07 stack_boxes=2.343e+05 min centre F=0.0080661 t=749s iv_checked=1.070e+07 iv_rejected=0
+  it=760 processed=1.157e+07 stack_boxes=3.301e+05 min centre F=0.0080661 t=805s iv_checked=1.148e+07 iv_rejected=0
+  it=800 processed=1.182e+07 stack_boxes=2.853e+05 min centre F=0.0080661 t=822s iv_checked=1.174e+07 iv_rejected=0
+  it=840 processed=1.237e+07 stack_boxes=2.361e+05 min centre F=0.0080227 t=858s iv_checked=1.228e+07 iv_rejected=0
+  it=880 processed=1.279e+07 stack_boxes=2.403e+05 min centre F=0.0080227 t=886s iv_checked=1.270e+07 iv_rejected=0
+  it=920 processed=1.349e+07 stack_boxes=2.932e+05 min centre F=0.0080227 t=941s iv_checked=1.339e+07 iv_rejected=0
+  it=960 processed=1.390e+07 stack_boxes=2.541e+05 min centre F=0.0080227 t=966s iv_checked=1.380e+07 iv_rejected=0
+  it=1000 processed=1.465e+07 stack_boxes=2.403e+05 min centre F=0.0080227 t=1018s iv_checked=1.455e+07 iv_rejected=0
+  it=1040 processed=1.553e+07 stack_boxes=3.156e+05 min centre F=0.0080227 t=1081s iv_checked=1.542e+07 iv_rejected=0
+  it=1080 processed=1.594e+07 stack_boxes=2.723e+05 min centre F=0.0080227 t=1107s iv_checked=1.583e+07 iv_rejected=0
+  it=1120 processed=1.658e+07 stack_boxes=2.438e+05 min centre F=0.0080227 t=1155s iv_checked=1.647e+07 iv_rejected=0
+  it=1160 processed=1.707e+07 stack_boxes=2.345e+05 min centre F=0.0080227 t=1190s iv_checked=1.695e+07 iv_rejected=0

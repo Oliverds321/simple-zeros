@@ -1,0 +1,43 @@
+\section{Remarks on the limits of the method}\label{sec:remarks}
+
+\paragraph{Ceilings.} Alp\"oge and Furman~\cite[\S7.2]{AF} call a \emph{bandwidth-one certificate} for $N_0^s/N$ a function of the
+configuration that depends on it only through the first two trace moments against test functions of Fourier support in $[-1,1]$ and the
+on-line/off-line partition, and is valid configuration by configuration, and they describe a ceiling of about $0.682$ for such certificates.
+What is proved there is a quantitative bound with qualifications. For a constant $c_0$ and a weight $r$ on $[0,1]$ ($r\in C^1$, with $r'$
+differentiable off a countable set and $r''$ integrable) such that $c_0+\sum_{j=1}^{256}(S_j/256)\,r(j/256)\le p$, where
+$(S_j)$ is the sampled form factor of an explicit $256$-periodic law, the Lean theorem \texttt{Zeta23.\allowbreak PairCeiling.\allowbreak ceiling\_law256}
+gives $c_0+\int_0^1r(x)\,x\,dx\le p+0.824\abs{r(1)}+2.55\cdot10^{-6}\big(\abs{r'(1)}+\int_0^1\abs{r''}\big)$, under the displayed
+hypothesis \texttt{EnclOK} that $(S_j)$ lies in enclosures obtained outside Lean by interval arithmetic. For a certificate of this form that
+is valid configuration by configuration, averaging over the law (a step done on paper) gives the hypothesis with $p=p_0\le0.6818287$, the
+proportion of simple points of the law, and the bound is then below $0.6819$ if $r(1)=0$ and $\abs{r'(1)}+\int_0^1\abs{r''}<8.2$, in
+particular for the two windows of~\cite[(2.6)]{AF}. By the $0.682$ ceiling we mean this bound; a bound of $0.682$ for every bandwidth-one
+certificate is not proved in~\cite{AF} or here. Theorem~\ref{thm:S} lies below $0.682$. Within that class, the route of Section~\ref{sec:first}, which keeps only the energy among
+\emph{simple} zeros, is capped much lower: periodic adversaries with gaps alternating near $1.03$ and $1.96$ carry an energy of about $0.0019$ per
+simple zero, which caps cosine windows near $0.6737$ ($0.673666$ at $\cos1.48s$ with exact energies, $0.673697$ for the best cosine; Devine~\cite{Devine22066689}
+states that with the fixed optimal Montgomery--Taylor kernel the pure Gram/rank machinery cannot force a bound above $0.6736$ [V$\sim$]; \mbox{trmdy}~\cite{trmdy} states on 11~August~2026 that certificates reading only pair
+energies of simple zeros cannot exceed $0.674826$, and Zhongshan-Big-Jun~\cite{Zhongshan} give pressure-class ceilings near $0.6731$
+[V$\sim$]), and the
+same adversaries give at most $0.673776$ for the window $\tilde\psi$; the caps of the chain as $K$ grows level off near $0.67350$ for $\tilde\psi$.
+These values are floating-point computations, not theorems; they explain why the bandwidth-one values of \S\ref{ssec:others} and
+Theorem~\ref{thm:S} are all close together. (The repository teal-sea/zeta-lab states that the pressure-certificate family built on the Montgomery--Taylor window saturates at
+$\sup\Phi_n\le0.675142509660254$ [V$\sim$]; we have not compared that family with the class of our computations.)
+
+The route of Section~\ref{sec:simple} is not subject to the simple-only cap, because the binding adversaries of that cap use on-line double
+zeros, whose energy it keeps. Its own limits, again in floating point: the linear programme that chooses the weights gives $0.6761153$ at
+$K=7$ ($\mu=\frac1{500}$) and $0.6763110$ at $K=8$ ($\mu=\frac1{600}$), and the all-marks functional with a single window and exact energies is
+capped at $0.681447$ (at $\psi=\cos2s$). A $K=8$ certificate was not attempted: the trees grow by a factor of $20$ to $30$ per step in $K$, an
+estimated $1$ to $1.4\cdot10^{10}$ boxes over $136$ classes. Flat-topped windows lowered the $K=5$ value, so $\cos1.6s$ was kept. Whether an analogue of
+the $0.682$ ceiling holds for bandwidth-one certificates of $N^s/N$ we have not determined.
+
+\paragraph{What would be needed to go further.} For $N^s$ and $N^d$ the constants move with the local certificate. The $K=5$ certificate with large leaves was small
+enough for the kernel to replay (\S\ref{ssec:replay}); larger $K$, better windows and a certificate at $K\ge6$ small enough for kernel
+replay would need a better leaf (one whole basin per leaf) rather than more boxes. Beyond bandwidth one, or beyond
+the first two trace moments, the inputs of~\cite{AF} are no longer enough.
+
+For $N_0^s$ the route of Section~\ref{sec:simple} would give the same constants, $0.675158622$ with the $K=5$ certificate and $0.676102666$ with
+$K=7$, if one inequality held for the zeros of $\zeta$: that the slack of the rank--trace inequality is at least
+$a_1s_1+\frac{a_2}2(N-s_1)-\nu N-o(N)$. Lemma~\ref{lem:onslack} and Proposition~\ref{prop:agg} prove it whenever all zeros with $\Re\gamma\in I'$
+lie on the line, so the obstruction is the off-line pairs near the line, which for $N_0^s$ bring no bonus (Remark~\ref{rem:notS}; \mbox{trmdy}~\cite{trmdy} named the pricing of off-line pairs as the gate
+beyond the simple-only route on 11~August~2026 [V$\sim$]). We have
+reduced this inequality to families of local block inequalities and proved several of them on explicit classes of configurations, but it is
+not proved, and none of that work is part of this paper.

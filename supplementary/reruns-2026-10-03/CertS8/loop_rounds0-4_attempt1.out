@@ -1,0 +1,11 @@
+2026-10-03 12:38:16 round 0 -> CONTINUE 1
+2026-10-03 12:58:23 round 1 -> CONTINUE 2
+2026-10-03 13:18:28 round 2 -> CONTINUE 3
+2026-10-03 13:38:31 round 3 -> CONTINUE 4
+round_lb3.sh: FAIL round 4: s8_manifest.py: runs/R1003/r4_0.log: checkpoint gone but no ok line; runs/R1003/r4_1.log: checkpoint gone but no ok line; runs/R1003/r4_2.log: checkpoint gone but no ok line; runs/R1003/r4_3.log: checkpoint gone but no ok line
+2026-10-03 13:57:15 round 4 -> FAIL
+
+real	99m5.390s
+user	240m54.035s
+sys	11m27.780s
+exit=1

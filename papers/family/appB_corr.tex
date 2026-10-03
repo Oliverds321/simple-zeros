@@ -1,0 +1,96 @@
+\section{Corrections found in this work}\label{app:corr}
+
+This appendix lists the corrections made to the working draft (its sections on the killed kernel and on the Shell route), to formal statements and
+to the preprint~\cite{DSouza}. The statements of this paper are the corrected ones; ``counterexample'' means an explicit one, and ``kernel-checked''
+that it is a Lean theorem.
+
+\subsection{Statements of the working draft that are false as written}
+\begin{enumerate}
+\item \emph{Lemma~\ref{lem:shell-1prime}, far part.} The draft allowed any cutoff $\Xi$ with $0\le\Xi\le1$ supported in $(-1,1)$, including $\Xi\equiv0$, for
+which the far part is all of $a$ (numerical counterexample). Corrected by~\eqref{eq:Xi}; the constant becomes $2s/(\pi^2c\kappa)$. The same
+hypothesis is needed in the model mass of Lemma~\ref{lem:shell-4} (written out in its proof).
+\item \emph{Lemma~\ref{lem:shell-2}(c), the spike.} False without $\delta<1/(rQ)$; counterexample $a/r=0/1$, $\delta=1/Q$ for every $Q\ge2$. Not used.
+\item \emph{Theorem~\ref{thm:shell-K} as stated in the draft.} The kernel on $(\log Q+4,\Lc]$ is $(\Lc+\log K+O(1))/s$, not $\abs\alpha$; the pointwise claim beyond
+$\alphap$ fails on the top edge $(\log X-1,\log X]$; ``by the symmetry $s\mapsto-s$'' is not a symmetry of $\mathbf F$. The corrected statement is integrated and uses
+the weight $\omega_K$. None of this changes the constant or the rate.
+\item \emph{The condition on $\epsilon$.} The draft required only $\epsilon\to0$; Lemma~\ref{lem:shell-6d} needs $\log(1/\epsilon)=O(\log\log Q)$, through $R_1$ in
+$\mathcal Z$. With $\epsilon=Q^{-c'}$ the bulk condition at $\alphap=2497/1500$ holds only for $c'<0.0012$. The draft's choice $\epsilon=1/\Lc$ is fine.
+\item \emph{The rate.} The draft stated the error $(\log\log Q)^4(\log Q)^{-503/1994}$; $503/1994$ is the value at $\eps''=0$, and the proof gives
+$(\log Q)^{-\theta}$ for every $\theta<503/1994$.
+\item \emph{Lemma~\ref{lem:shell-6c}.} ``Every block has $R\ge1$'' holds only for nonempty blocks, and the cover needs $R_1\le N_0$ (numerical control).
+\item \emph{Lemma~\ref{lem:shell-5c}(2).} Needs $T\le N_0$; without it no absolute constant exists (numerical). Part (3) with the Weil-form error needs the
+actual size of $R_1$, not only $R_1\le Q/(2K)$.
+\end{enumerate}
+Further items concern formal transcriptions, not the draft. The formal statement of Lemma~\ref{lem:shell-6b} over the reals needs $j\in\mathbb N$
+and $H\ge0$, which were added as hypotheses (counterexamples $j=-3$; $H=-100$ with real powers). Three further false statements: the first Lean form
+of Lemma~\ref{lem:K-G} put the last term inside the integral (kernel-checked refutation); the first Lean form of Lemma~\ref{lem:shell-2}(a) was
+stated for all $Q\ge2$ and is false at $Q=2$, where $H_{\mathfrak w}=0$, so the lemma is stated in eventual form; and the first Lean form of
+Lemma~\ref{lem:shell-star} (\texttt{ring\_le\_primitive}) was false as Lean parses it. In that form the body of the last integral
+extends to the end of the expression and takes in the trailing term $+2(\log K+C_\mu)U$, which so sits inside the integral and inside both sums (the
+parse is a Lean theorem, \texttt{frozen\_rhs\_parse}, proved by \texttt{rfl}); with $R_1=1$, $K=3$, $C_\mu=0$, $Q=1000$, $a_n=e(-2n/Q)$ on the primes
+$1000<n\le30000$ and $\mathcal M=S$, all hypotheses hold and the ring mass is $331.4$, against $59.4$ for the right side as parsed (numerical
+counterexample). The corrected statement \texttt{ring\_le\_primitive\_corr} brackets the integral, and the first form was removed from the library.
+This is a correction of a Lean statement, not of the paper: the inequality displayed in Lemma~\ref{lem:shell-star}, which has the term outside the
+integral and the sums, was never affected. Of the items above, the far part of Lemma~\ref{lem:shell-1prime}, the transcription of
+Lemma~\ref{lem:K-G}, the first form of Lemma~\ref{lem:shell-2}(a) and the first form of Lemma~\ref{lem:shell-star} were found by the formalisation,
+the others in the proofs on paper.
+
+\subsection{Missing hypotheses, constants and wording}
+\begin{enumerate}
+\item Lemma~\ref{lem:shell-2}(a) needs $R_1\ge1$; its closing sentence needs $N/\epsilon\le Q^2(\log Q)^{-12}$; the per-class error in Step~2 is $2V^*$, not $V^*$; the
+tail bound of Step~3 could not be reproduced and is replaced by one with the same conclusion; Step~4 holds up to $O(\delta(1+\log Q))$.
+\item Lemma~\ref{lem:shell-P}(iv): the bound $\sum_e\abs{c_e}2^{\omega(e)}/e\le\zeta(2)^2/\zeta(4)$ holds for the plain kind and fails for the $q/\varphi$ kind ($3.2796$);
+only convergence is used.
+\item Lemma~\ref{lem:shell-6a} needs $K\le Q$ and $T\le N_0$ for its tail step, and $N_0\ge e^3$, which the ``large $N_0$'' of its proof and its
+formal statement use.
+\item Lemma~\ref{lem:shell-1prime}: the prime-power peak is $\ll T^2(\log N)^2N^{-1/2}$, not $T(\log N)^2N^{-1/2}$.
+\item Lemma~\ref{lem:shell-star}: the constant $1.4708$ is numerical only; any $O(1+\log K)$ bound suffices.
+\item Proposition~\ref{prop:shell-Z}: the explicit formula is used in the Weil form, with the error $E'$ in place of $E$. The draft's
+remark that the explicit formula for Dirichlet $L$-functions is not in the Lean artifact of~\cite{AF} is out of date. Lemma~\ref{lem:shell-5c}(1): ``total
+$\ll T$'' does not name the norm.
+\item Theorem~\ref{thm:shell-S} is stated with $\norm W_{C^A}Ts_0$ on the right, with $K$ and $\epsilon$ explicit; the draft's
+$\int W_j\norm a^2\asymp\gwin(j)Ts_0$ in the transfer would need a lower bound on the mass of $W_j$.
+\item The working draft's remark that Tao's inequality can be avoided needs $\epsilon\log Q\to0$, which does not hold for $\epsilon=1/\Lc$; the ring points
+have $q>Q/K$, which is enough.
+\item Lemma~\ref{lem:K-S} is proved only for $s\le\log X$, the range used; the draft stated it for $N\ge Q$ (D3).
+\item Lemma~\ref{lem:K-P}: the draft's prime number theorem with error $y\exp(-c\sqrt{\log y})$ is replaced by the weaker~\eqref{eq:PNT}, and its unverified
+Mertens constant $\abs{R(x)}\le2$ by $\log4+4$, so the bounds $E_2^2/U\le33.3\,\lambda\Lc/T$ and $2E_2/\sqrt U\le16.4(\Lc/T)^{1/2}$ become
+$E_2^2/U\le86\,\lambda\Lc/T$ and $2E_2/\sqrt U\le26.3(\Lc/T)^{1/2}$ (D4). The step $\sum_n\abs{\tilde{\mathfrak m}(n)}^2\ge U-1$ was asserted
+without proof and is written out here.
+\item Lemma~\ref{lem:K-Z}(b) holds for all $r,r'\le Q$; the draft's $r+r'\le Q$ is more than needed.
+\item Theorem~\ref{thm:one-prime}: the draft's $0.72375738$ is at $\lambda=32/25$, outside the formal design, and its statement that a profile at $\lambda=5/4$ ``fits the
+caps'' does not hold, because the formal design fixes $\lambda=\lambda^*$ (D1); the design profile of~\cite{DSouza} already gives $0.7235$ (D2); a table entry was rounded
+rather than truncated (D5).
+\item The bandwidth: the draft's open item on the uniformity in $\lambda$ of the rows of~\cite[\S\S7--10]{DSouza} is resolved in \S\ref{ssec:bandwidth} for $\FQ$ at
+$\lambda=191/100$ (the dyadic family at $\lambda=93/50$ was not examined, and its constant is not claimed; Remark~\ref{rem:shell-dyadic}); its list of
+formal caps was incomplete; the ends constant becomes $c_1=0.52$ with the Minkowski split; the moment floor stays at $3/4$ in eventual form; the ramp rate is
+$\Theta(1/\log Q)$; the zone slope is $1.9458$ with certified Lipschitz constant $1.906$ (a doc-string said $1$); the Gevrey gate is raised to $5\cdot10^4$.
+\item Lemma~\ref{lem:shell-6d}: the near bound holds, and is proved, for $0\le X_0\le s_0/5$, where the near zeros have $\beta\ge\frac45$ and (LF) counts them.
+The draft stated it with no range of $X_0$, and the first Lean form \texttt{Z6d\_counts} for every $X_0\ge0$; for $X_0>s_0/5$ the near sum contains zeros
+with $\beta<\frac45$, and (M) gives only a larger exponent there (it would need $\eps''\ge1-1/\alphap\approx0.399$). The corrected formal statement
+\texttt{Z6d\_counts\_corr} adds $5X_0\le s_0$ to the near clause only and is proved; the first form is kept, open and unused.
+Theorem~\ref{thm:shell-S} uses the bound at $X_0=O(\log\log Q)$ only, which its proof checks. No constant or rate changes.
+\item The pointwise assembly~\eqref{eq:shell-assembly}, formal statement. The first Lean form (\texttt{AS\_pointwise}) allowed any $\alpha''<2$,
+independently of $\lambda$. Its ring is that of the near polynomial not cut at $X$, while $\mathbf F(s)$ sees $a(s)$ cut at $X$; for $s+1>\lambda\Lc=\log X$
+the argument of the assembly bounds the ring of the cut polynomial, which that ring does not control. No counterexample is known. The corrected form
+\texttt{AS\_pointwise\_corr} adds $\alpha''<\lambda$ and is proved; the first form is kept, open and unused. Theorem~\ref{thm:shell-K}
+uses the formal assembly with $\alpha''<5/3<191/100=\lambda$, and its formal statement is unchanged. In this paper the ring is that of $a(s)$, which is cut
+at $X$ (\S\ref{ssec:notation}), and the assembly is used only for $s\le\alphap\Lc$ with $\alphap<\lambda$, where the cut and the uncut near polynomials
+agree, as they do in Theorem~\ref{thm:shell-S} through the condition $s_0\le\log X-2$. In \S\ref{ssec:shell-notation} and
+in the assembly the range of $s$ also carries $s\le\log X-1$, which $\norm{a(s)}^2=U(s+O(1))$, Lemma~\ref{lem:shell-4} and the
+relative costs of Lemma~\ref{lem:shell-1prime} need, and which $\alpha''<\lambda$ implies for large $Q$. No constant or rate changes.
+\end{enumerate}
+
+\subsection{\texorpdfstring{Items for the preprint~\cite{DSouza}}{Items for the preprint}}
+\begin{enumerate}
+\item Its formalisation section says that the six headline theorems depend on one \texttt{sorry}, the sharp large-sieve constant. The large sieve
+is now proved in Gallagher's form $Q^2+\pi N$, and the six theorems are kernel-checked with no \texttt{sorry}; the budget constant
+of~\cite[Lemma~4.3]{DSouza} becomes $1+4Q^{-\delta}$ instead of $1+2Q^{-\delta}$.
+\item The sieve-budget row $L_{11}$ should read $Q^{\lambda-2}(T/2\pi)^\lambda$.
+\item The even and odd subfamilies now have the constants $0.7212$ and $0.7098$ of the full families, by the reflected large sieve; this is a Lean theorem on a
+branch of the formal tree, and it supersedes the preprint's $0.6980$ and $0.6919$.
+\item The bibliography of~\cite{DSouza} gives a different author for the source of H1--H6; this paper cites the arXiv listing~\cite{AF}.
+For reference: the preprint's own text says of that source that it is not posted to a preprint server~\cite[\S1.2]{DSouza}; the arXiv paper~\cite{AF}
+states on its first page that its mathematical argument was discovered and written by Claude, an AI developed by Anthropic, and that the listed
+authors verified the proof and take responsibility for its content [V].
+\end{enumerate}

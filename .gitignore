@@ -1,0 +1,7 @@
+/.lake/
+*.olean
+*.ilean
+# Python caches, and the output of supplementary/replay-K5/gen_replay.py (regenerated shards; see supplementary/VERIFY.md)
+__pycache__/
+/supplementary/replay-K5/[12][12][12][12][12]/
+/supplementary/replay-K5/common/

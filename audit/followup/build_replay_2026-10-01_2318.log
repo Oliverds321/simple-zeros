@@ -1,0 +1,14 @@
+lake build ZetaSReplay (jobs=3) started 2026-10-01 23:18:57 at dcd371e
+✔ [8795/10236] Built R11111_Cells (13s)
+✔ [8796/10236] Built R11221_Pts8 (96s)
+✔ [8797/10236] Built R11221_Pts9 (96s)
+✔ [8798/10236] Built R11222_Data (740ms)
+✔ [8799/10236] Built R11221_Pts10 (96s)
+✔ [8800/10236] Built R11221_Pts11 (73s)
+✔ [8801/10236] Built R11222_Pts0 (93s)
+✔ [8802/10236] Built R11222_Pts1 (91s)
+✔ [8803/10236] Built R11222_Pts2 (90s)
+✔ [8804/10236] Built R11222_Pts3 (90s)
+✔ [8805/10236] Built R11222_Pts4 (90s)
+lake build exit=127 finished 2026-10-01 23:24:30
+errors: 0; sorry warnings: 0

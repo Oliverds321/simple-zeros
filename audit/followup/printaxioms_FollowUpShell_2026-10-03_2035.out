@@ -1,0 +1,4 @@
+# lake env lean comparator/PrintAxioms/FollowUpShell.lean after the fresh build of 2026-10-03_1924 (Sat Oct  3 20:35:52 AEST 2026)
+'ZetaShell.LemmaK.theorem_one_prime_design' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaShell.certS53' depends on axioms: [propext, Classical.choice, Quot.sound]
+# exit=0

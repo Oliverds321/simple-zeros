@@ -1,0 +1,70 @@
+Zeta23 — a Lean 4 formalization of critical-line zero-proportion theorems
+Copyright 2026 Anthropic, PBC
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This product includes software derived from PrimeNumberTheoremAnd
+(https://github.com/AlexKontorovich/PrimeNumberTheoremAnd),
+Copyright the PrimeNumberTheoremAnd contributors, licensed under the Apache License, Version 2.0.
+The derived files are the ones under Zeta23/FromPNTPlus/; each carries its upstream notice
+(source file, upstream commit, original copyright line) and a description of the local modifications.
+Some of those files in turn derive from mathlib (https://github.com/leanprover-community/mathlib4),
+Copyright the mathlib contributors, Apache License, Version 2.0; their original headers are preserved.
+
+MODIFICATIONS (Apache License, Version 2.0, Section 4(b)).
+This repository is a MODIFIED COPY of Zeta23 as released at https://github.com/anthropics/zeta-23-lean.
+The modifications are by Oliver D'Souza, Copyright 2026 Oliver D'Souza, and are licensed under the
+Apache License, Version 2.0 (see LICENSE). The upstream copyright line above and LICENSE are
+untouched, as are the per-file copyright headers of every module that came from upstream.
+In summary:
+
+  ADDED, wholly new work by Oliver D'Souza — the Lean library ZetaQ/ (33 modules), its root module
+  ZetaQ.lean and ZetaQ/README.md; the scripts and receipt files under audit/; the ZetaQ entries in
+  lakefile.toml; and, inside Zeta23/, the three modules Zeta23/WindowD.lean,
+  Zeta23/Tail/GevreyTail.lean and Zeta23/Taper/GevreyProduct.lean, with the two corresponding
+  imports added to Zeta23.lean. Each of these files carries its own copyright header naming
+  Oliver D'Souza, including the three added modules under Zeta23/ -- which do not exist upstream,
+  and whose headers were corrected accordingly: two had inherited the upstream Anthropic header by
+  copy from neighbouring files, and one carried no header at all.
+  ZetaQ/ imports Zeta23 and is not part of the upstream artifact: it is a separate development in
+  the conductor aspect, it is not sorry-free, and it is deliberately outside lakefile.toml's
+  defaultTargets, so that `lake build` still builds only the upstream library.
+
+  CHANGED, inside the upstream Zeta23/ — Zeta23/Defs.lean gains the weakened standing-assumption
+  class Params.ValidQ (Params.Valid with the bandwidth cap lam_le_one dropped) and the implication
+  Valid.validQ; and twenty-one further modules under Zeta23/ have hypotheses of the form
+  (hP : P.Valid) replaced by (hP : P.ValidQ), with the corresponding call sites adapted by inserting
+  .validQ. These are hypothesis WEAKENINGS: every affected statement is generalised, no conclusion
+  is altered, and no declaration is removed or renamed. No other change was made under Zeta23/.
+
+  ADDED for the follow-up of October 2026, wholly new work by Oliver D'Souza — the Lean libraries
+  ZetaS/ (the zeta follow-up; imports Zeta23), ZetaSCertShims/ (bare-name forwarders for the
+  certificate checker in ZetaS/Cert/), ZetaShell/ (the family follow-up; imports ZetaQ) and
+  ZetaSReplay/ (1,478 generated modules: the kernel replay of the K = 5 certificate), with their
+  root modules ZetaS.lean and ZetaShell.lean and their entries in lakefile.toml; under comparator/,
+  the topic FollowUpZeta (ChallengeDeps/FollowUpZeta.lean, Challenge/FollowUpZeta.lean,
+  Solution/FollowUpZeta.lean, PrintAxioms/FollowUpZeta.lean, config-followup.json,
+  README_followup.md), the topic FollowUpFamily (the four files FollowUpFamily.lean in the same
+  folders, config-followup-family.json and README_followup_family.md) and the files
+  PrintAxioms/FollowUpShell.lean and PrintAxioms/FollowUpReplay.lean; supplementary/ (certificate data, certifier scripts, logs and the
+  replay generator); papers/; audit/followup/; CITATION.cff, .zenodo.json and RELEASE_NOTES.md; and
+  entries in .gitattributes and .gitignore. All of it is Copyright 2026 Oliver D'Souza and licensed
+  under the Apache License, Version 2.0 (see LICENSE), except the text of the two papers: the
+  LaTeX sources, bibliographies and PDFs under papers/ are licensed under the Creative Commons
+  Attribution 4.0 International licence (CC BY 4.0, https://creativecommons.org/licenses/by/4.0/).
+  A file in these folders that carries no header of its own is covered by this notice. The four comparator files named FollowUpZeta.lean
+  had inherited the upstream Anthropic header by copy from the neighbouring upstream topic files;
+  their headers were corrected to name Oliver D'Souza.
+
+  UNCHANGED — LICENSE, every upstream file under comparator/ (including the trusted challenge
+  statement files), and the upstream text of README.md, AUDIT.md and this file, to which only
+  clearly marked sections have been added.
+
+  The results recorded in AUDIT.md were obtained on the pristine upstream tree, before the changes
+  above; see the scope note at the head of that file.
+
+This product depends on, but does not include, Lean 4 (https://github.com/leanprover/lean4) and
+mathlib4 with its standard dependency set — fetched by the build tool from their public repositories at the
+revisions pinned in lake-manifest.json: batteries, aesop, Qq, ProofWidgets4, import-graph, LeanSearchClient and
+plausible are released under the Apache License, Version 2.0; Cli (leanprover/lean4-cli) is released under the
+MIT License (Copyright (c) 2021 Marc Huisinga). None of these dependencies is included in this repository.

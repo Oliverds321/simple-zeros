@@ -1,0 +1,283 @@
+\section{Introduction}\label{sec:intro}
+
+\subsection{Results}\label{ssec:results}
+Write a nontrivial zero of $\zeta(s)$ as $\rho=\beta+i\gamma$ and let $m_\rho\ge1$ be its multiplicity. As in Alp\"oge and Furman~\cite{AF}, for
+$0\le T_1<T_2$ let
+\begin{align*}
+N(T_1,T_2)&:=\sum_{T_1<\gamma\le T_2}m_\rho &&\text{(zeros, counted with multiplicity)},\\
+N^d(T_1,T_2)&:=\#\{\rho:\ T_1<\gamma\le T_2\} &&\text{(distinct zeros)},\\
+N^s(T_1,T_2)&:=\#\{\rho:\ T_1<\gamma\le T_2,\ m_\rho=1\} &&\text{(simple zeros)},\\
+N_0^s(T_1,T_2)&:=\#\{\rho:\ T_1<\gamma\le T_2,\ \beta=\tfrac12,\ m_\rho=1\} &&\text{(simple zeros on the critical line)},
+\end{align*}
+and let $N^{\mathrm{sc}}(T_1,T_2)$ be the number of zeros with $T_1<\gamma\le T_2$ that lie on the critical line, counted with multiplicity, plus
+the number of those off the line that are simple. Thus $N_0^s\le N^s\le N^d\le N$ and $N_0^s\le N^{\mathrm{sc}}\le N$. All ratios below have
+$N(T,2T)$, which counts multiplicity, in the denominator.
+
+\begin{theorem}[Simple and distinct zeros]\label{thm:main}
+As $T\to\infty$,
+\[
+N^s(T,2T)\ \ge\ (0.676102666-o(1))\,N(T,2T),\qquad N^d(T,2T)\ \ge\ (0.838051333-o(1))\,N(T,2T).
+\]
+With the smaller certificate of Section~\ref{sec:cert} \textup{(}$K=5$\textup{)} the same argument gives $0.675158622$ and $0.837579311$.
+\end{theorem}
+
+The constants are $\Sigma=(H+\frac{a_2}2-\nu)/(1-a_1+\frac{a_2}2)$ and $D=\frac12(1+\Sigma)$, where $H=H(\cos1.6s)=0.671981551000\ldots$ is the
+Alp\"oge--Furman constant of the window $\cos(1.6s)$ and $(a_1,a_2,\nu)$ are the rational claims of a certified local inequality
+(Theorem~\ref{thm:SigmaD}). For $K=7$, $\Sigma=0.67610266696413\ldots$ and $D=0.83805133348206\ldots$; for $K=5$, $\Sigma=0.67515862219923\ldots$
+and $D=0.83757931109961\ldots$; the ninth digits above are truncated. In Lean~4~\cite{Lean4}, the $K=5$ pair is proved with no hypotheses and the
+$K=7$ pair with its certificate as the one hypothesis (\S\ref{ssec:formal}).
+
+\begin{theorem}[Simple zeros on the critical line]\label{thm:S}
+As $T\to\infty$, $N_0^s(T,2T)\ge(0.6733736895-o(1))\,N(T,2T)$.
+\end{theorem}
+
+\begin{corollary}[Simple or on the line]\label{cor:SC}
+As $T\to\infty$, $N^{\mathrm{sc}}(T,2T)\ge(0.8879195-o(1))\,N(T,2T)$.
+\end{corollary}
+
+\begin{table}[ht]\centering\small
+\caption{Lower bounds for $\liminf_{T\to\infty}X(T,2T)/N(T,2T)$. ``Previous'' lists refereed or arXiv values, and for $N_0^s$ also the
+range of unrefereed values; the unrefereed values are discussed in \S\ref{ssec:others}. The last column is explained in \S\ref{ssec:formal}.
+Lamzouri's and Wang's values are stated for $0<\gamma\le T$; a lower bound for every dyadic interval $(T,2T]$ implies the same lower bound for
+$0<\gamma\le T$. Wang's values are our truncations of the bounds $C_0+\delta_0$ and $C_1+\delta_0/2$ that it states (\S\ref{ssec:others});
+Lamzouri's $0.8876200$ is its formula at the Montgomery--Taylor constant, evaluated by us (it states $88.76\%$).}\label{tab:results}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.4cm}>{\raggedright\arraybackslash}p{4.4cm}>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{4.2cm}@{}}
+\toprule
+$X$ & previous & this paper & status of the proof in Lean \\
+\midrule
+$N^d$ (distinct) & $\frac56$ and $0.8362503$ \cite{AF}; $0.8362$ \cite{Lamzouri}; $0.83625038$ \cite{Wang24167} &
+$\mathbf{0.838051333}$ ($K=7$)\newline $\mathbf{0.837579311}$ ($K=5$) &
+$K=7$: certificate as hypothesis\newline $K=5$: no hypothesis (the certificate is replayed by the kernel)\\[3pt]
+$N^s$ (simple) & $0.6725007$ \cite{AF,Lamzouri}; $0.67250077$ \cite{Wang24167}; all implied by $N_0^s\le N^s$ &
+$\mathbf{0.676102666}$ ($K=7$)\newline $\mathbf{0.675158622}$ ($K=5$) & as for $N^d$\\[3pt]
+$N^{\mathrm{sc}}$ (simple or on the line) & $0.8876200$ \cite{Lamzouri} & $0.8879195$ (Cor.~\ref{cor:SC}) & certificate as hypothesis\\[3pt]
+$N_0^s$ (simple, on the line) & $0.6725007$ \cite{AF,Lamzouri}; $0.67250077$ \cite{Wang24167}; unrefereed: six values from $0.673399$ to
+$0.67349239$, one announced as a hypothesis-free Lean theorem (\S\ref{ssec:others}) & $0.6733736895$ (Thm~\ref{thm:S}; not a record) & certificate as hypothesis\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For distinct zeros Theorem~\ref{thm:main} improves Wang's bound~\cite{Wang24167}, $0.83625038$ truncated (\S\ref{ssec:others}), by
+$1.80\cdot10^{-3}$ ($1.32\cdot10^{-3}$ with $K=5$).
+For simple zeros there is, to our knowledge, no earlier bound specific to the statistic: since a simple zero on the line is simple, every lower
+bound for $N_0^s$ is one for $N^s$, and Theorem~\ref{thm:main} exceeds the largest refereed or arXiv value that we located, $0.67250077$~\cite{Wang24167}, by
+$3.60\cdot10^{-3}$, and the largest unrefereed bandwidth-one claim for $N_0^s$ that we know of ($0.67349239$, \S\ref{ssec:others}) by
+$2.61\cdot10^{-3}$; larger unrefereed claims obtained by other methods are discussed there.
+Both values of Theorem~\ref{thm:main} lie below what is known under the Riemann hypothesis: $0.6792$~\cite{CGdL} and $19/27$~\cite{BHB} for
+simple zeros, $0.8477$~\cite{CGdL} for distinct zeros.
+
+Theorem~\ref{thm:main} is the result that this paper claims as new, as far as we have found in the public record: apart from the unrefereed
+claims of Yang and Yang by other methods (\S\ref{ssec:others}), we found no earlier bound for $N^s$ or $N^d$ beyond the standard
+consequences of a bound for $N_0^s$ (\S\ref{ssec:new}). We read $24$ related works at source and made three web searches; this says only
+that we did not find such a bound, not that none exists. Theorem~\ref{thm:S} is not a record: for simple zeros on the line, six unrefereed
+works announce larger values, from $0.673399$ to $0.67349239$, and one of them, Zhaoyi-Tian's $0.6734$, is announced as a hypothesis-free
+Lean theorem, while the formal statement of Theorem~\ref{thm:S} carries a certificate hypothesis (\S\ref{ssec:others},
+\S\ref{ssec:formal}).
+
+\subsection{What is new}\label{ssec:new}
+Alp\"oge and Furman~\cite{AF} restrict Weil's explicit formula to a finite family of modulated copies of a window and obtain a real symmetric
+matrix $G$ whose trace and Hilbert--Schmidt norm are known asymptotically from the prime side, and whose zero side splits into a positive
+semidefinite part $P$ from the zeros on the line and a part $Q$ from the off-line pairs with at most one positive eigenvalue per pair.
+A rank--trace inequality then gives $N_0^s\ge(2-R(\psi)-o(1))N$ for every admissible window $\psi$.
+
+The main results of this paper, Theorem~\ref{thm:main}, keep more of the matrix. For $N^s$ and $N^d$ a simple off-line pair counts twice in the
+numerator, and this is exactly what its negative eigenvalue costs in the rank--trace accounting (the ``simple pair'' entry in Step~3 of the
+proof of Theorem~\ref{thm:SigmaD} is $2-2a_1-c_*=0$). Off-line pairs and zeros of multiplicity at least three can therefore be removed at no loss
+(Lemma~\ref{lem:removal}), and what remains is an inequality about the zeros on the line of multiplicity one or two, the on-line spectral
+condition (Theorem~\ref{thm:OLL}). We prove it with four ingredients:
+\begin{enumerate}[label=(\roman*)]
+\item an exact identity for the slack of the rank--trace inequality on a set of on-line zeros (Lemma~\ref{lem:onslack}), which isolates the
+Gram energy among \emph{all} of them, whatever their multiplicities;
+\item a local inequality over all patterns of multiplicities $\bm\in\{1,2\}^K$ of $K$ consecutive zeros, certified by computer
+(Definition~\ref{def:LIm}, Section~\ref{sec:cert}), and its aggregation along the ordered zeros (Proposition~\ref{prop:agg});
+\item a localisation lemma for the eigenvalues above a threshold (Theorem~\ref{thm:loc}), which reduces the spectral condition to a set of
+zeros with a close neighbour, where it is paid for by the zeros themselves (Lemma~\ref{lem:tight});
+\item a majorant of Beurling--Selberg type for the window, with Fourier transform supported in $[-1,1]$, which bounds the largest eigenvalue on
+the remaining separated set (Lemma~\ref{lem:room}).
+\end{enumerate}
+A split of the zeros into close pairs and a separated remainder, whose Gram norm is bounded by a sinc-square Fourier majorant, was published
+earlier for simple zeros on the line, by \mbox{gfreund123} in pull request~\#888 to \mbox{GettysburgResearch/riemann}
+(14~September~2026)~\cite{Gettysburg888} [V$\sim$]; ingredients (iii) and (iv) use a device of the same kind for a different spectral
+condition, and the priority is theirs. Related devices appear, for $N_0^s$, in \mbox{trmdy}'s second campaign~\cite{trmdy} (off-line pairs priced as virtual on-line
+doubles, 11~August~2026, left open there) and in \mbox{RakitinD}'s exact decomposition of the slack with off-line and multiple-zero
+residuals~\cite{Rakitin} [V$\sim$]; neither is used there for $N^s$ or $N^d$.
+In one line, for $X$ the number of simple zeros: with $\Slack_X:=X-2\tr G+\HS G^2$, the prime side gives
+$X\ge(H(\psi)-o(1))N+\Slack_X$, exactly as in~\cite{AF}; the four ingredients show
+\[
+\Slack_X\ \ge\ a_1X+\tfrac{a_2}2(N-X)-\nu N-o(N),
+\]
+where $a_1,a_2,\nu$ are the certified constants; and solving the two inequalities for $X$ gives
+$X\ge\Sigma N-o(N)$ with $\Sigma=(H+\frac{a_2}2-\nu)/(1-a_1+\frac{a_2}2)$. The bound of~\cite{AF} corresponds to $a_1=a_2=\nu=0$.
+
+
+Apart from the unrefereed claims of Yang and Yang discussed in \S\ref{ssec:others}, we know of no public work that treats the proportions
+of simple zeros or of distinct zeros beyond the standard consequences of a bound $S$ for $N_0^s$: the bound $S$ itself for $N^s$ (since
+$N_0^s\le N^s$), and for $N^d$ the value $\frac12(1+S)$ that the chain of~\cite[Theorem~A(ii)]{AF} gives for $S=H(\psi)$ and that of
+Theorem~\ref{thm:S} gives for its constant (Remark~\ref{rem:Sdist}; for Theorem~\ref{thm:S} this is $0.8366868$).
+
+Theorem~\ref{thm:S} and Corollary~\ref{cor:SC} are secondary, and we state their status plainly in \S\ref{ssec:others}. Corollary~\ref{cor:SC} is
+Lamzouri's formula~\cite{Lamzouri} for zeros that are simple or on the line, evaluated at the constant of Theorem~\ref{thm:S}; it is not an
+independent advance. For Theorem~\ref{thm:S} the method appeared publicly before our work on it, and several unrefereed values exceed ours.
+
+\subsection{What the results are not}\label{ssec:not}
+The theorems are lower bounds only. They do not show that the remaining zeros are multiple or off the line; they are merely not reached by the
+certificates. Theorem~\ref{thm:main} counts simple zeros \emph{whether or not} they lie on the critical line: a configuration in which a
+positive proportion of the zeros are simple off-line pairs is consistent with it, and it gives no information on how many zeros are on the
+line. It says nothing about the Riemann hypothesis. The proportion of zeros that are simple \emph{and} on the line is not improved by the route
+of Theorem~\ref{thm:main} (Remark~\ref{rem:notS}); for that statistic this paper has only Theorem~\ref{thm:S}. The analytic inputs are those
+of~\cite{AF}; in particular no zero-density estimate, zero-free region or mollifier is used. As observed in~\cite[\S1.4]{AF}, these inputs
+are insensitive to $o(N)$ zeros off the line, and the local inequalities added here concern only the kernel $k_\psi$. The local inequalities behind the constants are
+verified by computer; how, and at what level of trust, is stated in \S\ref{ssec:formal} and Section~\ref{sec:cert}.
+
+\subsection{Relation to other work}\label{ssec:others}
+The method of this paper is that of Alp\"oge and Furman~\cite{AF}, whose argument makes Montgomery's pair-correlation deduction unconditional.
+Lamzouri~\cite{Lamzouri} gave a second proof of their bound by a Hilbert-space inequality, and obtained the only previous value, $0.8876200$, for
+the proportion of zeros that are simple or on the line. Wang~\cite{Wang24167} raised the constants, ``by refining the method of Lamzouri'', to
+$C_0+\delta_0$ for simple zeros on the line and $C_1+\delta_0/2$ for distinct zeros, with $C_0=\frac32-\frac1{\sqrt2}\cot\frac1{\sqrt2}=0.67250\ldots$,
+$C_1=\frac12(C_0+1)=0.83625\ldots$ and $\delta_0=6.66624\ldots\cdot10^{-8}$, for $0<\gamma\le T$; truncated, these are $0.67250077$ and
+$0.83625038$ (our evaluation). We have read its abstract and the statement of its main theorem [V$\sim$].
+Santib\'a\~nez-Leal~\cite{SantibanezLeal} (24~September~2026, unrefereed) sharpens one step of Wang's argument to $0.6725007995$ and
+$0.8362503997$ [V$\sim$]. Before 2026 the unconditional bounds for distinct zeros included Farmer's
+$0.63952$~\cite{Farmer95} and Wu's $0.66036$~\cite{Wu12}, the latter cited as the record in~\cite{AF}; Lamzouri~\cite{Lamzouri} attributes a
+value above $70\%$ to Ki and Lee~\cite{KiLee12}, which we have not been able to check.
+
+\paragraph{Simple zeros on the line: others' work and what is ours.}
+In August and September 2026 many unrefereed, computer-assisted claims above~\cite{AF} for $N_0^s/N$ appeared on GitHub and Zenodo. In this
+paragraph and throughout the paper, statements about other work carry the tag [V$\sim$] when we read them only through the authors'
+descriptions or repository files, and [M] when they are our inference; we have built or run none of these works. As far as their descriptions show
+[V$\sim$], most of them and Theorem~\ref{thm:S} share one mechanism, published first, as far as we found, by \mbox{ainta}~\cite{ainta} on 11~August~2026: the stability
+form of the rank--trace inequality, a local $K$-point functional with a length penalty, an offset-averaged block aggregation, and an interval
+branch-and-bound. The step from the local inequality to the global bound differs between works (a piecewise-linear subaction in
+Devine~\cite{Devine22066689}, a cap-one block assembly in Zhaoyi-Tian~\cite{ZhaoyiTian}, a Bellman coboundary in
+tawanerguo-cn~\cite{TawanRepo}, a fusion polyhedron in \mbox{RakitinD}~\cite{Rakitin}, a separation-or-pair transfer in pull
+request~\#888~\cite{Gettysburg888}); we have not compared them [M].
+Position weights and windows other than a single cosine appeared the same day in \mbox{trmdy}~\cite{trmdy}, and also in
+\mbox{sxuff}~\cite{sxuff} (11~August), \mbox{AMTOPA}~\cite{AMTOPA} (12~August) and Gebendorfer~\cite{Gebendorfer} (7~September); the aggregation function $\Phi_m$ of Lemma~\ref{lem:Phi}, with a
+proof, appeared the same day in tawanerguo-cn~\cite{TawanRepo} and \mbox{sxuff}~\cite{sxuff}, and on 12~August in \mbox{trmdy} [V$\sim$]. Box
+pruning by convexity certificates and tangent planes appears in the verifiers of \mbox{sxuff}, \mbox{AMTOPA} and \mbox{npip99}~\cite{npip99}, and interval-Hessian
+basins in Zhaoyi-Tian's certificate; we have not checked whether our box bound differs from these in substance [M].
+Six unrefereed values that are, as far as we can tell, bandwidth-one certificates [M] exceed Theorem~\ref{thm:S}, by $2.5\cdot10^{-5}$ to $1.18\cdot10^{-4}$:
+\mbox{gfreund123}, in pull request~\#888 to the repository \mbox{GettysburgResearch/riemann}~\cite{Gettysburg888}, $0.67349239$, a draft pull request,
+which states that independent analytic review is required and that ``no independently reviewed world-record claim is made''; it states its
+bound for $0<\gamma\le T$ and builds on the window and one local inequality of Gebendorfer's draft [V$\sim$];
+\mbox{RakitinD}~\cite{Rakitin}, $0.6734775921119$, described as a frozen computer-assisted result that builds on a comparator from
+Gebendorfer's work, with, in its author's words, a ``partial Lean formalization with explicit remaining boundaries''; stated for
+$0<\gamma\le T$ [V$\sim$, M];
+Jonas Jakob Gebendorfer~\cite{Gebendorfer}, $0.6734760237$, called by its author an internally checked research draft; stated for
+$0<\gamma\le T$ [V$\sim$];
+\mbox{AMTOPA}~\cite{AMTOPA}, $0.673416490971$, described by its authors as an interval-certified research-draft record [V$\sim$];
+Zhaoyi-Tian~\cite{ZhaoyiTian}, $0.6734$, announced as a Lean theorem with no hypotheses, checked by the kernel with the three standard axioms,
+on the same Lean and Mathlib~\cite{Mathlib} versions as ours, with a kernel-replayed certificate of $3{,}203$ leaves, crediting \mbox{ainta} (the retained spectral defect and seven
+consecutive zeros), \mbox{sxuff} and \mbox{AMTOPA}'s earlier repository (position-dependent and exact shifted pressure) and \mbox{AMTOPA} (the corrected window,
+pair loads and pressure data) for ingredients it uses [V$\sim$]; we have not built it. By its description it is a formally verified bound
+above Theorem~\ref{thm:S}. Zhaoyi-Tian announced $0.673$ as a hypothesis-free Lean theorem on 31~August and $0.6734$ on 3~September~2026;
+\mbox{MichaelMobius}~\cite{Hurtado} announces a hypothesis-free Lean theorem for $0.6731175$ (latest commits 21--22~September~2026), and we have not
+established which of these was complete first; an end-to-end Lean reduction of the bound $0.673195$ to a single local-certificate premise
+was published by \mbox{npip99}~\cite{npip99} on 11--12~August~2026 [V$\sim$];
+and Michael Devine~\cite{Devine22066689}, $0.673399$ (stated also for simple and for distinct zeros, as a consequence), whose aggregation by
+a piecewise-linear subaction appears to differ from the block aggregation used here and by the others [V$\sim$, M]. Devine's later
+record~\cite{Devine22287432} announces a computation-free improvement of the Montgomery--Taylor constant, with a Lean formalisation in which
+the published pair-correlation and Riemann--von Mangoldt inputs are represented by explicit interfaces [V$\sim$].
+Further claims lie between $0.67300$ and $0.67332$ (among them \mbox{ainta}'s $0.673008527927$ and \mbox{trmdy}'s
+$0.6733127422$)\footnote{The others we know of [V$\sim$]: \mbox{yuhangshi888}~\cite{yuhangshi} ($0.6733169771$), \mbox{AMTOPA}'s earlier $0.673262375585$,
+\mbox{sxuff}~\cite{sxuff} ($0.673205978423$), \mbox{npip99}~\cite{npip99} ($0.673195198901$), tawanerguo-cn~\cite{TawanRepo} ($0.6731929114731422$),
+\mbox{MichaelMobius}~\cite{Hurtado} ($0.6731175265$, announced with a hypothesis-free Lean proof), \mbox{vstaln}~\cite{vstaln} ($0.67306445176$),
+Zhongshan-Big-Jun~\cite{Zhongshan} ($0.6730664726$ of 15~August; its README also lists $0.6730536459$ of 14~August) and uwe-schwarz~\cite{uweschwarz} ($0.6730266625$).};
+teal-sea/zeta-lab~\cite{tealsea} reports Lean proofs of small-$K$ bounds ($0.6728470197$), which, according to its README, the Palomar registry
+rebuilt and replayed [V$\sim$].
+What is ours for Theorem~\ref{thm:S}, as far as we have found, is the even polynomial window with exact rational constants as a window for
+$\zeta$ (its $H$ is an exact rational; Alp\"oge and Furman used a quartic polynomial window for the zeros of $\xi'$~\cite[Remark~7.1]{AF}),
+and the box bound LB3 in its exact form (\S\ref{ssec:bnb}), which we have not compared in substance with the pruning of other verifiers. The
+aggregation function $\Phi_m$ of Lemma~\ref{lem:Phi}, which Theorem~\ref{thm:S} needs on its concave branch since its block energy
+$A=1.1144$ exceeds $m/(m-1)$, is not ours: it was published with proofs by tawanerguo-cn~\cite{TawanRepo} and \mbox{sxuff}~\cite{sxuff} on
+11~August~2026 and by \mbox{trmdy}~\cite{trmdy} on 12~August, each using it on its concave branch; \mbox{yuhangshi888}~\cite{yuhangshi} uses a supporting
+plane of it, and Zhaoyi-Tian prove in Lean a cap-one variant [V$\sim$]. We have verified none of these proofs.
+
+\paragraph{Claims by other methods.}
+The ceiling $\approx0.682$ of~\cite[\S7.2]{AF} concerns bandwidth-one certificates that use only the first two trace moments
+(Section~\ref{sec:remarks}). For $N^s$ the largest value that the bandwidth-one claims above would give is $0.67349239$; for $N^d$, if their chains give $\frac12(1+S)$ as
+those of~\cite[Theorem~A(ii)]{AF} and of Theorem~\ref{thm:S} do (Remark~\ref{rem:Sdist}), it is $\frac12(1+0.67349239)=0.8367461$. Both lie
+below Theorem~\ref{thm:main}.
+Hongyi Yang and Shihua Yang claim much more, by methods that use trace moments beyond the first two [V$\sim$]. In Zenodo record~21975237~\cite{YY1} they claim $0.7962$ for
+simple zeros on the line and $0.8981$ for distinct zeros, with ineffective constants, a result they declare ``at the certified-candidate
+level, not as an established theorem''; according to the record, its identity and certificate layers are compiled and kernel-checked in
+Lean~4, while its analytic layer is not yet formalised and awaits external peer review [V$\sim$]. In Zenodo record~22065921~\cite{YY2}, Shihua Yang and Hongyi Yang
+claim that almost all zeros of $\zeta$ are simple and lie on the critical line, in the density sense, unconditionally and with ineffective
+constants, with the explicit bounds $0.910460$ for simple zeros on the line and $0.955230$ for distinct zeros; the record describes the
+analytic chain as ``a certified candidate pending external review'' and states that its certificates are kernel-checked in
+Lean~4 [V$\sim$]. The record page of~\cite{YY2} shows its files under embargo,
+with the stated reason that the version contains errors and needs revision [V$\sim$, read 28~September~2026]. We have not verified either
+claim; if they are correct, they supersede Theorems~\ref{thm:main}--\ref{thm:S} and Corollary~\ref{cor:SC}.
+
+\subsection{Formal verification}\label{ssec:formal}
+The four results are formalised in Lean~4~\cite{Lean4}, in a library \texttt{ZetaS} built on the Lean artifact
+\texttt{Zeta23} of~\cite{AF} (toolchain v4.33.0-rc2, Mathlib~\cite{Mathlib} revision 51e6992), against the zero-counting functions that~\cite{AF} define
+directly from Mathlib's \texttt{riemannZeta} (Appendix~\ref{app:lean}). We say that a declaration is \emph{kernel-checked} if
+\texttt{\#print axioms} reports only \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound}: no \texttt{sorry}, no added axiom,
+no \texttt{native\_decide}. The formalisation is in the repository \repourl, at tag \repotag{} (Appendix~\ref{app:layout}). The
+trust level of each result is as follows.
+\begin{enumerate}[label=(\alph*)]
+\item \emph{Kernel-checked with no hypotheses.} The two headline theorems for the $K=5$ pair ($0.675158622$, $0.837579311$;
+Appendix~\ref{app:replay}), which are in the library \texttt{ZetaSReplay} of the repository, built separately from
+\texttt{ZetaS}. Further, the inputs of Proposition~\ref{prop:AF} for the two windows used, at every bandwidth
+$\lambda<1$ (from the artifact of~\cite{AF} and a window-general version of its pipeline); every lemma, proposition and theorem of
+Sections~\ref{sec:setting}--\ref{sec:sc} in its abstract form (not the remarks, among them Remark~\ref{rem:Sdist}, and not the examples of
+sharpness), with the qualifications stated after Lemmas~\ref{lem:residue}
+and~\ref{lem:Phi}, where the formal version is weaker than the printed statement but covers every use: the linear algebra of
+Section~\ref{sec:linalg}; the local-to-global steps of Sections~\ref{sec:first}--\ref{sec:simple} (aggregation, packing, transfer, tight
+chains, the room lemma; the on-line spectral condition and the deduction of Theorem~\ref{thm:main} from its certificates only for the two
+certificates used, Theorems~\ref{thm:OLL} and~\ref{thm:SigmaD} for arbitrary certificate data being a mechanical generalisation not yet
+formalised; the deductions of Theorem~\ref{thm:S} and Corollary~\ref{cor:SC} from their certificate); the assembly from the
+zeros of \texttt{riemannZeta} to the matrices of Section~\ref{sec:setting} at every bandwidth $\lambda<1$ (Poisson and Gram identities, positive
+definiteness of the kernel, the truncation defect, the inertia of off-line pairs), together with the limit $\lambda\to1^-$; the closing
+arithmetic of all constants; and the majorant certificate of Lemma~\ref{lem:room}, replayed by the kernel in $614$ cells (about $88$
+seconds).
+\item \emph{Kernel-checked with one displayed hypothesis, a numerical certificate.} In the library the six headline theorems each have one
+hypothesis: \texttt{CertAM5} for the $K=5$ pair, \texttt{CertAM7} for the $K=7$ pair ($0.676102666$, $0.838051333$), and \texttt{CertS8} for
+Theorem~\ref{thm:S} and Corollary~\ref{cor:SC}. Each of these is one \texttt{Prop} asserting that a local inequality holds for all gap
+vectors (Appendix~\ref{app:lean}); the data that realise it are identified by sha256 in Table~\ref{tab:certs}, and they are verified
+outside Lean by interval arithmetic (\S\ref{ssec:bnb}). Nothing else is assumed: in the library at commit \texttt{bb7223b}, \texttt{\#print axioms} for each
+of the six headline theorems gives only the three standard axioms (Appendix~\ref{app:census}). The fourteen statements of record (the six headline
+statements, their six cumulative forms on $0<\Im\rho\le T$ and two non-vacuity companions) are in the comparator package of the library
+(Appendix~\ref{app:record}), and all fourteen are proved with the three standard axioms. For the $K=5$ pair the
+hypothesis is discharged by the kernel replay, (a) and (c). The $K=7$ certificate and the certificate behind Theorem~\ref{thm:S} are too
+large for kernel replay on the hardware used (\S\ref{ssec:replay}) and stay as displayed hypotheses.
+\item \emph{The kernel replay of the $K=5$ certificate.} The kernel checker of the replay is version~3, which admits a tangent line only
+when the tangent point lies in the span interval (without this guard a leaf check could accept a false claim, \S\ref{ssec:replay}). The
+checker, its soundness nodes and the chain \texttt{ZetaS.CertV2.\allowbreak ChainV3.\allowbreak certAM5\_of\_checks}, which derives
+\texttt{CertAM5} from the acceptance of the $20$ class certificates by the checker and the identity of their data with the data of
+\texttt{CertAM5}, are in the library with the three standard axioms (Appendix~\ref{app:chain}). The full replay, against the library at
+commit \texttt{bb7223b}, whose Lean files the release changes only in comments (Appendix~\ref{app:layout}), compiled all $1{,}478$ files
+with no failure, and the kernel checked the $46{,}047$ leaves and $89{,}362$ point records in exact rational
+arithmetic (\S\ref{ssec:replay}). Its top files prove \texttt{ZetaS.CertV2.\allowbreak certAM5\_replayed}${}:{}$\texttt{ZetaS.CertAM5} and,
+from it, the two theorems of the $K=5$ pair without hypothesis (Appendix~\ref{app:replay}). Each of
+the three depends only on \texttt{propext}, \texttt{Classical.choice} and \texttt{Quot.sound} and rests on no open declaration
+(Appendix~\ref{app:census}). The
+$1{,}478$ source files match their manifest file by file, and a scan of all of them finds no \texttt{sorry}, \texttt{native\_decide},
+\texttt{axiom}, \texttt{unsafe}, \texttt{implemented\_by} or \texttt{extern}. The replay files, byte-identical to those
+checked, and the two theorems are in the repository as the library \texttt{ZetaSReplay}, outside the default build targets;
+\texttt{lake build ZetaSReplay} repeats the replay (\S\ref{ssec:reproduce}). The certificates themselves were
+found by floating-point and interval computation; the kernel checked them.
+\end{enumerate}
+
+\paragraph{Earlier formal work.} Formal proofs of bounds of this kind were announced before ours [V$\sim$]: Zhaoyi-Tian's
+hypothesis-free Lean theorems for $N_0^s$, at $0.673$ (31~August) and $0.6734$ (3~September~2026)~\cite{ZhaoyiTian}; a hypothesis-free Lean
+theorem for $N_0^s$ at $0.6731175$ announced by \mbox{MichaelMobius}~\cite{Hurtado} (latest commits 21--22~September~2026; we could not
+establish when its Lean theorem was first complete); \mbox{npip99}'s end-to-end Lean reduction of
+$0.673195$ to one local-certificate premise~\cite{npip99} (11--12~August); Lean-proved small-$K$ bounds for $N_0^s$ in
+teal-sea/zeta-lab~\cite{tealsea}, which, according to its README, the Palomar registry rebuilt; the finite deduction of \mbox{yuhangshi888}~\cite{yuhangshi} in Lean; Devine's
+formalised computation-free improvement of the Montgomery--Taylor constant~\cite{Devine22287432}, with the pair-correlation and
+Riemann--von Mangoldt inputs as interfaces; partial formalisations by \mbox{RakitinD}~\cite{Rakitin} and of the certificate layers of Yang and
+Yang~\cite{YY1,YY2}; and a formalisation of Lamzouri's proof, with the Riemann--von Mangoldt formula and a pair-correlation asymptotic as
+stated hypotheses, by \mbox{AxiomMath}~\cite{AxiomMath}. Our formal theorem for simple zeros on the line, Theorem~\ref{thm:S}, has a smaller constant
+than the one Zhaoyi-Tian announces, and its certificate is a hypothesis. Its formal status is that of \mbox{npip99}'s earlier theorem. The Lean artifact of~\cite{AF}, on which our
+library is built, already proves hypothesis-free bounds for $N^d$ ($\frac34$ and $\frac56$, and $0.75329\ldots$ and
+$0.83625\ldots$ with the Montgomery--Taylor window) as well as for $N_0^s$ and for the distinct zeros on the line; apart from these and, under
+its hypotheses, \mbox{AxiomMath}'s formalisation of Lamzouri's bounds, we know of no earlier formal result for $N^s$, $N^d$ or $N^{\mathrm{sc}}$
+(Yang and Yang state that the identity and certificate layers of their claims, which include $N^d$, are kernel-checked in Lean~4).
+
+\subsection{Plan}
+Section~\ref{sec:setting} fixes the setting of~\cite{AF} and the inputs taken from it, at bandwidth $\lambda<1$. Section~\ref{sec:linalg}
+collects the linear algebra. Section~\ref{sec:first} proves Theorem~\ref{thm:S}, Section~\ref{sec:simple} Theorem~\ref{thm:main}, and
+Section~\ref{sec:sc} Corollary~\ref{cor:SC}. Section~\ref{sec:cert} describes the certificates and Section~\ref{sec:remarks} the limits of the
+method. Appendix~\ref{app:lean} reproduces the Lean statements; Appendix~\ref{app:how} records how the work was done.

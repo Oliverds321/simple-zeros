@@ -1,0 +1,130 @@
+\section{Setting and the inputs from Alp\"oge--Furman}\label{sec:setting}
+
+We follow the notation of~\cite[\S\S1--2]{AF}. Throughout, $\ell:=\log(T/2\pi)$ and $N:=N(T,2T)=\frac T{2\pi}(\ell+2\log2-1)+O(\ell)$.
+For a zero $\rho$ put $\gamma_\rho:=(\rho-\frac12)/i\in\C$, which is real if and only if $\rho$ lies on the critical line. Off-line zeros come in
+pairs $\pi=\{\rho,1-\bar\rho\}$ with $\gamma_{1-\bar\rho}=\overline{\gamma_\rho}$ and equal multiplicities.
+
+\subsection{The window, the test family and the matrix}\label{ssec:family}
+Fix a \emph{bandwidth} $\lambda\in(0,1]$ and put $L:=\lambda\ell$. A \emph{window} is an even function $\psi\in C^2([-\frac12,\frac12])$ with
+$0<\psi\le1$. (The hypotheses of~\cite[\S2.2]{AF} are that $\psi$ is even, $C^2$ and positive; the bound $\psi\le1$ is used there tacitly,
+through $0\le\varphi\le1$.) Fix a smooth nondecreasing function $\chi$ with $\chi=0$ on $(-\infty,0]$ and $\chi=1$ on $[1,\infty)$, and let $\chi_w(t):=\chi(t/w)$, the
+ramp of width $w$, for $1\le w=o(L)$; \cite{AF} take a $C^\infty$ ramp of width $1$. Implied constants may depend on $\chi$ and $\psi$. Put, as
+in~\cite[(2.7)]{AF},
+\begin{equation}\label{eq:window}
+\varphi(u):=\chi_w\big(\tfrac L2+u\big)\,\chi_w\big(\tfrac L2-u\big)\,\psi(u/L)^{1/2},
+\end{equation}
+so that $\varphi$ is real and even, $\operatorname{supp}\varphi=[-\frac L2,\frac L2]$ and $\varphi(\pm\frac L2)=0$. Let
+$a:=L^{-1}\int\varphi^2=\int\psi+O(w/L)$ and $\widehat\varphi(z):=\int\varphi(u)e^{-iuz}\,du$, an even entire function, real on $\R$, with
+$\widehat\varphi(\bar z)=\overline{\widehat\varphi(z)}$. The grid is $\alpha_k:=T+2\pi k/L$ for $0\le k<d:=\floor{LT/2\pi}$, and for a zero
+$\rho$ we put
+\[
+v_\rho:=\big(\widehat\varphi(\gamma_\rho-\alpha_k)\big)_{0\le k<d}\in\C^d,\qquad u_\rho:=(aL^2)^{-1/2}v_\rho .
+\]
+Let $I:=[T,2T)$ and $I':=[T-\sqrt T,\,2T+\sqrt T)$. The matrix of~\cite[(2.10)]{AF} is
+\begin{equation}\label{eq:G}
+G:=\sum_{\Re\gamma_\rho\in I'}m_\rho\,u_\rho u_\rho^{\tsp},
+\end{equation}
+the sum running over distinct zeros, with the bilinear transpose. It is real symmetric: $v_{1-\bar\rho}=\overline{v_\rho}$ because the grid is
+real and $\widehat\varphi(\bar z)=\overline{\widehat\varphi(z)}$, the multiplicities of $\rho$ and $1-\bar\rho$ agree, and both have the same
+$\Re\gamma$, so that they enter~\eqref{eq:G} together. An on-line zero contributes $m_\rho u_\rho u_\rho^{\tsp}\succeq0$. An off-line pair with
+$u_\rho=x+iy$ ($x,y\in\R^d$) contributes $m_\pi(u_\rho u_\rho^{\tsp}+\bar u_\rho\bar u_\rho^{\tsp})=2m_\pi(xx^{\tsp}-yy^{\tsp})$, which has at
+most one positive and at most one negative eigenvalue.
+
+\subsection{The kernel and the window constant}\label{ssec:kernel}
+For a window $\psi$ put $v_\psi:=\psi/\!\int\psi$ and
+\[
+k_\psi(x):=\int_{-1/2}^{1/2}v_\psi(s)\cos(2\pi xs)\,ds ,
+\]
+an even, positive definite function with $k_\psi(0)=1$ and $\abs{k_\psi}\le1$. Let
+\[
+J(\psi):=\iint\abs{u-v}\,\psi(u)\psi(v)\,du\,dv,\qquad R_\lambda(\psi):=\frac{\int\psi^2+\lambda^2J(\psi)}{\lambda\,(\int\psi)^2},\qquad
+H_\lambda(\psi):=2-R_\lambda(\psi),
+\]
+all integrals over $[-\frac12,\frac12]$, and $R:=R_1$, $H:=H_1$. Substituting $v=u+r$ gives the one-integral form
+$J(\psi)=2\int_0^1r\,(\psi\star\psi)(r)\,dr$ with $(\psi\star\psi)(r):=\int\psi(u)\psi(u+r)\,du$; the prime side of~\cite{AF} produces this form,
+and the two agree for every continuous $\psi$ (evenness is not needed). $R$ is the constant of~\cite[Lemma~5.6]{AF}; for $\psi=\cos(\sqrt2s)$,
+$H=\frac32-\cot(1/\sqrt2)/\sqrt2=0.6725007036\ldots$, which is optimal among constants of the form $2-R(\psi)$~\cite{CCLM}. Every quantity
+used below is homogeneous of degree $0$ in $\psi$, so a window may be rescaled by a positive constant without changing $k_\psi$, $R_\lambda$
+or $H_\lambda$. For $\psi(s)=\cos(\alpha s)$,
+\begin{equation}\label{eq:kcos}
+k_\psi(x)=\frac{\sinc(\pi x-\frac\alpha2)+\sinc(\pi x+\frac\alpha2)}{2\sinc(\frac\alpha2)},\qquad\sinc y=\frac{\sin y}y\ (y\ne0),\quad\sinc0=1 .
+\end{equation}
+
+\subsection{The inputs}\label{ssec:inputs}
+\begin{proposition}[Inputs from~\cite{AF}]\label{prop:AF}
+Let $\psi$ be a window and $0<\lambda<1$. As $T\to\infty$:
+\begin{enumerate}[label=\textup{(AF\arabic*)}]
+\item \textup{(\cite[Lemma~2.1]{AF})} $\norm{u_\rho}^2\le1$ for every on-line zero.
+\item \textup{(\cite[Lemma~3.1 and Proposition~4.1]{AF})} Each off-line pair contributes to $G$ a real symmetric matrix with at most one
+positive and at most one negative eigenvalue.
+\item \textup{(\cite[Proposition~4.2]{AF})} $\tr G=N(I')+O(T^{1/2}L^2)$, and $N(I')=N+O(\sqrt T\log T)$.
+\item \textup{(\cite[Theorem~5.7]{AF} at $\lambda=1$; for $\lambda<1$ its proof, as indicated in~\cite[Remark~6.1]{AF}, which states the case
+$\psi=\psi_0$; the general formula for $R_\lambda(\psi)$ is formally verified for the two windows used here)} $\HS{G}^2=(R_\lambda(\psi)+o(1))\,N$.
+\end{enumerate}
+\end{proposition}
+
+The prime-side input behind (AF3)--(AF4) is the Montgomery--Vaughan mean value theorem for a Dirichlet polynomial of length
+$(T/2\pi)^\lambda$, as in~\cite{AF}.
+\cite{AF} prove (AF4) also at $\lambda=1$, with error $O(L^{-1})$; all arguments below go through verbatim there. The formal proof works at
+$\lambda<1$, where its prime-side error term is $o(N)$, and then lets $\lambda\to1^-$ (\S\ref{ssec:bandwidth}); we follow it.
+
+\subsection{Normalised ordinates and the Gram identity}\label{ssec:gram}
+For an on-line zero put $x_\rho:=\gamma_\rho L/2\pi$ (the \emph{normalised ordinate}) and, for $k\in\Z$,
+$U_\rho(k):=(aL^2)^{-1/2}\widehat\varphi(\gamma_\rho-\alpha_k)$, so that $u_\rho=(U_\rho(k))_{0\le k<d}$. Let
+\[
+\delta_\rho:=\sum_{k\notin[0,d)}U_\rho(k)^2,\qquad \widehat E_{\rho\rho'}:=\sum_{k\notin[0,d)}U_\rho(k)U_{\rho'}(k),\qquad
+k_\varphi(\xi):=\frac{\int\varphi(Ls)^2e^{2\pi i\xi s}\,ds}{\int\varphi(Ls)^2\,ds}.
+\]
+Let $v_\varphi:=\varphi(L\cdot)^2/\!\int\varphi(L\cdot)^2$, $\delta_0:=\int v_\psi\,(1-\varphi(L\cdot)^2/\psi)$, and
+\[
+\eps_T:=\norm{v_\varphi-v_\psi}_{L^1},\qquad \eps_T':=\frac{\delta_0}{1-\delta_0}.
+\]
+Both tend to $0$ because $w=o(L)$. Finally let $\Lambda:=\abs{I'}L/2\pi$ be the normalised length of $I'$.
+
+\begin{lemma}[Gram identity and residues]\label{lem:residue}
+Let $T$ be so large that $a\ge\frac12\int\psi$, so that $\int\varphi^2>0$. For on-line zeros $\rho,\rho'$ with $\gamma_\rho,\gamma_{\rho'}\in I'$:
+\begin{enumerate}[label=\textup{(\roman*)}]
+\item $\sum_{k\in\Z}U_\rho(k)U_{\rho'}(k)=k_\varphi(x_\rho-x_{\rho'})$; hence $\norm{u_\rho}^2=1-\delta_\rho$ with $0\le\delta_\rho\le1$, and
+$\langle u_\rho,u_{\rho'}\rangle=k_\varphi(x_\rho-x_{\rho'})-\widehat E_{\rho\rho'}$, where $\widehat E\succeq0$ and
+$\abs{\widehat E_{\rho\rho'}}\le(\delta_\rho\delta_{\rho'})^{1/2}$.
+\item $k_\varphi$ is even and positive definite with $k_\varphi(0)=1$, so $\abs{k_\varphi}\le1$; moreover $\sup_\R\abs{k_\varphi-k_\psi}\le\eps_T$
+and $v_\varphi\le(1+\eps'_T)\,v_\psi$, with $\eps_T'\ge0$.
+\item $\sum_{\rho}m_\rho\delta_\rho=o(N)$ \textup{(}indeed $\ll\sqrt T\log T$\textup{)}, the sum over on-line zeros with $\gamma_\rho\in I'$.
+\item The consecutive gaps between the normalised ordinates of any set of zeros with $\Re\gamma\in I'$ add up to at most
+$\Lambda=\lambda N(1+o(1))$; every multiplicity is $\ll\log T$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) With $f(u):=\varphi(u)e^{-iu(\gamma-T)}$, supported in $[-\frac L2,\frac L2]$ and vanishing at the ends, $\widehat\varphi(\gamma-\alpha_k)$ is
+$L$ times a Fourier coefficient of $f$ on the period $L$; Parseval gives the identity~\cite[Lemma~2.1]{AF}, and the case $\rho=\rho'$ gives
+$\sum_{k\in\Z}U_\rho(k)^2=1$. Subtracting the off-grid part gives the rest; $\widehat E$ is a Gram matrix, and Cauchy--Schwarz gives the bound on its
+entries. (The normalisation needs $\int\varphi^2>0$: for the zero window the identity fails, $k_\varphi(0)$ being $0$.)
+(ii) Every kernel matrix $(k_\varphi(x_i-x_j))$ is the Gram matrix of full-lattice vectors by~(i), so $k_\varphi$ is positive definite, and it is
+even because $\varphi$ is. Next $v_\varphi=(1-\delta_0)^{-1}(\varphi(L\cdot)^2/\psi)\,v_\psi\le(1+\eps_T')v_\psi$, since the ramp only removes mass;
+and $\abs{k_\varphi-k_\psi}\le\norm{v_\varphi-v_\psi}_1$.
+(iii) For real $z$, two integrations by parts give $\abs{\widehat\varphi(z)}\le\abs z^{-2}\int\abs{\varphi''}$, and
+$\abs{\widehat\varphi(z)}\le\int\abs\varphi\le L\sqrt a$; with $\xi=(\gamma_\rho-\alpha_k)L/2\pi$ this is
+$\abs{U_\rho(k)}\le\min\{1,\lambda_\varphi\xi^{-2}\}$ with $\lambda_\varphi:=L\int\abs{\varphi''}/(4\pi^2\sqrt a)\ll L/w+1$ (here
+$a\ge\frac12\int\psi$ and $\int\abs{\chi_w''}=w^{-1}\int\abs{\chi''}$ are used). The grid covers $[T,2T)$, and $\delta_\rho\le1$ always. The zeros with $\gamma_\rho\in I'\setminus[T,2T)$ number
+$\ll\sqrt T\log T$, and those in $[T,2T)$ within distance $1$ (in $\gamma$) of $T$ or $2T$ number $\ll\log T$. The others lie in shells of unit
+length in $\gamma$ at distance $j\ge1$ from the ends of $[T,2T)$, each with $\ll\log T\ll L$ zeros; for such a zero every off-grid $k$ has
+$\abs\xi\ge jL/2\pi$, so $\delta_\rho\ll\lambda_\varphi^2(jL)^{-3}$, and these zeros contribute $\ll\sum_jL\lambda_\varphi^2(jL)^{-3}\ll1$.
+(iv) is the Riemann--von Mangoldt formula and $N(t+1)-N(t)\ll\log t$.
+\end{proof}
+
+The formal proof has (ii) in a weaker form, the positive definiteness of $(1+\eps_T')k_\psi-k_\varphi$ in place of the pointwise bound
+$v_\varphi\le(1+\eps_T')v_\psi$, and (iii) with $o(N)$ only; these are all that is used below.
+
+At bandwidth $\lambda$ the normalised ordinates have mean spacing $\lambda$, not $1$. Every local inequality below is stated in these units,
+where the kernel between two on-line zeros is $k_\varphi(x_\rho-x_{\rho'})$ at every $\lambda$; the certificates therefore apply at every
+$\lambda$ without change, and $\Lambda\le N(1+o(1))$ is the only place where the density enters.
+
+\subsection{The limit \texorpdfstring{$\lambda\to1^-$}{lambda to 1}}\label{ssec:bandwidth}
+Each of our bounds is proved in the form: for every $\lambda\in(0,1)$ and every $\eps>0$, $X(T,2T)\ge(f(\lambda)-\eps)N$ for $T\ge T_0$, where
+$f(\lambda)$ is obtained from the bandwidth-one constant by replacing $H(\psi)$ by $H_\lambda(\psi)$. Since $R_\lambda(\psi)\to R(\psi)$ as
+$\lambda\to1^-$ and each constant is continuous (indeed affine) in $H$, letting $\lambda\to1^-$ gives the bandwidth-one constants. For instance the
+constant $\Sigma$ of Theorem~\ref{thm:main} at $K=7$ equals $0.5950$, $0.66902$ and $0.675404$ at $\lambda=0.9$, $0.99$ and $0.999$.
+(Equivalently, in units of the mean spacing the certificates transfer by the exact identity $F^{(\lambda)}_{\gamma,\lambda\mu}(h)=F_{\gamma,\mu}(\lambda h)$,
+where $F^{(\lambda)}$ is built from $k_\psi(\lambda\,\cdot)$; so no slack is consumed. The formal proof does not need this, because it works in
+normalised units throughout.)

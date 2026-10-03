@@ -1,0 +1,2 @@
+'family_simple_on_line_killed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'family_simple_on_line_shell' depends on axioms: [propext, Classical.choice, Quot.sound]
